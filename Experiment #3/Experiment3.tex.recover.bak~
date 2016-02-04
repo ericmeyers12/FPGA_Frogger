@@ -1,0 +1,96 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% IEEE Style - Double columns, 11pt font, letterpaper
+\documentclass[journal, twocolumn, final,11pt,letterpaper]{IEEEtran}	
+
+% Include Latex Packages
+\input{header.tex}
+
+
+% Title of Document
+\title{ECE385 Experiment \#3
+	}
+\author{
+\IEEEauthorblockN{Eric Meyers, Ryan Helsdingen}\\
+\IEEEauthorblockA{Section ABG; TAs: Ben Delay, Shuo Liu \\
+February 10th, 2016 \\
+emeyer7, helsdin2}}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\begin{document}
+	
+%SECTION : Formatting and Title
+\maketitle
+\singlespacing
+
+%SECTION 1 - Introduction
+\section{Introduction}
+\IEEEPARstart{T}{he} purpose of this lab is to design and construct a four-bit serial logic processor that performs a total of eight logical operations in a bit-wise fashion. There are two four-bit words stored in two shift registers. \\
+\vspace{-5mm}
+
+%SECTION 2 - Pre-Lab
+\section{Pre-Lab}
+Part A) Describe the simplest (two-input one-output) circuit that can optionally invert a signal (i.e., one input determines if the output is equal to the other input or equal to the other input inverted). Sketch your circuit. \\
+
+Answer: The logic needed is shown in the following truth table:
+\begin{center}
+	\begin{tabular}{ll|l}
+		A & B & Inverted? \\ \hline
+		0 & 0 & Yes \\
+		0 & 1 & No \\
+		1 & 0 & No \\
+		1 & 1 & Yes \\
+	\end{tabular}
+\end{center}
+This truth table can be created using a NXOR gate which is essentailly a comparator.\\
+
+SHOW DIAGRAM FOR PART A HERE \\
+
+Part B) Explain how a modular design such as that presented above improves testability and cuts down development time. Propose an approach that could be used to troubleshoot the modular circuit above if it appeared to be completing the computation cycle correctly but was not giving the correct output. (Be specific.)\\
+
+Answer: A modular design allows the operator to unit-test each individual module. Once each module is successfully tested, the entire system can be integrated into a whole-system and tested. A modular design ideally will cut down the debugging time needed on the system as a whole.  
+
+
+%SECTION 3 - Description of Circuit
+\section{Description of Circuit}
+The team designed a total of four modular sub-systems in this lab. The following sub-systems were designed and constructed:\\
+\begin{enumerate}
+	\item Loader and Data In
+	\item Computation Unit
+	\item Function Output Router
+	\item Control Logic Finite State Machine (FSM)
+\end{enumerate}
+Each sub-system was tested individually and system integration tests were performed at the end
+
+
+%SECTION 4 - State Diagram
+\section{State Diagram}
+
+%SECTION 5 - Design
+\section{Design}
+
+%SECTION 6 - Block Diagram
+\section{Block Diagram} 
+ 
+%SECTION 7 - Circuit/Logic Diagrams
+\section{Circuit/Logic Diagrams}
+Please refer t
+ 
+%SECTION 8 - Component Layout Sheet
+\section{Component Layout Sheet}
+
+%SECTION 9 - Documentation
+\section{Documentation from Experiment}
+
+
+%SECTION 10 - Conclusion
+\section{Conclusion}
+
+\newpage
+\onecolumn
+%SECTION 11: Figures
+\section{Figures}
+
+
+%SECTION : Bibliography
+%Insert Bibliography if needed
+
+\end{document}
