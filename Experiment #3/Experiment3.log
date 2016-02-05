@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 FEB 2016 18:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 FEB 2016 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -805,11 +805,7 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ))
-(./Experiment3.aux
-
-LaTeX Warning: Label `fig:fsm-truth-table' multiply defined.
-
-)
+(./Experiment3.aux)
 \openout1 = `Experiment3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -827,7 +823,8 @@ LaTeX Font Info:    ... okay on input line 18.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count146
 \scratchdimen=\dimen218
@@ -923,6 +920,16 @@ File: FSM.png Graphic file (type png)
 Package pdftex.def Info: FSM.png used on input line 90.
 (pdftex.def)             Requested size: 239.59871pt x 92.74788pt.
 
+Underfull \hbox (badness 1721) in paragraph at lines 97--98
+\OT1/ptm/m/n/11 S0 "con-trol bits" , which de-ter-mines whether the
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 97--98
+\OT1/ptm/m/n/11 noth-ing). This is im-por-tant be-cause it de-ter-mines
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
@@ -934,51 +941,95 @@ File: FSM_Truth_Table.png Graphic file (type png)
 Package pdftex.def Info: FSM_Truth_Table.png used on input line 103.
 (pdftex.def)             Requested size: 232.52945pt x 163.63182pt.
 
-Underfull \hbox (badness 1406) in paragraph at lines 111--112
-[]\OT1/ptm/m/n/11 The first com-po-nent that was de-signed was the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
-File: FSM_Truth_Table.png Graphic file (type png)
-<use FSM_Truth_Table.png>
-Package pdftex.def Info: FSM_Truth_Table.png used on input line 119.
-(pdftex.def)             Requested size: 232.52945pt x 163.63182pt.
 
-Underfull \vbox (badness 1466) has occurred while \output is active []
+Underfull \vbox (badness 7362) has occurred while \output is active []
 
  [2 <./FSM.png> <./FSM_Truth_Table.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
-[3
 
-] [4
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
-] (./Experiment3.aux)
+ []
 
-LaTeX Warning: There were multiply-defined labels.
 
- ) 
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
+\OT1/ptm/m/n/11 TOOOOOOOOOOOOOOOOOO TI-I-I-I-I-I-I-I-I-I-I-I-I-I-I-I-I-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+ []
+
+[4] <Control_Logic.png, id=29, 825.0825pt x 594.22pt>
+File: Control_Logic.png Graphic file (type png)
+ <use Control_Logic.png>
+Package pdftex.def Info: Control_Logic.png used on input line 291.
+(pdftex.def)             Requested size: 453.79678pt x 326.822pt.
+
+<Loader_Logic.png, id=30, 391.4625pt x 553.06625pt>
+File: Loader_Logic.png Graphic file (type png)
+ <use Loader_Logic.png>
+Package pdftex.def Info: Loader_Logic.png used on input line 297.
+(pdftex.def)             Requested size: 254.4476pt x 359.4888pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5
+
+
+ <./Control_Logic.png>]
+<Computational_Router_Logic.png, id=35, 574.145pt x 588.1975pt>
+File: Computational_Router_Logic.png Graphic file (type png)
+
+<use Computational_Router_Logic.png>
+Package pdftex.def Info: Computational_Router_Logic.png used on input line 303.
+
+(pdftex.def)             Requested size: 315.78073pt x 323.50961pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./Loader_Logic.png>] [7 <./Computational_Router_Logic.png>] (./Experiment3
+.aux) ) 
 Here is how much of TeX's memory you used:
- 22260 strings out of 493089
- 513769 string characters out of 6134842
- 663877 words of memory out of 5000000
- 25355 multiletter control sequences out of 15000+600000
+ 22615 strings out of 493089
+ 520087 string characters out of 6134842
+ 719077 words of memory out of 5000000
+ 25707 multiletter control sequences out of 15000+600000
  34531 words of font info for 74 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 64i,7n,67p,650b,636s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment3.pdf (4 pages, 333367 bytes).
+ 64i,17n,69p,650b,949s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Experiment3.pdf (7 pages, 601263 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 67 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

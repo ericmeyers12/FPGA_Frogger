@@ -83,7 +83,7 @@ In the end, the functionality of the circuit is as follows: when a user selects 
 
 %SECTION 4 - State Diagram - Eric
 \section{State Diagram}
-The FSM created in this lab is a Mealy State Machine and this was chosen due to the simplicity of the relationship between the input and output on the state diagram.
+The FSM created in this lab is a Mealy State Machine and this was chosen due to the simplicity of the relationship between the input and output on the state diagram. (???????)
 
 \begin{figure} [H]
 	\centering
@@ -94,9 +94,9 @@ The FSM created in this lab is a Mealy State Machine and this was chosen due to 
 
 %SECTION 5 - Design - Eric
 \section{Design}
-The first component designed in this lab was the FSM Sequential Logic Circuit. This is because the output of this state machine controls the actions on the shift register (i.e. this output controls the "control bits", S1 and S0, which determines whether the registers are shifting right, parallel loading, or doing nothing). This is important because it determines whether we are in a load/execute/do nothing state. \\
+The first component designed in this lab was the FSM Sequential Logic Circuit. This is because the output of this state machine controls the actions on the shift register (i.e. this output controls the S1 and S0 "control bits" , which determines whether the registers are shifting right, parallel loading, or doing nothing). This is important because it determines whether the machine is in a load/execute/do nothing state. These proper inputs to the control bits on the shift registers will be examined further on in this section.\\
 
-The truth table was given from the documentation in the Experiment 3 PDF. This is shown below in figure:.
+The truth table for the FSM was given from the documentation in the Experiment 3 PDF. This is shown below in figure.
 
 \begin{figure} [H]
 	\centering
@@ -105,21 +105,72 @@ The truth table was given from the documentation in the Experiment 3 PDF. This i
 	\caption{FSM Truth Table}
 \end{figure}       
 
-Next, given this truth table, the team constructed a K-Map for each of the output bits - S, Q , C1 and C0. Since the only output is "S" and the remaining bits are only internal to the state machine, the 
+Next, given this truth table, the team constructed a K-Map for each of the output bits - S, Q , C1 and C0. Since the only output is "S", and the remaining bits are only internal to the state machine, there must be three D-flip-flops to store the state of these internal bits. The K-Maps are shown along with the cooresponding S.O.P resultant equations.
 
-
-The first component that was designed was the Loader Unit. As stated before, this requires the operator to input the four bits of data via the DIN switches, and allows them to either load it into the A register or the B register. If either LoadA or LoadB are on, the  Only when LoadA OR LoadB is on, must the contents specified by DIN have the ability to be parallel loaded into the shift register. \\
-
-Next, the FSM Sequential Logic Circuit was designed 
-
+\begin{figure} [H]
+	\centering
+	\begin{Karnaugh}
+		\contingut{0,x,x,x,0,1,1,1,1,x,x,x,0,1,1,1}
+		\implicant{1}{11}{gray}
+		\implicant{3}{10}{gray}
+	\end{Karnaugh}
+	\vspace{-5mm}
+	\caption*{FSM Sequential Circuit Output (S)}
+\end{figure}
+\vspace{-5mm}
+\[ S = C_1 \lor C_0 \lor \lnot E \land Q\]\\
 
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[scale=0.33]{FSM_Truth_Table.png}
-	\label{fig:fsm-truth-table}
-	\caption{FSM Truth Table}
-\end{figure}            
+	\begin{Karnaugh}
+		\contingut{0,x,x,x,0,1,1,1,1,x,x,x,1,1,1,1}
+		\implicant{1}{11}{gray}
+		\implicant{3}{10}{gray}
+		\implicant{12}{10}{gray}
+	\end{Karnaugh}
+	\vspace{-5mm}
+	\caption*{State Internal Bit (Q)}
+\end{figure}
+\vspace{-5mm}
+\[ Q = C_1 \lor C_0 \lor E\]
+
+
+\begin{figure} [H]
+	\centering
+	\begin{Karnaugh}
+		\contingut{0,x,x,x,0,1,1,0,0,x,x,x,0,1,1,0}
+		\implicant{1}{9}{gray}
+		\implicant{2}{10}{gray}
+	\end{Karnaugh}
+	\vspace{-5mm}
+	\caption*{Counter Internal Bit (C1)}
+\end{figure}
+\vspace{-5mm}
+\[ C_1 = C_1 \oplus C_0 \]
+
+\begin{figure} [H]
+	\centering
+	\begin{Karnaugh}
+		\contingut{0,x,x,x,0,0,1,0,1,x,x,x,0,0,1,0}
+		\implicant{2}{10}{gray}
+		\implicant{8}{10}{gray}
+	\end{Karnaugh}
+	\vspace{-5mm}
+	\caption*{Counter Internal Bit (C0}
+\end{figure}
+\vspace{-5mm}
+\[ Q = (C_1 \land \lnot C_0) \lor (\lnot E \land Q)\]
+
+Next, once these logic functions were derived, an AND-OR circuit was designed and then converted into a NAND-NOR circuit. This NAND-NOR circuit was optimized to use the least number of chips possible and as a result, only used a total of 5 TTL chips.\\ 
+
+LIST CHIPS HERE(1) SN74LS00, (1) SN74LS \\
+
+The next modular component that was designed of the computational and router unit. This was the logic that performed a particular operation. The three primary functions (AND, OR, XOR) and a high signal is fed into a 4-to-1 MUX with the select lines connected to the F1 and F0 switches. This output of the 4-to-1 MUX is then fed into a comparator. The second line of this comparator is connected to the F2 switch (negated). This effectively acts as an XOR gate.  \\
+
+This output is then fed to the proper inputs on the two 4-to-1 MUXs connected to the shift registers. The R1 and R0 control the routing selection, and the two MUXs on the top must be fed the right values in order to route the output correctly and perform the proper action. This output of the MUX then is fed into the left serial input on the shift register. \\
+
+Next the shift register control bits needed to be determined to either be shifting right parallel loading or doing nothing. S1 and S0 must both be high if a parallel load is being performed on the shift register, so this means the LoadA switch can be wired directly to the A shift register control bit, and the LoadB switch can be wired directly to the B shift register S1 control bit. The S0 must come from the Control Logic Circuit (the "S" output), and be fed into some combinational logic that is derived below:
 
 \begin{center}
 	\begin{tabular}{lll|ll|ll}
@@ -134,6 +185,79 @@ Next, the FSM Sequential Logic Circuit was designed
 		1 & 1 & 1 & 1 & 1 & 1 & 1 \\
 	\end{tabular}
 \end{center}
+
+This is referencing the fact that the control bits on each Register A and Register B are as follows: 
+
+\begin{center}
+	\begin{tabular}{ll|l}
+		S1 & S0 & Action \\ \hline
+		0 & 0 & Do Nothing  \\
+		0 & 1 & Shift Right \\
+		1 & 0 & Shift Left \\
+		1 & 1 & 1 Parallel Load\\
+	\end{tabular}
+\end{center}
+
+Next, from the above large truth table K-Maps can be formed, this is shown below with the fcooresponding S.O.P functions along side them.
+\begin{figure} [H]
+	\centering
+	\begin{Karnaughvuit}
+		\minterms{2,3,6,7}
+		\maxterms{0,1,4,5}
+		\implicant{3}{6}{gray}
+	\end{Karnaughvuit}
+	\vspace{-15mm}
+	\caption*{}
+\end{figure}
+\vspace{-5mm}
+\[ S_1 : A=  LoadA\] 
+
+
+\begin{figure} [H]
+	\centering
+	\begin{Karnaughvuit}
+		\minterms{2,4,3,6,7}
+		\maxterms{0,1,5}
+		\implicant{3}{6}{gray}
+		\implicantcostats{4}{6}{gray}
+	\end{Karnaughvuit}
+	\vspace{-5mm}
+	\caption*{}
+\end{figure}
+\vspace{-15mm}
+\[ S_0:A=  \lnot LoadA \lor (\lnot LoadB \land S)\] 
+
+
+\begin{figure} [h]
+	\centering
+	\begin{Karnaughvuit}
+		\minterms{1,3,5,7}
+		\maxterms{0,4,2,6}
+		\implicant{1}{7}{gray}
+	\end{Karnaughvuit}
+	\vspace{-15mm}
+	\caption*{}
+\end{figure}
+\vspace{-5mm}
+\[ S_1:B=  LoadB\] 
+
+
+\begin{figure} [h]
+	\centering
+	\begin{Karnaughvuit}
+		\minterms{1,3,4,5,7}
+		\maxterms{0,2,6}
+		\implicant{1}{7}{gray}
+		\implicant{4}{5}{gray}
+	\end{Karnaughvuit}
+	\vspace{-15mm}
+	\caption*{}
+\end{figure}
+\vspace{-5mm}
+\[ S_0:B=  \lnot LoadB \lor (\lnot LoadA \land S)\] 
+
+Once these equations were formed, an AND-OR circuit was designed and then a NAND-NAND circuit containing only four logic gates was created. This serves as the control of our shift registers and will feed to the proper place upon constructing. \\ TOOOOOOOOOOOOOOOOOO TIIIIIIIIIIIIIIIIIIREEEEEEEEED
+
 %SECTION 6 - Block Diagram - Ryan
 \section{Block Diagram} 
 Please refer to Figure \_\_\_\_ in "Section XI: Figures" of this document to view the Block Diagram created in this lab.
@@ -142,7 +266,7 @@ Please refer to Figure \_\_\_\_ in "Section XI: Figures" of this document to vie
 \section{Circuit/Logic Diagrams}
 As stated before, to allow for easier  construction and debugging, this system was broken down into modular components. All circuit diagrams are shown in "Section XI: Figures" of this document.\\
  
-The FSM Control Logic is shown in Figure \_\_\_. The Loader/Computation/Router Unit are shown in Figure \_\_\_.
+The FSM Control Logic is shown in Figure \ref{fig:control-logic-diagram}. The Loader is shown in Figure \ref{fig:loader-logic-diagram} and the Computational/Router Unit is shown in Figure \ref{fig:computational-router-logic-diagram}.   
  
 %SECTION 8 - Component Layout Sheet - Eric 
 \section{Component Layout Sheet}
@@ -157,10 +281,28 @@ RYAN SECTION
 \section{Conclusion}
 RYAN SECTION
 
-\newpage
+\clearpage
 \onecolumn
 %SECTION 11: Figures
 \section{Figures}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.55]{Control_Logic.png}
+	\caption{Control Logic Diagram\label{fig:control-logic-diagram}}
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.65]{Loader_Logic.png}
+	\caption{Loader Logic Diagram\label{fig:loader-logic-diagram}}
+\end{figure}
+
+\begin{figure} [H]
+ 	\centering
+ 	\includegraphics[scale=0.55]{Computational_Router_Logic.png}
+ 	\caption{Computational/Router Logic Diagram\label{fig:computational-router-logic-diagram}}
+\end{figure}
 
 
 %SECTION : Bibliography
