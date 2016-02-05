@@ -23,7 +23,7 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - Eric
 \section{Introduction}
-\IEEEPARstart{T}{he} purpose of this lab is to design and construct a four-bit serial logic processor that performs a total of eight logical operations in a bit-wise fashion. There are two four-bit words stored in two shift registers. WRITE MORE SHIT HERE \\
+\IEEEPARstart{T}{he} purpose of this lab is to design and construct a four-bit serial logic processor that performs a total of eight logical operations in a bit-wise fashion. There are two four-bit words stored in two shift registers, A and B. The operator may store any data of their choosing in these two shift registers by using the load/data-in switches and then execute any logical bitwise operation on these two words by using the function-select switches along with the routing switches.\\
 \vspace{-5mm}
 
 %SECTION 2 - Pre-Lab  - Eric
@@ -162,15 +162,13 @@ Next, given this truth table, the team constructed a K-Map for each of the outpu
 \vspace{-5mm}
 \[ Q = (C_1 \land \lnot C_0) \lor (\lnot E \land Q)\]
 
-Next, once these logic functions were derived, an AND-OR circuit was designed and then converted into a NAND-NOR circuit. This NAND-NOR circuit was optimized to use the least number of chips possible and as a result, only used a total of 5 TTL chips.\\ 
+Once these logic functions were derived, an AND-OR circuit was designed and then converted into a NAND-NOR circuit. This NAND-NOR circuit was optimized to use the least number of chips possible and as a result, only used a total of 5 TTL chips.\\ 
 
-LIST CHIPS HERE(1) SN74LS00, (1) SN74LS \\
-
-The next modular component that was designed of the computational and router unit. This was the logic that performed a particular operation. The three primary functions (AND, OR, XOR) and a high signal is fed into a 4-to-1 MUX with the select lines connected to the F1 and F0 switches. This output of the 4-to-1 MUX is then fed into a comparator. The second line of this comparator is connected to the F2 switch (negated). This effectively acts as an XOR gate.  \\
+The next modular component that was designed was the computational and router unit. This was the circuit that performed a particular logical operation. The three primary functions (AND, OR, XOR) and a high signal is fed into a 4-to-1 MUX with the select lines connected to the F1 and F0 switches. This output of the 4-to-1 MUX is then fed into a comparator. The second line of this comparator is connected to the F2 switch (negated). This effectively acts as an XOR gate. This is so that we do not have to use extra logic gates on the second set of logical operations (NAND, NOR, NXOR, 0000), and instead use an optional inverter, which was demonstrated in the pre-lab.  \\
 
 This output is then fed to the proper inputs on the two 4-to-1 MUXs connected to the shift registers. The R1 and R0 control the routing selection, and the two MUXs on the top must be fed the right values in order to route the output correctly and perform the proper action. This output of the MUX then is fed into the left serial input on the shift register. \\
 
-Next the shift register control bits needed to be determined to either be shifting right parallel loading or doing nothing. S1 and S0 must both be high if a parallel load is being performed on the shift register, so this means the LoadA switch can be wired directly to the A shift register control bit, and the LoadB switch can be wired directly to the B shift register S1 control bit. The S0 must come from the Control Logic Circuit (the "S" output), and be fed into some combinational logic that is derived below:
+Next the shift register control bits needed to be determined to either be shifting right parallel loading or doing nothing. S1 and S0 must both be high if a parallel load is being performed on the shift register, so this means the LoadA switch can be wired directly to the A shift register S1 control bit, and the LoadB switch can be wired directly to the B shift register S1 control bit. The S0 must come from the Control Logic Circuit (the "S" output), and be fed into some combinational logic that is derived below:
 
 \begin{center}
 	\begin{tabular}{lll|ll|ll}
@@ -194,11 +192,11 @@ This is referencing the fact that the control bits on each Register A and Regist
 		0 & 0 & Do Nothing  \\
 		0 & 1 & Shift Right \\
 		1 & 0 & Shift Left \\
-		1 & 1 & 1 Parallel Load\\
+		1 & 1 & Parallel Load\\
 	\end{tabular}
 \end{center}
 
-Next, from the above large truth table K-Maps can be formed, this is shown below with the fcooresponding S.O.P functions along side them.
+Next, from the above first truth table K-Maps can be formed, this is shown below with the cooresponding S.O.P functions along side them.
 \begin{figure} [H]
 	\centering
 	\begin{Karnaughvuit}
@@ -256,11 +254,36 @@ Next, from the above large truth table K-Maps can be formed, this is shown below
 \vspace{-5mm}
 \[ S_0:B=  \lnot LoadB \lor (\lnot LoadA \land S)\] 
 
-Once these equations were formed, an AND-OR circuit was designed and then a NAND-NAND circuit containing only four logic gates was created. This serves as the control of our shift registers and will feed to the proper place upon constructing. \\ TOOOOOOOOOOOOOOOOOO TIIIIIIIIIIIIIIIIIIREEEEEEEEED
+Once these equations were formed, an AND-OR circuit was designed, then from this a NAND-NAND circuit containing only four logic gates was created. This serves as the control of our shift registers and will feed to the proper place upon constructing.\\ 
 
+All in all, the total number of chips used was 18 TTL chips. This chip count could have been reduced if better optimization was performed, however, since the team possessed the required chips, none was needed. The chips used were as follows:
+\begin{itemize}
+	\item Control Logic Unit
+	\begin{itemize}
+		\item 74LS00 - 2-input NAND (2)
+		\item 74LS02 - 2-input NOR
+		\item74LS04 - Hex Inverter
+		\item 74LS27 - 3-input NOR
+		\item 74LS107 - J-K Flip Flop (2)
+	\end{itemize}
+	\item Computation and Router Unit
+	\begin{itemize}
+		\item 74LS00 - 2-input NAND
+		\item 74LS85 Comparator
+		\item 74LS153 4-to-1 Multiplexer
+		\item 74LS194 - Universal Shift Register (2)
+	\end{itemize}
+	\item Loader Unit
+	\begin{itemize}
+		\item 74LS02 - 2-input NOR (3)
+		\item 74LS04 - Hex Inverter 
+	\end{itemize}
+\end{itemize}
 %SECTION 6 - Block Diagram - Ryan
 \section{Block Diagram} 
-Please refer to Figure \_\_\_\_ in "Section XI: Figures" of this document to view the Block Diagram created in this lab.
+RYAN SECTION
+
+%Please refer to Figure \_\_\_\_ in "Section XI: Figures" of this document to view the Block Diagram created in this lab.
  
 %SECTION 7 - Circuit/Logic Diagrams - Eric
 \section{Circuit/Logic Diagrams}
@@ -270,7 +293,7 @@ The FSM Control Logic is shown in Figure \ref{fig:control-logic-diagram}. The Lo
  
 %SECTION 8 - Component Layout Sheet - Eric 
 \section{Component Layout Sheet}
-Please refer to Figure \_\_\_\_ in "Section XI: Figures" of this document to view the Component Layout Sheet created in this lab.
+Please refer to Figure \ref{fig:component-layout} in "Section XI: Figures" of this document to view the Component Layout Sheet created in this lab.
 
 %SECTION 9 - Documentation - Ryan
 \section{Documentation from Experiment}
@@ -294,7 +317,7 @@ RYAN SECTION
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[scale=0.65]{Loader_Logic.png}
+	\includegraphics[scale=0.6]{Loader_Logic.png}
 	\caption{Loader Logic Diagram\label{fig:loader-logic-diagram}}
 \end{figure}
 
@@ -303,6 +326,13 @@ RYAN SECTION
  	\includegraphics[scale=0.55]{Computational_Router_Logic.png}
  	\caption{Computational/Router Logic Diagram\label{fig:computational-router-logic-diagram}}
 \end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.55]{Component_Layout.png}
+	\caption{Component Layout Diagram\label{fig:component-layout}}
+\end{figure}
+
 
 
 %SECTION : Bibliography

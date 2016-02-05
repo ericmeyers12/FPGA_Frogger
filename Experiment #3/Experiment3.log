@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 FEB 2016 23:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 FEB 2016 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -881,15 +881,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+
 Underfull \hbox (badness 6364) in paragraph at lines 78--79
 []\OT1/ptm/m/n/11 The Com-pu-ta-tion Unit per-formed the se-lected
  []
@@ -945,12 +945,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
-
-Underfull \vbox (badness 7362) has occurred while \output is active []
-
- [2 <./FSM.png> <./FSM_Truth_Table.png>]
+[2 <./FSM.png> <./FSM_Truth_Table.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 167--168
+[]\OT1/ptm/m/n/11 The next mod-u-lar com-po-nent that was de-signed
  []
 
 
@@ -964,34 +966,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-\OT1/ptm/m/n/11 TOOOOOOOOOOOOOOOOOO TI-I-I-I-I-I-I-I-I-I-I-I-I-I-I-I-I-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 
  []
 
-[4] <Control_Logic.png, id=29, 825.0825pt x 594.22pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+
+ []
+
+[4] <Control_Logic.png, id=30, 825.0825pt x 594.22pt>
 File: Control_Logic.png Graphic file (type png)
  <use Control_Logic.png>
-Package pdftex.def Info: Control_Logic.png used on input line 291.
+Package pdftex.def Info: Control_Logic.png used on input line 314.
 (pdftex.def)             Requested size: 453.79678pt x 326.822pt.
 
-<Loader_Logic.png, id=30, 391.4625pt x 553.06625pt>
+<Loader_Logic.png, id=31, 391.4625pt x 553.06625pt>
 File: Loader_Logic.png Graphic file (type png)
  <use Loader_Logic.png>
-Package pdftex.def Info: Loader_Logic.png used on input line 297.
-(pdftex.def)             Requested size: 254.4476pt x 359.4888pt.
+Package pdftex.def Info: Loader_Logic.png used on input line 320.
+(pdftex.def)             Requested size: 234.8793pt x 331.8423pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -999,37 +996,45 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
  <./Control_Logic.png>]
-<Computational_Router_Logic.png, id=35, 574.145pt x 588.1975pt>
+<Computational_Router_Logic.png, id=36, 574.145pt x 588.1975pt>
 File: Computational_Router_Logic.png Graphic file (type png)
 
 <use Computational_Router_Logic.png>
-Package pdftex.def Info: Computational_Router_Logic.png used on input line 303.
+Package pdftex.def Info: Computational_Router_Logic.png used on input line 326.
 
 (pdftex.def)             Requested size: 315.78073pt x 323.50961pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./Loader_Logic.png>] [7 <./Computational_Router_Logic.png>] (./Experiment3
+ [6 <./Loader_Logic.png>] <Component_Layout.png, id=41, 711.1368pt x 543.4704pt
+>
+File: Component_Layout.png Graphic file (type png)
+
+<use Component_Layout.png>
+Package pdftex.def Info: Component_Layout.png used on input line 332.
+(pdftex.def)             Requested size: 391.12645pt x 298.90964pt.
+ [7 <./Computational_Router_Logic.png> <./Component_Layout.png>] (./Experiment3
 .aux) ) 
 Here is how much of TeX's memory you used:
- 22615 strings out of 493089
- 520087 string characters out of 6134842
- 719077 words of memory out of 5000000
- 25707 multiletter control sequences out of 15000+600000
- 34531 words of font info for 74 fonts, out of 8000000 for 9000
+ 22621 strings out of 493089
+ 520216 string characters out of 6134842
+ 719235 words of memory out of 5000000
+ 25711 multiletter control sequences out of 15000+600000
+ 35638 words of font info for 75 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 64i,17n,69p,650b,949s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,17n,69p,691b,949s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
 /texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment3.pdf (7 pages, 601263 bytes).
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Experiment3.pdf (7 pages, 3199983 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 72 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
