@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  5 FEB 2016 13:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  5 FEB 2016 13:42
 entering extended mode
 **Experiment3.tex
 
@@ -1044,7 +1044,7 @@ nt #3\Experiment3.aux") )
 Here is how much of TeX's memory you used:
  22704 strings out of 493921
  523158 string characters out of 3144445
- 715636 words of memory out of 3000000
+ 715624 words of memory out of 3000000
  25604 multiletter control sequences out of 15000+200000
  35638 words of font info for 75 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
@@ -1057,7 +1057,7 @@ mr8.pfb><C:/Program Files (x86)/MiKTeX 2.90/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb><C:/Program Files (x86)/MiKTeX 2.90/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb><C:/Program Files (x86)/MiKTeX 2.90/fonts/type1/urw/times/utmb8a.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.90/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment3.pdf (7 pages, 3206457 bytes).
+Output written on Experiment3.pdf (7 pages, 3206443 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
