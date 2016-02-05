@@ -23,7 +23,7 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - Eric
 \section{Introduction}
-\IEEEPARstart{T}{he} purpose of this lab is to design and construct a four-bit serial logic processor that performs a total of eight logical operations in a bit-wise fashion. There are two four-bit words stored in two shift registers. \\
+\IEEEPARstart{T}{he} purpose of this lab is to design and construct a four-bit serial logic processor that performs a total of eight logical operations in a bit-wise fashion. There are two four-bit words stored in two shift registers. WRITE MORE SHIT HERE \\
 \vspace{-5mm}
 
 %SECTION 2 - Pre-Lab  - Eric
@@ -81,7 +81,7 @@ Finally, the Control Logic/Finite State Machine Unit is a sequential circuit tha
 
 In the end, the functionality of the circuit is as follows: when a user selects a four-bit word and loads it into the register of their choosing, they must then select the logical operation they would like to perform, select where they would like the output of this logical operation to go via the routing selection, and flip the execute switch. This will begin shifting the outputs of the shift register and perform bitwise logical operations of the requestion function. The machine will halt after exactly four operations and the register requested through the routing switches will contain the output of the logical operation. \\
 
-%SECTION 4 - State Diagram - Ryan
+%SECTION 4 - State Diagram - Eric
 \section{State Diagram}
 The FSM created in this lab is a Mealy State Machine and this was chosen due to the simplicity of the relationship between the input and output on the state diagram.
 
@@ -94,7 +94,19 @@ The FSM created in this lab is a Mealy State Machine and this was chosen due to 
 
 %SECTION 5 - Design - Eric
 \section{Design}
-The first component designed in this lab was the FSM Sequential Logic Circuit. This is because the output of this state machine controls the shift register control inputs (bits S1 and S0 which determine what the actions of the shift register are - i.e. shift right, parallel load, or nothing).
+The first component designed in this lab was the FSM Sequential Logic Circuit. This is because the output of this state machine controls the actions on the shift register (i.e. this output controls the "control bits", S1 and S0, which determines whether the registers are shifting right, parallel loading, or doing nothing). This is important because it determines whether we are in a load/execute/do nothing state. \\
+
+The truth table was given from the documentation in the Experiment 3 PDF. This is shown below in figure:.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.33]{FSM_Truth_Table.png}
+	\label{fig:fsm-truth-table}
+	\caption{FSM Truth Table}
+\end{figure}       
+
+Next, given this truth table, the team constructed a K-Map for each of the output bits - S, Q , C1 and C0. Since the only output is "S" and the remaining bits are only internal to the state machine, the 
+
 
 The first component that was designed was the Loader Unit. As stated before, this requires the operator to input the four bits of data via the DIN switches, and allows them to either load it into the A register or the B register. If either LoadA or LoadB are on, the  Only when LoadA OR LoadB is on, must the contents specified by DIN have the ability to be parallel loaded into the shift register. \\
 
