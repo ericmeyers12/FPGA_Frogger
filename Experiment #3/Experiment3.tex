@@ -21,68 +21,129 @@ emeyer7, helsdin2}}
 \maketitle
 \singlespacing
 
-%SECTION 1 - Introduction
+%SECTION 1 - Introduction - Eric
 \section{Introduction}
 \IEEEPARstart{T}{he} purpose of this lab is to design and construct a four-bit serial logic processor that performs a total of eight logical operations in a bit-wise fashion. There are two four-bit words stored in two shift registers. \\
 \vspace{-5mm}
 
-%SECTION 2 - Pre-Lab
+%SECTION 2 - Pre-Lab  - Eric
 \section{Pre-Lab}
 Part A) Describe the simplest (two-input one-output) circuit that can optionally invert a signal (i.e., one input determines if the output is equal to the other input or equal to the other input inverted). Sketch your circuit. \\
 
 Answer: The logic needed is shown in the following truth table:
 \begin{center}
 	\begin{tabular}{ll|l}
-		A & B & Inverted? \\ \hline
-		0 & 0 & Yes \\
-		0 & 1 & No \\
-		1 & 0 & No \\
-		1 & 1 & Yes \\
+		A & B & Y \\ \hline
+		0 & 0 & 0 \\
+		0 & 1 & 1 \\
+		1 & 0 & 1 \\
+		1 & 1 & 0 \\
 	\end{tabular}
 \end{center}
-This truth table can be created using a NXOR gate which is essentailly a comparator.\\
 
-SHOW DIAGRAM FOR PART A HERE \\
+Taking B to be the "select" line in this example, when the input (A) is driven high and our select line (B) is low, the output will be high. The reverse case is true when the input (A) is low and the select line (B) is high, the output will also be high. Therefore, depending on the select line, the input will be inverted. This can be implemented with a single XOR gate as shown below. \\
+\begin{center}
+	\begin{circuitikz} \draw
+	(2,1) node[xor port] (myxor) {}
+	(myxor.in 1) node[left=.5cm](a) {A}
+	(myxor.in 2) node[left = .5cm](b) {B}
+	(myxor.out)node[right = .5cm](y){Y};
+	\end{circuitikz}
+\end{center}
+\vspace{5mm}
 
 Part B) Explain how a modular design such as that presented above improves testability and cuts down development time. Propose an approach that could be used to troubleshoot the modular circuit above if it appeared to be completing the computation cycle correctly but was not giving the correct output. (Be specific.)\\
 
 Answer: A modular design allows the operator to unit-test each individual module. Once each module is successfully tested, the entire system can be integrated into a whole-system and tested. A modular design ideally will cut down the debugging time needed on the system as a whole.  
 
 
-%SECTION 3 - Description of Circuit
+%SECTION 3 - Description of Circuit - Eric
 \section{Description of Circuit}
+The logic processor was designed to contain two storage registers, and allow the operator to specify the data loaded into each register (A and B), as well as the operation performed between the two register, where the output is stored and 
 The team designed a total of four modular sub-systems in this lab. The following sub-systems were designed and constructed:\\
 \begin{enumerate}
-	\item Loader and Data In
+	\item Data Loader Unit
 	\item Computation Unit
-	\item Function Output Router
-	\item Control Logic Finite State Machine (FSM)
+	\item Function-Select and Output Router Unit
+	\item Control Logic Finite State Machine (FSM) Unit
 \end{enumerate}
-Each sub-system was tested individually and system integration tests were performed at the end
+\vspace{2mm}
 
+Each sub-system was tested individually and system integration tests were performed at the end upon successfully unit-testing each component. This way the team could eliminate errors and debug with efficiency.\\
 
-%SECTION 4 - State Diagram
+A total of eight operations can be performed on this unit. AND, OR, XOR, NAND, NOR, and NXOR are the six primary logical operations that can be performed, along with the last two operations simply being loading the specified registers with all 1s or 0s. \\
+
+The Data Loader consists of a total of six switches. Two switches for loading either register A or B, and four switches to specify the contents to store in the particular register.\\
+
+The Computation Unit performed the selected operation specified through the three function-select switches. The output of the operation is funnelled into the proper register as given by the operator. \\
+
+Finally, the Control Logic/Finite State Machine Unit is a sequential circuit that essentially determines the correct  number of cycles to perform a full logical operation. It relies on one input (execute switch) and has one output that determines if the registers should be shifting right, doing nothing, or loading. \\
+
+In the end, the functionality of the circuit is as follows: when a user selects a four-bit word and loads it into the register of their choosing, they must then select the logical operation they would like to perform, select where they would like the output of this logical operation to go via the routing selection, and flip the execute switch. This will begin shifting the outputs of the shift register and perform bitwise logical operations of the requestion function. The machine will halt after exactly four operations and the register requested through the routing switches will contain the output of the logical operation. \\
+
+%SECTION 4 - State Diagram - Ryan
 \section{State Diagram}
+The FSM created in this lab is a Mealy State Machine and this was chosen due to the simplicity of the relationship between the input and output on the state diagram.
 
-%SECTION 5 - Design
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.35]{FSM.png}
+	\label{fig:mealy-fsm}
+	\caption{Mealy FSM}
+\end{figure}    
+
+%SECTION 5 - Design - Eric
 \section{Design}
+The first component designed in this lab was the FSM Sequential Logic Circuit. This is because the output of this state machine controls the shift register control inputs (bits S1 and S0 which determine what the actions of the shift register are - i.e. shift right, parallel load, or nothing).
 
-%SECTION 6 - Block Diagram
+The first component that was designed was the Loader Unit. As stated before, this requires the operator to input the four bits of data via the DIN switches, and allows them to either load it into the A register or the B register. If either LoadA or LoadB are on, the  Only when LoadA OR LoadB is on, must the contents specified by DIN have the ability to be parallel loaded into the shift register. \\
+
+Next, the FSM Sequential Logic Circuit was designed 
+
+
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.33]{FSM_Truth_Table.png}
+	\label{fig:fsm-truth-table}
+	\caption{FSM Truth Table}
+\end{figure}            
+
+\begin{center}
+	\begin{tabular}{lll|ll|ll}
+		S & LA & LB & S1A & S0A & S1B & S0B\\ \hline
+		0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+		0 & 1 & 0 & 1 & 1 & 0 & 0 \\
+		0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+		1 & 0 & 0 & 0 & 1 & 0 & 1 \\
+		1 & 0 & 1 & 0 & 0 & 1 & 1 \\
+		1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+		1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+	\end{tabular}
+\end{center}
+%SECTION 6 - Block Diagram - Ryan
 \section{Block Diagram} 
+Please refer to Figure \_\_\_\_ in "Section XI: Figures" of this document to view the Block Diagram created in this lab.
  
-%SECTION 7 - Circuit/Logic Diagrams
+%SECTION 7 - Circuit/Logic Diagrams - Eric
 \section{Circuit/Logic Diagrams}
-Please refer t
+As stated before, to allow for easier  construction and debugging, this system was broken down into modular components. All circuit diagrams are shown in "Section XI: Figures" of this document.\\
  
-%SECTION 8 - Component Layout Sheet
+The FSM Control Logic is shown in Figure \_\_\_. The Loader/Computation/Router Unit are shown in Figure \_\_\_.
+ 
+%SECTION 8 - Component Layout Sheet - Eric 
 \section{Component Layout Sheet}
+Please refer to Figure \_\_\_\_ in "Section XI: Figures" of this document to view the Component Layout Sheet created in this lab.
 
-%SECTION 9 - Documentation
+%SECTION 9 - Documentation - Ryan
 \section{Documentation from Experiment}
+RYAN SECTION
 
 
-%SECTION 10 - Conclusion
+%SECTION 10 - Conclusion - Ryan
 \section{Conclusion}
+RYAN SECTION
 
 \newpage
 \onecolumn
