@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 FEB 2016 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 FEB 2016 10:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -848,35 +848,43 @@ File: Schematic-Processor.png Graphic file (type png)
 
 <use Schematic-Processor.png>
 Package pdftex.def Info: Schematic-Processor.png used on input line 64.
-(pdftex.def)             Requested size: 513.9109pt x 238.88826pt.
+(pdftex.def)             Requested size: 449.68674pt x 209.03406pt.
 
-<processor-output-rtl-simulator.png, id=13, 819.38554pt x 364.27986pt>
+<processor-output-rtl-simulator.png, id=13, 881.2925pt x 519.9425pt>
 File: processor-output-rtl-simulator.png Graphic file (type png)
 
 <use processor-output-rtl-simulator.png>
 Package pdftex.def Info: processor-output-rtl-simulator.png used on input line 
 70.
-(pdftex.def)             Requested size: 491.63512pt x 218.5696pt.
+(pdftex.def)             Requested size: 484.71237pt x 285.96925pt.
+
+<pre-lab-design-analysis.png, id=14, 619.31375pt x 353.32pt>
+File: pre-lab-design-analysis.png Graphic file (type png)
+
+<use pre-lab-design-analysis.png>
+Package pdftex.def Info: pre-lab-design-analysis.png used on input line 76.
+(pdftex.def)             Requested size: 340.62361pt x 194.3266pt.
  [2
 
 
- <./Schematic-Processor.png> <./processor-output-rtl-simulator.png>] (./Experim
-ent4.aux) ) 
+ <./Schematic-Processor.png> <./processor-output-rtl-simulator.png>] [3 <./pre-
+lab-design-analysis.png>]
+(./Experiment4.aux) ) 
 Here is how much of TeX's memory you used:
- 22101 strings out of 493089
- 510376 string characters out of 6134842
+ 22107 strings out of 493089
+ 510559 string characters out of 6134842
  657881 words of memory out of 5000000
- 25213 multiletter control sequences out of 15000+600000
+ 25218 multiletter control sequences out of 15000+600000
  30784 words of font info for 59 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  64i,7n,67p,504b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment4.pdf (2 pages, 332922 bytes).
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Experiment4.pdf (3 pages, 745864 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 33 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
