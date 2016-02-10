@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 FEB 2016 12:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 FEB 2016 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -562,6 +562,18 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks30
+\SOUL@lasttoken=\toks31
+\SOUL@cmds=\toks32
+\SOUL@buffer=\toks33
+\SOUL@token=\toks34
+\SOUL@spaceskip=\skip49
+\SOUL@ttwidth=\dimen184
+\SOUL@uldp=\dimen185
+\SOUL@ulht=\dimen186
+)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.0 (rcs-revision 1.4)
@@ -638,7 +650,7 @@ File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
 )))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip49
+\@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -646,12 +658,12 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks30
-\ex@=\dimen184
+\@emptytoks=\toks35
+\ex@=\dimen187
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen185
+\pmbraise@=\dimen188
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
@@ -668,7 +680,7 @@ LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box60
 \strutbox@=\box61
-\big@size=\dimen186
+\big@size=\dimen189
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count126
@@ -676,21 +688,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \dotsspace@=\muskip10
 \c@parentequation=\count128
 \dspbrk@lvl=\count129
-\tag@help=\toks31
+\tag@help=\toks36
 \row@=\count130
 \column@=\count131
 \maxfields@=\count132
-\andhelp@=\toks32
-\eqnshift@=\dimen187
-\alignsep@=\dimen188
-\tagshift@=\dimen189
-\tagwidth@=\dimen190
-\totwidth@=\dimen191
-\lineht@=\dimen192
-\@envbody=\toks33
-\multlinegap=\skip50
-\multlinetaggap=\skip51
-\mathdisplay@stack=\toks34
+\andhelp@=\toks37
+\eqnshift@=\dimen190
+\alignsep@=\dimen191
+\tagshift@=\dimen192
+\tagwidth@=\dimen193
+\totwidth@=\dimen194
+\lineht@=\dimen195
+\@envbody=\toks38
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks39
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -706,23 +718,23 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen193
-\lightrulewidth=\dimen194
-\cmidrulewidth=\dimen195
-\belowrulesep=\dimen196
-\belowbottomsep=\dimen197
-\aboverulesep=\dimen198
-\abovetopsep=\dimen199
-\cmidrulesep=\dimen200
-\cmidrulekern=\dimen201
-\defaultaddspace=\dimen202
+\heavyrulewidth=\dimen196
+\lightrulewidth=\dimen197
+\cmidrulewidth=\dimen198
+\belowrulesep=\dimen199
+\belowbottomsep=\dimen200
+\aboverulesep=\dimen201
+\abovetopsep=\dimen202
+\cmidrulesep=\dimen203
+\cmidrulekern=\dimen204
+\defaultaddspace=\dimen205
 \@cmidla=\count133
 \@cmidlb=\count134
-\@aboverulesep=\dimen203
-\@belowrulesep=\dimen204
+\@aboverulesep=\dimen206
+\@belowrulesep=\dimen207
 \@thisruleclass=\count135
 \@lastruleclass=\count136
-\@thisrulewidth=\dimen205
+\@thisrulewidth=\dimen208
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
@@ -733,21 +745,21 @@ Package multicol Warning: May not work with the twocolumn option on input line
 150.
 
 \mult@box=\box62
-\multicol@leftmargin=\dimen206
+\multicol@leftmargin=\dimen209
 \c@unbalance=\count138
 \c@collectmore=\count139
 \doublecol@number=\count140
 \multicoltolerance=\count141
 \multicolpretolerance=\count142
-\full@width=\dimen207
-\page@free=\dimen208
-\premulticols=\dimen209
-\postmulticols=\dimen210
-\multicolsep=\skip52
-\multicolbaselineskip=\skip53
+\full@width=\dimen210
+\page@free=\dimen211
+\premulticols=\dimen212
+\postmulticols=\dimen213
+\multicolsep=\skip53
+\multicolbaselineskip=\skip54
 \partial@page=\box63
 \last@line=\box64
-\maxbalancingoverflow=\dimen211
+\maxbalancingoverflow=\dimen214
 \mult@rightbox=\box65
 \mult@grightbox=\box66
 \mult@gfirstbox=\box67
@@ -771,22 +783,22 @@ Package multicol Warning: May not work with the twocolumn option on input line
 \@tempa=\box85
 \c@columnbadness=\count143
 \c@finalcolumnbadness=\count144
-\last@try=\dimen212
-\multicolovershoot=\dimen213
-\multicolundershoot=\dimen214
+\last@try=\dimen215
+\multicolovershoot=\dimen216
+\multicolundershoot=\dimen217
 \mult@nat@firstbox=\box86
 \colbreak@box=\box87
 \mc@col@check@num=\count145
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen215
+\bigstrutjot=\dimen218
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen216
-\extrarowheight=\dimen217
-\NC@list=\toks35
-\extratabsurround=\skip54
-\backup@length=\skip55
+\col@sep=\dimen219
+\extrarowheight=\dimen220
+\NC@list=\toks40
+\extratabsurround=\skip55
+\backup@length=\skip56
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
@@ -805,7 +817,11 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ))
-(./Experiment4.aux)
+(./Experiment4.aux
+
+LaTeX Warning: Label `fig:pre-lab-design-analysis' multiply defined.
+
+)
 \openout1 = `Experiment4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -823,68 +839,108 @@ LaTeX Font Info:    ... okay on input line 18.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count146
-\scratchdimen=\dimen218
+\scratchdimen=\dimen221
 \scratchbox=\box88
 \nofMPsegments=\count147
 \nofMParguments=\count148
-\everyMPshowfont=\toks36
+\everyMPshowfont=\toks41
 \MPscratchCnt=\count149
-\MPscratchDim=\dimen219
+\MPscratchDim=\dimen222
 \MPnumerator=\count150
 \makeMPintoPDFobject=\count151
-\everyMPtoPDFconversion=\toks37
-) ABD: EveryShipout initializing macros [1{/usr/local/texlive/2015/texmf-var/fo
-nts/map/pdftex/updmap/pdftex.map}
+\everyMPtoPDFconversion=\toks42
+) ABD: EveryShipout initializing macros
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 55.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<pre-lab-design-analysis.png, id=4, 619.31375pt x 353.32pt>
+File: pre-lab-design-analysis.png Graphic file (type png)
+
+<use pre-lab-design-analysis.png>
+Package pdftex.def Info: pre-lab-design-analysis.png used on input line 67.
+(pdftex.def)             Requested size: 216.76306pt x 123.66385pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
+
+ []
+
+<processor-comparison.png, id=6, 604.2575pt x 167.62625pt>
+File: processor-comparison.png Graphic file (type png)
+
+<use processor-comparison.png>
+Package pdftex.def Info: processor-comparison.png used on input line 82.
+(pdftex.def)             Requested size: 211.49329pt x 58.67006pt.
+
+<lab4-statistics.png, id=7, 727.71875pt x 269.005pt>
+File: lab4-statistics.png Graphic file (type png)
+ <use lab4-statistics.png>
+Package pdftex.def Info: lab4-statistics.png used on input line 92.
+(pdftex.def)             Requested size: 254.70537pt x 94.15315pt.
+
+Overfull \hbox (2.70537pt too wide) in paragraph at lines 92--93
+ [][] 
+ []
+
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
+ <./pre-lab-design-analysis.png> <./processor-comparison.png>] [2
 
-]
-<Schematic-Processor.png, id=11, 1284.8pt x 597.23125pt>
+ <./lab4-statistics.png>] <Schematic-Processor.png, id=21, 1284.8pt x 597.23125
+pt>
 File: Schematic-Processor.png Graphic file (type png)
 
 <use Schematic-Processor.png>
-Package pdftex.def Info: Schematic-Processor.png used on input line 64.
+Package pdftex.def Info: Schematic-Processor.png used on input line 110.
 (pdftex.def)             Requested size: 449.68674pt x 209.03406pt.
 
-<processor-output-rtl-simulator.png, id=13, 881.2925pt x 519.9425pt>
+<processor-output-rtl-simulator.png, id=22, 881.2925pt x 519.9425pt>
 File: processor-output-rtl-simulator.png Graphic file (type png)
 
 <use processor-output-rtl-simulator.png>
 Package pdftex.def Info: processor-output-rtl-simulator.png used on input line 
-70.
+116.
 (pdftex.def)             Requested size: 484.71237pt x 285.96925pt.
-
-<pre-lab-design-analysis.png, id=14, 619.31375pt x 353.32pt>
 File: pre-lab-design-analysis.png Graphic file (type png)
-
-<use pre-lab-design-analysis.png>
-Package pdftex.def Info: pre-lab-design-analysis.png used on input line 76.
+ <use pre-lab-design-analysis.png>
+Package pdftex.def Info: pre-lab-design-analysis.png used on input line 122.
 (pdftex.def)             Requested size: 340.62361pt x 194.3266pt.
- [2
+
+[3
 
 
- <./Schematic-Processor.png> <./processor-output-rtl-simulator.png>] [3 <./pre-
-lab-design-analysis.png>]
-(./Experiment4.aux) ) 
+ <./Schematic-Processor.png> <./processor-output-rtl-simulator.png>] [4]
+(./Experiment4.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 22107 strings out of 493089
- 510559 string characters out of 6134842
- 657881 words of memory out of 5000000
- 25218 multiletter control sequences out of 15000+600000
- 30784 words of font info for 59 fonts, out of 8000000 for 9000
+ 22338 strings out of 493089
+ 513774 string characters out of 6134842
+ 665447 words of memory out of 5000000
+ 25425 multiletter control sequences out of 15000+600000
+ 34844 words of font info for 75 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 64i,7n,67p,504b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8
-r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment4.pdf (3 pages, 745864 bytes).
+ 64i,8n,67p,504b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Experiment4.pdf (4 pages, 964385 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 40 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -33,26 +33,72 @@ Please refer to Figure \ref{fig:schematic-processor} in "Section XI: Figures" to
 \section{Design Simulations of Logic Processor}
 Please refer to Figure \ref{fig:processor-output-rtl-simulator} in "Section XI: Figures" to view the Annotated RTL Simulation Output of the 8-bit Logic Processor designed in the Pre-Lab of this Experiment.
 
-%SECTION 4 - Written Description - 
+%SECTION 4 - Written Description - Ryan 
 \section{Written Description of Adder Circuit}
+\hl{RYAN SECTION}
 
-%SECTION 5 - Purpose of Modules - 
+%SECTION 5 - Purpose of Modules - Ryan
 \section{Purpose of Modules}
+\hl{RYAN SECTION}
 
-%SECTION 6 - State Machine - 
+%SECTION 6 - State Machine - Eric
 \section{State Machine}
+\hl{ERIC SECTION}
 
-%SECTION 7 - Schematic/Block Diagrams -
+%SECTION 7 - Schematic/Block Diagrams -Ryan 
 \section{Schematic Block Diagrams}
 
-%SECTION 8 - Design Analysis 
+%SECTION 8 - Design Analysis - Eric
 \section{Design Analysis Comparison}
+The following table displays the values the team received upon analyzing the metrics requested in the pre-lab.
+\begin{center}
+	\begin{tabular}{l|lll}
+		Metric & Ripple & Lookahead & Select \\ \hline
+		Memory(BRAM) & 0 & 0 & 0 \\
+		Frequency (MHz) & 62.81 & 64.526 & 61.55\\
+		Power (mW) & 156.65 & 156.39 & 156.30\\
+	\end{tabular}
+\end{center}
 
-%SECTION 9 - Post Lab
+The following figure 
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.35]{pre-lab-design-analysis.png}
+	\caption{Area, Power, Frequency Comparison\label{fig:pre-lab-design-analysis}}
+\end{figure}
+
+
+%SECTION 9 - Post Lab - Eric
 \section{Post-Lab}
+1) Compare the usage of LUT, Memory, and Flip-Flop of your bit-serial logic processor
+exercise in the IQT with your TTL design in Lab 3. Make an educated guess of the usage of
+these resources for TTL assuming the processor is extended to 8-bit. Which design is better, and
+why? \\
 
-%SECTION 10 - Conclusion
+Answer: The System Verilog design used in Lab 4 clearly dominates the total usage of Logic Elements in Lab 3 almost by a factor of three. This is because \_\_\_\_\_.
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.35]{processor-comparison.png}
+	\caption{Processor Area Comparison\label{fig:processor-comparison}}
+\end{figure}
+
+2) For the adders, refer to the Design Resources and Statistics in IQT.30-32 and complete
+the following design statistics table for each adder. This is more comprehensive than the above
+design analysis and is required for every SystemVerilog circuit.
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=0.35]{lab4-statistics.png}
+	\caption{Processor Area Comparison\label{fig:lab4-statistics}}
+\end{figure}
+
+%SECTION 10 - Conclusion - Eric
 \section{Conclusion}
+Overall, the team successfully demonstrated all three different adder designs for full credit. A
+
+\hl{ERIC SECTION}
+
 
 \clearpage
 \onecolumn
