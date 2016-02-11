@@ -23,7 +23,7 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - Eric
 \section{Introduction}
-\IEEEPARstart{T}{he} 
+\IEEEPARstart{T}{he} purpose of this lab was to get a brief introduction to System Verilog and Quartus by creating and analyzing a total of 4 designs. The first is a 8 bit serial logic processor that was created during last lab (Lab 3) using TTL chips on a breadboard. The next three being different configurations of 16-bit adders: A carry-ripple adder, a carry-lookahead adder, and a carry-select adder. The team then analyzed the performance of these three adders by selecting different metrics to compare as well as analyzed the performance of the serial logic processor compared to the design used in Lab 3.
 
 %SECTION 2 - Schematic of Logic Processor -Eric  
 \section{Schematic of Logic Processor}
@@ -43,10 +43,14 @@ Please refer to Figure \ref{fig:processor-output-rtl-simulator} in "Section XI: 
 
 %SECTION 6 - State Machine - Eric
 \section{State Machine}
-\hl{ERIC SECTION}
+The State Machine for the Serial Bit Logic Processor Control Unit is shown in Figure  \ref{fig:serial-processor-state-machine} in "Section XI: Figures" in this document. \\
 
+The State Machine is broken down into a total of ten states labeled A through J, with A being the initial/halt state and J being the final state. \hl{PUT MORE HERE}
+	
 %SECTION 7 - Schematic/Block Diagrams -Ryan 
 \section{Schematic Block Diagrams}
+\hl{RYAN SECTION}
+
 
 %SECTION 8 - Design Analysis - Eric
 \section{Design Analysis Comparison}
@@ -76,28 +80,42 @@ exercise in the IQT with your TTL design in Lab 3. Make an educated guess of the
 these resources for TTL assuming the processor is extended to 8-bit. Which design is better, and
 why? \\
 
-Answer: The System Verilog design used in Lab 4 clearly dominates the total usage of Logic Elements in Lab 3 almost by a factor of three. This is because \_\_\_\_\_.
-\begin{figure} [H]
+\textit{Answer:} The System Verilog design used in Lab 4 clearly dominates the total usage of Logic Elements in Lab 3 almost by a factor of three. This is because the system used in Lab4 is very efficient and optimizes/reduces the amount of Logic Elements used as neccessary. However, this was not done in Lab 3 efficiently. If the team attempted to do Lab 3 again, a lower LE count would have been achieved but no where near the efficiency of using Quartus.
+\begin{table} [H]
 	\centering
 	\includegraphics[scale=0.35]{processor-comparison.png}
-	\caption{Processor Area Comparison\label{fig:processor-comparison}}
-\end{figure}
+	\caption{Processor Area Comparison\label{tab:processor-comparison}}
+\end{table}
 
 2) For the adders, refer to the Design Resources and Statistics in IQT.30-32 and complete
 the following design statistics table for each adder. This is more comprehensive than the above
-design analysis and is required for every SystemVerilog circuit.
+design analysis and is required for every SystemVerilog circuit.\\
 
-\begin{figure} [H]
+These numbers are shown below in Table \ref{tab:lab4-statistics} .
+
+\begin{table} [H]
 	\centering
 	\includegraphics[scale=0.35]{lab4-statistics.png}
-	\caption{Processor Area Comparison\label{fig:lab4-statistics}}
-\end{figure}
+	\caption{Processor Area Comparison\label{tab:lab4-statistics}}
+\end{table}
+
+Observe the data plot and provide explanation to the data, i.e., does each resource
+breakdown comparison from the plot makes sense? Are they complying with the theoretical
+design expectations, e.g., the maximum operating frequency of the carry-lookahead adder is
+higher than the carry-ripple adder? Which design consumes more power than the other as you
+expected, why?\\
+
+\textit{Answer:} The frequency of the Lookahead Adder was, indeed, faster than that of the Ripple Adder or the Select Adder. This makes sense because, although the Lookahead Adder consumes more area through logic elements (must connect each adder together with some logic so that the next adder can see the carry bits), it is faster which is shown in the frequency analysis.\\
+
+The only result that was somewhat surprising to the group was the fact that the Select Adder was slower than the Ripple Adder. The team was not sure why this was the case because the Ripple Adder should \textit{usually} be slower than the Ripple Adder however, not in this case. This might be attributed to the fact that.....
 
 %SECTION 10 - Conclusion - Eric
 \section{Conclusion}
-Overall, the team successfully demonstrated all three different adder designs for full credit. A
+Overall, the team successfully demonstrated all three different adder configurations (Carry-Ripple, Carry-Lookahead, and Carry-Select) during the demo period for full credit. These adders were analyzed in the previous sections and it is evident that the Lookahead Adder was the fastest out of all three, and the Select Adder consumed the least amount of power out of all three.\\
 
-\hl{ERIC SECTION}
+The serial bit logic processor created in the pre-lab outperformed the bit logic processor constructed in lab 3 in several manners. For one, the total number of logic elements on the System Verilog Processor was $\approx$ 60 while the TTL Lab 3 total logic elements was exceeding $\approx$  180. This is almost a factor of three reduction because of Quartus optimization techniques and improvements to the circuit.\\ 
+
+Overall, the team gained plenty of insight to the benefits of using System Verilog vs. using TTL chips on breadboards. The complexity decreased significantly and breaking sequential and combinational logic into modules through System Verilog proves to be a very effective. 
 
 
 \clearpage
@@ -121,6 +139,12 @@ Overall, the team successfully demonstrated all three different adder designs fo
 	\centering
 	\includegraphics[scale=0.55]{pre-lab-design-analysis.png}
 	\caption{Pre-Lab Adder Design Analysis (Area, Power, Frequency)\label{fig:pre-lab-design-analysis}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{state-machine-processor.png}
+	\caption{State Machine for Serial Bit Logic Processor \label{fig:serial-processor-state-machine}}
 \end{figure}
 
 

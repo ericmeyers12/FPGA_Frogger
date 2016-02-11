@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 FEB 2016 15:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  11 FEB 2016 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,13 +853,16 @@ Package caption Info: End \AtBeginDocument code.
 \makeMPintoPDFobject=\count151
 \everyMPtoPDFconversion=\toks42
 ) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 55.
-LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 55.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -868,10 +871,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: pre-lab-design-analysis.png Graphic file (type png)
 
 <use pre-lab-design-analysis.png>
-Package pdftex.def Info: pre-lab-design-analysis.png used on input line 67.
+Package pdftex.def Info: pre-lab-design-analysis.png used on input line 71.
 (pdftex.def)             Requested size: 216.76306pt x 123.66385pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--78
+Underfull \hbox (badness 10000) in paragraph at lines 78--82
 
  []
 
@@ -879,68 +882,115 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--78
 File: processor-comparison.png Graphic file (type png)
 
 <use processor-comparison.png>
-Package pdftex.def Info: processor-comparison.png used on input line 82.
+Package pdftex.def Info: processor-comparison.png used on input line 86.
 (pdftex.def)             Requested size: 211.49329pt x 58.67006pt.
+ [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-<lab4-statistics.png, id=7, 727.71875pt x 269.005pt>
+
+ <./pre-lab-design-analysis.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 90--93
+
+ []
+
+<lab4-statistics.png, id=16, 727.71875pt x 269.005pt>
 File: lab4-statistics.png Graphic file (type png)
- <use lab4-statistics.png>
-Package pdftex.def Info: lab4-statistics.png used on input line 92.
+
+<use lab4-statistics.png>
+Package pdftex.def Info: lab4-statistics.png used on input line 98.
 (pdftex.def)             Requested size: 254.70537pt x 94.15315pt.
 
-Overfull \hbox (2.70537pt too wide) in paragraph at lines 92--93
+Overfull \hbox (2.70537pt too wide) in paragraph at lines 98--99
  [][] 
  []
 
-[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \hbox (badness 2538) in paragraph at lines 102--107
+\OT1/ptm/m/n/11 higher than the carry-ripple adder? Which de-sign
+ []
 
 
- <./pre-lab-design-analysis.png> <./processor-comparison.png>] [2
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
 
- <./lab4-statistics.png>] <Schematic-Processor.png, id=21, 1284.8pt x 597.23125
-pt>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Underfull \hbox (badness 3623) in paragraph at lines 114--115
+[]\OT1/ptm/m/n/11 Overall, the team suc-cess-fully demon-strated all
+ []
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 114--115
+\OT1/ptm/m/n/11 three dif-fer-ent adder con-fig-u-ra-tions (Carry-Ripple,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+[2 <./processor-comparison.png> <./lab4-statistics.png>]
+<Schematic-Processor.png, id=23, 1284.8pt x 597.23125pt>
 File: Schematic-Processor.png Graphic file (type png)
 
 <use Schematic-Processor.png>
-Package pdftex.def Info: Schematic-Processor.png used on input line 110.
+Package pdftex.def Info: Schematic-Processor.png used on input line 128.
 (pdftex.def)             Requested size: 449.68674pt x 209.03406pt.
 
-<processor-output-rtl-simulator.png, id=22, 881.2925pt x 519.9425pt>
+<processor-output-rtl-simulator.png, id=24, 881.2925pt x 519.9425pt>
 File: processor-output-rtl-simulator.png Graphic file (type png)
 
 <use processor-output-rtl-simulator.png>
 Package pdftex.def Info: processor-output-rtl-simulator.png used on input line 
-116.
+134.
 (pdftex.def)             Requested size: 484.71237pt x 285.96925pt.
 File: pre-lab-design-analysis.png Graphic file (type png)
  <use pre-lab-design-analysis.png>
-Package pdftex.def Info: pre-lab-design-analysis.png used on input line 122.
+Package pdftex.def Info: pre-lab-design-analysis.png used on input line 140.
 (pdftex.def)             Requested size: 340.62361pt x 194.3266pt.
 
-[3
+<state-machine-processor.png, id=25, 1234.6125pt x 368.37625pt>
+File: state-machine-processor.png Graphic file (type png)
+
+<use state-machine-processor.png>
+Package pdftex.def Info: state-machine-processor.png used on input line 146.
+(pdftex.def)             Requested size: 493.83626pt x 147.34789pt.
+ [3
 
 
- <./Schematic-Processor.png> <./processor-output-rtl-simulator.png>] [4]
+ <./Schematic-Processor.png> <./processor-output-rtl-simulator.png>] [4 <./stat
+e-machine-processor.png>]
 (./Experiment4.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 22338 strings out of 493089
- 513774 string characters out of 6134842
- 665447 words of memory out of 5000000
- 25425 multiletter control sequences out of 15000+600000
- 34844 words of font info for 75 fonts, out of 8000000 for 9000
+ 22347 strings out of 493089
+ 513985 string characters out of 6134842
+ 666447 words of memory out of 5000000
+ 25432 multiletter control sequences out of 15000+600000
+ 35980 words of font info for 76 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 64i,8n,67p,504b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,8n,67p,646b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment4.pdf (4 pages, 964385 bytes).
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Experiment4.pdf (4 pages, 1013486 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
