@@ -35,6 +35,7 @@ Please refer to Figure \ref{fig:processor-output-rtl-simulator} in "Section XI: 
 
 %SECTION 4 - Written Description - Ryan 
 \section{Written Description of Adder Circuit}
+<<<<<<< HEAD
 The three adders used in this lab were the carry-ripple adder (CRA), carry-select adder (CSA), and the carry-lookahead adder (CLA).  All three designs manipulated in some way or another the full adder.  As you can see in the full adder block diagram (Fig. \ref{fig:full-adder-block-schematic}) and full adder truth table (Table \ref{FAtruth}, the full adder has two logic inputs, a carry-in bit input, and two outputs including a sum bit and a carry-out bit.  The full adders function is to add all three input bits and send any access bits to the carry-out bit.  In other words, the sum and carry-out bit form a two bit sum of the three inputs with the sum being the less significant bit.     
 \begin{center}
 	\begin{tabular}{lll|ll}
@@ -64,16 +65,33 @@ For the CRA, only full-adders were used to add each bit.  The need for modules w
 The CLA 4-bit module contained four copies of the one-bit CLA. The carry-in bit of the least significant bit acted as the carry-in bit of the module and the carry-out bit of the most significant bit acted as the carry-out bit of the module.  The module took in four input bits for A and B sending them to their respective one-bit CLA inputs and outputted four sum bits, one from each one-bit CLA.  Connecting the modules was a simple wire connecting the carry-out of one module to the carry-in of the next high significant 4-bit module.  The 16-bit CLA had therefore 4x4-bit modules connected.
 
 The same process was used with the CSA except that each module contained (4) 1-bit CSA.  Also the need for guessing the carry-in bit on the least significant 4-bit module was unnecessary since it was guaranteed to be logic 0, so a 4-bit full-adder replaced it.     
+=======
+RYAN SECTION
+
+%SECTION 5 - Purpose of Modules - Ryan
+\section{Purpose of Modules}
+RYAN SECTION
+>>>>>>> origin/master
 
 %SECTION 6 - State Machine - Eric
 \section{State Machine}
 The State Machine for the Serial Bit Logic Processor Control Unit is shown in Figure  \ref{fig:serial-processor-state-machine} in "Section XI: Figures" of this document.  \\
 
+<<<<<<< HEAD
 The State Machine is broken down into a total of ten states labeled A through J, with A being the initial/halt state and J being the final state. PUT MORE HERE
 	
 %SECTION 7 - Schematic/Block Diagrams -Ryan 
 \section{Schematic Block Diagrams}
 All block diagrams are shown in Figures \ref{fig:full-adder-block-schematic} to \ref{fig:one-bit-csa-block-schematic} found in "Section XI: Figures" of this document.  Block diagrams show in order the CRA basic full adder block digram, then the CLA block diagrams, and finally the CSA block diagrams.  For the CLA and CSA block digrams, first the 4x4-bit system block digram is shown, then the block diagram for a 4-bit module is shown, and lastly the one-bit block diagram is shown.    
+=======
+The State Machine is broken down into a total of ten states labeled A through J, with A being the initial/halt state and J being the final state. The intermediary states are the shifting states (eight in total meaning that the shift register shifts eight times before coming to a halt).
+	
+%SECTION 7 - Schematic/Block Diagrams -Ryan 
+\section{Schematic Block Diagrams}
+RYAN SECTION
+
+-I ADDED BLOCK SCHEMATICS FROM QUARTUS IN FIGURES SECTION -  you just need to put descriptions here of what the figures mean down below / add your high level block diagrams if youd like
+>>>>>>> origin/master
 
 %SECTION 8 - Design Analysis - Eric
 \section{Design Analysis Comparison}
@@ -130,7 +148,7 @@ expected, why?\\
 
 \textit{Answer:} The frequency of the Lookahead Adder was, indeed, faster than that of the Ripple Adder or the Select Adder. This makes sense because, although the Lookahead Adder consumes more area through logic elements (must connect each adder together with some logic so that the next adder can see the carry bits), it is faster which is shown in the frequency analysis.\\
 
-The only result that was somewhat surprising to the group was the fact that the Select Adder was slower than the Ripple Adder. The team was not sure why this was the case because the Ripple Adder should \textit{usually} be slower than the Ripple Adder however, not in this case. This might be attributed to the fact that.....
+The only result that was somewhat surprising to the group was the fact that the Select Adder was slower than the Ripple Adder. The team was not sure why this was the case because the Select Adder should \textit{usually} be slower than the Ripple Adder however, not in this case.
 
 %SECTION 10 - Conclusion - Eric
 \section{Conclusion}
