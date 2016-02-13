@@ -35,23 +35,23 @@ Please refer to Figure \ref{fig:processor-output-rtl-simulator} in "Section XI: 
 
 %SECTION 4 - Written Description - Ryan 
 \section{Written Description of Adder Circuit}
-\hl{RYAN SECTION}
+RYAN SECTION
 
 %SECTION 5 - Purpose of Modules - Ryan
 \section{Purpose of Modules}
-\hl{RYAN SECTION}
+RYAN SECTION
 
 %SECTION 6 - State Machine - Eric
 \section{State Machine}
 The State Machine for the Serial Bit Logic Processor Control Unit is shown in Figure  \ref{fig:serial-processor-state-machine} in "Section XI: Figures" in this document. \\
 
-The State Machine is broken down into a total of ten states labeled A through J, with A being the initial/halt state and J being the final state. \hl{PUT MORE HERE}
+The State Machine is broken down into a total of ten states labeled A through J, with A being the initial/halt state and J being the final state. The intermediary states are the shifting states (eight in total meaning that the shift register shifts eight times before coming to a halt).
 	
 %SECTION 7 - Schematic/Block Diagrams -Ryan 
 \section{Schematic Block Diagrams}
-\hl{RYAN SECTION}
+RYAN SECTION
 
-\hl{-I ADDED BLOCK SCHEMATICS FROM QUARTUS IN FIGURES SECTION -  you just need to put descriptions here of what the figures mean down below / add your high level block diagrams if youd like}
+-I ADDED BLOCK SCHEMATICS FROM QUARTUS IN FIGURES SECTION -  you just need to put descriptions here of what the figures mean down below / add your high level block diagrams if youd like
 
 %SECTION 8 - Design Analysis - Eric
 \section{Design Analysis Comparison}
@@ -108,7 +108,7 @@ expected, why?\\
 
 \textit{Answer:} The frequency of the Lookahead Adder was, indeed, faster than that of the Ripple Adder or the Select Adder. This makes sense because, although the Lookahead Adder consumes more area through logic elements (must connect each adder together with some logic so that the next adder can see the carry bits), it is faster which is shown in the frequency analysis.\\
 
-The only result that was somewhat surprising to the group was the fact that the Select Adder was slower than the Ripple Adder. The team was not sure why this was the case because the Ripple Adder should \textit{usually} be slower than the Ripple Adder however, not in this case. This might be attributed to the fact that.....
+The only result that was somewhat surprising to the group was the fact that the Select Adder was slower than the Ripple Adder. The team was not sure why this was the case because the Select Adder should \textit{usually} be slower than the Ripple Adder however, not in this case.
 
 %SECTION 10 - Conclusion - Eric
 \section{Conclusion}
