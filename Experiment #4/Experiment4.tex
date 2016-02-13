@@ -23,7 +23,7 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - Eric
 \section{Introduction}
-\IEEEPARstart{T}{he} purpose of this lab was to get a brief introduction to System Verilog and Quartus by creating and analyzing a total of 4 designs. The first is a 8 bit serial logic processor that was created during last lab (Lab 3) using TTL chips on a breadboard. The next three being different configurations of 16-bit adders: A carry-ripple adder, a carry-lookahead adder, and a carry-select adder. The team then analyzed the performance of these three adders by selecting different metrics to compare as well as analyzed the performance of the serial logic processor compared to the design used in Lab 3.
+\IEEEPARstart{T}{he} purpose of this lab was to get a brief introduction to System Verilog and Quartus by creating and analyzing a total of 4 designs. The first is an 8 bit serial logic processor that was created during last lab (Lab 3) using TTL chips on a breadboard. The next three being different configurations of 16-bit adders: A carry-ripple adder, a carry-lookahead adder, and a carry-select adder. The team then analyzed the performance of these three adders by selecting different metrics to compare as well as analyzed the performance of the serial logic processor compared to the design used in Lab 3.
 
 %SECTION 2 - Schematic of Logic Processor -Eric  
 \section{Schematic of Logic Processor}
@@ -35,23 +35,45 @@ Please refer to Figure \ref{fig:processor-output-rtl-simulator} in "Section XI: 
 
 %SECTION 4 - Written Description - Ryan 
 \section{Written Description of Adder Circuit}
-\hl{RYAN SECTION}
+The three adders used in this lab were the carry-ripple adder (CRA), carry-select adder (CSA), and the carry-lookahead adder (CLA).  All three designs manipulated in some way or another the full adder.  As you can see in the full adder block diagram (Fig. \ref{fig:full-adder-block-schematic}) and full adder truth table (Table \ref{FAtruth}, the full adder has two logic inputs, a carry-in bit input, and two outputs including a sum bit and a carry-out bit.  The full adders function is to add all three input bits and send any access bits to the carry-out bit.  In other words, the sum and carry-out bit form a two bit sum of the three inputs with the sum being the less significant bit.     
+\begin{center}
+	\begin{tabular}{lll|ll}
+		A & B &$C_{in}$& $C_{out}$& S \\ \hline
+		0 & 0 & 0      & 0 & 0\\
+		0 & 0 & 1      & 0 & 1\\
+		0 & 1 & 0      & 0 & 1\\
+		0 & 1 & 1      & 1 & 0\\
+		1 & 0 & 0      & 0 & 1\\
+		1 & 0 & 1      & 1 & 0\\
+		1 & 1 & 0      & 1 & 0\\
+		1 & 1 & 1      & 1 & 1\\		
+	\end{tabular}
+	\label{FAtruth}
+\end{center}
+The first adder designed, the CRA,  was the most straightfoward approach to an N-bit binary adder.  It consisted of a chain of full adders connected by their carry bits. The first adder would have a carry-in bit of logic 0.  It would take in the least significant bit of both register A and B (A[0] and B[0]) and add the two, outputting the least significant sum bit (S[0]) and a carry-out bit that would link to the carry-in bit of the next full adder.  This chain would continue for all 16 bits.  While this design is simple, long computation time is its biggest issue.  Later full adders must wait for a signal in their carry-in bits in order to function correctly.  One adder alone, has several gates the signal must go through before a carry-out signal is generated.  
+
+The next adder designed was the CLA.  It brought in a method that would reduce the wait time that the CRA suffered from.  This method took the CRA design and replaced the carry-out bit of the full adder with both a generating (G) bit and a propagating (P) bit.  Each full adder would then take in input bits A and B and do a little educated guesswork with them.  The G bit checked for two high bits, guaranteeing that the carry-in of the next full adder would be high.  It followed G=A$\cdot$B.  The P bit checked for only one of the two to be high.  It followed P=A+B, and would serve as a potential for a logic 1 to be sent to the next full adder.  The last possible result of A and B inputs, that is, both are low, would output a low P and G bit giving no chance for the next carry-in bit to be logic 1.  The carry-in bit of the next adder thus held a logical expression of $C_{i+1}=G_i+(P_i\cdot C_i)$.  This new method cuts down the computation time compared to the CRA by predetermining the next carry-in bit if inputs bits A and B share the same signal.  Unfortunately the CLA uses more logic gates at the cost of area and power consumption.  
+
+The final adder designed was the CSA.  This design was the least-straightforward of the three designs.  Each bit required two full-adders, a 2-to-1 mux, an AND gate, and an OR gate.  Both full-adders would take in the same A and B input bits.  One full-adder would simulate a logic 0 for the carry-in bit and send its sum bit to the 0 input on the 2-to-1 mux.  Likewise, the other full-adder would simulate a logic 1 for the carry-in bit and send its sum output bit the 1 input of the 2-to-1 mux.  The output of the mux is the sum bit for that one-bit CSA and would be selected through the value of the carry-in bit for the one-bit CSA. The carry-out of the full-adder with the logic 1 carry-in gets AND'd with the carry-in of the one-bit CSA and that result gets OR'd with the carry-out of the full-adder with the logic 0 carry-in.  The result is the carry-out bit of the one-bit CSA which gets sent to the carry-in bit of the next one-bit CSA.  This design cuts down on computation time by precomputing both possibilities of carry-in bits.  However, this design uses the most logic gates which increases both power consumption and area.  
+
 
 %SECTION 5 - Purpose of Modules - Ryan
 \section{Purpose of Modules}
-\hl{RYAN SECTION}
+For the CRA, only full-adders were used to add each bit.  The need for modules was not necessary for this design, so it manipulated the flat approach.  However, for the CLA and CSA, 4-bit modules were created to optimize speed.  The number of gates per bit of adding was quite higher for these two designs.  A flat approach would have been impractical especially for 16 bit addition or greater.  Instead, a hierarchical approach was used.  Both the CLA and CSA used 4-bit modules.  
+
+The CLA 4-bit module contained four copies of the one-bit CLA. The carry-in bit of the least significant bit acted as the carry-in bit of the module and the carry-out bit of the most significant bit acted as the carry-out bit of the module.  The module took in four input bits for A and B sending them to their respective one-bit CLA inputs and outputted four sum bits, one from each one-bit CLA.  Connecting the modules was a simple wire connecting the carry-out of one module to the carry-in of the next high significant 4-bit module.  The 16-bit CLA had therefore 4x4-bit modules connected.
+
+The same process was used with the CSA except that each module contained (4) 1-bit CSA.  Also the need for guessing the carry-in bit on the least significant 4-bit module was unnecessary since it was guaranteed to be logic 0, so a 4-bit full-adder replaced it.     
 
 %SECTION 6 - State Machine - Eric
 \section{State Machine}
-The State Machine for the Serial Bit Logic Processor Control Unit is shown in Figure  \ref{fig:serial-processor-state-machine} in "Section XI: Figures" in this document. \\
+The State Machine for the Serial Bit Logic Processor Control Unit is shown in Figure  \ref{fig:serial-processor-state-machine} in "Section XI: Figures" of this document.  \\
 
-The State Machine is broken down into a total of ten states labeled A through J, with A being the initial/halt state and J being the final state. \hl{PUT MORE HERE}
+The State Machine is broken down into a total of ten states labeled A through J, with A being the initial/halt state and J being the final state. PUT MORE HERE
 	
 %SECTION 7 - Schematic/Block Diagrams -Ryan 
 \section{Schematic Block Diagrams}
-\hl{RYAN SECTION}
-
-\hl{-I ADDED BLOCK SCHEMATICS FROM QUARTUS IN FIGURES SECTION -  you just need to put descriptions here of what the figures mean down below / add your high level block diagrams if youd like}
+All block diagrams are shown in Figures \ref{fig:full-adder-block-schematic} to \ref{fig:one-bit-csa-block-schematic} found in "Section XI: Figures" of this document.  Block diagrams show in order the CRA basic full adder block digram, then the CLA block diagrams, and finally the CSA block diagrams.  For the CLA and CSA block digrams, first the 4x4-bit system block digram is shown, then the block diagram for a 4-bit module is shown, and lastly the one-bit block diagram is shown.    
 
 %SECTION 8 - Design Analysis - Eric
 \section{Design Analysis Comparison}
