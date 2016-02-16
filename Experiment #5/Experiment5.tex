@@ -12,7 +12,7 @@
 \author{
 \IEEEauthorblockN{Eric Meyers, Ryan Helsdingen}\\
 \IEEEauthorblockA{Section ABG; TAs: Ben Delay, Shuo Liu \\
-February 17th, 2016 \\
+February 24th, 2016 \\
 emeyer7, helsdin2}}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \begin{document}
@@ -21,38 +21,102 @@ emeyer7, helsdin2}}
 \maketitle
 \singlespacing
 
-%SECTION 1 - Introduction - 
+%SECTION 1 - Introduction - Eric
 \section{Introduction}
+The purpose of this lab was to design and construct a 2s compliment 8-bit multiplier that uses a shift-and-add algorithm. The user will input their desired multiplicand and multiplier into switches and these will be stored in two shift registers (A and B). The multiplier is built upon a control unit with a state machine, so once the "run" button is pressed, the machine will cycle through multiple states and output the value in the combined 16-bit value "AB".
 
-
-%SECTION 2 - 8-bit Multiplication Example -
+%SECTION 2 - 8-bit Multiplication Example - Ryan
 \section{8-bit Multiplication Example}
+RYAN SECTION
 
-
-%SECTION 3 - Description of Circuit
+%SECTION 3 - Description of Circuit - Eric
 \section{Description of Circuit}
+ERIC SECTION
 
+%SECTION 4 - Purpose of Modules - Eric
+\section{Purpose of Modules}
+ERIC SECTION
 
-%SECTION 4 - Schematic/Block Diagram
+%SECTION 5 - State Diagram of FSM - Ryan
+\section{State Diagram}
+RYAN SECTION
+
+%SECTION 6 - Schematic/Block Diagram -Eric
 \section{Schematic/Block Diagram}
+Please refer to "Section X : Figures" of this document to view the Schematic/Block Diagrams. Figure \ref{fig:full-multiplier-diagram} displays the entire block diagram of the multiplier, with block labels and interconnections. The multiplier, as stated before is broken down into several modules. Those modules are as follows with the figure references aside them:
+\begin{itemize}
+	\item Shift Register - Figure \ref{fig:shift-register-diagram}
+	\item Full Adder/Subtractor - Figure \ref{fig:full-adder-subtractor-diagram}
+	\item X Register - Figure \ref{fig:x-ff-diagram}
+	\item Control Unit - Figure \ref{fig:top-half-control} (TOP HALF ONLY)
+	\item Control Unit - Figure \ref{fig:bottom-half-control} (BOTTOM HALF ONLY)
+\end{itemize}
 
-
-%SECTION 5 - Pre-Lab Simulation Waveforms
+%SECTION 7 - Pre-Lab Simulation Waveforms -Eric
 \section{Pre-Lab Simulation Waveforms}
-
-
-%SECTION 6 - Post Lab 
+Please refer to "Section X : Figures" of this document to view the Pre-Lab Simulation Waveforms. There was a total of four simulations performed. All options were explored on this multiplier and the following inputs were used: 
+\begin{itemize}
+	\item \textbf{+}7 * \textbf{+}59 - (Figure \_)
+	\item \textbf{+}7 * \textbf{-}59 - (Figure \_)
+	\item \textbf{-}7 * \textbf{+}59 - (Figure \_)
+	\item \textbf{-}7 * \textbf{-}59 - (Figure \_)
+\end{itemize}
+%SECTION 8 - Post Lab -Ryan
 \section{Post Lab}
+RYAN SECTION
 
-
-%SECTION 7 - Conclusion
+%SECTION 9 - Conclusion - Ryan
 \section{Conclusion}
-
+RYAN OR ERIC
 
 \clearpage
 \onecolumn
-%SECTION 8: Figures
+%SECTION 10: Figures
 \section{Figures}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{simulation-output.png}
+	\caption{ModelSim Simulation Output (+7 * -59)\label{fig:simulation-output}}
+\end{figure}
+NEED 3 MORE SIMULATIONS!!!!
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{full-multiplier-diagram.png}
+	\caption{Full Multiplier Block Diagram\label{fig:full-multiplier-diagram}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.5]{shift-register-diagram.png}
+	\caption{Shift Register Block Diagram\label{fig:shift-register-diagram}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.5]{full-adder-subtractor-diagram.png}
+	\caption{Full Adder and Subtractor Block Diagram\label{fig:full-adder-subtractor-diagram}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.55]{control-unit-top-half-diagram.png}
+		\caption{Top Half Control Unit Block Diagram\label{fig:top-half-control}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.65]{control-unit-bottom-half-diagram.png}
+	\caption{Bottom Half Control Unit Block Diagram\label{fig:bottom-half-control}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{x-ff-diagram.png}
+	\caption{X-Bit Flip Flop Block Diagram\label{fig:x-ff-diagram}}
+\end{figure}
+
 
 
 

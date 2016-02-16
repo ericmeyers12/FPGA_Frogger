@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 FEB 2016 09:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 FEB 2016 08:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -837,29 +837,95 @@ Package caption Info: End \AtBeginDocument code.
 \MPnumerator=\count150
 \makeMPintoPDFobject=\count151
 \everyMPtoPDFconversion=\toks37
-) ABD: EveryShipout initializing macros [1{/usr/local/texlive/2015/texmf-var/fo
-nts/map/pdftex/updmap/pdftex.map}
+) ABD: EveryShipout initializing macros
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 48.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
+]
+<simulation-output.png, id=12, 1211.52625pt x 452.69125pt>
+File: simulation-output.png Graphic file (type png)
 
-] [2
+<use simulation-output.png>
+Package pdftex.def Info: simulation-output.png used on input line 79.
+(pdftex.def)             Requested size: 484.60191pt x 181.07329pt.
+
+<full-multiplier-diagram.png, id=14, 1207.51125pt x 481.8pt>
+File: full-multiplier-diagram.png Graphic file (type png)
+
+<use full-multiplier-diagram.png>
+Package pdftex.def Info: full-multiplier-diagram.png used on input line 86.
+(pdftex.def)             Requested size: 482.99594pt x 192.71658pt.
+
+<shift-register-diagram.png, id=15, 862.22125pt x 353.32pt>
+File: shift-register-diagram.png Graphic file (type png)
+
+<use shift-register-diagram.png>
+Package pdftex.def Info: shift-register-diagram.png used on input line 92.
+(pdftex.def)             Requested size: 431.10957pt x 176.65956pt.
+
+<full-adder-subtractor-diagram.png, id=16, 583.17876pt x 800.9925pt>
+File: full-adder-subtractor-diagram.png Graphic file (type png)
+
+<use full-adder-subtractor-diagram.png>
+Package pdftex.def Info: full-adder-subtractor-diagram.png used on input line 9
+8.
+(pdftex.def)             Requested size: 291.58867pt x 400.49527pt.
+
+<control-unit-top-half-diagram.png, id=17, 938.50626pt x 718.685pt>
+File: control-unit-top-half-diagram.png Graphic file (type png)
+
+<use control-unit-top-half-diagram.png>
+Package pdftex.def Info: control-unit-top-half-diagram.png used on input line 1
+04.
+(pdftex.def)             Requested size: 516.18004pt x 395.27797pt.
+
+<control-unit-bottom-half-diagram.png, id=18, 748.7975pt x 788.9475pt>
+File: control-unit-bottom-half-diagram.png Graphic file (type png)
+
+<use control-unit-bottom-half-diagram.png>
+Package pdftex.def Info: control-unit-bottom-half-diagram.png used on input lin
+e 110.
+(pdftex.def)             Requested size: 486.7126pt x 512.80978pt.
+
+<x-ff-diagram.png, id=19, 773.89125pt x 595.22375pt>
+File: x-ff-diagram.png Graphic file (type png)
+ <use x-ff-diagram.png>
+Package pdftex.def Info: x-ff-diagram.png used on input line 116.
+(pdftex.def)             Requested size: 309.55101pt x 238.08528pt.
+
+[2
 
 
-] (./Experiment5.aux) ) 
+ <./simulation-output.png> <./full-multiplier-diagram.png>] [3 <./shift-registe
+r-diagram.png> <./full-adder-subtractor-diagram.png>] [4 <./control-unit-top-ha
+lf-diagram.png>] [5 <./control-unit-bottom-half-diagram.png>] [6 <./x-ff-diagra
+m.png>] (./Experiment5.aux) ) 
 Here is how much of TeX's memory you used:
- 22081 strings out of 493089
- 509906 string characters out of 6134842
- 655881 words of memory out of 5000000
- 25197 multiletter control sequences out of 15000+600000
- 28639 words of font info for 56 fonts, out of 8000000 for 9000
+ 22180 strings out of 493089
+ 512064 string characters out of 6134842
+ 660881 words of memory out of 5000000
+ 25270 multiletter control sequences out of 15000+600000
+ 33493 words of font info for 72 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 64i,6n,67p,504b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base
-/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment5.pdf (2 pages, 18360 bytes).
+ 64i,7n,67p,504b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvip
+s/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Experiment5.pdf (6 pages, 1154403 bytes).
 PDF statistics:
- 19 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
