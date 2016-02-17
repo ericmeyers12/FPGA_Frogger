@@ -1,0 +1,14 @@
+File: PIC24F_V1.1.zip
+
+Revision History
+
+Revision  Date            Comment     
+V1.0      Nov. 5,  2013   Added files for PIC24F16KA102 and PIC24F32KA304 Family devices
+
+V1.1      Dec. 5,  2013   Added files for PIC24F16KM204 Family devices
+
+V1.2	  Dec. 16, 2013   Added PIC24FJxxxGC010 family
+
+V1.3      Aug. 8,  2014   Added PIC24FJ64GB002 files
+
+V1.4      Dec. 31, 2014   Added PIC24F16KL402 family
