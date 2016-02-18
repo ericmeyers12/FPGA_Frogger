@@ -30,20 +30,38 @@ The purpose of this lab was to design and construct a 2s compliment 8-bit multip
 RYAN SECTION
 
 %SECTION 3 - Description of Circuit - Eric
-The multiplier
+\section{Description of Circuit}
+The purpose of the 8-bit multiplier is to take two 8-bit user-defined words, multiply them together and place the resulting product in the two combined registers. \\
+
+Initially both storage registers will begin with 00000000 loaded into them. On the Altera Board, the operator will control the last eight general purpose switches to indicate what the word they wish to load is, then press the "Clear\_A\_Load\_B" push button to the right. This will then take the switch values and load them into Register B. Therefore after this operation is performed, A will still contain 00000000, and B will contain XXXXXXXX (X being the value the user defines).\\
+
+Then once the user indicates the multiplier (Register B), they will then indicate the multiplicand by changing the order of the eight switches. Once this is done, then the user will press the "Run" switch and the control unit will cycle through all states within the FSM and come to a halt. The product of the two values will be displayed in register AB(concatenated A + B) and the X bit will be displayed on the green LED next to the HEX values. \\
+
+The FSM is a part of the control unit and will be explained below and the "X-bit" will also be described in detail below. 
 
 %SECTION 4 - Purpose of Modules - Eric
 \section{Purpose of Modules}
-The multiplier is broken down into four primary modules as listed below:
+Please refer to Figure \ref{fig:block-diagram} to understand the how each module interacts with one another. The multiplier is broken down into four primary modules as listed below:
 \begin{itemize}
 	\item Shift Register 
 	\item Full Adder/Subtractor
 	\item Control Unit 
 	\item X Register 
-\end{itemize}
-The first of these modules is the shift register and it's purpose is to store the contents of each 8-bit word the user specifies.
+\end{itemize} 
 
-The control unit is meant to determine the states of 
+The first of these modules is the shift register and it's purpose is to store the contents of each 8-bit word the user specifies. The concatenation of the two registers together (AB) contains the 16-bit product of the multiplication. The shift register shifts right when enabled by the control unit, pushing the least significant bit out through its "shift\_out" output. The data also is parallel loaded in through its input in the module and has parallel outputs used to display on LEDs on the Altera Board. \\
+
+The next module is the Full Adder/Subtractor which essentially does exactly what it states: both adds and subtracts (depending on the control unit). The inputs are 16 data bits (8 bits for A and 8 bits for B) and a "subtract" bit which indicates whether or not subtraction must be performed.\\
+
+Because subtraction is adding the 2s complement of a number, the team decided to use a trick learned back in Lab 3. To get the 2s complement, one must flip all of the bits and add one. To conditionally flip all of the bits, the team used an XOR gate with inputs of B and the "subtract" bit. This is because if the "subtract" bit is high, then the B value must be flipped, and if it is low then it stays the same. Then this logic value must be fed into the nine inputs of the full adders along with the "subtract" bit on the first full adder. Please reference Figure \ref{fig:full-adder-subtractor-diagram} to get a better understanding of this. \\
+
+This setup will take the 2s complement of the number and add it to the A value if the "subtract" bit is high, but if the "subtract" bit is low then it will simply regularly add the two A and B values. \\
+
+The next module is the Control Unit which dictates how the Finite State Machine operates and how the entire circuit functions. This unit takes in 3 inputs (Run, Reset, and Clear\_A\_Load\_B) that are designated by the operator. These inputs then determine the outputs of the control unit which are Load, Shift, Add, and Shift. These four outputs are determined by the Finite State Machine described in "Section V: State Diagram".\\
+
+ Essentially, the outputs are telling each module if they are in use or not. So for example, if the multiplier needs to perform an "Add" or "Subtract" operation, it will output a high value on the respective output and this will be then fed into the proper module which will then be activated. \\
+
+Last but not least is the "X Register" Module which contains the status of the "X" bit. The "X" bit is essentially the most significant bit in the A register. This register tells whether the result of the multiplication is positive or negative and is mainly used to view the output of the multiplication on the Altera Board by feeding it into a green LED to see its status. 
 
 %SECTION 5 - State Diagram of FSM - Ryan
 \section{State Diagram}
@@ -75,7 +93,7 @@ RYAN SECTION
 
 %SECTION 9 - Conclusion - Ryan
 \section{Conclusion}
-RYAN OR ERIC
+RYAN SECTION - you can probably keep this short and too the point, no need to make it too long.f
 
 \clearpage
 \onecolumn
@@ -104,6 +122,12 @@ RYAN OR ERIC
 	\centering
 	\includegraphics[scale=0.4]{simulation4.png}
 	\caption{ModelSim Simulation Output (-7 * -59)\label{fig:simulation4}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.6]{Block_Diagram.png}
+	\caption{Incomplete Module Block Diagram\label{fig:block-diagram}}
 \end{figure}
 
 \begin{figure} [htbp]
