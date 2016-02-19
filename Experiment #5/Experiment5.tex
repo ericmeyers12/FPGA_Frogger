@@ -27,7 +27,34 @@ The purpose of this lab was to design and construct a 2s compliment 8-bit multip
 
 %SECTION 2 - 8-bit Multiplication Example - Ryan
 \section{8-bit Multiplication Example}
-RYAN SECTION
+Table \ref{tab:table1} shows each step of the multiplication process given inputs Multiplier B=7 and Multiplicand S=-59.  The result is -413 in decimal and 1111 1110 0110 0011 in binary.  As you can see, bolded at the bottom of Table \ref{tab:table1} is the expected result loaded into A and B. Shift functions occur eight times, right-shifting the bit.  Add functions occur before each shift and only if the previous M bit is equal to 1.  During an add function, S gets added to A.  The only exception is before the eighth shift which would be a subtract function rather than an add function.  S would get subtracted from A.  This exception, as you can see, is not needed for this example.
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{Reworked 8-bit Multiplication Problem. }
+	\begin{tabular}{ccccc}	% ccccccc indicates 7 center aligned columns
+		\toprule	% top separator
+		Function & X & A & B & M \\
+		\midrule
+		Clr\_A\_Ld\_B & 0 & 0000 0000 & 0000 0111 & 1 \\ 
+		ADD (1)    & 1 & 1100 0101 & 0000 0111 & 1 \\
+		SHIFT (1)  & 1 & 1110 0010 & 1000 0011 & 1 \\
+
+		ADD (2)    & 1 & 1010 0111 & 1000 0011 & 1 \\
+		SHIFT (2)  & 1 & 1101 0011 & 1100 0001 & 1 \\		
+		ADD (3)    & 1 & 1001 1000 & 1100 0001 & 1 \\
+		SHIFT (3)  & 1 & 1100 1100 & 0110 0000 & 0 \\		
+		SHIFT (4)  & 1 & 1110 0110 & 0011 0000 & 0 \\		
+		SHIFT (5)  & 1 & 1111 0011 & 0001 1000 & 0 \\		
+		SHIFT (6)  & 1 & 1111 1001 & 1000 1100 & 0 \\		
+		SHIFT (7)  & 1 & 1111 1100 & 1100 0110 & 0 \\		
+		SHIFT (8)  & 1 & \textbf{1111 1110} & \textbf{0110 0011} & 1 \\
+		\bottomrule	% bottom separator
+	\end{tabular}%
+	\label{tab:table1}	% this is the label given to the table that can be referenced using \ref{tab:Exp1Part1_7}
+\end{table}%
+
 
 %SECTION 3 - Description of Circuit - Eric
 \section{Description of Circuit}
@@ -89,11 +116,24 @@ Please refer to "Section X : Figures" of this document to view the Pre-Lab Simul
 \end{itemize}
 %SECTION 8 - Post Lab -Ryan
 \section{Post Lab}
-RYAN SECTION
+1)  Refer to the Design Resources and Statistics in IQT.30-32 and complete
+the following design statistics table.\\
+
+These numbers are shown below in Table \ref{tab:lab5-statistics} .
+
+\begin{table} [H]
+	\centering
+	\includegraphics[scale=0.35]{lab5-statistics.png}
+	\caption{Processor Area Comparison\label{tab:lab45-statistics}}
+\end{table}
+
+Come up with a few ideas on how you might optimize your design to decrease the total gate count and/or to increase maximum frequency by changing your code for the design.\\
+
+\textit{Answer:} 
 
 %SECTION 9 - Conclusion - Ryan
 \section{Conclusion}
-RYAN SECTION - you can probably keep this short and too the point, no need to make it too long.f
+In this lab, the team was able to successfully program and test a working multiplier on the DE2 FPGA board.  
 
 \clearpage
 \onecolumn
