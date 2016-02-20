@@ -92,7 +92,9 @@ Last but not least is the "X Register" Module which contains the status of the "
 
 %SECTION 5 - State Diagram of FSM - Ryan
 \section{State Diagram}
-RYAN SECTION
+The State Machine for the 8-bit Multiplier is shown in Figure \ref{fig:FSM} in "Section X: Figures" of this document.  \\
+
+The State Machine is broken down into a total of five states labeled A through E, with A being the reset\_state and E being the done\_state. The start\_state is made up of 16 substates for the 7 add functions, 1 subtract function, and 8 shift functions.  
 
 %SECTION 6 - Schematic/Block Diagram -Eric
 \section{Schematic/Block Diagram}
@@ -139,14 +141,14 @@ These numbers are shown below in Table \ref{tab:lab5-statistics} .
 	\end{tabular}%
 	\label{tab:table2}	% this is the label given to the table that can be referenced using \ref{tab:Exp1Part1_7}
 \end{table}%
-
+ 
 Come up with a few ideas on how you might optimize your design to decrease the total gate count and/or to increase maximum frequency by changing your code for the design.\\
 
 \textit{Answer:} 
 
 %SECTION 9 - Conclusion - Ryan
 \section{Conclusion}
-In this lab, the team was able to successfully program and test a working multiplier on the DE2 FPGA board.  
+In this lab, the team was able to successfully program and test a working 8-bit multiplier on the DE2 FPGA board, concatenating an 8-bit multiplier and 8-bit multiplicand into a 16-bit solution.  The design used a total of 95 logic elements functioning at a frequency of 239.52 MHz.  Both values could be improved, that is, the number of logic elements decreased and the frequency increased through optimizing such things as the implementation of the add function to a CLA based off the results of Lab 4.  Overall, this lab provides a bridge from the basic adder design from lab 4 to the design of the SLC-3 in the next lab.    
 
 \clearpage
 \onecolumn
@@ -219,6 +221,11 @@ In this lab, the team was able to successfully program and test a working multip
 	\caption{X-Bit Flip Flop Block Diagram\label{fig:x-ff-diagram}}
 \end{figure}
 
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.65]{FSM.jpg}
+	\caption{Multiplier State Diagram\label{fig:FSM}}
+\end{figure}
 
 
 
