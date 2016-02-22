@@ -128,6 +128,8 @@ These numbers are shown below in Table \ref{tab:lab5-statistics} .
 	\caption{Reworked 8-bit Multiplication Problem. }
 	\begin{tabular}{c|c}	% ccccccc indicates 7 center aligned columns
 		\toprule	% top separator
+		Resource & Value \\
+		\midrule
 		LUT & 95\\
 		DSP & 0\\
 		Memory (BRAM) & 0\\
@@ -136,7 +138,6 @@ These numbers are shown below in Table \ref{tab:lab5-statistics} .
 		Static Power & 98.52 mW\\
 		Dynamic Power & 0 mW\\
 		Total Power & 147.8 mW\\
-	
 		\bottomrule	% bottom separator
 	\end{tabular}%
 	\label{tab:table2}	% this is the label given to the table that can be referenced using \ref{tab:Exp1Part1_7}
@@ -144,7 +145,9 @@ These numbers are shown below in Table \ref{tab:lab5-statistics} .
  
 Come up with a few ideas on how you might optimize your design to decrease the total gate count and/or to increase maximum frequency by changing your code for the design.\\
 
-\textit{Answer:} 
+\textit{Answer:} The implementation of the full 9-bit adder could be changed to incorporate the techniques in the previous lab. Specifically, the carry-ripple adder could be changed into a carry-ahead adder and this would theoretically not change the gate cound (as shown by previos lab Resource Analysis) and it would increase the frequency by approximately 2 MHz. \\
+
+Another idea to decrease the gate count would be to remove the X Register and not display the negative sign on the LED. This would remove one flip-flop and make it so that the shift-in to the A register would simply be the most significant bit of the A register (i.e. the most significant bit would be shifted in).
 
 %SECTION 9 - Conclusion - Ryan
 \section{Conclusion}
