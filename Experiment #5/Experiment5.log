@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 FEB 2016 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 MAR 2016 15:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -912,10 +912,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--123
  []
 
 
-LaTeX Warning: Reference `tab:lab5-statistics' on page 2 undefined on input lin
-e 124.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
@@ -1018,25 +1014,22 @@ Overfull \hbox (16.38269pt too wide) in paragraph at lines 229--230
 .png>] [6 <./Block_Diagram.png> <./full-multiplier-diagram.png>] [7 <./shift-re
 gister-diagram.png> <./full-adder-subtractor-diagram.png>] [8 <./control-unit-t
 op-half-diagram.png>] [9 <./control-unit-bottom-half-diagram.png>] [10 <./x-ff-
-diagram.png> <./FSM.jpg>] (./Experiment5.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+diagram.png> <./FSM.jpg>] (./Experiment5.aux) ) 
 Here is how much of TeX's memory you used:
- 22217 strings out of 493089
- 512627 string characters out of 6134842
+ 22216 strings out of 493089
+ 512606 string characters out of 6134842
  665881 words of memory out of 5000000
- 25300 multiletter control sequences out of 15000+600000
+ 25299 multiletter control sequences out of 15000+600000
  34629 words of font info for 73 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  64i,9n,67p,721b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Experiment5.pdf (10 pages, 1538169 bytes).
+{/usr/local/texlive/2015/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on Experiment5.pdf (10 pages, 1533418 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream

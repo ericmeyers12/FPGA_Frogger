@@ -13,44 +13,47 @@
 //    Spring 2015 Distribution
 //------------------------------------------------------------------------------
 
-
-module ISDU ( 	input	Clk, 
-                        Reset,
-						Run,
-						Continue,
-						ContinueIR,
+	
+module ISDU (input					Clk, 
+											Reset,
+											Run,
+											Continue,
+											ContinueIR,
 									
-				input [3:0]  Opcode, 
-				input        IR_5,
+				input [3:0]  			Opcode, 
+				input        			IR_5, IR_11,
 				  
-				output logic 	LD_MAR,
-								LD_MDR,
-								LD_IR,
-								LD_BEN,
-								LD_CC,
-								LD_REG,
-								LD_PC,
+				output logic 			LD_MAR,
+											LD_MDR,
+											LD_IR,
+											LD_BEN,
+											LD_CC,
+											LD_REG,
+											LD_PC,
 									
-				output logic 	GatePC,
-								GateMDR,
-								GateALU,
-								GateMARMUX,
+				output logic 			GatePC,
+											GateMDR,
+											GateALU,
+											GateMARMUX,
 									
 				output logic [1:0] 	PCMUX,
-				                    DRMUX,
-									SR1MUX,
-				output logic 		SR2MUX,
-									ADDR1MUX,
+											DRMUX,
+											SR1MUX,
+											
+				output logic 			SR2MUX,
+											ADDR1MUX,
+											
 				output logic [1:0] 	ADDR2MUX,
-				output logic 		MARMUX,
+				
+				output logic 			MARMUX,
 				  
 				output logic [1:0] 	ALUK,
 				  
-				output logic 		Mem_CE,
-									Mem_UB,
-									Mem_LB,
-									Mem_OE,
-									Mem_WE
+				output logic 			Mem_CE,
+											Mem_UB,
+											Mem_LB,
+											Mem_OE,
+											Mem_WE
 				);
 
     enum logic [3:0] {Halted, PauseIR1, PauseIR2, S_18, S_33_1, S_33_2, S_35, S_32, S_01}   State, Next_state;   // Internal state logic
@@ -120,19 +123,19 @@ module ISDU ( 	input	Clk,
 	    GateALU = 1'b0;
 	    GateMARMUX = 1'b0;
 		 
-		ALUK = 2'b00;
+		 ALUK = 2'b00;
 		 
-	    PCMUX = 2'b00;
-	    DRMUX = 2'b00;
-	    SR1MUX = 2'b00;
-	    SR2MUX = 1'b0;
-	    ADDR1MUX = 1'b0;
-	    ADDR2MUX = 2'b00;
-	    MARMUX = 1'b0;
+		 PCMUX = 2'b00;
+		 DRMUX = 2'b00;
+		 SR1MUX = 2'b00;
+		 SR2MUX = 1'b0;
+		 ADDR1MUX = 1'b0;
+		 ADDR2MUX = 2'b00;
+		 MARMUX = 1'b0;
 		 
-	    Mem_OE = 1'b1;
-	    Mem_WE = 1'b1;
-		 
+		 Mem_OE = 1'b1;
+		 Mem_WE = 1'b1;
+			 
 	    case (State)
 			Halted: ;
 			S_18 : 

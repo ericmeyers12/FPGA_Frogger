@@ -1,4 +1,4 @@
-==//------------------------------------------------------------------------------
+ //------------------------------------------------------------------------------
 // Company: 		 UIUC ECE Dept.
 // Engineer:		 Stephen Kempf
 //
@@ -36,7 +36,7 @@ assign Run_ah = ~Run;
 // For Lab 1, they will direclty be connected to the IR register through an always_comb circuit
 // For Lab 2, they will be patched into the MEM2IO module so that Memory-mapped IO can take place
 logic [3:0] hex_4[3:0]; 
-HexDriver hex_drivers[3:0] (hex_4, {HEX3, HEX2, HEX1, HEX0});
+HexDriver hex_drivers[3:0](hex_4, {HEX3, HEX2, HEX1, HEX0});
 // This works thanks to http://stackoverflow.com/questions/1378159/verilog-can-we-have-an-array-of-custom-modules
 
 // Internal connections
@@ -48,6 +48,10 @@ logic [1:0] PCMUX, DRMUX, SR1MUX, ADDR2MUX, ALUK;
 logic [15:0] MDR_In;
 logic [15:0] MAR, MDR, IR;
 logic [15:0] Data_Mem_In, Data_Mem_Out;
+
+assign MDR_In = Data;
+assign MDR = Data;
+
 
 
 // Connect MAR to ADDR, which is also connected as an input into MEM2IO
@@ -65,17 +69,34 @@ tristate #(.N(16)) tr0(
 );
 
 // Our SRAM and I/O controller (note, this plugs into MDR/MAR
-Mem2IO memory_subsystem(
+/*Mem2IO memory_subsystem( UNCOMMENT FOR LAB2
 	.*, .Reset(Reset_ah), .A(ADDR), .Switches(S),
 	.HEX0(hex_4[0]), .HEX1(hex_4[1]), .HEX2(hex_4[2]), .HEX3(hex_4[3]),
 	.Data_CPU_In(MDR), .Data_CPU_Out(MDR_In)
-);
+);*/
+test_memory memory_subsystem(.*, .Reset, .I_O(Data), .A(ADDR), .CE, .UB, .LB, .OE, .WE);
 
 // State machine, you need to fill in the code here as well
 ISDU state_controller(
-	.*, .Reset(Reset_ah), .Run(Run_ah), .Continue(Continue_ah),
+	.*, .Reset(Reset_ah), .Run(Run_ah), .Continue(Continue_ah), .ContinueIR(Continue_ah),
 	.Opcode(IR[15:12]), .IR_5(IR[5]), .IR_11(IR[11]),
+	.LD_MAR, .LD_MDR, .LD_IR, .LD_BEN, .LD_CC, .LD_REG, .LD_PC,
+	.GatePC, .GateMDR, .GateALU, .GateMARMUX,
+	.PCMUX, .DRMUX, .SR1MUX,
+	.SR2MUX, .ADDR1MUX,
+	.ADDR2MUX,
+	.MARMUX,
+	.ALUK,
 	.Mem_CE(CE), .Mem_UB(UB), .Mem_LB(LB), .Mem_OE(OE), .Mem_WE(WE)
 );
+
+always_comb
+begin
+	hex_4[0] = IR[3:0];
+	hex_4[1] = IR[7:4];
+	hex_4[2] = IR[11:8];
+	hex_4[3] = IR[15:12];
+end
+
 
 endmodule

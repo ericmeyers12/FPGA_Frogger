@@ -94,7 +94,7 @@ Last but not least is the "X Register" Module which contains the status of the "
 \section{State Diagram}
 The State Machine for the 8-bit Multiplier is shown in Figure \ref{fig:FSM} in "Section X: Figures" of this document.  \\
 
-The State Machine is broken down into a total of five states labeled A through E, with A being the reset\_state and E being the done\_state. The start\_state is made up of 16 substates for the 7 add functions, 1 subtract function, and 8 shift functions.  
+The State Machine is broken down into a total of five states labeled A through E, with A being the reset\_state and E being the done\_state. The start\_state is made up of 16 sub-states for the 7 add functions, 1 subtract function, and 8 shift functions.  
 
 %SECTION 6 - Schematic/Block Diagram -Eric
 \section{Schematic/Block Diagram}
@@ -121,7 +121,7 @@ Please refer to "Section X : Figures" of this document to view the Pre-Lab Simul
 1)  Refer to the Design Resources and Statistics in IQT.30-32 and complete
 the following design statistics table.\\
 
-These numbers are shown below in Table \ref{tab:lab5-statistics} .
+These numbers are shown below in Table \ref{tab:table2} .
 
 \begin{table}[htbp]
 	\centering
@@ -145,7 +145,7 @@ These numbers are shown below in Table \ref{tab:lab5-statistics} .
  
 Come up with a few ideas on how you might optimize your design to decrease the total gate count and/or to increase maximum frequency by changing your code for the design.\\
 
-\textit{Answer:} The implementation of the full 9-bit adder could be changed to incorporate the techniques in the previous lab. Specifically, the carry-ripple adder could be changed into a carry-ahead adder and this would theoretically not change the gate cound (as shown by previos lab Resource Analysis) and it would increase the frequency by approximately 2 MHz. \\
+\textit{Answer:} The implementation of the full 9-bit adder could be changed to incorporate the techniques in the previous lab. Specifically, the carry-ripple adder could be changed into a carry-ahead adder and this would theoretically not change the gate count (as shown by previous lab Resource Analysis) and it would increase the frequency by approximately 2 MHz. \\
 
 Another idea to decrease the gate count would be to remove the X Register and not display the negative sign on the LED. This would remove one flip-flop and make it so that the shift-in to the A register would simply be the most significant bit of the A register (i.e. the most significant bit would be shifted in).
 
