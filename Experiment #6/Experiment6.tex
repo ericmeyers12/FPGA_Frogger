@@ -12,7 +12,7 @@
 \author{
 \IEEEauthorblockN{Eric Meyers, Ryan Helsdingen}\\
 \IEEEauthorblockA{Section ABG; TAs: Ben Delay, Shuo Liu \\
-March 2nd, 2016 \\
+March 9th, 2016 \\
 emeyer7, helsdin2}}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \begin{document}
@@ -27,27 +27,52 @@ The purpose of this lab is to create a very primitive processing unit designed a
 
 %SECTION 2 - Description of Circuit - 
 \section{Description of Circuit}
-ERIC SECTION
+The circuit consists of several modules; specifically the high level SLC­3 module, the register file, the datapath, the Instruction Decoder/Sequencer Unit (IDSU), the Arithmetic and Logic Unit (ALU), many 16-bit registers (MAR, MDR, IR, and PC), several multiplexers, and some tristate buffers. The datapath and ISDU (Control) are shown in Figure \ref{fig:SLC3-Circuit}. This Figure directly below this in the same section (Figure \ref{fig:Memory-Circuit}) is the memory interface of the SLC3.\\
+
+All of these modules work together with one another to form the top level SLC3. The SLC3 will perform a total of 
+
+
 
 %SECTION 3 - Purpose of Modules - 
 \section{Purpose of Modules}
-E
+As stated in the previous section there are many modules that work together in this system to form the top level SLC3. The following modules were created:
+\begin{itemize}
+	\item 16-bit Register
+	\item 
+\end{itemize}
+
+\normalsize\textbf{16-bit Shift Register} \\
+
+\normalsize\textbf{2-to-1 Multiplexer} \\
+-created with 3 bit version too\\
+
+\normalsize\textbf{4-to-1 Multiplexer} \\
+\normalsize\textbf{Instruction Sequencer and Decoder } \\
+\normalsize\textbf{16-bit Shift Register} \\
+\normalsize\textbf{16-bit Shift Register} \\
+\normalsize\textbf{16-bit Shift Register} \\
+\normalsize\textbf{16-bit Shift Register} \\
+\normalsize\textbf{16-bit Shift Register} \\
+\normalsize\textbf{16-bit Shift Register} \\
+\normalsize\textbf{16-bit Shift Register} \\
+
+
 
 %SECTION 4 - State Diagram - 
 \section{State Diagram}
-RYAN SECTION?
+RYAN SECTION - Maybe get done on Thursday?
 
 %SECTION 5 - Instruction Sequencer / Decoder - 
 \section{Instruction Sequencer / Decoder}
-ERIC SECTION
+ERIC SECTION - Write on Thursday
 
 %SECTION 6 - Schematic/Block Diagram - 
 \section{Schematic/Block Diagram}
-ERIC SECTION
+RYAN SECTION
 
 %SECTION 7 - Pre-Lab Simulation Waveforms -
 \section{Pre-Lab Simulation Waveforms}
-ERIC SECTION
+The Pre-Lab Simulation Waveforms can be found on Figure \ref{} in "Section XI: Figures". Finish on Sunday
 
 %SECTION 8 - Design Statistics
 \section{Design Statistics}
@@ -55,16 +80,32 @@ ERIC SECTION
 
 %SECTION 9 - Post Lab -Ryan
 \section{Post Lab}
-RYAN SECTION
+RYAN SECTION - Answer Questions \\
+
+1.) What is MEM2IO used for, i.e. what is its main function? \\
+
+2.) What is the difference between BR and JMP instructions?\\
 
 %SECTION 10 - Conclusion - Ryan
 \section{Conclusion}
-ERIC SECTION
+RYAN SECTION
 
 \clearpage
 \onecolumn
 %SECTION 11: Figures
 \section{Figures}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.27]{SLC3_Circuit.png}
+	\caption{SLC3 CPU \label{fig:SLC3-Circuit}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{Memory_Circuit.png}
+	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:Memory-Circuit}}
+\end{figure}
 
 
 %SECTION : Bibliography
