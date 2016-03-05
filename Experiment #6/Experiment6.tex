@@ -12,7 +12,7 @@
 \author{
 \IEEEauthorblockN{Eric Meyers, Ryan Helsdingen}\\
 \IEEEauthorblockA{Section ABG; TAs: Ben Delay, Shuo Liu \\
-March 2nd, 2016 \\
+March 9th, 2016 \\
 emeyer7, helsdin2}}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \begin{document}
@@ -23,38 +23,113 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - Eric
 \section{Introduction}
+The purpose of this lab is to create a very primitive processing unit designed around the Little Computer 3 (LC3) that was explored during previous ECE curriculum. This will be referred to the SLC3 Processing Unit throughout this lab. The SLC3 is a condensed version of the LC3 that allows user interfacing through memory-mapped I/O on board the Altera Cyclone IV SRAM Module, along with switches and LED indicators to show the user the status of the data within registers of the SLC3.  
 
 %SECTION 2 - Description of Circuit - 
 \section{Description of Circuit}
+The circuit consists of several modules; specifically the high level SLC­3 module, the register file, the datapath, the Instruction Decoder/Sequencer Unit (IDSU), the Arithmetic and Logic Unit (ALU), many 16-bit registers (MAR, MDR, IR, and PC), several multiplexers, and some tristate buffers. The datapath and ISDU (Control) are shown in Figure \ref{fig:SLC3-Circuit}. This Figure directly below this in the same section (Figure \ref{fig:Memory-Circuit}) is the memory interface of the SLC3.\\
+
+All of these modules work together with one another to form the top level SLC3. The SLC3 will perform a total of 
+
+TODO
 
 %SECTION 3 - Purpose of Modules - 
 \section{Purpose of Modules}
+As stated in the previous section there are many modules that work together in this system to form the top level SLC3. The following modules were created:\\
+
+\normalsize\textbf{16-bit Shift Register} \\
+These modules are 16 inputs and 16 outputs with a load\_enable line that determines if the data-in is sent to the data-out. The Instruction Register, Memory Address Register, Memory Data Register, Program Counter Register, and Register File will all be utilizing this module. \\
+
+\normalsize\textbf{Multiplexers} \\
+A 16-bit 2-to-1 MUX will be used for the ADDR1MUX and the SR2MUX. A 3-bit 2-to-1 MUX will be used for the DRMUX and the SR1MUX.
+
+A 16-bit 4-to-1 MUX will be used for the ADDR2MUX only.
+
+A 16-bit 3-to-1 MUX will be used for the PCMUX. This will take inputs of the databus, the 16-bit adder output, and the PC+1. \\
+
+\normalsize\textbf{Instruction Sequencer and Decoder } \\
+This module will contain the state machine for the entire SLC3. It will have the ability to implement 11 states and cycle through all of them in a cyclic fashion. \\
+
+\normalsize\textbf{NZP} \\
+TODO \\
+
+\normalsize\textbf{Datapath} \\
+TODO \\
+
+\normalsize\textbf{Arthmetic and Logic Unit} \\
+TODO \\
+
+\normalsize\textbf{SEXT/ZEXT} \\
+TODO \\
+
+\normalsize\textbf{Register File} \\
+TODO \\
+
+\normalsize\textbf{16-bit Adder} \\
+TODO \\
+
+\normalsize\textbf{Tristate Buffer} \\
+TODO \\
+
+\normalsize\textbf{Tristate} \\
+TODO \\
+
+\normalsize\textbf{Mem2IO} \\
+TODO \\
+
+
+
 
 %SECTION 4 - State Diagram - 
 \section{State Diagram}
+RYAN SECTION 
 
 %SECTION 5 - Instruction Sequencer / Decoder - 
 \section{Instruction Sequencer / Decoder}
+ERIC SECTION 
 
 %SECTION 6 - Schematic/Block Diagram - 
 \section{Schematic/Block Diagram}
+RYAN SECTION\\
+
+The Schematic / Block Diagrams can be found on Figure \ref{} in "Section XI: Figures".
 
 %SECTION 7 - Pre-Lab Simulation Waveforms -
 \section{Pre-Lab Simulation Waveforms}
+The Pre-Lab Simulation Waveforms can be found on Figure \ref{} in "Section XI: Figures".
 
 %SECTION 8 - Design Statistics
 \section{Design Statistics}
+ERIC SECTION
 
 %SECTION 9 - Post Lab -Ryan
 \section{Post Lab}
+RYAN SECTION - Answer Questions \\
+
+1.) What is MEM2IO used for, i.e. what is its main function? \\
+
+2.) What is the difference between BR and JMP instructions?\\
 
 %SECTION 10 - Conclusion - Ryan
 \section{Conclusion}
+RYAN SECTION
 
 \clearpage
 \onecolumn
 %SECTION 11: Figures
 \section{Figures}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.27]{SLC3_Circuit.png}
+	\caption{SLC3 CPU \label{fig:SLC3-Circuit}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{Memory_Circuit.png}
+	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:Memory-Circuit}}
+\end{figure}
 
 
 %SECTION : Bibliography

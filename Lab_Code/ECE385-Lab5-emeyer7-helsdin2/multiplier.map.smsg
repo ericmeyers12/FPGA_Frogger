@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at x_flip_flop.sv(4): always construct contains both blocking and non-blocking assignments File: C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/ECE385-Lab5-emeyer7-helsdin2/x_flip_flop.sv Line: 4
