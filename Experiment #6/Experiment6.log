@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 MAR 2016 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 MAR 2016 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -562,6 +562,40 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count121
+\lst@gtempboxa=\box40
+\lst@token=\toks30
+\lst@length=\count122
+\lst@currlwidth=\dimen184
+\lst@column=\count123
+\lst@pos=\count124
+\lst@lostspace=\dimen185
+\lst@width=\dimen186
+\lst@newlines=\count125
+\lst@lineno=\count126
+\lst@maxwidth=\dimen187
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count127
+\lst@skipnumbers=\count128
+\lst@framebox=\box41
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2014/09/06 1.5e listings language file
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2014/09/06 1.5e listings language file
+)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.0 (rcs-revision 1.4)
@@ -615,26 +649,26 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
 shapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
-\pgfnodepartlowerbox=\box40
-\pgfnodeparttwobox=\box41
-\pgfnodepartthreebox=\box42
-\pgfnodepartfourbox=\box43
-\pgfnodeparttwentybox=\box44
-\pgfnodepartnineteenbox=\box45
-\pgfnodeparteighteenbox=\box46
-\pgfnodepartseventeenbox=\box47
-\pgfnodepartsixteenbox=\box48
-\pgfnodepartfifteenbox=\box49
-\pgfnodepartfourteenbox=\box50
-\pgfnodepartthirteenbox=\box51
-\pgfnodeparttwelvebox=\box52
-\pgfnodepartelevenbox=\box53
-\pgfnodeparttenbox=\box54
-\pgfnodepartninebox=\box55
-\pgfnodeparteightbox=\box56
-\pgfnodepartsevenbox=\box57
-\pgfnodepartsixbox=\box58
-\pgfnodepartfivebox=\box59
+\pgfnodepartlowerbox=\box42
+\pgfnodeparttwobox=\box43
+\pgfnodepartthreebox=\box44
+\pgfnodepartfourbox=\box45
+\pgfnodeparttwentybox=\box46
+\pgfnodepartnineteenbox=\box47
+\pgfnodeparteighteenbox=\box48
+\pgfnodepartseventeenbox=\box49
+\pgfnodepartsixteenbox=\box50
+\pgfnodepartfifteenbox=\box51
+\pgfnodepartfourteenbox=\box52
+\pgfnodepartthirteenbox=\box53
+\pgfnodeparttwelvebox=\box54
+\pgfnodepartelevenbox=\box55
+\pgfnodeparttenbox=\box56
+\pgfnodepartninebox=\box57
+\pgfnodeparteightbox=\box58
+\pgfnodepartsevenbox=\box59
+\pgfnodepartsixbox=\box60
+\pgfnodepartfivebox=\box61
 )))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
@@ -646,51 +680,51 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks30
-\ex@=\dimen184
+\@emptytoks=\toks31
+\ex@=\dimen188
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen185
+\pmbraise@=\dimen189
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count121
+\inf@bad=\count129
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count122
-\leftroot@=\count123
+\uproot@=\count130
+\leftroot@=\count131
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count124
-\DOTSCASE@=\count125
+\classnum@=\count132
+\DOTSCASE@=\count133
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box60
-\strutbox@=\box61
-\big@size=\dimen186
+\Mathstrutbox@=\box62
+\strutbox@=\box63
+\big@size=\dimen190
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count126
-\c@MaxMatrixCols=\count127
+\macc@depth=\count134
+\c@MaxMatrixCols=\count135
 \dotsspace@=\muskip10
-\c@parentequation=\count128
-\dspbrk@lvl=\count129
-\tag@help=\toks31
-\row@=\count130
-\column@=\count131
-\maxfields@=\count132
-\andhelp@=\toks32
-\eqnshift@=\dimen187
-\alignsep@=\dimen188
-\tagshift@=\dimen189
-\tagwidth@=\dimen190
-\totwidth@=\dimen191
-\lineht@=\dimen192
-\@envbody=\toks33
+\c@parentequation=\count136
+\dspbrk@lvl=\count137
+\tag@help=\toks32
+\row@=\count138
+\column@=\count139
+\maxfields@=\count140
+\andhelp@=\toks33
+\eqnshift@=\dimen191
+\alignsep@=\dimen192
+\tagshift@=\dimen193
+\tagwidth@=\dimen194
+\totwidth@=\dimen195
+\lineht@=\dimen196
+\@envbody=\toks34
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks34
+\mathdisplay@stack=\toks35
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -706,54 +740,52 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen193
-\lightrulewidth=\dimen194
-\cmidrulewidth=\dimen195
-\belowrulesep=\dimen196
-\belowbottomsep=\dimen197
-\aboverulesep=\dimen198
-\abovetopsep=\dimen199
-\cmidrulesep=\dimen200
-\cmidrulekern=\dimen201
-\defaultaddspace=\dimen202
-\@cmidla=\count133
-\@cmidlb=\count134
-\@aboverulesep=\dimen203
-\@belowrulesep=\dimen204
-\@thisruleclass=\count135
-\@lastruleclass=\count136
-\@thisrulewidth=\dimen205
+\heavyrulewidth=\dimen197
+\lightrulewidth=\dimen198
+\cmidrulewidth=\dimen199
+\belowrulesep=\dimen200
+\belowbottomsep=\dimen201
+\aboverulesep=\dimen202
+\abovetopsep=\dimen203
+\cmidrulesep=\dimen204
+\cmidrulekern=\dimen205
+\defaultaddspace=\dimen206
+\@cmidla=\count141
+\@cmidlb=\count142
+\@aboverulesep=\dimen207
+\@belowrulesep=\dimen208
+\@thisruleclass=\count143
+\@lastruleclass=\count144
+\@thisrulewidth=\dimen209
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
-\c@tracingmulticols=\count137
+\c@tracingmulticols=\count145
 
 
 Package multicol Warning: May not work with the twocolumn option on input line 
 150.
 
-\mult@box=\box62
-\multicol@leftmargin=\dimen206
-\c@unbalance=\count138
-\c@collectmore=\count139
-\doublecol@number=\count140
-\multicoltolerance=\count141
-\multicolpretolerance=\count142
-\full@width=\dimen207
-\page@free=\dimen208
-\premulticols=\dimen209
-\postmulticols=\dimen210
+\mult@box=\box64
+\multicol@leftmargin=\dimen210
+\c@unbalance=\count146
+\c@collectmore=\count147
+\doublecol@number=\count148
+\multicoltolerance=\count149
+\multicolpretolerance=\count150
+\full@width=\dimen211
+\page@free=\dimen212
+\premulticols=\dimen213
+\postmulticols=\dimen214
 \multicolsep=\skip52
 \multicolbaselineskip=\skip53
-\partial@page=\box63
-\last@line=\box64
-\maxbalancingoverflow=\dimen211
-\mult@rightbox=\box65
-\mult@grightbox=\box66
-\mult@gfirstbox=\box67
-\mult@firstbox=\box68
-\@tempa=\box69
-\@tempa=\box70
+\partial@page=\box65
+\last@line=\box66
+\maxbalancingoverflow=\dimen215
+\mult@rightbox=\box67
+\mult@grightbox=\box68
+\mult@gfirstbox=\box69
+\mult@firstbox=\box70
 \@tempa=\box71
 \@tempa=\box72
 \@tempa=\box73
@@ -769,22 +801,24 @@ Package multicol Warning: May not work with the twocolumn option on input line
 \@tempa=\box83
 \@tempa=\box84
 \@tempa=\box85
-\c@columnbadness=\count143
-\c@finalcolumnbadness=\count144
-\last@try=\dimen212
-\multicolovershoot=\dimen213
-\multicolundershoot=\dimen214
-\mult@nat@firstbox=\box86
-\colbreak@box=\box87
-\mc@col@check@num=\count145
+\@tempa=\box86
+\@tempa=\box87
+\c@columnbadness=\count151
+\c@finalcolumnbadness=\count152
+\last@try=\dimen216
+\multicolovershoot=\dimen217
+\multicolundershoot=\dimen218
+\mult@nat@firstbox=\box88
+\colbreak@box=\box89
+\mc@col@check@num=\count153
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen215
+\bigstrutjot=\dimen219
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen216
-\extrarowheight=\dimen217
-\NC@list=\toks35
+\col@sep=\dimen220
+\extrarowheight=\dimen221
+\NC@list=\toks36
 \extratabsurround=\skip54
 \backup@length=\skip55
 )
@@ -822,22 +856,24 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count146
-\scratchdimen=\dimen218
-\scratchbox=\box88
-\nofMPsegments=\count147
-\nofMParguments=\count148
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count149
-\MPscratchDim=\dimen219
-\MPnumerator=\count150
-\makeMPintoPDFobject=\count151
-\everyMPtoPDFconversion=\toks37
+\scratchcounter=\count154
+\scratchdimen=\dimen222
+\scratchbox=\box90
+\nofMPsegments=\count155
+\nofMParguments=\count156
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count157
+\MPscratchDim=\dimen223
+\MPnumerator=\count158
+\makeMPintoPDFobject=\count159
+\everyMPtoPDFconversion=\toks38
 ) ABD: EveryShipout initializing macros
+\c@lstlisting=\count160
 Missing character: There is no Í in font ptmr7t!
 Missing character: There is no ¾ in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
@@ -848,56 +884,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--31
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
-
-Underfull \hbox (badness 2205) in paragraph at lines 40--42
-\OT1/ptm/m/n/11 Reg-is-ter, Mem-ory Data Reg-is-ter, Pro-gram Counter
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--42
-
- []
-
-
-Underfull \hbox (badness 5274) in paragraph at lines 46--47
-[]\OT1/ptm/m/n/11 A 16-bit 4-to-1 MUX will be used for the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--58
-
- []
-
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 63.
-LaTeX Font Info:    Try loading font information for U+msa on input line 63.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 42.
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 63.
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 51--52
+[]\OT1/ptm/m/n/11 A 16-bit 2-to-1 MUX will be used for the
+ []
+
+
+Underfull \hbox (badness 4144) in paragraph at lines 51--52
+\OT1/ptm/m/n/11 ADDR1MUX and the SR2MUX. A 3-bit 2-to-1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 53--54
+[]\OT1/ptm/m/n/11 A 16-bit 4-to-1 MUX will be used for the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
@@ -905,142 +961,186 @@ Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 80--82
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--85
+Underfull \hbox (badness 10000) in paragraph at lines 87--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
+Underfull \hbox (badness 10000) in paragraph at lines 90--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--91
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
 
 
-LaTeX Warning: Reference `state-diagram' on page 2 undefined on input line 103.
+Underfull \hbox (badness 1584) in paragraph at lines 108--109
+\OT1/ptm/m/n/11 11 states and cy-cle through them to per-form the
+ []
 
 
+Underfull \hbox (badness 2111) in paragraph at lines 108--109
+\OT1/ptm/m/n/11 as-so-ci-ated with it that de-ter-mines which states it
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
 
-LaTeX Warning: Reference `' on page 2 undefined on input line 113.
-
-
-LaTeX Warning: Reference `' on page 2 undefined on input line 117.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 137--138
+LaTeX Warning: Reference `' on page 2 undefined on input line 125.
+
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 129.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 149--150
 \OT1/ptm/m/n/11 databus, min-i-miz-ing de-lay in data move-ment, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--141
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 []\OT1/ptm/m/n/11 Beyond the prob-lems ex-pe-ri-enced in lab,
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 142--143
+Underfull \hbox (badness 6625) in paragraph at lines 154--155
 \OT1/ptm/m/n/11 un-der-stand-ing the cre-ation of the sim-ple SLC3
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
-[2] <state-diagram.jpg, id=14, 368.87813pt x 341.02406pt>
-File: state-diagram.jpg Graphic file (type jpg)
+[3
 
-<use state-diagram.jpg>
-Package pdftex.def Info: state-diagram.jpg used on input line 153.
-(pdftex.def)             Requested size: 368.87721pt x 341.02322pt.
- <SLC3_Circuit.png, id=15, 1665.97406pt x 1388.18625pt>
+] <state-diagram.png, id=18, 728.7225pt x 658.46pt>
+File: state-diagram.png Graphic file (type png)
+ <use state-diagram.png>
+Package pdftex.def Info: state-diagram.png used on input line 165.
+(pdftex.def)             Requested size: 510.10226pt x 460.91887pt.
+
+<SLC3_Circuit.png, id=20, 1665.97406pt x 1388.18625pt>
 File: SLC3_Circuit.png Graphic file (type png)
-
-<use SLC3_Circuit.png>
-Package pdftex.def Info: SLC3_Circuit.png used on input line 160.
+ <use SLC3_Circuit.png>
+Package pdftex.def Info: SLC3_Circuit.png used on input line 172.
 (pdftex.def)             Requested size: 449.81902pt x 374.8153pt.
- <Memory_Circuit.png, id=17, 840.13875pt x 349.305pt>
+
+<Memory_Circuit.png, id=21, 840.13875pt x 349.305pt>
 File: Memory_Circuit.png Graphic file (type png)
-
-<use Memory_Circuit.png>
-Package pdftex.def Info: Memory_Circuit.png used on input line 166.
+ <use Memory_Circuit.png>
+Package pdftex.def Info: Memory_Circuit.png used on input line 178.
 (pdftex.def)             Requested size: 336.04955pt x 139.71951pt.
- [3
+
+[4
 
 
- <./state-diagram.jpg>] [4 <./SLC3_Circuit.png> <./Memory_Circuit.png>] (./Expe
-riment6.aux)
+ <./state-diagram.png>] [5 <./SLC3_Circuit.png> <./Memory_Circuit.png>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 186.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \vbox (badness 1038) has occurred while \output is active []
+
+ [6
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+[8] (./Experiment6.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 22161 strings out of 493089
- 511213 string characters out of 6134842
- 661881 words of memory out of 5000000
- 25254 multiletter control sequences out of 15000+600000
- 33493 words of font info for 72 fonts, out of 8000000 for 9000
+ 23738 strings out of 493089
+ 534218 string characters out of 6134842
+ 715011 words of memory out of 5000000
+ 26805 multiletter control sequences out of 15000+600000
+ 34008 words of font info for 74 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 64i,9n,67p,669b,286s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,9n,67p,669b,1685s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment6.pdf (4 pages, 346850 bytes).
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Experiment6.pdf (8 pages, 467081 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

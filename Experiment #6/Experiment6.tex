@@ -27,31 +27,36 @@ The purpose of this lab is to create a very primitive processing unit designed a
 
 %SECTION 2 - Description of Circuit - 
 \section{Description of Circuit}
-The circuit consists of several modules; specifically the high level SLC­3 module, the register file, the datapath, the Instruction Decoder/Sequencer Unit (IDSU), the Arithmetic and Logic Unit (ALU), many 16-bit registers (MAR, MDR, IR, and PC), several multiplexers, and some tristate buffers. The datapath and ISDU (Control) are shown in Figure \ref{fig:SLC3-Circuit}. This Figure directly below this in the same section (Figure \ref{fig:Memory-Circuit}) is the memory interface of the SLC3.\\
+The circuit consists of several modules; specifically the high level SLC­3 module, the register file, the datapath, the Instruction Decoder/Sequencer Unit (IDSU), the Arithmetic and Logic Unit (ALU), many 16-bit registers (MAR, MDR, IR, and PC), several multiplexers, and some tristate buffers. The datapath and ISDU (Control) are shown in Figure \ref{fig:SLC3-Circuit}. The memory interface is shown directly below in the same section in Figure \ref{fig:Memory-Circuit}.\\
 
-All of these modules work together with one another to form the top level SLC3. The SLC3 will perform a total of 
-
-TODO
+All of these modules work together with one another to form the top level SLC3. The SLC3 will have the ability to perform up to 11 instructions with operations on 8 16-bit registers (R0-R7). \\
 
 %SECTION 3 - Purpose of Modules - 
 \section{Purpose of Modules}
 As stated in the previous section there are many modules that work together in this system to form the top level SLC3. The following modules were created:\\
 
 \normalsize\textbf{16-bit Shift Register} \\
-These modules are 16 inputs and 16 outputs with a load\_enable line that determines if the data-in is sent to the data-out. The Instruction Register, Memory Address Register, Memory Data Register, Program Counter Register, and Register File will all be utilizing this module. \\
+
+These modules have 16 inputs and 16 outputs with a load\_enable line that determines if the data-in is sent to the data-out. It was used for the following units: 
+\begin{itemize}
+	\item Instruction Register (IR)
+	\item Memory Address Register (MAR)
+	\item Memory Data Register (MAR)
+	\item Program Counter (PC)
+	\item Register File (Reg\_File)
+\end{itemize} 
 
 \normalsize\textbf{Multiplexers} \\
-A 16-bit 2-to-1 MUX will be used for the ADDR1MUX and the SR2MUX. A 3-bit 2-to-1 MUX will be used for the DRMUX and the SR1MUX.
 
-A 16-bit 4-to-1 MUX will be used for the ADDR2MUX only.
+A 16-bit 2-to-1 MUX will be used for the ADDR1MUX and the SR2MUX. A 3-bit 2-to-1 MUX will be used for the DRMUX and the SR1MUX. \\
+
+A 16-bit 4-to-1 MUX will be used for the ADDR2MUX only. \\
 
 A 16-bit 3-to-1 MUX will be used for the PCMUX. This will take inputs of the databus, the 16-bit adder output, and the PC+1. \\
 
 \normalsize\textbf{Instruction Sequencer and Decoder } \\
-This module will contain the state machine for the entire SLC3. It will have the ability to implement 11 states and cycle through all of them in a cyclic fashion. \\
 
-\normalsize\textbf{NZP} \\
-TODO \\
+Please refer to "Section V: Instruction Sequencer and Decoder" in this document to get more details regarding the use of this module.
 
 \normalsize\textbf{Datapath} \\
 TODO \\
@@ -59,7 +64,6 @@ TODO \\
 \normalsize\textbf{Arthmetic and Logic Unit} \\
 \begin{table}[htbp]
 	\centering
-	%	\caption{Short Circuit Test Measurements.}
 	\begin{tabular}{cc}	% ccccccc indicates 7 center aligned columns
 		\toprule	% top separator
 		ALUK & OUTPUT FUNCTION \\
@@ -70,8 +74,8 @@ TODO \\
 		11 & PASS A \\
 		\bottomrule	% bottom separator
 	\end{tabular}%
-	\label{tab:ALU-table}	% this is the label given to the table that can be referenced using \ref{tab:Exp1Part1_7}
-\end{table}%
+	\label{tab:ALU-table}
+\end{table}
 
 The ALU module does the brunt arithmetic work of the SLC3 machine.  The ALU takes in two 16 values (A and B) and does one of four things with the data: bitwise ADD, bitwise AND, bitwise NOT, or passes the A input through to the output terminal. \\
 
@@ -95,16 +99,24 @@ TODO \\
 \normalsize\textbf{Mem2IO} \\
 TODO \\
 
-
-
-
 %SECTION 4 - State Diagram - 
 \section{State Diagram}
-The State Diagram can be found on Figure \ref{state-diagram} in "Section XI: Figures".
+The State Diagram can be found on Figure \ref{fig:state-diagram} in "Section XI: Figures".
 
 %SECTION 5 - Instruction Sequencer / Decoder - 
 \section{Instruction Sequencer / Decoder}
-ERIC SECTION 
+This module will contain the state machine for the entire SLC3. It will have the ability to implement 11 states and cycle through them to perform the desired action. Each instruction has a unique "opcode" associated with it that determines which states it branches to once the instruction is loaded into the IR.  Every instruction must perform a "FETCH" to store the current instruction , and only some instructions must perform a "LOAD" or "STORE" sequence. \\
+
+Essentially the "FETCH" sequence of instructions must take the PC and load its associated content into the IR. This consists of moving the PC register contents into the MAR, then retrieving the associated content from the SRAM and moving it into the MDR. Once the MDR is loaded, then this data must be moved from the databus into the IR. \\
+
+The "LOAD" and "STORE" sequences are meant for the "LDR" and "STR" instruction and memory on board the SRAM must be accessed. The "L
+
+\normalsize\textbf{NZP} \\
+The NZP Module is meant for branching and conditional statements in the SLC3 ISA. The module takes inputs as the 3 NZP bits from the IR (bits 11-9) along with the 16-bit databus. The module outputs a single BEN bit that is then fed into the ISDU to determine if the "BR" instruction must be executed. \\
+
+This module is only used in the "BR" instruction (state 0), and is updated in the "AND" (state 1), "ADD" (state 5), "NOT" (state 9), and "LDR" (state 27). \\
+
+Essentially, in each state, proper variables must be updated to ensure the correct operation of the state diagram. For example in the FETCH sequence of instructions, in order to get the PC to move from the PC Register to the MAR, GatePC must be set to 1, LD\_MAR must be set to 1, PCMUX must be set to 00, LD\_PC must be set to 1. Please refer to the Appendix of this document to view the code to update the proper variables in the ISDU. 
 
 %SECTION 6 - Schematic/Block Diagram - 
 \section{Schematic/Block Diagram}
@@ -150,7 +162,7 @@ Beyond the problems experienced in lab, understanding the creation of the simple
 
 \begin{figure} [htbp]
 	\centering	
-	\includegraphics[scale=1]{state-diagram.jpg}
+	\includegraphics[scale=0.7]{state-diagram.png}
 	\caption{SLC3 Machine State Diagram	\label{fig:state-diagram}}
 \end{figure}
 
@@ -167,6 +179,164 @@ Beyond the problems experienced in lab, understanding the creation of the simple
 	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:Memory-Circuit}}
 \end{figure}
 
+\clearpage 
+
+
+\section{Appendix}
+\begin{lstlisting}
+always_comb
+begin
+	case (State)
+	Halted: ;
+	S_18 : //FETCH - step 1
+		begin 
+			GatePC = 1'b1;
+			LD_MAR = 1'b1;
+			PCMUX = 2'b00;
+			LD_PC = 1'b1;
+		end
+	
+	S_33_1 : //FETCH - step 2
+		begin
+			Mem_OE = 1'b0;
+		end
+	
+	S_33_2 : //FETCH - step 3
+		begin 
+			Mem_OE = 1'b0;
+			LD_MDR = 1'b1;
+		end
+	
+	S_35 : //FETCH - step 3
+		begin 
+			GateMDR = 1'b1;
+			LD_IR = 1'b1;
+		end
+	
+	PauseIR1: ;
+	
+	PauseIR2: ;
+	
+	S_32 : 
+			LD_BEN = 1'b1;
+	
+	S_01 : //ADD
+		begin 
+			SR2MUX = IR_5;
+			LD_CC = 1'b1;
+			ALUK = 2'b00;
+			GateALU = 1'b1;
+			LD_REG = 1'b1;
+		end
+	
+	S_05:	//AND
+		begin
+			LD_REG = 1'b1;
+			LD_CC = 1'b1;
+			ALUK = 2'b10;
+			GateALU = 1'b1;
+		end
+	
+	S_09:	//NOT
+		begin
+			LD_REG = 1'b1;
+			LD_CC = 1'b1;
+			ALUK = 2'b01;
+			GateALU = 1'b1;
+			SR2MUX = IR_5;
+		end
+	
+	S_22:	//BR
+		begin
+			LD_PC = 1'b1;
+			PCMUX = 2'b01;
+			ADDR1MUX = 1'b1;
+			ADDR2MUX = 2'b01;
+		end
+	
+	S_12:	//JMP
+		begin
+			LD_PC = 1'b1;
+			PCMUX = 2'b01;
+			ADDR1MUX = 1'b0;
+			ADDR2MUX = 2'b11;
+		end
+	
+	S_04:	//JSR - step 1
+		begin
+			MARMUX = 1'b1;
+			GateMARMUX = 1'b1;
+			ADDR2MUX = 2'b00;
+			ADDR1MUX = 1'b1;
+		end
+	
+	S_21: //JSR - step 2
+		begin
+			DRMUX = 1'b1;
+			LD_REG = 1'b1;
+		end
+	
+	S_06:	//LDR - step 1
+		begin
+			MARMUX = 1'b1; 
+			GateMARMUX = 1'b1;
+			ADDR1MUX = 1'b0; 
+			ADDR2MUX = 2'b10; 
+			LD_MAR = 1'b1;
+		end
+	
+	S_25_1: //LDR - step 2
+		begin
+			Mem_OE = 1'b0;
+		end
+	
+	S_25_2: //LDR - step 3
+		begin
+			Mem_OE = 1'b0;
+			LD_MDR = 1'b1;
+		end
+	
+	S_27: //LDR - step 4
+		begin
+			LD_REG = 1'b1;
+			LD_CC = 1'b1;
+			GateMDR = 1'b1; 
+		end
+	
+	S_07:	//STR - step 1
+		begin
+			LD_MAR = 1'b1;
+			ADDR1MUX = 1'b0; 
+			ADDR2MUX = 2'b10; 
+			MARMUX = 1'b1; 
+			GateMARMUX = 1'b1;
+		end
+	
+	S_23: //STR - step 2
+		begin
+			SR1MUX = 1'b1; 
+			ALUK = 2'b11;
+			GateALU = 1'b1;
+			LD_MDR = 1'b1;
+		end
+	
+	S_16_1: //STR - step 3
+		begin
+			Mem_WE = 1'b0; 
+			GateMDR = 1'b1; 
+		end
+	
+	S_16_2: //STR - step 4
+		begin
+			Mem_WE = 1'b0; 
+			GateMDR = 1'b1; 
+		end
+	
+	default : ;
+	
+	endcase
+end
+\end{lstlisting}
 
 %SECTION : Bibliography
 %Insert Bibliography if needed
