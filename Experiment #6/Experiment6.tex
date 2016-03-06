@@ -79,9 +79,14 @@ TODO \\
 
 The ALU module does the brunt arithmetic work of the SLC3 machine.  The ALU takes in two 16 values (A and B) and does one of four things with the data: bitwise ADD, bitwise AND, bitwise NOT, or passes the A input through to the output terminal. \\
 
+\normalsize\textbf{NZP} \\
+The NZP Module is meant for branching and conditional statements in the SLC3 ISA. The module takes inputs as the 3 NZP bits from the IR (bits 11-9) along with the 16-bit databus. The module outputs a single BEN bit that is then fed into the ISDU to determine if the "BR" instruction must be executed. \\
+
+This module is only used in the "BR" instruction (state 0), and is updated in the "AND" (state 1), "ADD" (state 5), "NOT" (state 9), and "LDR" (state 27). \\
 
 
 \normalsize\textbf{SEXT/ZEXT} \\
+
 The SEXT/ZEXT modules take in data that is M bits long and extend it to N bits long where M<N by adding bits to the front of the input.  ZEXT extends the input with purely zeros added to the front of it, whereas SEXT depends on the sign of the value.  If the MSB=1, the input is negative and gets extended with the proper number of 1s.  On the contrary, if MSB=0, the input is positive and gets extended with the proper number of zeros.  \\
 
 \normalsize\textbf{Register File} \\
@@ -109,12 +114,7 @@ This module will contain the state machine for the entire SLC3. It will have the
 
 Essentially the "FETCH" sequence of instructions must take the PC and load its associated content into the IR. This consists of moving the PC register contents into the MAR, then retrieving the associated content from the SRAM and moving it into the MDR. Once the MDR is loaded, then this data must be moved from the databus into the IR. \\
 
-The "LOAD" and "STORE" sequences are meant for the "LDR" and "STR" instruction and memory on board the SRAM must be accessed. The "L
-
-\normalsize\textbf{NZP} \\
-The NZP Module is meant for branching and conditional statements in the SLC3 ISA. The module takes inputs as the 3 NZP bits from the IR (bits 11-9) along with the 16-bit databus. The module outputs a single BEN bit that is then fed into the ISDU to determine if the "BR" instruction must be executed. \\
-
-This module is only used in the "BR" instruction (state 0), and is updated in the "AND" (state 1), "ADD" (state 5), "NOT" (state 9), and "LDR" (state 27). \\
+The "LOAD" and "STORE" sequences are meant for the "LDR" and "STR" instruction and memory on board the SRAM must be accessed. \\
 
 Essentially, in each state, proper variables must be updated to ensure the correct operation of the state diagram. For example in the FETCH sequence of instructions, in order to get the PC to move from the PC Register to the MAR, GatePC must be set to 1, LD\_MAR must be set to 1, PCMUX must be set to 00, LD\_PC must be set to 1. Please refer to the Appendix of this document to view the code to update the proper variables in the ISDU. 
 
@@ -134,6 +134,8 @@ ERIC SECTION
 
 %SECTION 9 - Post Lab -Ryan
 \section{Post Lab}
+
+
 %RYAN SECTION - Answer Questions \\
 
 1.) What is MEM2IO used for, i.e. what is its main function? \\
@@ -177,6 +179,30 @@ Beyond the problems experienced in lab, understanding the creation of the simple
 	\centering
 	\includegraphics[scale=0.4]{Memory_Circuit.png}
 	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:Memory-Circuit}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{slc3_top_level_circuit.png}
+	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:slc3-circuit}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{datapath_input_circuit.png}
+	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:datapath-circuit-input}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{datapath_output_circuit.png}
+	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:datapath-circuit-output}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.4]{ISDU_Circuit.png}
+	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:ISDU-circuit}}
 \end{figure}
 
 \clearpage 

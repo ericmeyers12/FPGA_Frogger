@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 MAR 2016 16:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 MAR 2016 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,7 +839,11 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ))
-(./Experiment6.aux)
+(./Experiment6.aux
+
+LaTeX Warning: Label `fig:datapath-circuit' multiply defined.
+
+)
 \openout1 = `Experiment6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -858,8 +862,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count154
 \scratchdimen=\dimen222
@@ -961,57 +964,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 84--86
+Underfull \hbox (badness 10000) in paragraph at lines 82--84
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--89
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--95
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--98
+Underfull \hbox (badness 10000) in paragraph at lines 92--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 113--114
 \OT1/ptm/m/n/11 11 states and cy-cle through them to per-form the
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 108--109
+Underfull \hbox (badness 2111) in paragraph at lines 113--114
 \OT1/ptm/m/n/11 as-so-ci-ated with it that de-ter-mines which states it
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--116
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
@@ -1032,11 +1045,6 @@ LaTeX Warning: Reference `' on page 2 undefined on input line 125.
 LaTeX Warning: Reference `' on page 2 undefined on input line 129.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
@@ -1052,32 +1060,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--146
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 151--152
 \OT1/ptm/m/n/11 databus, min-i-miz-ing de-lay in data move-ment, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 []\OT1/ptm/m/n/11 Beyond the prob-lems ex-pe-ri-enced in lab,
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 154--155
+Underfull \hbox (badness 6625) in paragraph at lines 156--157
 \OT1/ptm/m/n/11 un-der-stand-ing the cre-ation of the sim-ple SLC3
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
@@ -1086,26 +1099,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--155
 ] <state-diagram.png, id=18, 728.7225pt x 658.46pt>
 File: state-diagram.png Graphic file (type png)
  <use state-diagram.png>
-Package pdftex.def Info: state-diagram.png used on input line 165.
+Package pdftex.def Info: state-diagram.png used on input line 167.
 (pdftex.def)             Requested size: 510.10226pt x 460.91887pt.
 
 <SLC3_Circuit.png, id=20, 1665.97406pt x 1388.18625pt>
 File: SLC3_Circuit.png Graphic file (type png)
  <use SLC3_Circuit.png>
-Package pdftex.def Info: SLC3_Circuit.png used on input line 172.
+Package pdftex.def Info: SLC3_Circuit.png used on input line 174.
 (pdftex.def)             Requested size: 449.81902pt x 374.8153pt.
 
 <Memory_Circuit.png, id=21, 840.13875pt x 349.305pt>
 File: Memory_Circuit.png Graphic file (type png)
  <use Memory_Circuit.png>
-Package pdftex.def Info: Memory_Circuit.png used on input line 178.
+Package pdftex.def Info: Memory_Circuit.png used on input line 180.
 (pdftex.def)             Requested size: 336.04955pt x 139.71951pt.
 
-[4
+<slc3_top_level_circuit.png, id=22, 1131.22626pt x 788.9475pt>
+File: slc3_top_level_circuit.png Graphic file (type png)
+
+<use slc3_top_level_circuit.png>
+Package pdftex.def Info: slc3_top_level_circuit.png used on input line 186.
+(pdftex.def)             Requested size: 452.48248pt x 315.5734pt.
+
+<datapath_input_circuit.png, id=23, 1236.62pt x 797.98125pt>
+File: datapath_input_circuit.png Graphic file (type png)
+
+<use datapath_input_circuit.png>
+Package pdftex.def Info: datapath_input_circuit.png used on input line 192.
+(pdftex.def)             Requested size: 494.63924pt x 319.18684pt.
+
+<datapath_output_circuit.png, id=24, 977.6525pt x 796.9775pt>
+File: datapath_output_circuit.png Graphic file (type png)
+
+<use datapath_output_circuit.png>
+Package pdftex.def Info: datapath_output_circuit.png used on input line 198.
+(pdftex.def)             Requested size: 391.05408pt x 318.78534pt.
+
+<ISDU_Circuit.png, id=25, 883.3pt x 776.9025pt>
+File: ISDU_Circuit.png Graphic file (type png)
+ <use ISDU_Circuit.png>
+Package pdftex.def Info: ISDU_Circuit.png used on input line 204.
+(pdftex.def)             Requested size: 353.31374pt x 310.7555pt.
+ [4
 
 
- <./state-diagram.png>] [5 <./SLC3_Circuit.png> <./Memory_Circuit.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 186.
+ <./state-diagram.png>] [5 <./SLC3_Circuit.png> <./Memory_Circuit.png>] [6 <./s
+lc3_top_level_circuit.png> <./datapath_input_circuit.png>] [7 <./datapath_outpu
+t_circuit.png> <./ISDU_Circuit.png>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 212.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -1113,22 +1154,25 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Underfull \vbox (badness 1038) has occurred while \output is active []
 
- [6
+ [8
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-[8] (./Experiment6.aux)
+ [9]
+[10] (./Experiment6.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 23738 strings out of 493089
- 534218 string characters out of 6134842
+ 23763 strings out of 493089
+ 534884 string characters out of 6134842
  715011 words of memory out of 5000000
- 26805 multiletter control sequences out of 15000+600000
+ 26826 multiletter control sequences out of 15000+600000
  34008 words of font info for 74 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  64i,9n,67p,669b,1685s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1137,10 +1181,10 @@ exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment6.pdf (8 pages, 467081 bytes).
+Output written on Experiment6.pdf (10 pages, 1346696 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 72 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
