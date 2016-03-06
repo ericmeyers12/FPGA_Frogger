@@ -57,10 +57,28 @@ TODO \\
 TODO \\
 
 \normalsize\textbf{Arthmetic and Logic Unit} \\
-TODO \\
+\begin{table}[htbp]
+	\centering
+	%	\caption{Short Circuit Test Measurements.}
+	\begin{tabular}{cc}	% ccccccc indicates 7 center aligned columns
+		\toprule	% top separator
+		ALUK & OUTPUT FUNCTION \\
+		\midrule
+		00 & A ADD B \\
+		01 & A AND B \\
+		10 & NOT A \\
+		11 & PASS A \\
+		\bottomrule	% bottom separator
+	\end{tabular}%
+	\label{tab:ALU-table}	% this is the label given to the table that can be referenced using \ref{tab:Exp1Part1_7}
+\end{table}%
+
+The ALU module does the brunt arithmetic work of the SLC3 machine.  The ALU takes in two 16 values (A and B) and does one of four things with the data: bitwise ADD, bitwise AND, bitwise NOT, or passes the A input through to the output terminal. \\
+
+
 
 \normalsize\textbf{SEXT/ZEXT} \\
-TODO \\
+The SEXT/ZEXT modules take in data that is M bits long and extend it to N bits long where M<N by adding bits to the front of the input.  ZEXT extends the input with purely zeros added to the front of it, whereas SEXT depends on the sign of the value.  If the MSB=1, the input is negative and gets extended with the proper number of 1s.  On the contrary, if MSB=0, the input is positive and gets extended with the proper number of zeros.  \\
 
 \normalsize\textbf{Register File} \\
 TODO \\
@@ -69,7 +87,7 @@ TODO \\
 TODO \\
 
 \normalsize\textbf{Tristate Buffer} \\
-TODO \\
+The tristate buffer module is used to protect the bus from multiple signals entering the bus.  The tristate buffer takes in gate signals determined by the state of the machine and sends the respective data to the proper databus input. \\
 
 \normalsize\textbf{Tristate} \\
 TODO \\
@@ -82,7 +100,7 @@ TODO \\
 
 %SECTION 4 - State Diagram - 
 \section{State Diagram}
-RYAN SECTION 
+The State Diagram can be found on Figure \ref{state-diagram} in "Section XI: Figures".
 
 %SECTION 5 - Instruction Sequencer / Decoder - 
 \section{Instruction Sequencer / Decoder}
@@ -104,15 +122,26 @@ ERIC SECTION
 
 %SECTION 9 - Post Lab -Ryan
 \section{Post Lab}
-RYAN SECTION - Answer Questions \\
+%RYAN SECTION - Answer Questions \\
 
 1.) What is MEM2IO used for, i.e. what is its main function? \\
 
+MEM2IO acts as the middle-man between the data going to/from the SRAM and CPU and the I/O of the system.  For this lab, the I/O includes the switches as input and the Hex displays as output. \\  
+
 2.) What is the difference between BR and JMP instructions?\\
+
+While the BR branch instruction and the JMP jump instruction pushes the PC to a non-sequential location as a result, they are completely different functions in design.  The JMP instruction is simple in design and function.  It takes the value in BaseR and shoves it into the PC regardless of any other conditions.  The BR instruction is conditional.  It relies on the current values of n, z, and p.  If any of the values match their equivalents in the status register, the branch is enabled and the value of PC is updated with the new address.  If none of the values match, the branch instruction is ignored and the next instruction is called.  \\    
 
 %SECTION 10 - Conclusion - Ryan
 \section{Conclusion}
-RYAN SECTION
+Week 1 was successful for the team as we finished the Fetch command with relative ease.  The team had minor problems with understanding the datapath vs. databus, minimizing delay in data movement, and properly implementing test\_memory.sv into the design for simulation and testing.  Initially too many modules were created building a high enough delay to the point that signals were missing their proper clock cycles.  \\
+
+Week 2 gave the team much more trouble.  Each function required some sort of debugging after the first failed attempt.  The largest source of errors was improper connections between modules.  Unfortunately, not all of the functions were able to be completely debugged in time for the lab section. \\
+%expand here
+
+Beyond the problems experienced in lab, understanding the creation of the simple SLC3 processor in System Verilog is a valuable tool for a computer engineer moving foward.   \\      
+
+
 
 \clearpage
 \onecolumn
@@ -120,14 +149,21 @@ RYAN SECTION
 \section{Figures}
 
 \begin{figure} [htbp]
+	\centering	
+	\includegraphics[scale=1]{state-diagram.jpg}
+	\caption{SLC3 Machine State Diagram	\label{fig:state-diagram}}
+\end{figure}
+
+
+\begin{figure} [htbp]
 	\centering
-	\includegraphics[scale=0.27]{SLC3_Circuit.png}
+%	\includegraphics[scale=0.27]{SLC3_Circuit.png}
 	\caption{SLC3 CPU \label{fig:SLC3-Circuit}}
 \end{figure}
 
 \begin{figure} [htbp]
 	\centering
-	\includegraphics[scale=0.4]{Memory_Circuit.png}
+%	\includegraphics[scale=0.4]{Memory_Circuit.png}
 	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:Memory-Circuit}}
 \end{figure}
 
