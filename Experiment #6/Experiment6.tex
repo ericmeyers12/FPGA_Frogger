@@ -105,10 +105,14 @@ This module is meant for all "immediate" values and allows the computer to store
 The tristate buffer module is used to protect the bus from multiple signals entering the bus.  The tristate buffer takes in gate signals determined by the state of the machine and sends the respective data to the proper databus input. \\
 
 \normalsize\textbf{Tristate} \\
-TODO \\
+
+The tristate module is meant to buffer the data going to and from the Mem2IO module. There are two inputs and outputs going to and from the Mem2IO module and there is a 20 bit data line going to and from the SRAM. \\
 
 \normalsize\textbf{Mem2IO} \\
-TODO \\
+
+MEM2IO acts as the middle-man between the data going to/from the SRAM and CPU and the I/O of the system.  For this lab, the I/O includes the switches as input and the Hex displays as output. \\
+
+This module can only be used for programming on the FPGA board. Another module (test\_memory.sv) must be used for simulation purposes. This module was provided.\\
 
 %SECTION 4 - State Diagram - 
 \section{State Diagram}
@@ -427,6 +431,12 @@ begin
 			Mem_WE = 1'b0; 
 			GateMDR = 1'b1; 
 		end
+		
+	S_16_3: //STR - step 5
+		begin
+			Mem_WE = 1'b0; 
+			GateMDR = 1'b1; 
+		end
 	
 	default : ;
 	
@@ -436,15 +446,15 @@ end
 Test Memory Simulation Setup
 \begin{lstlisting}
 mem_array[   0 ] <=    opCLR(R0) ;							// Clear R0 can be used as a base
-mem_array[   1 ] <=    opADDi(R1, R0, 8) ;			// R1 = R0 + 8
-mem_array[   2 ] <=    opSTR(R1, R0, 7) ;			// Store R0 + 7 in R1
-mem_array[   3 ] <=    opLDR(R6, R0, 7) ; 			// Load R0 + 7 into R6
-mem_array[   4 ] <=    opAND(R2, R1, R0) ;		// R2 = R1 & R0
-mem_array[   5 ] <=    opNOT(R3, R0) ;	             // R3 = NOT(R0)
-mem_array[	 6 ] <= 	  opJMP(R6) ;                  // Jump to contents in R6
-mem_array[	 7	] <= 	  opPSE(12'hC02) ;			// WILL NOT REACH THIS STATEMENT
+mem_array[   1 ] <=    opADDi(R1, R0, 8) ;				// R1 = R0 + 8
+mem_array[   2 ] <=    opSTR(R1, R0, 7) ;				// Store R0 + 7 in R1
+mem_array[   3 ] <=    opLDR(R6, R0, 7) ;				// Load R0 + 7 into R6
+mem_array[   4 ] <=    opAND(R2, R1, R0) ;				// R2 = R1 & R0
+mem_array[   5 ] <=    opNOT(R3, R1) ; 					// R3 = NOT(R1)
+mem_array[	 6 ] <=	   opJMP(R6) ; 						// Jump to contents in R6
+mem_array[	 7	] <=   opPSE(12'hC02) ;					// WILL NOT REACH THIS STATEMENT
 mem_array[   8 ] <=    opJSR(0);							// Jump to 0 (Service Routine)
-mem_array[	 9 ] <= 	opBR(nzp, -9); 				// Branch back to beginning
+mem_array[	 9 ] <=    opBR(nzp, -9);					// Branch back to beginning
 
 \end{lstlisting}
 
