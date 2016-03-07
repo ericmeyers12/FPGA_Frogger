@@ -56,10 +56,12 @@ A 16-bit 3-to-1 MUX will be used for the PCMUX. This will take inputs of the dat
 
 \normalsize\textbf{Instruction Sequencer and Decoder } \\
 
-Please refer to "Section V: Instruction Sequencer and Decoder" in this document to get more details regarding the use of this module.
+Please refer to "Section V: Instruction Sequencer and Decoder" in this document to get more details regarding the use of this module. \\
 
 \normalsize\textbf{Datapath} \\
-TODO \\
+
+The datapath module essentially is one of the main modules that brings all other modules together. It combines all other modules in the correct order to "recreate" the block diagram and flow represented in Figure \ref{fig:SLC3-Circuit}.\\
+
 
 \normalsize\textbf{Arthmetic and Logic Unit} \\
 \begin{table}[htbp]
@@ -80,6 +82,7 @@ TODO \\
 The ALU module does the brunt arithmetic work of the SLC3 machine.  The ALU takes in two 16 values (A and B) and does one of four things with the data: bitwise ADD, bitwise AND, bitwise NOT, or passes the A input through to the output terminal. \\
 
 \normalsize\textbf{NZP} \\
+
 The NZP Module is meant for branching and conditional statements in the SLC3 ISA. The module takes inputs as the 3 NZP bits from the IR (bits 11-9) along with the 16-bit databus. The module outputs a single BEN bit that is then fed into the ISDU to determine if the "BR" instruction must be executed. \\
 
 This module is only used in the "BR" instruction (state 0), and is updated in the "AND" (state 1), "ADD" (state 5), "NOT" (state 9), and "LDR" (state 27). \\
@@ -90,12 +93,15 @@ This module is only used in the "BR" instruction (state 0), and is updated in th
 The SEXT/ZEXT modules take in data that is M bits long and extend it to N bits long where M<N by adding bits to the front of the input.  ZEXT extends the input with purely zeros added to the front of it, whereas SEXT depends on the sign of the value.  If the MSB=1, the input is negative and gets extended with the proper number of 1s.  On the contrary, if MSB=0, the input is positive and gets extended with the proper number of zeros.  \\
 
 \normalsize\textbf{Register File} \\
-TODO \\
+
+The Register File is the main module that contains our 8 registers. It takes in input as the 3-bits from the SR1MUX, and DRMUX (which select which registers to choose), and outputs SR1\_OUT and SR2\_OUT. It also takes in input from the databus.\\
 
 \normalsize\textbf{16-bit Adder} \\
-TODO \\
+
+This module is meant for all "immediate" values and allows the computer to store either in the PC or into the MAR register. It takes in two inputs for the two values it is adding and outputs a single 16-bit value to both the GateMARMUX tristate buffer and the PCMUX. \\
 
 \normalsize\textbf{Tristate Buffer} \\
+
 The tristate buffer module is used to protect the bus from multiple signals entering the bus.  The tristate buffer takes in gate signals determined by the state of the machine and sends the respective data to the proper databus input. \\
 
 \normalsize\textbf{Tristate} \\
@@ -120,17 +126,33 @@ Essentially, in each state, proper variables must be updated to ensure the corre
 
 %SECTION 6 - Schematic/Block Diagram - 
 \section{Schematic/Block Diagram}
-RYAN SECTION\\
-
-The Schematic / Block Diagrams can be found on Figure \ref{} in "Section XI: Figures".
+The Schematic / Block Diagrams for the "SLC3 Top Level Module", the "Datapath Inputs", "Datapath Outputs", and the "ISDU" can be found in Figures \ref{fig:slc3-circuit}, \ref{fig:datapath-circuit-input}, \ref{fig:datapath-circuit-output}, and \ref{fig:ISDU-circuit} respectively in "Section XI: Figures".
 
 %SECTION 7 - Pre-Lab Simulation Waveforms -
 \section{Pre-Lab Simulation Waveforms}
-The Pre-Lab Simulation Waveforms can be found on Figure \ref{} in "Section XI: Figures".
+The Pre-Lab Simulation Waveforms can be found in "Section XI: Figures".
 
 %SECTION 8 - Design Statistics
 \section{Design Statistics}
-ERIC SECTION
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{c|c}	% ccccccc indicates 7 center aligned columns
+		\toprule	% top separator
+		Resource & Value \\
+		\midrule
+		LUT & 1721\\
+		DSP & 0\\
+		Memory (BRAM) & 0\\
+		Flip-Flop & 0\\
+		Frequency & 105.37 MHz\\
+		Static Power & 98.65 mW\\
+		Dynamic Power & 0 mW\\
+		Total Power & 147.07 mW\\
+		\bottomrule	% bottom separator
+	\end{tabular}%	
+	\caption{Design Statistics}
+	\label{tab:table2}	% this is the label given to the table that can be referenced using \ref{tab:Exp1Part1_7}
+\end{table}%
 
 %SECTION 9 - Post Lab -Ryan
 \section{Post Lab}
@@ -196,19 +218,67 @@ Beyond the problems experienced in lab, understanding the creation of the simple
 \begin{figure} [htbp]
 	\centering
 	\includegraphics[scale=0.4]{datapath_output_circuit.png}
-	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:datapath-circuit-output}}
+	\caption{Datapath (Output Only)\label{fig:datapath-circuit-output}}
 \end{figure}
 
 \begin{figure} [htbp]
 	\centering
 	\includegraphics[scale=0.4]{ISDU_Circuit.png}
-	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:ISDU-circuit}}
+	\caption{Instruction Sequencer and Decoding Unit Circuit\label{fig:ISDU-circuit}}
 \end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.7]{CLR_ANDi.png}
+	\caption{Clear and AND Instructions\label{fig:CLR-AND}}
+\end{figure}
+
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.7]{ADDi.png}
+	\caption{ADD Immediate Instruction\label{fig:ISDU-circuit}}
+\end{figure}
+
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.7]{STR.png}
+	\caption{Store Register Instructions\label{fig:ISDU-circuit}}
+\end{figure}
+
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.7]{LDR.png}
+	\caption{Load Register Instruction\label{fig:ISDU-circuit}}
+\end{figure}
+
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.7]{AND_NOT.png}
+	\caption{AND and NOT Instructions\label{fig:ISDU-circuit}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.7]{JMP_JSR.png}
+	\caption{Jump and Jump Service Routine Instructions\label{fig:ISDU-circuit}}
+\end{figure}
+
+\begin{figure} [htbp]
+	\centering
+	\includegraphics[scale=0.7]{JSR_BR_after.png}
+	\caption{Jump and Branch Instructions and End of Testing\label{fig:ISDU-circuit}}
+\end{figure}
+
+
 
 \clearpage 
 
 
-\section{Appendix}
+\section*{Appendix}
 \begin{lstlisting}
 always_comb
 begin
@@ -363,6 +433,21 @@ begin
 	endcase
 end
 \end{lstlisting}
+Test Memory Simulation Setup
+\begin{lstlisting}
+mem_array[   0 ] <=    opCLR(R0) ;							// Clear R0 can be used as a base
+mem_array[   1 ] <=    opADDi(R1, R0, 8) ;			// R1 = R0 + 8
+mem_array[   2 ] <=    opSTR(R1, R0, 7) ;			// Store R0 + 7 in R1
+mem_array[   3 ] <=    opLDR(R6, R0, 7) ; 			// Load R0 + 7 into R6
+mem_array[   4 ] <=    opAND(R2, R1, R0) ;		// R2 = R1 & R0
+mem_array[   5 ] <=    opNOT(R3, R0) ;	             // R3 = NOT(R0)
+mem_array[	 6 ] <= 	  opJMP(R6) ;                  // Jump to contents in R6
+mem_array[	 7	] <= 	  opPSE(12'hC02) ;			// WILL NOT REACH THIS STATEMENT
+mem_array[   8 ] <=    opJSR(0);							// Jump to 0 (Service Routine)
+mem_array[	 9 ] <= 	opBR(nzp, -9); 				// Branch back to beginning
+
+\end{lstlisting}
+
 
 %SECTION : Bibliography
 %Insert Bibliography if needed
