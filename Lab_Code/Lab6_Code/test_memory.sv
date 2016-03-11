@@ -62,7 +62,27 @@ module test_memory ( input 			Clk,
    begin
 		if(Reset)   // Insert initial memory contents here
 		begin
-mem_array[   0 ] <=    opCLR(R0)                ;       // Clear the register so it can be used as a base
+		
+//43690 = xAAAA = 1010 1010 1010 1010 = to demo logical operations
+//21845 = x5555 = 0101 0101 0101 0101 = to demo logical operations
+		
+		
+mem_array[   0 ] <=    opCLR(R0)                ;       // Clear R0 can be used as a base
+mem_array[   1 ] <=    opADDi(R1, R0, 43690)    ;       // R1 = R0 + 0xAAAA ; R1 should be 0xAAAA
+mem_array[   2 ] <=    opADD(R0, R0, R1)      	;       // R0 = R0 + R1 ; R0 should be 0xAAAA now too
+mem_array[   4 ] <=    opNOT(R1, R0)      		;       // R1 = NOT(R0) ; R1 should be 0x5555 now
+mem_array[   5 ] <=    opAND(R0, R1, R0)        ;       // R0 = R1 & R0 ; R0 should be cleared now
+mem_array[	 6 ] <= 	  opNOT(R0, R0)				;		  // R0 = NOT(R0) ; R0 should be 0xFFFF now
+mem_array[   7 ] <=    opANDi(R0, R0, 10)    	;       // R1 = R0 + 0xAAAA ; R1 should be 0xAAAA
+mem_array[ 	 8 ] <=	  opJMP(R0)						;		  // Branch to R0 which should be memory address #10
+mem_array[	 9	] <= 	  opPSE(12'hC02) 				;		  // WILL NOT REACH THIS STATEMENT
+mem_array[   10 ] <=    opLDR(R1, R0, inSW)     ;       // Switches will be loaded into R1 (R1 should be cleared)
+mem_array[   11 ] <=    opSTR(R1, R0, outHEX)  	;       // Output on HEX switches
+mem_array[	 12 ] <= 	opBR(nzp, -12)				;		  // Branch back to beginning
+
+
+
+/*mem_array[   0 ] <=    opCLR(R0)                ;       // Clear the register so it can be used as a base
 mem_array[   1 ] <=    opLDR(R1, R0, inSW)      ;       // Load switches
 mem_array[   2 ] <=    opJMP(R1)                ;       // Jump to the start of a program
 
@@ -77,10 +97,10 @@ mem_array[   7 ] <=    opLDR(R1, R0, inSW)      ;       // Load switches
 mem_array[   8 ] <=    opSTR(R1, R0, outHEX)    ;       // Output
 mem_array[   9 ] <=    opPSE(12'hC02)           ;       // Checkpoint 2 - read output, prepare to input
 mem_array[  10 ] <=    opBR(nzp, -4)            ;       // Repeat
-                                        
-                                                        // Basic I/O test 3 (Self-modifying code)
+                                                       // Basic I/O test 3 (Self-modifying code)
 mem_array[  11 ] <=    opPSE(12'h801)           ;       // Checkpoint 1 - prepare to input
 mem_array[  12 ] <=    opJSR(0)                 ;       // Get PC address
+*/
 mem_array[  13 ] <=    opLDR(R2,R7,3)           ;       // Load pause instruction as data
 mem_array[  14 ] <=    opLDR(R1, R0, inSW)      ;       // Load switches
 mem_array[  15 ] <=    opSTR(R1, R0, outHEX)    ;       // Output

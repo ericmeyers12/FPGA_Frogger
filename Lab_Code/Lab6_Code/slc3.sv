@@ -52,15 +52,13 @@ logic [15:0] Data_Mem_In, Data_Mem_Out;
 assign MDR_In = Data;
 assign MDR = Data;
 
-
-
 // Connect MAR to ADDR, which is also connected as an input into MEM2IO
 //	MEM2IO will determine what gets put onto Data_CPU (which serves as a potential
 //	input into MDR)
 assign ADDR = { 4'b00, MAR }; //Note, our external SRAM chip is 1Mx16, but address space is only 64Kx16
 assign MIO_EN = ~OE;
 
-// Connect everything to the data path (you have to figure out this part)
+// Connect our control to the datapath (containing all registers, muxes, combo logic, etc.
 datapath d0 (.*);
 
 // Break the tri-state bus to the ram into input/outputs 
@@ -68,18 +66,20 @@ tristate #(.N(16)) tr0(
 	.Clk(Clk), .OE(~WE), .In(Data_Mem_Out), .Out(Data_Mem_In), .Data(Data)
 );
 
-// Our SRAM and I/O controller (note, this plugs into MDR/MAR
-/*Mem2IO memory_subsystem( UNCOMMENT FOR LAB2
+test_memory test_mem(.*, .Reset(Reset_ah), .I_O(Data), .A(ADDR), .CE, .UB, .LB, .OE, .WE );
+
+/* Our SRAM and I/O controller (note, this plugs into MDR/MAR
+Mem2IO memory_subsystem(
 	.*, .Reset(Reset_ah), .A(ADDR), .Switches(S),
 	.HEX0(hex_4[0]), .HEX1(hex_4[1]), .HEX2(hex_4[2]), .HEX3(hex_4[3]),
 	.Data_CPU_In(MDR), .Data_CPU_Out(MDR_In)
 );*/
-test_memory memory_subsystem(.*, .Reset, .I_O(Data), .A(ADDR), .CE, .UB, .LB, .OE, .WE);
+
 
 // State machine, you need to fill in the code here as well
 ISDU state_controller(
 	.*, .Reset(Reset_ah), .Run(Run_ah), .Continue(Continue_ah), .ContinueIR(Continue_ah),
-	.Opcode(IR[15:12]), .IR_5(IR[5]), .IR_11(IR[11]),
+	.Opcode(IR[15:12]), .IR_5(IR[5]), .IR_11(IR[11]), .BEN,
 	.LD_MAR, .LD_MDR, .LD_IR, .LD_BEN, .LD_CC, .LD_REG, .LD_PC,
 	.GatePC, .GateMDR, .GateALU, .GateMARMUX,
 	.PCMUX, .DRMUX, .SR1MUX,
@@ -89,14 +89,6 @@ ISDU state_controller(
 	.ALUK,
 	.Mem_CE(CE), .Mem_UB(UB), .Mem_LB(LB), .Mem_OE(OE), .Mem_WE(WE)
 );
-
-always_comb
-begin
-	hex_4[0] = IR[3:0];
-	hex_4[1] = IR[7:4];
-	hex_4[2] = IR[11:8];
-	hex_4[3] = IR[15:12];
-end
 
 
 endmodule

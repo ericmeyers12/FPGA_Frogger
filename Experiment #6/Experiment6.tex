@@ -60,7 +60,7 @@ Please refer to "Section V: Instruction Sequencer and Decoder" in this document 
 
 \normalsize\textbf{Datapath} \\
 
-The datapath module essentially is one of the main modules that brings all other modules together. It combines all other modules in the correct order to "recreate" the block diagram and flow represented in Figure \ref{fig:SLC3-Circuit}.\\
+The datapath module essentially is one of the main modules that brings all other modules together. It has inputs as all of the ISDU outputs (being the control bits) and outputs to the memory unit. This combines all other modules in the correct order to ``recreate" the block diagram and flow represented in Figure \ref{fig:SLC3-Circuit}.\\
 
 
 \normalsize\textbf{Arthmetic and Logic Unit} \\
@@ -79,7 +79,7 @@ The datapath module essentially is one of the main modules that brings all other
 	\label{tab:ALU-table}
 \end{table}
 
-The ALU module does the brunt arithmetic work of the SLC3 machine.  The ALU takes in two 16 values (A and B) and does one of four things with the data: bitwise ADD, bitwise AND, bitwise NOT, or passes the A input through to the output terminal. \\
+The ALU module does the brunt arithmetic work of the SLC3 machine.  The ALU takes in two 16 values (A and B) and does one of four things with the data: bitwise ADD, bitwise AND, bitwise NOT, or passes the A input through to the output terminal. This operation is determined by the input of ALUK and this module outputs to a 16-bit logic type.\\
 
 \normalsize\textbf{NZP} \\
 
@@ -90,7 +90,7 @@ This module is only used in the "BR" instruction (state 0), and is updated in th
 
 \normalsize\textbf{SEXT/ZEXT} \\
 
-The SEXT/ZEXT modules take in data that is M bits long and extend it to N bits long where M<N by adding bits to the front of the input.  ZEXT extends the input with purely zeros added to the front of it, whereas SEXT depends on the sign of the value.  If the MSB=1, the input is negative and gets extended with the proper number of 1s.  On the contrary, if MSB=0, the input is positive and gets extended with the proper number of zeros.  \\
+The SEXT/ZEXT modules take in data that is M bits long and extend it to N bits long where M $\le$ N by adding bits to the front of the input.  ZEXT extends the input with purely zeros added to the front of it, whereas SEXT depends on the sign of the value.  If the MSB=1, the input is negative and gets extended with the proper number of 1s.  On the contrary, if MSB=0, the input is positive and gets extended with the proper number of zeros.  \\
 
 \normalsize\textbf{Register File} \\
 
@@ -105,10 +105,14 @@ This module is meant for all "immediate" values and allows the computer to store
 The tristate buffer module is used to protect the bus from multiple signals entering the bus.  The tristate buffer takes in gate signals determined by the state of the machine and sends the respective data to the proper databus input. \\
 
 \normalsize\textbf{Tristate} \\
-TODO \\
+
+The tristate module is meant to buffer the data going to and from the Mem2IO module. There are two inputs and outputs going to and from the Mem2IO module and there is a 20 bit data line going to and from the SRAM. \\
 
 \normalsize\textbf{Mem2IO} \\
-TODO \\
+
+MEM2IO acts as the middle-man between the data going to/from the SRAM and CPU and the I/O of the system.  For this lab, the I/O includes the switches as input and the Hex displays as output. \\
+
+This module can only be used for programming on the FPGA board. Another module (test\_memory.sv) must be used for simulation purposes. This module was provided.\\
 
 %SECTION 4 - State Diagram - 
 \section{State Diagram}
@@ -116,7 +120,9 @@ The State Diagram can be found on Figure \ref{fig:state-diagram} in "Section XI:
 
 %SECTION 5 - Instruction Sequencer / Decoder - 
 \section{Instruction Sequencer / Decoder}
-This module will contain the state machine for the entire SLC3. It will have the ability to implement 11 states and cycle through them to perform the desired action. Each instruction has a unique "opcode" associated with it that determines which states it branches to once the instruction is loaded into the IR.  Every instruction must perform a "FETCH" to store the current instruction , and only some instructions must perform a "LOAD" or "STORE" sequence. \\
+This module will contain the state machine for the entire SLC3. It contains inputs from the IR and then takes those bits and determines what outputs to set as high depending on the opcode.\\
+
+It will have the ability to implement 11 states and cycle through them to perform the desired action. Each instruction has a unique "opcode" associated with it that determines which states it branches to once the instruction is loaded into the IR.  Every instruction must perform a "FETCH" to store the current instruction , and only some instructions must perform a "LOAD" or "STORE" sequence. \\
 
 Essentially the "FETCH" sequence of instructions must take the PC and load its associated content into the IR. This consists of moving the PC register contents into the MAR, then retrieving the associated content from the SRAM and moving it into the MDR. Once the MDR is loaded, then this data must be moved from the databus into the IR. \\
 
@@ -172,7 +178,7 @@ While the BR branch instruction and the JMP jump instruction pushes the PC to a 
 \section{Conclusion}
 Week 1 was successful for the team as we finished the Fetch command with relative ease.  The team had minor problems with understanding the datapath vs. databus, minimizing delay in data movement, and properly implementing test\_memory.sv into the design for simulation and testing.  Initially too many modules were created building a high enough delay to the point that signals were missing their proper clock cycles.  \\
 
-Week 2 gave the team much more trouble.  Each function required some sort of debugging after the first failed attempt.  The largest source of errors was improper connections between modules.  Unfortunately, not all of the functions were able to be completely debugged in time for the lab section. \\
+Week 2 gave the team much more trouble. Each function required some sort of debugging after the first failed attempt. The largest source of errors was improper connections between modules. Once the team determined that everything was hooked up properly, issues were then encountered in simulations. This was the most difficult error to debug due to the asynchronous timing of the SRAM and it took 3 write cycles for an STR to be executed properly. Unfortunately, not all of the functions were able to be completely debugged in time for the lab section. However, the team managed to complete the operations after the fact, enough to show the simulations of the basic operations. \\
 %expand here
 
 Beyond the problems experienced in lab, understanding the creation of the simple SLC3 processor in System Verilog is a valuable tool for a computer engineer moving foward.   \\      
@@ -206,13 +212,13 @@ Beyond the problems experienced in lab, understanding the creation of the simple
 \begin{figure} [htbp]
 	\centering
 	\includegraphics[scale=0.4]{slc3_top_level_circuit.png}
-	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:slc3-circuit}}
+	\caption{SLC3 Top Level Diagram\label{fig:slc3-circuit}}
 \end{figure}
 
 \begin{figure} [htbp]
 	\centering
 	\includegraphics[scale=0.4]{datapath_input_circuit.png}
-	\caption{Memory, MAR, MDR, Mem2IO Configuration\label{fig:datapath-circuit-input}}
+	\caption{Datapath Circuit Input\label{fig:datapath-circuit-input}}
 \end{figure}
 
 \begin{figure} [htbp]
@@ -263,7 +269,7 @@ Beyond the problems experienced in lab, understanding the creation of the simple
 
 \begin{figure} [htbp]
 	\centering
-	\includegraphics[scale=0.7]{JMP_JSR.png}
+	\includegraphics[scale=0.3]{JMP_JSR.png}
 	\caption{Jump and Jump Service Routine Instructions\label{fig:ISDU-circuit}}
 \end{figure}
 
@@ -427,6 +433,12 @@ begin
 			Mem_WE = 1'b0; 
 			GateMDR = 1'b1; 
 		end
+		
+	S_16_3: //STR - step 5
+		begin
+			Mem_WE = 1'b0; 
+			GateMDR = 1'b1; 
+		end
 	
 	default : ;
 	
@@ -436,15 +448,15 @@ end
 Test Memory Simulation Setup
 \begin{lstlisting}
 mem_array[   0 ] <=    opCLR(R0) ;							// Clear R0 can be used as a base
-mem_array[   1 ] <=    opADDi(R1, R0, 8) ;			// R1 = R0 + 8
-mem_array[   2 ] <=    opSTR(R1, R0, 7) ;			// Store R0 + 7 in R1
-mem_array[   3 ] <=    opLDR(R6, R0, 7) ; 			// Load R0 + 7 into R6
-mem_array[   4 ] <=    opAND(R2, R1, R0) ;		// R2 = R1 & R0
-mem_array[   5 ] <=    opNOT(R3, R0) ;	             // R3 = NOT(R0)
-mem_array[	 6 ] <= 	  opJMP(R6) ;                  // Jump to contents in R6
-mem_array[	 7	] <= 	  opPSE(12'hC02) ;			// WILL NOT REACH THIS STATEMENT
+mem_array[   1 ] <=    opADDi(R1, R0, 8) ;				// R1 = R0 + 8
+mem_array[   2 ] <=    opSTR(R1, R0, 7) ;				// Store R0 + 7 in R1
+mem_array[   3 ] <=    opLDR(R6, R0, 7) ;				// Load R0 + 7 into R6
+mem_array[   4 ] <=    opAND(R2, R1, R0) ;				// R2 = R1 & R0
+mem_array[   5 ] <=    opNOT(R3, R1) ; 					// R3 = NOT(R1)
+mem_array[	 6 ] <=	   opJMP(R6) ; 						// Jump to contents in R6
+mem_array[	 7	] <=   opPSE(12'hC02) ;					// WILL NOT REACH THIS STATEMENT
 mem_array[   8 ] <=    opJSR(0);							// Jump to 0 (Service Routine)
-mem_array[	 9 ] <= 	opBR(nzp, -9); 				// Branch back to beginning
+mem_array[	 9 ] <=    opBR(nzp, -9);					// Branch back to beginning
 
 \end{lstlisting}
 
