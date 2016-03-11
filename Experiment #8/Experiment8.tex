@@ -1,0 +1,83 @@
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% IEEE Style - Double columns, 11pt font, letterpaper
+\documentclass[journal, twocolumn, final,11pt,letterpaper]{IEEEtran}	
+
+% Include Latex Packages
+\input{header.tex}
+
+
+% Title of Document
+\title{ECE385 Experiment \#8
+	}
+\author{
+\IEEEauthorblockN{Eric Meyers, Ryan Helsdingen}\\
+\IEEEauthorblockA{Section ABG; TAs: Ben Delay, Shuo Liu \\
+March 30th, 2016 \\
+emeyer7, helsdin2}}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\begin{document}
+	
+%SECTION : Formatting and Title
+\maketitle
+\singlespacing
+
+%SECTION 1 - Introduction - Eric
+\section{Introduction}
+
+%SECTION 2 - Description of Circuit / Inputs and Outputs - 
+\section{Description of Circuit}
+
+%SECTION 3 - Purpose of Modules - 
+\section{Purpose of Modules}
+
+%SECTION 4 - Description of USB Protocol & Changes
+\section{Description of Circuit}
+
+%SECTION 5 - Schematic/Block Diagram - 
+\section{Schematic/Block Diagram}
+
+%SECTION 6 - Post Lab - 
+\section{Post Lab}
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{c|c}	% ccccccc indicates 7 center aligned columns
+		\toprule	% top separator
+		Resource & Value \\
+		\midrule
+		LUT & \\
+		DSP & \\
+		Memory (BRAM) & \\
+		Flip-Flop & \\
+		Frequency &   MHz\\
+		Static Power & mW\\
+		Dynamic Power &  mW\\
+		Total Power & mW\\
+		\bottomrule	% bottom separator
+	\end{tabular}%	
+	\caption{Design Statistics}
+	\label{tab:design}
+\end{table}
+
+1. What is the difference between VGA\_clk and Clk? \\
+
+2. In the file io\_handler.h, why is it that the otg\_hpi\_address is defined as an integer pointer while the otg\_hpi\_r is defined as a char pointer? \\
+
+%SECTION 7 - Conclusion
+\section{Conclusion}
+
+\clearpage
+\onecolumn
+%SECTION 11: Figures
+\section{Figures}
+
+%\begin{figure} [H]
+%	\centering
+%	\includegraphics[scale=1.72]{top-level-circuit.pdf}
+%	\caption{Lab 7 Module Interconnections\label{fig:top-level-interconn}}
+%\end{figure}
+
+
+%SECTION : Bibliography
+%Insert Bibliography if needed
+
+\end{document}
