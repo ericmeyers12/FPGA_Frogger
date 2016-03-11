@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 MAR 2016 09:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 MAR 2016 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -874,39 +874,229 @@ Package caption Info: End \AtBeginDocument code.
 \everyMPtoPDFconversion=\toks38
 ) ABD: EveryShipout initializing macros
 \c@lstlisting=\count160
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 43.
-LaTeX Font Info:    Try loading font information for U+msa on input line 43.
 
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+[]\OT1/ptm/m/it/11 INQ.7:4: Why does SDRAM re-quire con-stant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 61.
+LaTeX Font Info:    Try loading font information for U+msa on input line 61.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+LaTeX Font Info:    Try loading font information for U+msb on input line 61.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+)
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
-] [2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-(./Experiment7.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+[2] <top-top-circuit.png, id=17, 965.6075pt x 546.04pt>
+File: top-top-circuit.png Graphic file (type png)
+
+<use top-top-circuit.png>
+Package pdftex.def Info: top-top-circuit.png used on input line 157.
+(pdftex.def)             Requested size: 386.23616pt x 218.41212pt.
+
+<switches_pio_module.png, id=19, 762.85pt x 468.75125pt>
+File: switches_pio_module.png Graphic file (type png)
+
+<use switches_pio_module.png>
+Package pdftex.def Info: switches_pio_module.png used on input line 163.
+(pdftex.def)             Requested size: 305.1346pt x 187.49716pt.
+
+<key_pio_module.png, id=20, 767.86874pt x 286.06876pt>
+File: key_pio_module.png Graphic file (type png)
+
+<use key_pio_module.png>
+Package pdftex.def Info: key_pio_module.png used on input line 169.
+(pdftex.def)             Requested size: 307.14206pt x 114.42546pt.
+
+<top-level-circuit.pdf, id=21, 315.1775pt x 303.1325pt>
+File: top-level-circuit.pdf Graphic file (type pdf)
+
+<use top-level-circuit.pdf>
+Package pdftex.def Info: top-level-circuit.pdf used on input line 175.
+(pdftex.def)             Requested size: 542.10435pt x 521.387pt.
+
+Overfull \hbox (26.10435pt too wide) in paragraph at lines 175--176
+ [][] 
+ []
+
+[3
+
+
+ <./top-top-circuit.png> <./switches_pio_module.png> <./key_pio_module.png>]
+[4 <./top-level-circuit.pdf>] (./Experiment7.aux) ) 
 Here is how much of TeX's memory you used:
- 23444 strings out of 493089
- 530499 string characters out of 6134842
- 684011 words of memory out of 5000000
- 26521 multiletter control sequences out of 15000+600000
- 32386 words of font info for 71 fonts, out of 8000000 for 9000
+ 23472 strings out of 493089
+ 531076 string characters out of 6134842
+ 687011 words of memory out of 5000000
+ 26543 multiletter control sequences out of 15000+600000
+ 33522 words of font info for 72 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 64i,9n,67p,504b,265s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8
-r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Experiment7.pdf (2 pages, 19443 bytes).
+ 64i,8n,67p,544b,281s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/tex
+mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on Experiment7.pdf (4 pages, 376855 bytes).
 PDF statistics:
- 19 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
