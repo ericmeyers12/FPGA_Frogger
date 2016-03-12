@@ -23,18 +23,25 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - Eric
 \section{Introduction}
-This lab is meant to give a brief introduction to NIOS System on a Chip (SOC) and to design a very simple accumulator program in C to output LEDs according to switches on the Altera FPGA Board.
+This lab is meant to give a brief introduction to NIOS System on a Chip (SOC) with an SDRAM controller and PIO block.  This platform will be used to make an LED blink and progress into the design of a very simple accumulator program in C to output LEDs according to switches on the Altera FPGA Board.\\
 
 %SECTION 2 - Description of Circuit - 
 \section{Description of Circuit}
+There are two parts to lab 7, the blinking LED circuit and more or less an extension of the blinking LED, the 8 bit accumulator.  Both circuits are programmed in C through the NIOS environment, stored in the off-chip SDRAM, and linked to input/output through PIOs created inside Qsys.  The blinking LED uses a PIO (Parallel I/O) block to control the state of the LEDs.  The 8-bit accumulator has the same PIO for the LEDs as well as a PIO block for the 8 input switches.\\
+
+The accumulator also has two input buttons, 'Accumulate' and 'Reset'.  At high level programing, the accumulator is intended to input an 8-bit switch value and add it to the value of the output 8-bit value of the LEDs each time the 'Accumulate' button is pressed.  The value overflows to 0 at 255.  If the 'Reset' button is pressed, then the LEDs get cleared.\\
+  
 
 %SECTION 3 - Purpose of Modules - 
 \section{Purpose of Modules}
+%For module description in lab7, you just need to include the top level module with the mention of all inputs and outputs and a description of the programs running on it. 
+The top-level module for lab 7 takes in a 50 MHz clock signal, 5 bits for keys/buttons, 8 bits for switches, and 32 data bits from the DRAM.  The module outputs 8 LED bits and several other bits to interface with the SDRAM including the 32 data bits.  The key input and output elements needed for this lab, however, are KEY[0] for hardware reset, KEY[2] for 'Reset' buttton, KEY[3] for 'Accumulate' button, CLOCK\_50 for 50 MHz clock input, 8 bit LEDG for LEDs, 8 bit SW for controlling the switches, and all SDRAM connecting bits.\\   
+
 
 %SECTION 4 - Schematic/Block Diagram - 
 \section{Schematic/Block Diagram}
 
-Please refer to "Section VIII: Figures" to view the Schematic/Block Diagrams for this lab. In Figure \ref{fig:top-level} is the top level module and Figure \ref{fig:top-level-interconn} shows the interconnections within this module. Unfortunately due to the processor and SDRAM being too complex to view on this report, they have been omitted. Figure \ref{fig:key-pio} and Figure \ref{fig:switch-pio} show the key and switch PIO module that were added into the Lab7.sv file to create the accumulator.
+Please refer to "Section VIII: Figures" to view the Schematic/Block Diagrams for this lab. In Figure \ref{fig:top-level} is the top level module and Figure \ref{fig:top-level-interconn} shows the interconnections within this module. Unfortunately due to the processor and SDRAM being too complex to view on this report, they have been omitted. Figure \ref{fig:key-pio} and Figure \ref{fig:switch-pio} show the key and switch PIO module that were added into the Lab7.sv file to create the accumulator. //
 
 %SECTION 5 - Answers to INQ Questions -
 \section{Answers to INQ Questions}
@@ -124,6 +131,9 @@ The .text segment is read only and contains the actual executable code. This is 
 
 %SECTION 6 - Post Lab - 
 \section{Post Lab}
+Refer to Table \ref{tab:table2} for the design statistics table of this lab. \\
+
+
 \begin{table}[htbp]
 	\centering
 	\begin{tabular}{c|c}	% ccccccc indicates 7 center aligned columns
@@ -146,6 +156,10 @@ The .text segment is read only and contains the actual executable code. This is 
 
 %SECTION 7 - Conclusion - Ryan
 \section{Conclusion}
+For experiment 7, the team was successfully able to configure the NIOS II based system on the Altera Cyclone IV. The blinking light demo proved functionality between the Qsys wizard, NIOS II device, SDRAM controller, and PIO (Parallel I/O).\\
+
+The accumulator was also successfully constructed by the team by constructing another PIO block for the eight switches on the DE2 and adjusting the main.c program to handle the input, output, and the overall functionality of the accumulator.\\  
+
 
 \clearpage
 \onecolumn
