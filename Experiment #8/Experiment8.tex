@@ -37,6 +37,8 @@ RYAN SECTION
 \section{Description of USB Protocol \& Changes}
 The USB protocol in Experiment 8 utilized the Cypress EZ-OTG (CY7C67200) USB controller on board the Altera. The CY7C67200 was used as a host controller and once a USB keyboard is plugged in, the keyboard acts as a device controller.\\
 
+The USB Keyboard is not an interrupt-based device, rather the host must poll the keyboard and send requests to receive the scancode in return. For this, the team must write functions to perform input/output reading and writing. These functions must be used in conjunction with the system verilog hardware that is synthesized to retrieve data and write data. 
+
 The two functions that were written by the team were in "usb.c" and "io\_handler.c" were pertaining to the reading and writing of data to and from the USB device controller (keyboard).\\
 
 io\_handler.c:
@@ -57,6 +59,7 @@ void IO_write(alt_u8 Address, alt_u16 Data)
 	*otg_hpi_cs = 1;
 }
 \end{lstlisting}
+This function takes in parameters as the Address and Data to be written. It then sets the appropriate bits on the signal lines and sends the Data to the otg\_hpi\_data variable to be written to the usb hardware.\\ 
 
 \begin{lstlisting}
 alt_u16 IO_read(alt_u8 Address)
@@ -72,7 +75,7 @@ alt_u16 IO_read(alt_u8 Address)
 	return temp;
 }
 \end{lstlisting}
-
+This function performs similar actions to the IO\_write function in that it must read from a particular address on the USB hardware. The team had to use a temp variable to read it properly, set the appropriate signals, then send the data from otg\_hpi\_data into the temp variable which is then returned to the user by the function.\\
 
 usb.c:
 \begin{itemize}
@@ -86,6 +89,7 @@ void UsbWrite(alt_u16 Address, alt_u16 Data)
 	IO_write(HPI_DATA, Data);
 }
 \end{lstlisting}
+This function utilizes the two functions written in the previous section (in io\_handler.c) and simply writes the particular address and the data in the parameters.
 
 
 \begin{lstlisting}
@@ -96,12 +100,13 @@ alt_u16 UsbRead(alt_u16 Address)
 	return temp;
 }
 \end{lstlisting}
+This function uses the two functions written in io\_handler.c to perform a read on the USB hardware. it first must write the address to HPI\_ADDR to receive the proper address, then the temp variable must store the result of IO\_read from HPI\_Data. 
 
 
 
 %SECTION 5 - Schematic/Block Diagram - 
 \section{Schematic/Block Diagram}
-ERIC SECTION
+The Schematic / Block Diagrams for this lab can be found in the Figures section of this document ("Section XI: Figures"). The Top Level Module Diagram can be found in Figure \ref{fig:top-level}, the Ball Module Diagram can be found in Figure \ref{fig:ball}, the VGA Module Diagram can be found in Figure \ref{fig:vga}, and the Color Mapper Module can be found in Figure \ref{fig:color_mapper}.
 
 %SECTION 6 - Post Lab - 
 \section{Post Lab}
@@ -111,14 +116,14 @@ ERIC SECTION
 		\toprule	% top separator
 		Resource & Value \\
 		\midrule
-		LUT & \\
-		DSP & \\
-		Memory (BRAM) & \\
-		Flip-Flop & \\
-		Frequency &   MHz\\
-		Static Power & mW\\
-		Dynamic Power &  mW\\
-		Total Power & mW\\
+		LUT & 2663\\
+		DSP & 10\\
+		Memory (BRAM) & 82,944\\
+		Flip-Flop & 646\\
+		Frequency &   132.89 MHz\\
+		Static Power & 102.09 mW\\
+		Dynamic Power &  25.86 mW\\
+		Total Power & 203.64 mW\\
 		\bottomrule	% bottom separator
 	\end{tabular}%	
 	\caption{Design Statistics}

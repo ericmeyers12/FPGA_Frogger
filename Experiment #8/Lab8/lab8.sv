@@ -13,7 +13,7 @@
 module  lab8 		( input         CLOCK_50,
                        input[3:0]    KEY, //bit 0 is set up as Reset
 							  output [6:0]  HEX0, HEX1,// HEX2, HEX3, HEX4, HEX5, HEX6, HEX7,
-							  //output [8:0]  LEDG,
+							  output [8:0]  LEDG,
 							  //output [17:0] LEDR,
 							  // VGA Interface 
                        output [7:0]  VGA_R,					//VGA Red
@@ -96,41 +96,68 @@ module  lab8 		( input         CLOCK_50,
 										 .otg_hpi_data_out_port(hpi_data_out),
 										 .otg_hpi_cs_export(hpi_cs),
 										 .otg_hpi_r_export(hpi_r),
-										 .otg_hpi_w_export(hpi_w));
+										 .otg_hpi_w_export(hpi_w)
+										 );
 	
 	//Fill in the connections for the rest of the modules 
     vga_controller vgasync_instance(.Clk, 
-												.Reset(), 
-												.hs(), 
-												.vs(), 
-												.pixel_clk(), 
-												.blank(),  
-												.sync(),
-												.DrawX(),
-												.DrawY()
+												.Reset(Reset_h), 
+												.hs(VGA_HS), 
+												.vs(vssig), 
+												.pixel_clk(VGA_CLK), 
+												.blank(VGA_BLANK_N),  
+												.sync(VGA_SYNC_N),
+												.DrawX(drawxsig),
+												.DrawY(drawysig)
 												);
 
-	 ball ball_instance(.Reset(), 
-							  .frame_clk(),
-							  .BallX(),
-							  .BallY(),
-							  .BallS(),
-							  .up(), 
-							  .down(), 
-							  .left(), 
-							  .right()
+	 ball ball_instance(.Reset(Reset_h), 
+							  .frame_clk(vssig),
+							  .BallX(ballxsig),
+							  .BallY(ballysig),
+							  .BallS(ballsizesig),
+							  .up, 
+							  .down, 
+							  .left, 
+							  .right
 							  );
    
-    //color_mapper color_instance();
-										  
-	 HexDriver hex_inst_0 (keycode[3:0], HEX0);
-	 HexDriver hex_inst_1 (keycode[7:4], HEX1);
-    
-
-	 /**************************************************************************************
-	    ATTENTION! Please answer the following quesiton in your lab report! Points will be allocated for the answers!
-		 Hidden Question #1/2:
-          What are the advantages and/or disadvantages of using a USB interface over PS/2 interface to
-			 connect to the keyboard? List any two.  Give an answer in your Post-Lab.
-     **************************************************************************************/
+    color_mapper color_instance(.BallX(ballxsig), 
+										  .BallY(ballysig), 
+										  .DrawX(drawxsig), 
+										  .DrawY(drawysig), 
+										  .Ball_size(ballsizesig),
+										  .Red(VGA_R), 
+										  .Green(VGA_G), 
+										  .Blue(VGA_B)
+										  );
+						
+		//Previous keycode, and logic left, right, up, down
+		logic[7:0] keycode_prev;
+		logic left, right, up, down;
+		
+		//Assigning Keycodes to left,down,right,and up 
+		//x04 = A (left), x1A = W (up), x16 = S (down), x07 = D (right
+		//				<W>
+		//		<A>   <S>   <D>
+		assign left = keycode == 16'h04 ? 1'b1 : 1'b0;
+		assign right = keycode == 16'h07 ? 1'b1 : 1'b0;
+		assign up = keycode == 16'h1A ? 1'b1 : 1'b0;
+		assign down = keycode == 16'h16 ? 1'b1 : 1'b0;
+		
+		//Assign previous keycodes based on functionality (only one key at a time)
+		assign LEDG[0] = keycode_prev == 16'h07 ? 1'b1 : 1'b0; // up
+		assign LEDG[1] = keycode_prev == 16'h16 ? 1'b1 : 1'b0; // right
+		assign LEDG[2] = keycode_prev == 16'h1A ? 1'b1 : 1'b0; // down
+		assign LEDG[3] = keycode_prev == 16'h04 ? 1'b1 : 1'b0; // left
+		
+		//Update Hex Drivers
+		HexDriver hex_inst_0 (keycode[3:0], HEX0);
+		HexDriver hex_inst_1 (keycode[7:4], HEX1);
+			
+		//Update 
+		always_ff @ (posedge Clk)
+			begin
+				keycode_prev <= (keycode == 16'h0) ? keycode_prev : keycode;
+			end
 endmodule
