@@ -35,7 +35,69 @@ RYAN SECTION
 
 %SECTION 4 - Description of USB Protocol & Changes
 \section{Description of USB Protocol \& Changes}
-ERIC SECTION
+The USB protocol in Experiment 8 utilized the Cypress EZ-OTG (CY7C67200) USB controller on board the Altera. The CY7C67200 was used as a host controller and once a USB keyboard is plugged in, the keyboard acts as a device controller.\\
+
+The two functions that were written by the team were in "usb.c" and "io\_handler.c" were pertaining to the reading and writing of data to and from the USB device controller (keyboard).\\
+
+io\_handler.c:
+\begin{itemize}
+	\item 	void IO\_init(void)
+	\item 	void IO\_write(alt\_u8 Address, alt\_u16 Data)
+\end{itemize}
+
+
+\begin{lstlisting}
+void IO_write(alt_u8 Address, alt_u16 Data)
+{
+	*otg_hpi_address = Address;
+	*otg_hpi_cs = 0;
+	*otg_hpi_w = 0;
+	*otg_hpi_data = Data;
+	*otg_hpi_w = 1;
+	*otg_hpi_cs = 1;
+}
+\end{lstlisting}
+
+\begin{lstlisting}
+alt_u16 IO_read(alt_u8 Address)
+{
+	alt_u16 temp;
+	//printf("%x\n",temp);
+	*otg_hpi_address = Address;
+	*otg_hpi_cs = 0;
+	*otg_hpi_r = 0;
+	temp = *otg_hpi_data;
+	*otg_hpi_r = 1;
+	*otg_hpi_cs = 1;
+	return temp;
+}
+\end{lstlisting}
+
+
+usb.c:
+\begin{itemize}
+	\item 	void UsbWrite(alt\_u16 Address, alt\_u16 Data)
+	\item 	alt\_u16 UsbRead(alt\_u16 Address)
+\end{itemize}
+\begin{lstlisting}
+void UsbWrite(alt_u16 Address, alt_u16 Data)
+{
+	IO_write(HPI_ADDR, Address);
+	IO_write(HPI_DATA, Data);
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}
+alt_u16 UsbRead(alt_u16 Address)
+{
+	IO_write(HPI_ADDR, Address);
+	alt_u16 temp = IO_read(HPI_DATA);
+	return temp;
+}
+\end{lstlisting}
+
+
 
 %SECTION 5 - Schematic/Block Diagram - 
 \section{Schematic/Block Diagram}
@@ -63,19 +125,21 @@ ERIC SECTION
 	\label{tab:design}
 \end{table}
 
-ERIC SECTION
-
 1. What is the difference between VGA\_clk and Clk? \\
-\textit{Answer:}\\
+
+\textit{Answer:}The VGA Clock runs at 25MHz to change how wide the individual pixels are, whereas the Clk onboard the processor runs at 50MHz (and does not affect the pixel size).\\
 
 2. In the file io\_handler.h, why is it that the otg\_hpi\_address is defined as an integer pointer while the otg\_hpi\_r is defined as a char pointer? \\
-\textit{Answer:}\\
 
-3.What are the advantages and/or disadvantages of using a USB interface over PS/2 interface to connect to the keyboard? List any two.  Give an answer in your Post-Lab. \\
-\textit{Answer:} \\
+\textit{Answer:} otg\_hpi\_r is a single bit and does not need to be declared as an int (16 bits - it would be a waste of space), whereas otg\_hpi\_address is multiple bits wide and must have multiple bits available to use.\\
+
+3.What are the advantages and/or disadvantages of using a USB interface over PS/2 interface to connect to the keyboard? List any two. \\
+
+\textit{Answer:} PS/2 keyboards aren't polled, but are completely interrupt based. This allows the processor to complete tasks while waiting. Drivers for PS/2 are much simpler than USB keyboard drivers. Another disadvantage is that the USB keyboard only takes in 6 keys every message, so this is limited compared to the PS/2. These are two disadvantages for using a USB keyboard over PS/2.\\
 
 4.  Note that Ball\_Y\_Motion in the above statement may have been changed at the same clock edge that is causing the assignment of Ball\_Y\_pos.  Will the new value of Ball\_Y\_Motion be used, or the old?  How will this impact behavior of the ball during a bounce, and how might that interact with a response to a keypress?  Can you fix it?\\
-\textit{Answer:}\\
+
+\textit{Answer:} The new value of Ball\_Y\_Motion that would be used would be the old one and this would make it so that the ball bounces one clock cycle after the keypress is handled. A fix would be to put the assignment inside of the section of code that bounces the ball so that there is no delay in processing. \\
 
 %SECTION 7 - Conclusion
 \section{Conclusion}
@@ -86,14 +150,33 @@ RYAN SECTION
 %SECTION 11: Figures
 \section{Figures}
 
-%\begin{figure} [H]
-%	\centering
-%	\includegraphics[scale=1.72]{top-level-circuit.pdf}
-%	\caption{Lab 7 Module Interconnections\label{fig:top-level-interconn}}
-%\end{figure}
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.5]{top_level_diagram.png}
+	\caption{Lab 8 Top Level SV\label{fig:top-level}}
+\end{figure}
 
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=1]{ball_diagram.pdf}
+	\caption{Ball Circuit Diagram\label{fig:ball}}
+\end{figure}
 
-%SECTION : Bibliography
-%Insert Bibliography if needed
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.5]{vga_diagram.png}
+	\caption{VGA Circuit Diagram\label{fig:vga}}
+\end{figure}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.5]{color_mapper_diagram.png}
+	\caption{Color Mapper Circuit Diagram\label{fig:color_mapper}}
+\end{figure}            
+
+     
+
+\section*{Appendix}
+
 
 \end{document}
