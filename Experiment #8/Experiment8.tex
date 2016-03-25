@@ -23,15 +23,123 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - Eric
 \section{Introduction}
-The purpose of this lab is to introduce concepts pertaining to USB protocol/communication and VGA display. The main goal of this lab was to connect a USB keyboard to the Altera FPGA and allow a user to control a ball displayed on a VGA-connected monitor.
+The purpose of this lab is to introduce concepts pertaining to USB protocol/communication and VGA display. The main goal of this lab was to connect a USB keyboard to the Altera FPGA and allow a user to control a ball displayed on a VGA-connected monitor. \\
+
+Through this lab we interface with both a keyboard through an on-board USB input port and a monitor through a VGA output port on the DE2 board.  Direction keys (W-A-S-D) are used to control the direction of a ball moving on the VGA monitor.  W is up, S is down, A is left, and D is right.  If the ball hits the edge of the screen with no other keys being pushed, it switches direction by 180 degrees.  The ball continues to move in the current direction if no new key is pressed and no screen edge is hit.  The last pressed 8 bit hex scan code is displayed on two of the hex displays and the direction key pushed is shown via the green LEDs on the board. \\
 
 %SECTION 2 - Description of Circuit / Inputs and Outputs - 
 \section{Description of Circuit}
-RYAN SECTION
+Much of the code needed for the lab was provided.  This included most of the modules used, the framework of the SystemVerilog code needed to connect these modules, and the base C code to make the ball move in two directions on a VGA screen.  Tasks that needed to be completed included creating a proper Qsys setup for the NIOS II processor to interface with the CY7C67200, building a top level entity in System Verilog to bring all the files provided together, defining a hardware I/O wrapper to connect the PIO's from the NIOS II to the HPI registers on the CY7C67200 chip, correctly interpreting and implementing the IO\_read and IO\_write methods for accessing the register bank of the CYC67200 chip, using these read and write commands to build USBRead and USBWrite methods, and lastly editing the C code for the ball to function as stated above adding 2 more directions and if/else conditions for boundary cases.  \\
+
+\subsection{NIOS II System}
+The NIOS II System is the processor used for low-speed low-performance tasks such as executing the high level C code.  The NIOS II System is made up of several submodules or PIOs including the NIOS II processor which works with the C code , on-chip memory, SDRAM controller for simplifying interfacing with the SDRAM, SDRAM\_PLL  which provides a phase shifted clock for the SDRAM, the JTAG\_UART submodule which allows for debugging through printf and scanf functions. The PIOs help the C code interact with SystemVerilog by providing addresses for the code to send information to and from various hardware.  \\ 
+
+
+
+\subsection{CYC67200 chip}
+The CYC67200 chip manages information sent through the USB port.  It is controlled by a hardware I/O wrapper in System Verilog that connects the HPI registers to the NIOS II processor.  In Qsys, PIO ports are created for keycode, HPI address, HPI chip select, HPI data, HPI read, and HPI write bits.  HPI\_DATA holds the 16 bit data that will be moved between the FPGA and EZ-OTG.  HPI\_ADDRESS is two bits of the address where the data will be read/written to whether it be HPI DATA, HPI MAILBOX, HPI ADDRESS, or HPI STATUS. Fig. \ref{fig:ports} shows the four registers matching up with their respective addresses.   
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{ports.jpg}
+	\caption{Port registers for different addresses. (lab manual)}
+	\label{fig:ports}
+\end{figure}
+
+The IO\_read and IO\_write methods are used for accessing the register bank of the CYC67200 chip.  We use these read and write commands to build USBRead and USBWrite methods to read and write to the internal memory of the EZ-OTG.
+
+\subsubsection{IO\_read}
+To read and return data from the memory location specified by the two bit memory address, we use the IO\_read function. 
+\subsubsection{IO\_write}
+To write data to the memory location specified by the two bit memory address, we use the IO\_write function.
+
+Two helper functions, USB\_Read and USB\_Write are used to simplify the process.
+\subsubsection{USB\_read}
+This helper function takes in an address from EZ-OTG memory, writes it to the EZ-OTG address register using IO\_write function, and reads the EZ-OTG data register at that address using IO\_read.  
+\subsubsection{USB\_write}
+This helper function takes in an address from EZ-OTG memory, writes it to the EZ-OTG address register using IO\_write function, and this time writes to the EZ-OTG data register at that address using IO\_write. 
+
+\subsection{C code for Ball Movement}
+For the ball, C code was added to control ball movement.  Section III of this report labeled 'Purpose of Modules' goes into further detail on each module used in the lab including the ball.sv module.  
+  
 
 %SECTION 3 - Purpose of Modules - 
 \section{Purpose of Modules}
-RYAN SECTION
+
+\subsection{lab8.sv}
+This is the top-level module for lab 8.  Inputs include the 50 MHz clock, push button, data and interrupt from the CY7C67200 chip, and data from the SDRAM.  Outputs include the two hex displays, the green LEDs, the DRAM interface, rest of the interface to the CY7C67200, and VGA.  
+
+The module includes several instantiations.  hpi\_io\_intf instantiates the interaction between the hardware and usb, nios\_system instantiates the connections for the NIOS II system, vga\_controller, ball, and collor\_mapper instantiate connections for their respective modules.
+
+\subsection{hpi\_io\_intf.sv}
+This method takes HPI output values from the NIOS II as input, checks for a call to reset, and if no reset, assigns these values to the proper values to be outputted by the top-level module to the CY7C67200 chip.  Inputs and outputs used are shown below.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{hpiio.jpg}
+	\label{fig:hpiio}
+\end{figure}
+
+
+
+\subsection{VGA\_controller.sv}
+The VGA\_controller manages output to the monitor.  Inputs include clock and reset. Outputs include several sync signals, a pixel clock specified for 25 MHz and 10 bit horizontal and vertical coordinate signals as shown below.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{VGAio.jpg}
+	\label{fig:VGAio}
+\end{figure}
+
+Most of this module was given to the team.
+
+
+\subsection{Ball.sv}
+This module defines the motion of the ball.  How big the ball size is, how fast and far the steps are for the ball movement, and the x and y coordinate for the ball are all given in this module.  Inputs include the reset, clock, and signals for the four directionals.  Outputs include the 10-bit values for x and y coordinates of the ball as well as size of the ball, BallS.  
+  
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{ballio.jpg}
+	\label{fig:ballio}
+\end{figure}
+
+Parameters are set to control where the ball can travel and step size of the ball.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{ballparam.jpg}
+	\label{fig:ballparam}
+\end{figure}
+
+The following code sets the ball to reverse direction when the ball hits one of its boundaries. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{ballboundary.jpg}
+	\label{fig:ballboundary}
+\end{figure}
+
+The ball is then given set directions for given key codes from the keyboard as shown below.  Directions are based off directional input values.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{ballkey.jpg}
+	\label{fig:ballkey}
+\end{figure}
+
+
+\subsection{color\_mapper.sv}
+The color\_mapper module controls the color of the pixels where the ball is located and maintains proper ball shape as the ball moves from location to location.  Inputs for this module include the coordinates to the center of the ball, the draw coordinates, and the size of the ball.  Outputs include the RGB array for that draw coordinate. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{colorio.jpg}
+	\label{fig:colorio}
+	\end{figure}
+
+This module was given to the team. \\
+
+
 
 %SECTION 4 - Description of USB Protocol & Changes
 \section{Description of USB Protocol \& Changes}
@@ -148,7 +256,10 @@ The Schematic / Block Diagrams for this lab can be found in the Figures section 
 
 %SECTION 7 - Conclusion
 \section{Conclusion}
-RYAN SECTION
+For experiment 8, the team was successfully able to complete all of the tasks.  The only issue came about in properly writing the C code to match up with the naming convention on the hardware.  \\
+
+This lab will prove very important for the final design project, especially if the project involves interfacing with a keyboard input and monitor output.  
+
 
 \clearpage
 \onecolumn
