@@ -10,9 +10,9 @@
 \title{ECE385 Final Project Proposal
 	}
 \author{
-\IEEEauthorblockN{Project Name \_\_\_\_ \\ Eric Meyers, Ryan Helsdingen}\\
+\IEEEauthorblockN{Project Idea: Frogger \\ Eric Meyers, Ryan Helsdingen}\\
 \IEEEauthorblockA{Section ABG; TAs: Ben Delay, Shuo Liu \\
-April 13th, 2016 \\
+April 6th, 2016 \\
 emeyer7, helsdin2}}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \begin{document}
@@ -26,19 +26,62 @@ emeyer7, helsdin2}}
 
 %SECTION 2 - Description of Circuit / Inputs and Outputs - 
 \section{Ideas and Overview}
-Our idea is to create a "Donkey-Kong"-like game that 
+Our idea is to create a "Frogger" game with the basic premise of moving a frog across the street without getting hit by any moving obstacles. This will be accomplished via similar techniques used in lab8 and interfacing VGA graphics with a USB keyboard controller.\\
 
+A NIOS-II Processor will be used and hardware...
 %SECTION 3 - Purpose of Modules - 
-\section{Block Diagram}
+\section{Block Diagram} 
 
 %SECTION 4 - Description of USB Protocol & Changes
 \section{List of Features}
+\textit{Basic Functionality}
+\begin{itemize}
+	\item User controlled block moves according to grid set on VGA display
+	\begin{itemize}
+		\item Up, down, left, or right depending on input
+	\end{itemize}
+	\item Moving obstacles that are different shapes
+	\begin{itemize}
+		\item Different types of objects can lead to different outcomes - i.e. object can either allow ``frogger" to move with it or kill it.
+	\end{itemize}
+	\item Multiple levels with increasing difficulty
+	\item Starting point and ending point on any given level
+	\item Timer
+		\begin{itemize}
+			\item 5 minutes to complete level
+		\end{itemize} 
+	\item Color 
+	\begin{itemize}
+		\item Must be able to clearly differentiate between obstacle, user controlled block, and the map
+	\end{itemize}
+	\item Score/Highscore
+\end{itemize}
+
+\vspace{5mm}
+
+\textit{Optional Functionality and Complexity}
+\begin{itemize}
+	\item Multiple maps
+	\begin{itemize}
+		\item Maps taking place with different shaped obstacles and different background
+	\end{itemize}
+	\item Sound - 8-bit soundtrack
+	\item Sprites and animations
+	\item Start menu - Options Help Highscores, Start Button
+	\item Powerups:
+		\begin{itemize}
+			\item Slow-down/speed-up obstacles
+			\item Longer blocks for "frogger" to hop onto
+			\item
+		\end{itemize}
+\end{itemize}
 
 %SECTION 5 - State Diagram for Decryption 
 \section{Expected Difficulty}
+The basic functionality of this game will not be much difficulty at all (1-2 pts). We are relying on implementing a majority of our ``Optional Functionality and Complexity" that will give us the bulk of the difficulty points. This project will most likely approach a 5 in terms of difficulty.
 
 %SECTION 6 - Proposed Timeline
-\section{Proposed Timeline}
+\section{Proposed Timeline} (RYAN)
 
 \clearpage
 \onecolumn
