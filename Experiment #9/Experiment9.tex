@@ -23,24 +23,102 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - Eric
 \section{Introduction}
+The purpose of this lab was to explore encryption/decryption techniques using the Advanced Encryption Standard (AES). The team wrote both encryption and decryption algorithms that runs on software and hardware respectively. The advantages/disadvantage of these two techniques will be analyzed in the post-lab section. 
 
 %SECTION 2 - Description of Circuit / Inputs and Outputs - 
 \section{Description of Circuit}
+The encryption algorithm will be performed on a NIOS-II processor and programmed in C, whereas the decryption algorithm will be performed on a Cyclone IV FPGA and programmed in System Verilog. \\
+
+The C program onboard the NIOS-II processor  will communicate with the hardware on the Altera DE2-115 board and transfer both the encrypted message and key to the hardware. The hardware will then proceed to decrypt this message using the provided key and display the result on the hex display.
 
 %SECTION 3 - Purpose of Modules - 
 \section{Purpose of Modules}
+The AES encryption/decryption algorithm used several modules. However, these can be broken down into software modules and hardware modules. The only software module was the NIOS system used to create the software encryption algorithm in C. The following were the hardware modules and these will be explained in detail when necessary:
+\begin{itemize}
+	\item lab9 (top-level)
+	\item aes\_controller
+	\item AES
+	\item io\_module
+	\item KeyExpansion
+	\item InvShiftRows
+	\item InvSubBytes
+	\item InvSubBytes\_16
+	\item InvShiftRows
+	\item InvMixColumns
+	\item AddRoundKey
+	
+	\item HexDriver
+\end{itemize}
+
+First, the encryption algorithm, as stated before was programmed in C on a NIOS-II processor. This processor is contained within the "NIOS system". \\
+
+The NIOS system developed was similar to that of the one created in lab8 except there are 4 PIO modules to allow communication to/from the hardware (to\_sw\_sig, to\_hw\_sig, to\_sw\_port, to\_hw\_port). A JTAG UART peripheral was used to allow debugging upon the host computer and to allow user input to the C program. \\
+
+\textit{lab9}\\
+\vspace{-4mm}
+
+This is the top-level module containing the connections from the nios\_system, aes\_controller, io\_module, and the hex display. \\
+
+\textit{aes\_controller}\\
+\vspace{-4mm}
+
+[TEXT HERE]\\
+
+\textit{AES}\\
+\vspace{-4mm}
+
+[TEXT HERE]\\
+
+\textit{KeyExpansion}\\
+\vspace{-4mm}
+
+[TEXT HERE]\\
+
+\textit{InvShiftRows}\\
+\vspace{-4mm}
+
+[TEXT HERE]\\
+
+\textit{InvSubBytes}\\
+\vspace{-4mm}
+
+[TEXT HERE]\\
+
+\textit{Inv\_Sub\_Bytes\_16}\\
+\vspace{-4mm}
+
+[TEXT HERE]\\
+
+\textit{InvMixColumns}\\
+\vspace{-4mm}
+
+[TEXT HERE]\\
+
+\textit{AddRoundKey}\\
+\vspace{-4mm}
+
+[TEXT HERE]\\
+
+\textit{HexDriver}\\
+\vspace{-4mm}
+
+This module contains the logic necessary to output values in binary/decimal in hex on the hex displays on board the Altera De2-115.\\
+
 
 %SECTION 4 - Description of USB Protocol & Changes
 \section{Software/Hardware State Diagram}
+The software/hardware state diagram is handled in io\_module and is shown in Figure \ref{fig:io-module}.
 
 %SECTION 5 - State Diagram for Decryption 
 \section{Decryption State Diagram}
+The decryption state diagram is split up into two FSMs for simplicity. One is referred to as the Calculation FSM and the other is referred to as the Round FSM. There are a total of 10 rounds with an extra round to ensure the key\_expansion algorithm performs. Each round a series of calculations are performed as determined in the algorithm outlined in the description PDF of this lab. The Round FSM is shown in Figure \ref{fig:round-state} and the Calculation FSM is shown in Figure \ref{fig:calc-state}.
 
 %SECTION 6 - Schematic/Block Diagram
 \section{Schematic/Block Diagram}
 
 %SECTION 7 - Annotated Pre-Lab Waveforms
 \section{Annotated Pre-Lab Waveforms}
+The annotated pre-lab waveforms can be found in Figure \ref{fig:0-500}, \ref{fig:500-1000}, \ref{fig:1000-1500}, and \ref{fig:1500-2000} for a 2000ns period. The ending decrypted value given plaintext of "daec3055df058e1c39e814ea76f6747e" with a key of "0102030405060708090a0b0c0d0e0f" is "ece298ece298...dc".
 
 %SECTION 8 - Post Lab - 
 \section{Post Lab}
@@ -64,8 +142,27 @@ emeyer7, helsdin2}}
 	\label{tab:design}
 \end{table}
 
+\begin{enumerate}
+	\item Which would you expect to be faster to complete encryption/decryption, the software or hardware? Is this what your results show?
+	\begin{itemize}
+		\item Answer Question
+	\end{itemize}
+	\item If you wanted to speed up the hardware, what would you do? (Note: restrictions of this lab do not apply to answer this question)
+	\begin{itemize}
+		\item Answer Question
+	\end{itemize}
+\end{enumerate}
+
+
 %SECTION 9 - Conclusion
 \section{Conclusion}
+Overall, this lab proved to be very difficult from both a hardware and software perspective. Programming the encryption algorithm in C was difficult for many reasons. Working with two-dimensional arrays is never an easy task in C, and this lab seemed to put this skill to the test. The notation used throughout the algorithm is difficult to understand fully what should be passed into certain functions. However, once a basic working model of the encryption algorithm was developed, it was optimized for patterns, and condensed and therefore much easier to understand. \\
+
+The hardware decryption was just as difficult as the software. The finite state machines that were developed took a large amount of time to debug using ModelSim. The io\_module used to pass information to/from the software proved to be a large time-sing in and of itself. \\
+
+In the end, the team did not receive full points for demo due to a glitch in passing the data to/from software. However, partial credit was received for showing simulations...\\
+
+Overall this lab was one of the most difficult ECE385 labs, however it was one of the most rewarding to understand in the end. AES encryption/decryption is now very clear to the team.
 
 \clearpage
 \onecolumn
@@ -73,11 +170,52 @@ emeyer7, helsdin2}}
 \section{Figures}
 
 
-%\begin{figure} [H]
-%	\centering
-%	\includegraphics[scale=.5]{color_mapper_diagram.png}
-%	\caption{Color Mapper Circuit Diagram\label{fig:color_mapper}}
-%\end{figure}            
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.6]{IO_Module_State_Diagram.png}
+	\caption{IO Module Hardware/Software State Diagram\label{fig:io-module}}
+\end{figure}  
+
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.6]{Decryption_Round_State_Diagram.pdf}
+	\caption{Decryption Round State Diagram\label{fig:round-state}}
+\end{figure}          
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.6]{Calc_State_Diagram.png}
+	\caption{Calculation State Diagram\label{fig:calc-state}}
+\end{figure}         
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.35]{simulate-0-500.png}
+	\caption{Simulation 0 - 500ns\label{fig:0-500}}
+\end{figure}          
+
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.35]{simulate-500-1000.png}
+	\caption{Simulation 500 - 1000ns\label{fig:500-1000}}
+\end{figure}          
+
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.35]{simulate-1000-1500.png}
+	\caption{Simulation 1000 - 1500ns\label{fig:1000-1500}}
+\end{figure}          
+
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.35]{simulate-1500-2000.png}
+	\caption{Simulation 1500-2000ns\label{fig:1500-2000}}
+\end{figure}          
+
 
      
 
