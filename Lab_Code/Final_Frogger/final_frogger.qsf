@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY final_top
+set_global_assignment -name TOP_LEVEL_ENTITY final_frogger_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:55:02  SEPTEMBER 28, 2015"
 set_global_assignment -name LAST_QUARTUS_VERSION 15.0.0
@@ -579,12 +579,13 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
 set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
 
-set_global_assignment -name VERILOG_FILE nios_system/synthesis/nios_system.v
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE final_frogger_top.sv
+set_global_assignment -name VERILOG_FILE nios_system/synthesis/nios_system.v -library nios_system
 set_global_assignment -name QIP_FILE nios_system/synthesis/nios_system.qip
+set_global_assignment -name SYSTEMVERILOG_FILE font_rom.sv
+set_global_assignment -name SYSTEMVERILOG_FILE frog.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hpi_io_intf.sv
 set_global_assignment -name SYSTEMVERILOG_FILE HexDriver.sv
-set_global_assignment -name SYSTEMVERILOG_FILE final_top.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Color_Mapper.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ball.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

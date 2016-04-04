@@ -54,9 +54,9 @@ module  color_mapper ( input        [9:0] BallX, BallY, DrawX, DrawY, Ball_size,
         end       
         else 
         begin 
-            Red = 8'h3f; 
-            Green = 8'h00;
-            Blue = 8'h3f - DrawX[9:3];
+            Red = 8'hd3;
+            Green = 8'hd3;
+            Blue = 8'hd3;
         end      
     end 
     
