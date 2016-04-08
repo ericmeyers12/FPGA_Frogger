@@ -25,12 +25,12 @@ emeyer7, helsdin2}}
 \section{Ideas and Overview}
 Our idea is to create a "Frogger" game with the basic premise of moving a frog across the street without getting hit by any moving obstacles (refer to Figure \ref{fig:frogger} for more details). This will be accomplished via similar techniques used in lab8 and interfacing VGA graphics with a USB keyboard controller.\\
 
-A NIOS-II Processor will be used which will be created in Qsys along with PIO modules to handle the input and output of the game. The sprite data and the background image data will be stored onboard the SDRAM which holds 1GBit of data (~20MB) - this will be plenty enough to store the sprite data (< 1MB) and any other background image data we choose to use.
+A NIOS-II Processor will be used which will be created in Qsys along with PIO modules to handle the input and output of the game. The sprite data and the background image data will be stored onboard the SDRAM which holds 1GBit of data (~20MB) - this will be plenty enough to store the sprite data ($<$ 1MB) and any other background image data we choose to use. The color\_mapper.sv file will then be modified to include the particular sprites wherever/whenever we may choose to use them.
 %SECTION 3 - Purpose of Modules - 
 \section{Block Diagram} 
 \begin{figure} [H]
 	\centering
-	\includegraphics[scale=.3]{Block_Diagram.png}
+	\includegraphics[scale=.25]{Block_Diagram.png}
 	\caption{Block Diagram\label{fig:frogger}}
 \end{figure} 
 
@@ -81,9 +81,9 @@ A NIOS-II Processor will be used which will be created in Qsys along with PIO mo
 
 %SECTION 5 - State Diagram for Decryption 
 \section{Expected Difficulty}
-The basic functionality of this game will not be much difficulty at all (3 pts). We are relying on implementing a majority of our ``Optional Functionality and Complexity" that will give us the bulk of the difficulty points. This project will most likely approach a 6 in terms of difficulty. 
+The basic functionality of this game will not be much difficulty at all (4 pts). We are relying on implementing a majority of our ``Optional Functionality and Complexity" that will give us the bulk of the difficulty points. This project will most likely approach a 6 in terms of difficulty. \\
 
-The basic functionality is not too difficult to implement and will require  This will be due to the amount of features we will be implementing. Sprites, animations, different maps, levels and power-ups will all require efficient memory usage. 
+The basic functionality is not too difficult to implement and will require us to heavily modify Lab 8. Sprites, animations, different maps, levels and power-ups will all require efficient memory usage. 
 
 %SECTION 6 - Proposed Timeline
 \section{Proposed Timeline} 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  1 APR 2016 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 APR 2016 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,165 +925,209 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
-
- []
-
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 123--124
 []\OT1/ptm/m/n/11 The an-no-tated pre-lab wave-forms can be found
  []
 
 
-Underfull \hbox (badness 2735) in paragraph at lines 121--122
+Underfull \hbox (badness 2735) in paragraph at lines 123--124
 \OT1/ptm/m/n/11 in Fig-ure 4[], 5[], 6[], and 7[] for a 2000ns pe-riod.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 \OT1/ptm/m/n/11 The end-ing de-crypted value given plain-text of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 \OT1/ptm/m/n/11 "daec3055df058e1c39e814ea76f6747e" with a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 \OT1/ptm/m/n/11 key of "0102030405060708090a0b0c0d0e0f" is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 2556) in paragraph at lines 150--151
+\OT1/ptm/m/n/11 in soft-ware (specif-i-cally in C) is meant
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 150--151
+\OT1/ptm/m/n/11 for gen-er-al-ized pro-ces-sors and thus must
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 150--151
+\OT1/ptm/m/n/11 com-pared to that of the hard-ware. The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
+ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 163--164
+Underfull \hbox (badness 1953) in paragraph at lines 169--170
 \OT1/ptm/m/n/11 soft-ware. How-ever, par-tial credit was re-ceived for
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
-[2] <IO_Module_State_Diagram.png, id=15, 639.38875pt x 386.44376pt>
+[3
+
+] <IO_Module_State_Diagram.png, id=18, 639.38875pt x 386.44376pt>
 File: IO_Module_State_Diagram.png Graphic file (type png)
 
 <use IO_Module_State_Diagram.png>
-Package pdftex.def Info: IO_Module_State_Diagram.png used on input line 175.
+Package pdftex.def Info: IO_Module_State_Diagram.png used on input line 181.
 (pdftex.def)             Requested size: 383.6362pt x 231.86804pt.
 
-<Decryption_Round_State_Diagram.pdf, id=17, 754.82pt x 480.79625pt>
+<Decryption_Round_State_Diagram.pdf, id=20, 754.82pt x 480.79625pt>
 File: Decryption_Round_State_Diagram.pdf Graphic file (type pdf)
 
 <use Decryption_Round_State_Diagram.pdf>
 Package pdftex.def Info: Decryption_Round_State_Diagram.pdf used on input line 
-182.
+188.
 (pdftex.def)             Requested size: 452.89551pt x 288.47997pt.
 
-<Calc_State_Diagram.png, id=18, 463.4916pt x 502.5174pt>
+<Calc_State_Diagram.png, id=21, 463.4916pt x 502.5174pt>
 File: Calc_State_Diagram.png Graphic file (type png)
 
 <use Calc_State_Diagram.png>
-Package pdftex.def Info: Calc_State_Diagram.png used on input line 188.
+Package pdftex.def Info: Calc_State_Diagram.png used on input line 194.
 (pdftex.def)             Requested size: 278.09709pt x 301.51276pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3
+ [4
 
 
  <./IO_Module_State_Diagram.png> <./Decryption_Round_State_Diagram.pdf>]
-<simulate-0-500.png, id=26, 1261.71375pt x 438.63875pt>
+
+! LaTeX Error: File `/*BLOCK*/' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 	\includegraphics[scale=.6]{/*BLOCK*/}
+                                            
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<simulate-0-500.png, id=29, 1264.725pt x 440.64626pt>
 File: simulate-0-500.png Graphic file (type png)
+ <use simulate-0-500.png>
+Package pdftex.def Info: simulate-0-500.png used on input line 209.
+(pdftex.def)             Requested size: 442.66039pt x 154.22849pt.
 
-<use simulate-0-500.png>
-Package pdftex.def Info: simulate-0-500.png used on input line 194.
-(pdftex.def)             Requested size: 441.60643pt x 153.52585pt.
-
-<simulate-500-1000.png, id=27, 1262.7175pt x 437.635pt>
+<simulate-500-1000.png, id=30, 1262.7175pt x 437.635pt>
 File: simulate-500-1000.png Graphic file (type png)
 
 <use simulate-500-1000.png>
-Package pdftex.def Info: simulate-500-1000.png used on input line 201.
+Package pdftex.def Info: simulate-500-1000.png used on input line 216.
 (pdftex.def)             Requested size: 441.95775pt x 153.17455pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4 <./Calc_State_Diagram.png> <./simulate-0-500.png>]
-<simulate-1000-1500.png, id=33, 1261.71375pt x 438.63875pt>
+ [5 <./Calc_State_Diagram.png> <./simulate-0-500.png>]
+<simulate-1000-1500.png, id=36, 1261.71375pt x 438.63875pt>
 File: simulate-1000-1500.png Graphic file (type png)
 
 <use simulate-1000-1500.png>
-Package pdftex.def Info: simulate-1000-1500.png used on input line 208.
+Package pdftex.def Info: simulate-1000-1500.png used on input line 223.
 (pdftex.def)             Requested size: 441.60643pt x 153.52585pt.
 
-<simulate-1500-2000.png, id=34, 1258.7025pt x 439.6425pt>
+<simulate-1500-2000.png, id=37, 1258.7025pt x 439.6425pt>
 File: simulate-1500-2000.png Graphic file (type png)
 
 <use simulate-1500-2000.png>
-Package pdftex.def Info: simulate-1500-2000.png used on input line 215.
+Package pdftex.def Info: simulate-1500-2000.png used on input line 230.
 (pdftex.def)             Requested size: 440.55247pt x 153.87717pt.
- [5 <./simulate-500-1000.png> <./simulate-1000-1500.png> <./simulate-1500-2000.
-png>] (./Experiment9.aux) ) 
+ [6 <./simulate-500-1000.png> <./simulate-1000-1500.png> <./simulate-1500-2000.
+png>] (./Experiment9.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 23416 strings out of 493089
- 530378 string characters out of 6134842
+ 23429 strings out of 493089
+ 530441 string characters out of 6134842
  684491 words of memory out of 5000000
  26488 multiletter control sequences out of 15000+600000
  33522 words of font info for 72 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  64i,8n,67p,589b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/
-base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Experiment9.pdf (5 pages, 612709 bytes).
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Experiment9.pdf (6 pages, 665676 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

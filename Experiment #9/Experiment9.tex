@@ -62,12 +62,14 @@ This is the top-level module containing the connections from the nios\_system, a
 \textit{aes\_controller}\\
 \vspace{-4mm}
 
-[TEXT HERE]\\
+The aes\_controller is the module that controls the operation of the AES module. It determines if the AES decryption algorithm is in a IDLE state, COMPUTE state, or READY state. This is accomplished through a simple state machine that was provided. The only changes the team made is instead of relying on a counter to determine when the algorithm was done, this was instead done inside the algorithm itself and output through the module into the controller.\\
 
 \textit{AES}\\
 \vspace{-4mm}
 
-[TEXT HERE]\\
+The AES module is the main decryption algorithm implementation. It contains inputs of Reset and Run, along with 128-bits of encrypted text and 128-bits of a key. It outputs a 128-bit value containing the plaintext of the encrypted input after finishing. The main algorithm is explained in the lab manual, as well as below in the State Diagram section. \\
+
+The module essentially loops through 10 rounds of calculations with each round containing the correct cycle of calculations as defined by the state machine. 
 
 \textit{KeyExpansion}\\
 \vspace{-4mm}
@@ -145,11 +147,15 @@ The annotated pre-lab waveforms can be found in Figure \ref{fig:0-500}, \ref{fig
 \begin{enumerate}
 	\item Which would you expect to be faster to complete encryption/decryption, the software or hardware? Is this what your results show?
 	\begin{itemize}
-		\item Answer Question
+		\item The faster encryption/decryption is expected to be the hardware because programming in software (specifically in C) is meant for generalized processors and thus must go through more clock cycles to do more compared to that of the hardware. The hardware is dedicated to the task at hand, and thus is faster than the software. \\
+		
+			\setlength{\leftskip}{24pt}Software Speed: MB/s \\
+			Hardware Speed: MB/s (simulation)\\
+			
 	\end{itemize}
 	\item If you wanted to speed up the hardware, what would you do? (Note: restrictions of this lab do not apply to answer this question)
 	\begin{itemize}
-		\item Answer Question
+		\item Instead of containing separate modules for each of the operations, these can be combined into a single module and the entire computation for one round can be done in a single state. This would significantly decrease the amount of time taken for one state to process. 
 	\end{itemize}
 \end{enumerate}
 
@@ -188,6 +194,15 @@ Overall this lab was one of the most difficult ECE385 labs, however it was one o
 	\includegraphics[scale=.6]{Calc_State_Diagram.png}
 	\caption{Calculation State Diagram\label{fig:calc-state}}
 \end{figure}         
+
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[scale=.6]{/*BLOCK*/}
+	\caption{Calculation State Diagram\label{fig:calc-state}}
+\end{figure}    
+
+
 
 \begin{figure} [H]
 	\centering
