@@ -40,13 +40,11 @@ The AES encryption/decryption algorithm used several modules. However, these can
 	\item AES
 	\item io\_module
 	\item KeyExpansion
-	\item InvShiftRows
-	\item InvSubBytes
-	\item InvSubBytes\_16
-	\item InvShiftRows
-	\item InvMixColumns
 	\item AddRoundKey
-	
+	\item SubBytes, InvSubBytes
+	\item InvSubBytes\_16
+	\item ShiftRows, InvShiftRows
+	\item MixColumns, InvMixColumns
 	\item HexDriver
 \end{itemize}
 
@@ -67,39 +65,116 @@ The aes\_controller is the module that controls the operation of the AES module.
 \textit{AES}\\
 \vspace{-4mm}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{AES.jpg}
+	\label{fig:AES}
+\end{figure}
+
 The AES module is the main decryption algorithm implementation. It contains inputs of Reset and Run, along with 128-bits of encrypted text and 128-bits of a key. It outputs a 128-bit value containing the plaintext of the encrypted input after finishing. The main algorithm is explained in the lab manual, as well as below in the State Diagram section. \\
 
-The module essentially loops through 10 rounds of calculations with each round containing the correct cycle of calculations as defined by the state machine. 
+The module essentially loops through 10 rounds of calculations with each round containing the correct cycle of calculations as defined by the state machine. \\
+
+\textit{io\_module}\\
+\vspace{-4mm}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{iomodule.jpg}
+	\label{fig:iomodule}
+\end{figure}
+
+The io\_module provides the communication between the hardware and software.  The module follows a 100-state machine diagram shown in Figure \ref{fig:io-module}. Inputs include the decrypted message, hardware port and sig signals to control the movement of the message, clock, reset, and AES ready bit.  Outputs include 128-bit encrypted messaage and key, software port and sig signals, IO ready bit, and output signals to show the state number on the LEDs. \\
 
 \textit{KeyExpansion}\\
 \vspace{-4mm}
 
-[TEXT HERE]\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{KeyExpansion.jpg}
+	\label{fig:KeyExpansion}
+\end{figure}
 
-\textit{InvShiftRows}\\
-\vspace{-4mm}
-
-[TEXT HERE]\\
-
-\textit{InvSubBytes}\\
-\vspace{-4mm}
-
-[TEXT HERE]\\
-
-\textit{Inv\_Sub\_Bytes\_16}\\
-\vspace{-4mm}
-
-[TEXT HERE]\\
-
-\textit{InvMixColumns}\\
-\vspace{-4mm}
-
-[TEXT HERE]\\
+The KeyExpansion module takes in the Cipher Key to create the first round key and then loops 10 more times creating 128-bit Round Keys each based off the previous key.  The 11 Round Keys are then stored into a 1408-bit Key Schedule. \\  
 
 \textit{AddRoundKey}\\
 \vspace{-4mm}
 
-[TEXT HERE]\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{AddRoundKey.jpg}
+	\label{fig:AddRoundKey}
+\end{figure}
+
+The AddRoundKey module fetches a 4-word, 128-bit Round key from the pre-computed Key Schedule and bitwise XORs with the corresponding byte from the updating 128-bit state.  \ref{fig:AddRoundKeydia} shows a diagram of the AddRoundKey module. \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{AddRoundKeydia.jpg}
+	\label{fig:AddRoundKeydia}
+\end{figure}  
+
+
+\textit{SubBytes,InvSubBytes}\\
+\vspace{-4mm}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{SubBytes.jpg}
+	\label{fig:SubBytes}
+\end{figure}
+
+SubBytes takes each byte of the updating state and transforms it by taking the multiplicative inverse of the Rijindael's finite field.  The transformation has been simplified into a black-box designated as the S-box (substitution box).  Inputs include the 256 byte array and clock.  Outputs include the transformed 256 byte array. Figure \ref{fig:SubBytesdia} portrays this module as a 4x4 matrix for sample.  \\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{SubBytesdia.jpg}
+	\label{fig:SubBytesdia}
+\end{figure}
+
+The InvSubBytes module is similar to the SubBytes module except that the S-box is replaced by its inverse to reverse the encryption process.  \\
+
+\textit{InvSubBytes\_16}\\
+\vspace{-4mm}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{InvSubBytes_16.jpg}
+	\label{fig:InvSubBytes_16}
+\end{figure}
+
+
+InvSubBytes\_16 is a submodule of InvSubBytes.  It takes in the entire state during the InvSubBytes round and performs the appropriate substitution for each row and column. \\
+
+\textit{ShiftRows,InvShiftRows}\\
+\vspace{-4mm}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{InvShiftRows.jpg}
+	\label{fig:InvShiftRows}
+\end{figure}
+
+The ShiftRows module takes in the 128-bit state and shifts the elements in each row n of the matrix by n-1 to the left.  Figure \ref{fig:InvShiftRows} shows a diagram of ShiftRows. \\ 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{ShiftRowsdia.jpg}
+	\label{fig:ShiftRowsdia}
+\end{figure}
+
+The InvShiftRows module does exactly whatt he ShiftRows module does except it reverses the direction such the row n is right-circularly shifted by n-1 times. 
+
+\textit{MixColumns,InvMixColumns}\\
+\vspace{-4mm}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{InvMixColumns.jpg}
+	\label{fig:InvMixColumns}
+\end{figure}
+
+The MixColumns module takes each of the four words from the state individually and goes through invertible linear tranformations over GF($2^8$) including multiplication by a fixed polynomial matrix to linearly combine the four bytes of each word to form a new Word.\\
 
 \textit{HexDriver}\\
 \vspace{-4mm}
@@ -198,7 +273,7 @@ Overall this lab was one of the most difficult ECE385 labs, however it was one o
 
 \begin{figure} [H]
 	\centering
-	\includegraphics[scale=.6]{/*BLOCK*/}
+%	\includegraphics[scale=.6]{/*BLOCK*/}
 	\caption{Calculation State Diagram\label{fig:calc-state}}
 \end{figure}    
 
