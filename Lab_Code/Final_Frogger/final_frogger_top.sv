@@ -46,8 +46,15 @@ module  final_frogger_top ( input         CLOCK_50,
 									);
     
     logic Reset_h, vssig, Clk;
-    logic [9:0] drawxsig, drawysig, ballxsig, ballysig, ballsizesig;
+    logic [10:0] drawxsig, drawysig, 
+					 frogxsig, frogysig, frogwidthsig, frogheightsig,
+					 car1xsig, car1ysig, car1widthsig, car1heightsig,
+					 car2xsig, car2ysig, car2widthsig, car2heightsig,
+					 car3xsig, car3ysig, car3widthsig, car3heightsig,
+					 lpad1xsig, lpad1ysig, lpad1widthsig, lpad1heightsig;
+
 	 logic [15:0] keycode;
+	logic left, right, up, down;
 	 
 	 assign VGA_VS = vssig;
     
@@ -113,20 +120,91 @@ module  final_frogger_top ( input         CLOCK_50,
 
 	 frog frog_instance(.Reset(Reset_h), 
 							  .frame_clk(vssig),
-							  .FrogX(ballxsig),
-							  .FrogY(ballysig),
-							  .FrogS(ballsizesig),
+							  .FrogX(frogxsig),
+							  .FrogY(frogysig),
+							  .Frog_Width(frogwidthsig),
+							  .Frog_Height(frogheightsig),
 							  .up, 
 							  .down, 
 							  .left, 
 							  .right
 							  );
-   
-    color_mapper color_instance(.BallX(ballxsig), 
-										  .BallY(ballysig), 
+							  
+	  car car_instance_1(.Reset(Reset_h),
+								.frame_clk(vssig),
+								.CarX(car1xsig),
+								.CarY(car1ysig),
+								.Car_Width(car1widthsig),
+								.Car_Height(car1heightsig),
+								.Car_Start_X(11'd680),
+								.Car_Start_Y(11'd400),
+								.Direction(1'b0)
+								);
+								
+	 car car_instance_2(.Reset(Reset_h),
+								.frame_clk(vssig),
+								.CarX(car2xsig),
+								.CarY(car2ysig),
+								.Car_Width(car2widthsig),
+								.Car_Height(car2heightsig),
+								.Car_Start_X(-11'd80),
+								.Car_Start_Y(11'd350),
+								.Direction(2'd1)
+								);
+								
+	 car car_instance_3(.Reset(Reset_h),
+								.frame_clk(vssig),
+								.CarX(car3xsig),
+								.CarY(car3ysig),
+								.Car_Width(car3widthsig),
+								.Car_Height(car3heightsig),
+								.Car_Start_X(11'd320),
+								.Car_Start_Y(11'd300),
+								.Direction(2'd0)
+								);
+								
+	 lilypad lpad_inst1( .Reset(Reset_h),
+								.frame_clk(vssig),
+								.LPadX(lpad1xsig),
+								.LPadY(lpad1ysig),
+								.LPad_Width(lpad1widthsig),
+								.LPad_Height(lpad1heightsig),
+								.LPad_Start_X(11'd680),
+								.LPad_Start_Y(11'd100),
+								.Direction(2'd0)
+	);
+	
+	car_row row1(.Reset(), .frame_clk(),
+					.CarY(), 
+					.Number_Cars(),
+					.Gap_Size(),
+					.Speed(),
+					.Direction(),
+					.Car_Start_X()
+				 );
+	
+    color_mapper color_instance(.FrogX(frogxsig), 
+										  .FrogY(frogysig), 
 										  .DrawX(drawxsig), 
 										  .DrawY(drawysig), 
-										  .Ball_size(ballsizesig),
+										  .Frog_Width(frogwidthsig),
+										  .Frog_Height(frogheightsig),
+										  .Car1X(car1xsig),
+										  .Car1Y(car1ysig),
+										  .Car1_Width(car1widthsig),
+										  .Car1_Height(car1heightsig),
+										  .Car2X(car2xsig),
+										  .Car2Y(car2ysig),
+										  .Car2_Width(car2widthsig),
+										  .Car2_Height(car2heightsig),
+										  .Car3X(car3xsig),
+										  .Car3Y(car3ysig),
+										  .Car3_Width(car3widthsig),
+										  .Car3_Height(car3heightsig),
+										  .LPad1X(lpad1xsig),
+										  .LPad1Y(lpad1ysig),
+										  .LPad1_Width(lpad1widthsig),
+										  .LPad1_Height(lpad1heightsig),
 										  .Red(VGA_R), 
 										  .Green(VGA_G), 
 										  .Blue(VGA_B)
@@ -134,7 +212,7 @@ module  final_frogger_top ( input         CLOCK_50,
 						
 		//Previous keycode, and logic left, right, up, down
 		logic[7:0] keycode_prev;
-		logic left, right, up, down;
+		
 		
 		//Assigning Keycodes to left,down,right,and up - ARROW KEYS
 		//				<^>

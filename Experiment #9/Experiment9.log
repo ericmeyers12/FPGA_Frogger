@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  11 APR 2016 22:47
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 APR 2016 21:55
+>>>>>>> origin/master
 entering extended mode
 **Experiment9.tex
 
@@ -857,10 +861,19 @@ LaTeX Info: The control sequence `\]' is already robust on input line 472.
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ))
+<<<<<<< HEAD
 ("C:\Users\Ryan Helsdingen\Documents\School\ECE 385\ECE385_Labs\Experiment #9\E
 xperiment9.aux"
 
 LaTeX Warning: Label `fig:calc-state' multiply defined.
+=======
+(./Experiment9.aux
+
+LaTeX Warning: Label `fig:calc-state' multiply defined.
+
+)
+\openout1 = `Experiment9.aux'.
+>>>>>>> origin/master
 
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -879,7 +892,11 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+<<<<<<< HEAD
  ("C:\Program Files (x86)\MiKTeX 2.90\tex\context\base\supp-pdf.mkii"
+=======
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+>>>>>>> origin/master
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count154
 \scratchdimen=\dimen221
@@ -1106,7 +1123,11 @@ Underfull \hbox (badness 2065) in paragraph at lines 198--199
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 2735) in paragraph at lines 198--199
+=======
+Underfull \hbox (badness 2735) in paragraph at lines 123--124
+>>>>>>> origin/master
 \OT1/ptm/m/n/11 in Fig-ure 5[], 6[], 7[], and 8[] for a 2000ns pe-riod.
  []
 
@@ -1199,6 +1220,7 @@ Package pdftex.def Info: Calc_State_Diagram.png used on input line 269.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+<<<<<<< HEAD
  [5
 
 
@@ -1206,6 +1228,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 O_Module_State_Diagram.png> <C:/Users/Ryan Helsdingen/Documents/School/ECE 385/
 ECE385_Labs/Experiment #9/Decryption_Round_State_Diagram.pdf>]
 <simulate-0-500.png, id=45, 1264.725pt x 440.64626pt>
+=======
+ [4
+
+
+ <./IO_Module_State_Diagram.png> <./Decryption_Round_State_Diagram.pdf>]
+<simulate-0-500.png, id=29, 1264.725pt x 440.64626pt>
+>>>>>>> origin/master
 File: simulate-0-500.png Graphic file (type png)
  <use simulate-0-500.png>
 Package pdftex.def Info: simulate-0-500.png used on input line 284.
@@ -1250,6 +1279,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  23566 strings out of 493921
  534229 string characters out of 3144445
  681615 words of memory out of 3000000
@@ -1265,6 +1295,20 @@ s (x86)/MiKTeX 2.90/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/Mi
 KTeX 2.90/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.90/
 fonts/type1/urw/times/utmri8a.pfb>
 Output written on Experiment9.pdf (7 pages, 902285 bytes).
+=======
+ 23416 strings out of 493089
+ 530378 string characters out of 6134842
+ 684491 words of memory out of 5000000
+ 26488 multiletter control sequences out of 15000+600000
+ 33522 words of font info for 72 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 64i,8n,67p,589b,279s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Experiment9.pdf (6 pages, 665662 bytes).
+>>>>>>> origin/master
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -1,10 +1,10 @@
 	 module hpi_io_intf( input [1:0]  from_sw_address,
-								output[15:0] from_sw_data_in,
+								output logic [15:0] from_sw_data_in,
 								input [15:0] from_sw_data_out,
 								input		 	 from_sw_r,from_sw_w,from_sw_cs,
 								inout [15:0] OTG_DATA,    
-								output[1:0]	 OTG_ADDR,    
-								output		 OTG_RD_N, OTG_WR_N, OTG_CS_N, OTG_RST_N, 
+								output logic [1:0]	 OTG_ADDR,    
+								output logic		 OTG_RD_N, OTG_WR_N, OTG_CS_N, OTG_RST_N, 
 								input 		 OTG_INT, Clk, Reset);
 								
 logic [15:0] tmp_data;
@@ -19,7 +19,7 @@ begin
 	if(Reset)
 	begin
 		tmp_data 		<= 16'b0;
-		OTG_ADDR 		<=	16'b0;
+		OTG_ADDR 		<= 16'b0;
 		OTG_RD_N 		<= 1'b1;
 		OTG_WR_N 		<= 1'b1;
 		OTG_CS_N 		<= 1'b1;

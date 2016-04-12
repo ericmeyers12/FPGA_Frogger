@@ -1,4 +1,24 @@
 
+State Machine - |final_frogger_top|lilypad:lpad_inst1|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car:car_instance_3|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car:car_instance_2|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car:car_instance_1|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
 State Machine - |final_frogger_top|frog:frog_instance|state
 Name state.UP state.WAIT state.RIGHT state.LEFT state.DOWN state.SET 
 state.SET 0 0 0 0 0 0 
