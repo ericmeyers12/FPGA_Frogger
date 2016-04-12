@@ -30,16 +30,16 @@ module  vga_controller ( input        Clk,       // 50 MHz clock
 												  blank,     // Blanking interval indicator.  Active low.
 												  sync,      // Composite Sync signal.  Active low.  We don't use it in this lab,
 												             //   but the video DAC on the DE2 board requires an input for it.
-								 output [9:0] DrawX,     // horizontal coordinate
+								 output [10:0] DrawX,     // horizontal coordinate
 								              DrawY );   // vertical coordinate
     
     // 800 horizontal pixels indexed 0 to 799
     // 525 vertical pixels indexed 0 to 524
-    parameter [9:0] hpixels = 10'b1100011111;
-    parameter [9:0] vlines = 10'b1000001100;
+    parameter [10:0] hpixels = 11'b1100011111;
+    parameter [10:0] vlines = 11'b1000001100;
 	 
 	 // horizontal pixel and vertical line counters
-    logic [9:0] hc, vc;
+    logic [10:0] hc, vc;
     logic clkdiv;
     
 	 // signal indicates if ok to display color for a pixel
@@ -62,16 +62,16 @@ module  vga_controller ( input        Clk,       // 50 MHz clock
 	begin: counter_proc
 		  if ( Reset ) 
 			begin 
-				 hc <= 10'b0000000000;
-				 vc <= 10'b0000000000;
+				 hc <= 11'b0000000000;
+				 vc <= 11'b0000000000;
 			end
 				
 		  else 
 			 if ( hc == hpixels )  //If hc has reached the end of pixel count
 			  begin 
-					hc <= 10'b0000000000;
+					hc <= 11'b0000000000;
 					if ( vc == vlines )   //if vc has reached end of line count
-						 vc <= 10'b0000000000;
+						 vc <= 11'b0000000000;
 					else 
 						 vc <= (vc + 1'b1);
 			  end
@@ -89,7 +89,7 @@ module  vga_controller ( input        Clk,       // 50 MHz clock
         if ( Reset ) 
             hs <= 1'b0;
         else  
-            if ((((hc + 1) >= 10'b1010010000) & ((hc + 1) < 10'b1011110000))) 
+            if ((((hc + 1) >= 11'b1010010000) & ((hc + 1) < 11'b1011110000))) 
                 hs <= 1'b0;
             else 
 				    hs <= 1'b1;
@@ -112,7 +112,7 @@ module  vga_controller ( input        Clk,       // 50 MHz clock
     //(This signal is registered within the DAC chip, so we can leave it as pure combinational logic here)    
     always_comb
     begin 
-        if ( (hc >= 10'b1010000000) | (vc >= 10'b0111100000) ) 
+        if ( (hc >= 11'b1010000000) | (vc >= 11'b0111100000) ) 
             display = 1'b0;
         else 
             display = 1'b1;

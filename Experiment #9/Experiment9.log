@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 APR 2016 11:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 APR 2016 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -836,7 +836,11 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ))
-(./Experiment9.aux)
+(./Experiment9.aux
+
+LaTeX Warning: Label `fig:calc-state' multiply defined.
+
+)
 \openout1 = `Experiment9.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -855,8 +859,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count154
 \scratchdimen=\dimen222
@@ -970,7 +973,7 @@ Underfull \hbox (badness 2065) in paragraph at lines 123--124
 
 
 Underfull \hbox (badness 2735) in paragraph at lines 123--124
-\OT1/ptm/m/n/11 in Fig-ure 4[], 5[], 6[], and 7[] for a 2000ns pe-riod.
+\OT1/ptm/m/n/11 in Fig-ure 5[], 6[], 7[], and 8[] for a 2000ns pe-riod.
  []
 
 
@@ -1063,20 +1066,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
  <./IO_Module_State_Diagram.png> <./Decryption_Round_State_Diagram.pdf>]
-
-! LaTeX Error: File `/*BLOCK*/' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 	\includegraphics[scale=.6]{/*BLOCK*/}
-                                            
-I could not locate the file with any of these extensions:
-.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 <simulate-0-500.png, id=29, 1264.725pt x 440.64626pt>
 File: simulate-0-500.png Graphic file (type png)
  <use simulate-0-500.png>
@@ -1109,12 +1098,12 @@ Package pdftex.def Info: simulate-1500-2000.png used on input line 230.
  [6 <./simulate-500-1000.png> <./simulate-1000-1500.png> <./simulate-1500-2000.
 png>] (./Experiment9.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23429 strings out of 493089
- 530441 string characters out of 6134842
+ 23416 strings out of 493089
+ 530378 string characters out of 6134842
  684491 words of memory out of 5000000
  26488 multiletter control sequences out of 15000+600000
  33522 words of font info for 72 fonts, out of 8000000 for 9000
@@ -1124,7 +1113,7 @@ Here is how much of TeX's memory you used:
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Experiment9.pdf (6 pages, 665676 bytes).
+Output written on Experiment9.pdf (6 pages, 665662 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream

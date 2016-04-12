@@ -14,83 +14,95 @@
 
 
 module  frog ( input Reset, frame_clk,
-               output [9:0]  FrogX, FrogY, FrogS,
+               output [10:0]  FrogX, FrogY, Frog_Width, Frog_Height,
 					input up, down, left, right);
     
-    logic [9:0] Frog_X_Pos, Frog_X_Motion, Frog_Y_Pos, Frog_Y_Motion, Frog_Size;
+    logic [10:0] Frog_X_Position, Frog_Y_Position, Frog_X_Motion, Frog_Y_Motion;
 	 
 	 enum		logic [2:0] {UP, DOWN, LEFT, RIGHT, WAIT, SET} state, next_state;
 	 
-    parameter [9:0] Frog_X_Start=320;  // Start position on the X axis
-    parameter [9:0] Frog_Y_Start=440;  // Start position on the Y axis
-    parameter [9:0] Frog_X_Min=0;       // Leftmost point on the X axis
-    parameter [9:0] Frog_X_Max=639;     // Rightmost point on the X axis
-    parameter [9:0] Frog_Y_Min=0;       // Topmost point on the Y axis
-    parameter [9:0] Frog_Y_Max=479;     // Bottommost point on the Y axis
-    parameter [9:0] Frog_X_Step=40;      // Step size on the X axis
-    parameter [9:0] Frog_Y_Step=30;      // Step size on the Y axis
+    parameter [10:0] Frog_X_Start=320;  // Start position on the X axis
+    parameter [10:0] Frog_Y_Start=440;  // Start position on the Y axis
+    parameter [10:0] Frog_X_Min=0;       // Leftmost point on the X axis
+    parameter [10:0] Frog_X_Max=640;     // Rightmost point on the X axis
+    parameter [10:0] Frog_Y_Min=0;       // Topmost point on the Y axis
+    parameter [10:0] Frog_Y_Max=480;     // Bottommost point on the Y axis
+    parameter [10:0] Frog_X_Step=40;      // Step size on the X axis
+    parameter [10:0] Frog_Y_Step=40;      // Step size on the Y axis
 
-    assign Frog_Size = 8;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+    assign Frog_Width = 40;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
+	 assign Frog_Height = 40;
    
     always_ff @ (posedge Reset or posedge frame_clk )
     begin: Move_Frog
         if (Reset)  // Asynchronous Reset
         begin 
 				state <= SET;
-            Frog_Y_Motion <= 10'd0; //Frog_Y_Step;
-				Frog_X_Motion <= 10'd0; //Frog_X_Step;
-				Frog_Y_Pos <= Frog_Y_Start;
-				Frog_X_Pos <= Frog_X_Start;
+            Frog_Y_Motion <= 11'd0; //Frog_Y_Step;
+				Frog_X_Motion <= 11'd0; //Frog_X_Step;
+				Frog_Y_Position <= Frog_Y_Start;
+				Frog_X_Position <= Frog_X_Start;
         end
         else 
         begin 
 				 state <= next_state;
-				 if ( (Frog_Y_Pos + Frog_Size) >= Frog_Y_Max )  // Frog is at the bottom edge, BOUNCE!
-					  Frog_Y_Motion <= (~ (Frog_Y_Step) + 1'b1);  // 2's complement.
-				 else if ( (Frog_Y_Pos - Frog_Size) <= Frog_Y_Min )  // Frog is at the top edge, BOUNCE!
-					  Frog_Y_Motion <= Frog_Y_Step;
-				 else if ( (Frog_X_Pos + Frog_Size) >= Frog_X_Max )  // Frog is at the right edge, BOUNCE!
-					  Frog_X_Motion <= (~ (Frog_X_Step) + 1'b1);  // 2's complement.
-				 else if ( (Frog_X_Pos - Frog_Size) <= Frog_X_Min )  // Frog is at the left edge, BOUNCE!
-					  Frog_X_Motion <= Frog_X_Step;  
+				 if ((Frog_Y_Position + Frog_Height) > Frog_Y_Max)  //BOTTOM EDGE
+				 begin
+					  //Frog_Y_Motion <= 11'b0;
+					  Frog_Y_Position = Frog_Y_Max - Frog_Height;
+				 end
+				 else if (Frog_Y_Position > 11'd800 && Frog_Y_Position < 11'd1024) //TOP EDGE
+				 begin
+					  //Frog_Y_Motion <= 11'b0;
+					  Frog_Y_Position = Frog_Y_Min;
+				 end
+				 else if ((Frog_X_Position + Frog_Width) > Frog_X_Max )  //RIGHT EDGE
+				 begin
+					  //Frog_X_Motion <= 11'b0;
+					  Frog_X_Position = Frog_X_Max - Frog_Width;
+				 end
+				 else if (Frog_X_Position > 11'd800 && Frog_X_Position < 11'd1024)  //LEFT EDGE
+				 begin
+					  //Frog_X_Motion <= 11'b0;
+					  Frog_X_Position = Frog_X_Min;
+				 end
 				 else 
 					begin
-						if(state == UP)//RIGHT BUTTON PRESSED = "W"
+						if(state == UP && Frog_Y_Position != 0)//RIGHT BUTTON PRESSED
 						begin
-								Frog_X_Motion <= 10'b0;
-								Frog_Y_Motion <= ~(Frog_Y_Step) + 1;
+								Frog_X_Motion <= 11'b0;
+								Frog_Y_Motion <= ~(Frog_Y_Step)+1; //2s Complement
 						end
-						else if(state == DOWN) //DOWN BUTTON PRESSED = "S"
+						else if(state == DOWN) //DOWN BUTTON PRESSED
 						begin
-								Frog_X_Motion <= 10'b0;
+								Frog_X_Motion <= 11'b0;
 								Frog_Y_Motion <= Frog_Y_Step;
 						end
-						else if(state == LEFT) //LEFT BUTTON PRESSED = "A"
+						else if(state == LEFT && Frog_X_Position != 0) //LEFT BUTTON PRESSED
 						begin
-								Frog_Y_Motion <= 10'b0;
-								Frog_X_Motion <= ~(Frog_X_Step) + 1;
+								Frog_Y_Motion <= 11'b0;
+								Frog_X_Motion <= ~(Frog_X_Step)+1; //2s Complement
 						end
-						else if(state == RIGHT) //RIGHT BUTTON PRESSED = "D"
+						else if(state == RIGHT) //RIGHT BUTTON PRESSED
 						begin
-								Frog_Y_Motion <= 10'b0;
+								Frog_Y_Motion <= 11'b0;
 								Frog_X_Motion <= Frog_X_Step;
 						end
 						else //DEFAULT CASE - Nothing pressed so stay still
 						begin
-							Frog_Y_Motion <= 10'b0;
-							Frog_X_Motion <= 10'b0;
+							Frog_Y_Motion <= 11'b0;
+							Frog_X_Motion <= 11'b0;
 						end
 				end	 
-			Frog_Y_Pos <= (Frog_Y_Pos + Frog_Y_Motion);  // Update Frog position
-			Frog_X_Pos <= (Frog_X_Pos + Frog_X_Motion);
+				Frog_Y_Position <= (Frog_Y_Position + Frog_Y_Motion);  // Update Frog position
+				Frog_X_Position <= (Frog_X_Position + Frog_X_Motion);
 		end
 	end
 	
-	assign FrogX = Frog_X_Pos;
-	assign FrogY = Frog_Y_Pos;
-	assign FrogS = Frog_Size;
+	assign FrogX = Frog_X_Position;
+	assign FrogY = Frog_Y_Position;
 	
-	//STATE MACHINE
+	//STATE MACHINE FOR ONLY MOVING ONCE UPON ANY KEYPRESS
 	always_comb 
 	begin
       next_state = state;
