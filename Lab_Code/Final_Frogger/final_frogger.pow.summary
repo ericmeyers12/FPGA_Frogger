@@ -1,0 +1,12 @@
+PowerPlay Power Analyzer Status : Successful - Mon Apr 18 12:59:49 2016
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Revision Name : final_frogger
+Top-level Entity Name : final_frogger_top
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Power Models : Final
+Total Thermal Power Dissipation : 238.85 mW
+Core Dynamic Thermal Power Dissipation : 31.96 mW
+Core Static Thermal Power Dissipation : 102.31 mW
+I/O Thermal Power Dissipation : 104.59 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

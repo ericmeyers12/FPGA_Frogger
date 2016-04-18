@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY final_frogger_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:55:02  SEPTEMBER 28, 2015"
-set_global_assignment -name LAST_QUARTUS_VERSION 15.0.0
+set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE2_115_Default -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE2_115_Default -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -entity DE2_115_Default -section_id "Root Region"
@@ -589,6 +589,7 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ms" -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE testbench.sv -section_id testbench
+set_global_assignment -name SDC_FILE lab8.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE final_frogger_top.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Color_Mapper.sv
 set_global_assignment -name SYSTEMVERILOG_FILE font_rom.sv

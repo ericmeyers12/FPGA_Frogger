@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ establishPalette()
+comment1.params=
+comment1.target=void\ outputPalette()
+comment2.params=
+comment2.target=void\ outputSVs()
+comment3.params=
+comment3.target=int\ getRequiredInt()
+comment4.params=filenames
+comment4.target=LoadImageApp(java.util.ArrayList)
+comment5.params=
+comment5.target=void\ outputRAM()
+comment6.params=number
+comment6.target=java.lang.String\ verilogNumber(int)
+comment7.params=color
+comment7.target=java.lang.String\ verilogColor(int)
+comment8.params=args
+comment8.target=void\ main(java.lang.String[])
+numComments=9
