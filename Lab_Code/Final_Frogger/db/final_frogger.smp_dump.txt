@@ -4,17 +4,62 @@ Name state.WAIT
 state.MOVE 0 
 state.WAIT 1 
 
-State Machine - |final_frogger_top|car:car_instance_3|state
+State Machine - |final_frogger_top|car_row:car_row_instance3|car:car_i[3].car_instance|state
 Name state.WAIT 
 state.MOVE 0 
 state.WAIT 1 
 
-State Machine - |final_frogger_top|car:car_instance_2|state
+State Machine - |final_frogger_top|car_row:car_row_instance3|car:car_i[2].car_instance|state
 Name state.WAIT 
 state.MOVE 0 
 state.WAIT 1 
 
-State Machine - |final_frogger_top|car:car_instance_1|state
+State Machine - |final_frogger_top|car_row:car_row_instance3|car:car_i[1].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance3|car:car_i[0].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance2|car:car_i[3].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance2|car:car_i[2].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance2|car:car_i[1].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance2|car:car_i[0].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance1|car:car_i[3].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance1|car:car_i[2].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance1|car:car_i[1].car_instance|state
+Name state.WAIT 
+state.MOVE 0 
+state.WAIT 1 
+
+State Machine - |final_frogger_top|car_row:car_row_instance1|car:car_i[0].car_instance|state
 Name state.WAIT 
 state.MOVE 0 
 state.WAIT 1 

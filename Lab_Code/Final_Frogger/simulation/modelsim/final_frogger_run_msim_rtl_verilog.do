@@ -30,11 +30,13 @@ vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthe
 vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_jtag_uart_0.v}
 vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/frog.sv}
 vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/car.sv}
+vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/lilypad.sv}
 vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/VGA_controller.sv}
 vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/hpi_io_intf.sv}
 vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/HexDriver.sv}
 vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/Color_Mapper.sv}
 vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/final_frogger_top.sv}
+vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/car_row.sv}
 vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_irq_mapper.sv}
 vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv}
 vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v}

@@ -15,27 +15,17 @@
 
 module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY, 
 														Frog_Width, Frog_Height,
-														Car1X, Car1Y, Car1_Width, Car1_Height,
-														Car2X, Car2Y, Car2_Width, Car2_Height,
-														Car3X, Car3Y, Car3_Width, Car3_Height,
 														LPad1X, LPad1Y, LPad1_Width, LPad1_Height,
+							  input logic [3:0][10:0] Car_Row1_X, Car_Row1_Y,
+							  input logic [3:0][10:0] Car_Row2_X, Car_Row2_Y,
+							  input logic [3:0][10:0] Car_Row3_X, Car_Row3_Y,  
+							  input [2:0] Row1_Number_Cars, Row2_Number_Cars, Row3_Number_Cars,
+							  input [3:0] Car_Collision, LPad_Collision,
                        output logic [7:0]  Red, Green, Blue );
     
-    logic frog_on, car1_on, car2_on, car3_on, lpad1_on;
-
+    logic frog_on, lpad1_on;
+	 logic [3:0] car_on1, car_on2, car_on3;
 	 
- /* Old Ball: Generated square box by checking if the current pixel is within a square of length
-    2*Ball_Size, centered at (BallX, BallY).  Note that this requires unsigned comparisons.
-	 
-    if ((DrawX >= BallX - Ball_size) &&
-       (DrawX <= BallX + Ball_size) &&
-       (DrawY >= BallY - Ball_size) &&
-       (DrawY <= BallY + Ball_size))
-
-     New Ball: Generates (pixelated) circle by using the standard circle formula.  Note that while 
-     this single line is quite powerful descriptively, it causes the synthesis tool to use up three
-     of the 12 available multipliers on the chip!  Since the multiplicants are required to be signed,
-	  we have to first cast them from logic to int (signed by default) before they are multiplied). */
 	 
 /*====== DISPLAY FROGGER ======*/	  
  always_comb
@@ -48,68 +38,98 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
   end 
 	 
 
-/*====== DISPLAY CAR1 =========*/ 
-always_comb
-begin:Car1_on_proc
-		if(Car1X >= 11'd0 && Car1X < 11'd680)
-		begin
-			if (DrawX >= Car1X && DrawX <= (Car1_Width + Car1X) &&
-			DrawY >= Car1Y && DrawY <= (Car1_Height+Car1Y))
-				car1_on = 1'b1;
-			else
-				car1_on = 1'b0;
+/*====== DISPLAY CAR_ROW1 =========*/ 
+	generate 
+		genvar i1;
+		for (i1 = 0; i1 < 3'd4; i1 = i1 + 1) 
+		begin: car_map1
+			always_comb 
+			begin
+				if (i1 < Row1_Number_Cars)
+				begin
+					if(Car_Row1_X[i1] >= 11'd0 && Car_Row1_X[i1] < 11'd680)
+					begin
+						if (DrawX >= Car_Row1_X[i1] && DrawX <= (11'd80 + Car_Row1_X[i1]) &&
+						DrawY >= Car_Row1_Y[i1] && DrawY <= (11'd40 + Car_Row1_Y[i1]))
+							car_on1[i1] = 1'b1;
+						else
+							car_on1[i1] = 1'b0;
+					end
+					else
+					begin
+						if (DrawX >= 11'd0 && DrawX <= (11'd80 + Car_Row1_X[i1]) &&
+						DrawY >= Car_Row1_Y[i1] && DrawY <= (11'd40 + Car_Row1_Y[i1]))
+							car_on1[i1] = 1'b1;
+						else
+							car_on1[i1] = 1'b0;
+					end
+				end
+				else car_on1[i1] = 1'b0;
+			end
 		end
-		else
-		begin
-			if (DrawX >= 11'd0 && DrawX <= (Car1_Width + Car1X) &&
-			DrawY >= Car1Y && DrawY <= (Car1_Height+Car1Y))
-				car1_on = 1'b1;
-			else
-				car1_on = 1'b0;
+	endgenerate
+	
+/*====== DISPLAY CAR_ROW2 =========*/ 
+	generate 
+		genvar i2;
+		for (i2 = 0; i2 < 3'd4; i2 = i2 + 1) 
+		begin: car_map2
+			always_comb 
+			begin
+				if (i2 < Row2_Number_Cars)
+				begin
+					if(Car_Row2_X[i2] >= 11'd0 && Car_Row2_X[i2] < 11'd680)
+					begin
+						if (DrawX >= Car_Row2_X[i2] && DrawX <= (11'd80 + Car_Row2_X[i2]) &&
+						DrawY >= Car_Row2_Y[i2] && DrawY <= (11'd40 + Car_Row2_Y[i2]))
+							car_on2[i2] = 1'b1;
+						else
+							car_on2[i2] = 1'b0;
+					end
+					else
+					begin
+						if (DrawX >= 11'd0 && DrawX <= (11'd80 + Car_Row2_X[i2]) &&
+						DrawY >= Car_Row2_Y[i2] && DrawY <= (11'd40 + Car_Row2_Y[i2]))
+							car_on2[i2] = 1'b1;
+						else
+							car_on2[i2] = 1'b0;
+					end
+				end
+				else car_on2[i2] = 1'b0;
+			end
 		end
-end
-
-/*======= DISPLAY CAR2 ========*/
-always_comb
-begin:Car2_on_proc
-		if(Car2X >= 11'd0 && Car2X < (11'd680))
-		begin
-			if (DrawX >= Car2X && DrawX <= (Car2_Width + Car2X) &&
-			DrawY >= Car2Y && DrawY <= (Car2_Height+Car2Y))
-				car2_on = 1'b1;
-			else
-				car2_on = 1'b0;
+	endgenerate
+	
+/*====== DISPLAY CAR_ROW2 =========*/ 
+	generate 
+		genvar i3;
+		for (i3 = 0; i3 < 3'd4; i3 = i3 + 1) 
+		begin: car_map3
+			always_comb 
+			begin
+				if (i3 < Row3_Number_Cars)
+				begin
+					if(Car_Row3_X[i3] >= 11'd0 && Car_Row3_X[i3] < 11'd680)
+					begin
+						if (DrawX >= Car_Row3_X[i3] && DrawX <= (11'd80 + Car_Row3_X[i3]) &&
+						DrawY >= Car_Row3_Y[i3] && DrawY <= (11'd40 + Car_Row3_Y[i3]))
+							car_on3[i3] = 1'b1;
+						else
+							car_on3[i3] = 1'b0;
+					end
+					else
+					begin
+						if (DrawX >= 11'd0 && DrawX <= (11'd80 + Car_Row3_X[i3]) &&
+						DrawY >= Car_Row3_Y[i3] && DrawY <= (11'd40 + Car_Row3_Y[i3]))
+							car_on3[i3] = 1'b1;
+						else
+							car_on3[i3] = 1'b0;
+					end
+				end
+				else car_on3[i3] = 1'b0;
+			end
 		end
-		else 
-		begin
-			if (DrawX >= 0 && DrawX <= (Car2_Width + Car2X) &&
-			DrawY >= Car2Y && DrawY <= (Car2_Height+Car2Y))
-				car2_on = 1'b1;
-			else
-				car2_on = 1'b0;
-		end
-end
-
-/*======= DISPLAY CAR3 ========*/
-always_comb
-begin:Car3_on_proc
-		if(Car3X >= 11'd0 && Car3X < (11'd680))
-		begin
-			if (DrawX >= Car3X && DrawX <= (Car3_Width + Car3X) &&
-			DrawY >= Car3Y && DrawY <= (Car3_Height+Car3Y))
-				car3_on = 1'b1;
-			else
-				car3_on = 1'b0;
-		end
-		else 
-		begin
-			if (DrawX >= 0 && DrawX <= (Car3_Width + Car3X) &&
-			DrawY >= Car3Y && DrawY <= (Car3_Height+Car3Y))
-				car3_on = 1'b1;
-			else
-				car3_on = 1'b0;
-		end
-end
+	endgenerate
 
 /*======= DISPLAY LILYPAD1 ========*/
 always_comb
@@ -141,29 +161,35 @@ end
 			Green = 8'd252;
 			Blue = 8'd73;
 	  end       
-	  else if (car1_on == 1'b1)	//CAR #1 ON
+	  else if (car_on1[0] == 1'b1 || car_on1[1] == 1'b1 || car_on1[2] == 1'b1 || car_on1[3] == 1'b1)	//CARROW #1 ON
 	  begin
-			Red = 8'd60;
-			Green = 8'd130;
-			Blue = 8'd80;
+			Red = 8'd0;
+			Green = 8'd150;
+			Blue = 8'd250;
 	  end
-	  else if (car2_on == 1'b1)	//CAR #2 ON
+	  else if (car_on2[0] == 1'b1 || car_on2[1] == 1'b1 || car_on2[2] == 1'b1 || car_on2[3] == 1'b1)	//CARROW #2 ON
 	  begin
-			Red = 8'd130;
-			Green = 8'd30;
-			Blue = 8'd90;
+			Red = 8'd150;
+			Green = 8'd0;
+			Blue = 8'd30;
 	  end
-	  else if (car3_on == 1'b1)	//CAR #3 ON
+	  else if (car_on3[0] == 1'b1 || car_on3[1] == 1'b1 || car_on3[2] == 1'b1 || car_on3[3] == 1'b1)	//CARROW #3 ON
 	  begin
-			Red = 8'd240;
-			Green = 8'd280;
-			Blue = 8'd20;
+			Red = 8'd150;
+			Green = 8'd250;
+			Blue = 8'd0;
 	  end
 	  else if (lpad1_on == 1'b1)	//LILYPAD ON
 	  begin
 			Red = 8'd0;
 			Green = 8'd256;
 			Blue = 8'd256;
+	  end
+	  else if (Car_Collision[0] == 1'b1 || Car_Collision[1] == 1'b1 || Car_Collision[2] == 1'b1) //Car_Collision represents each row here
+	  begin
+			Red = 8'd255;
+			Green = 8'd00;
+			Blue = 8'd00;
 	  end
 	  else //SHOW BACKGROUND
 	  begin 

@@ -14,30 +14,45 @@
 
 
 module  car_row ( input Reset, frame_clk,
-						input [10:0] CarY, 
-						input [1:0] Number_Cars,
-						input [7:0] Gap_Size,
-						input [4:0] Speed,
-						input Direction,
-						output logic [1:0][63:0] Car_Start_X
+						input [2:0] Number_Cars,			/*Total number of car modules used MAX 4 CARS/ROW*/
+						input [7:0] Gap_Size,				/*Defines gap size from xcoord of 1 car to xcoord to another car*/
+						input [4:0] Speed,					/*1-32 speed, used in car module state machine*/
+						input Direction, 						/*1 = RIGHT, 0 = LEFT */
+						input [10:0] Car_Start_Y,
+						output logic [3:0] [10:0] Car_X, 	/*640/10 = 64 positions (2^6) on grid with 10 pixel steps*/
+						output logic [3:0] [10:0] Car_Y, 			/*Car_Y is for entire Row*/
+						input [10:0] Frog_X, Frog_Y,
+						output logic Car_Collision
 				 );
 				 
-	generate // start of generate block
+	logic [10:0] Car_Start_X;
+	assign Car_Start_X = 11'd0;
+	logic [3:0] car_collision_intermediate;
+	
+	//This will generate a total of 4 Car Modules every time
+	//Color Mapper will determine which ones must be on and which ones must be off
+	generate
       genvar i;
-
-      for (i=0; i<4; i=i+1) begin: pipe_i
-         pipe pipe_instance(.clk(vssig),
-                            .Reset(Reset_h),
-									 .SoftReset(SoftReset),
-                            .startX((12'd639+12'd25) + i*12'd154),
-									 .switches(SW[7:0]*(i+1)),
-                            .currentX(pipeX[i]),
-                            .width(pipeWidth[i]),
-                            .gapSize(pipeGapSize[i]),
-                            .gapLocation(pipeGapLocation[i]),
-                            .gameOn(gameOn));
-      end
+		for (i = 0; i <= 2'd3; i = i + 1) 
+		begin: car_i
+				car car_instance(.Reset,
+									.frame_clk,
+									.CarX(Car_X[i]),
+									.CarY(Car_Y[i]),
+									.Car_Start_X(Car_Start_X + Gap_Size*i + i*11'd80), 
+									.Car_Start_Y,
+									.Direction,
+									.Speed,
+									.Frog_X,
+									.Frog_Y,
+									.Car_Collision(car_collision_intermediate[i])
+									);
+		end
    endgenerate	 
-    
+	
+	assign Car_Collision = ((car_collision_intermediate [0] && Number_Cars <= 1) ||
+								   (car_collision_intermediate [1] && Number_Cars <= 2) ||
+									(car_collision_intermediate [2] && Number_Cars <= 3) ||
+									(car_collision_intermediate [3] && Number_Cars <= 4)) ? 1 : 0;
    
 endmodule

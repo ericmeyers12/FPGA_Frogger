@@ -15,7 +15,8 @@
 
 module  frog ( input Reset, frame_clk,
                output [10:0]  FrogX, FrogY, Frog_Width, Frog_Height,
-					input up, down, left, right);
+					input up, down, left, right,
+					input [10:0] LPad_MotionX);
     
     logic [10:0] Frog_X_Position, Frog_Y_Position, Frog_X_Motion, Frog_Y_Motion;
 	 

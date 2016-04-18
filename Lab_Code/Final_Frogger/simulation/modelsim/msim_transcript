@@ -21,77 +21,77 @@
 # Modifying modelsim.ini
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis {E:/Final_Frogger/nios_system/synthesis/nios_system.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:53 on Apr 11,2016
+# Start time: 17:09:36 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis" E:/Final_Frogger/nios_system/synthesis/nios_system.v 
 # -- Compiling module nios_system
 # 
 # Top level modules:
 # 	nios_system
-# End time: 13:30:53 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:36 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_reset_controller.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:53 on Apr 11,2016
+# Start time: 17:09:36 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_reset_controller.v 
 # -- Compiling module altera_reset_controller
 # 
 # Top level modules:
 # 	altera_reset_controller
-# End time: 13:30:53 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:36 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_reset_synchronizer.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:53 on Apr 11,2016
+# Start time: 17:09:36 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_reset_synchronizer.v 
 # -- Compiling module altera_reset_synchronizer
 # 
 # Top level modules:
 # 	altera_reset_synchronizer
-# End time: 13:30:53 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:36 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:53 on Apr 11,2016
+# Start time: 17:09:36 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0.v 
 # -- Compiling module nios_system_mm_interconnect_0
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0
-# End time: 13:30:54 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:37 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:54 on Apr 11,2016
+# Start time: 17:09:37 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter.v 
 # -- Compiling module nios_system_mm_interconnect_0_avalon_st_adapter
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_avalon_st_adapter
-# End time: 13:30:55 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:37 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:55 on Apr 11,2016
+# Start time: 17:09:37 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v 
 # -- Compiling module altera_avalon_sc_fifo
 # 
 # Top level modules:
 # 	altera_avalon_sc_fifo
-# End time: 13:30:55 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:37 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sysid_qsys_0.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:55 on Apr 11,2016
+# Start time: 17:09:37 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sysid_qsys_0.v 
 # -- Compiling module nios_system_sysid_qsys_0
 # 
 # Top level modules:
 # 	nios_system_sysid_qsys_0
-# End time: 13:30:55 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:37 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sdram_pll.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:55 on Apr 11,2016
+# Start time: 17:09:37 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sdram_pll.v 
 # -- Compiling module nios_system_sdram_pll_dffpipe_l2c
 # -- Compiling module nios_system_sdram_pll_stdsync_sv6
@@ -100,72 +100,72 @@
 # 
 # Top level modules:
 # 	nios_system_sdram_pll
-# End time: 13:30:55 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:37 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sdram.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:55 on Apr 11,2016
+# Start time: 17:09:37 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sdram.v 
 # -- Compiling module nios_system_sdram_input_efifo_module
 # -- Compiling module nios_system_sdram
 # 
 # Top level modules:
 # 	nios_system_sdram
-# End time: 13:30:55 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:38 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_data.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:55 on Apr 11,2016
+# Start time: 17:09:38 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_data.v 
 # -- Compiling module nios_system_otg_hpi_data
 # 
 # Top level modules:
 # 	nios_system_otg_hpi_data
-# End time: 13:30:55 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:39 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_cs.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:55 on Apr 11,2016
+# Start time: 17:09:39 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_cs.v 
 # -- Compiling module nios_system_otg_hpi_cs
 # 
 # Top level modules:
 # 	nios_system_otg_hpi_cs
-# End time: 13:30:56 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:39 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_address.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:56 on Apr 11,2016
+# Start time: 17:09:39 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_address.v 
 # -- Compiling module nios_system_otg_hpi_address
 # 
 # Top level modules:
 # 	nios_system_otg_hpi_address
-# End time: 13:30:56 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:39 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_onchip_memory2_0.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:56 on Apr 11,2016
+# Start time: 17:09:39 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_onchip_memory2_0.v 
 # -- Compiling module nios_system_onchip_memory2_0
 # 
 # Top level modules:
 # 	nios_system_onchip_memory2_0
-# End time: 13:30:56 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:39 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:56 on Apr 11,2016
+# Start time: 17:09:39 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0.v 
 # -- Compiling module nios_system_nios2_qsys_0
 # 
 # Top level modules:
 # 	nios_system_nios2_qsys_0
-# End time: 13:30:56 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:39 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:56 on Apr 11,2016
+# Start time: 17:09:39 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu.v 
 # -- Compiling module nios_system_nios2_qsys_0_cpu_register_bank_a_module
 # -- Compiling module nios_system_nios2_qsys_0_cpu_register_bank_b_module
@@ -192,61 +192,61 @@
 # Top level modules:
 # 	nios_system_nios2_qsys_0_cpu_nios2_performance_monitors
 # 	nios_system_nios2_qsys_0_cpu
-# End time: 13:30:57 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:40 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_sysclk.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:57 on Apr 11,2016
+# Start time: 17:09:40 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_sysclk.v 
 # -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_sysclk
 # 
 # Top level modules:
 # 	nios_system_nios2_qsys_0_cpu_debug_slave_sysclk
-# End time: 13:30:57 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:40 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_tck.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:57 on Apr 11,2016
+# Start time: 17:09:41 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_tck.v 
 # -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_tck
 # 
 # Top level modules:
 # 	nios_system_nios2_qsys_0_cpu_debug_slave_tck
-# End time: 13:30:57 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:41 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_wrapper.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:57 on Apr 11,2016
+# Start time: 17:09:41 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_wrapper.v 
 # -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_wrapper
 # 
 # Top level modules:
 # 	nios_system_nios2_qsys_0_cpu_debug_slave_wrapper
-# End time: 13:30:57 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:41 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_test_bench.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:57 on Apr 11,2016
+# Start time: 17:09:41 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_test_bench.v 
 # -- Compiling module nios_system_nios2_qsys_0_cpu_test_bench
 # 
 # Top level modules:
 # 	nios_system_nios2_qsys_0_cpu_test_bench
-# End time: 13:30:58 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:41 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_keycode.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:58 on Apr 11,2016
+# Start time: 17:09:41 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_keycode.v 
 # -- Compiling module nios_system_keycode
 # 
 # Top level modules:
 # 	nios_system_keycode
-# End time: 13:30:59 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:41 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_jtag_uart_0.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:59 on Apr 11,2016
+# Start time: 17:09:41 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_jtag_uart_0.v 
 # -- Compiling module nios_system_jtag_uart_0_sim_scfifo_w
 # -- Compiling module nios_system_jtag_uart_0_scfifo_w
@@ -256,256 +256,306 @@
 # 
 # Top level modules:
 # 	nios_system_jtag_uart_0
-# End time: 13:30:59 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:41 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/frog.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:59 on Apr 11,2016
+# Start time: 17:09:41 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/frog.sv 
 # -- Compiling module frog
 # 
 # Top level modules:
 # 	frog
-# End time: 13:30:59 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:42 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/car.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:59 on Apr 11,2016
+# Start time: 17:09:42 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/car.sv 
 # -- Compiling module car
 # 
 # Top level modules:
 # 	car
-# End time: 13:30:59 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:42 on Apr 17,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/lilypad.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:09:42 on Apr 17,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/lilypad.sv 
+# -- Compiling module lilypad
+# 
+# Top level modules:
+# 	lilypad
+# End time: 17:09:42 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/VGA_controller.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:59 on Apr 11,2016
+# Start time: 17:09:42 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/VGA_controller.sv 
 # -- Compiling module vga_controller
 # 
 # Top level modules:
 # 	vga_controller
-# End time: 13:30:59 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:42 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/hpi_io_intf.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:30:59 on Apr 11,2016
+# Start time: 17:09:42 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/hpi_io_intf.sv 
 # -- Compiling module hpi_io_intf
 # 
 # Top level modules:
 # 	hpi_io_intf
-# End time: 13:31:00 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:42 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/HexDriver.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:00 on Apr 11,2016
+# Start time: 17:09:42 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/HexDriver.sv 
 # -- Compiling module HexDriver
 # 
 # Top level modules:
 # 	HexDriver
-# End time: 13:31:00 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:42 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/Color_Mapper.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:00 on Apr 11,2016
+# Start time: 17:09:42 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/Color_Mapper.sv 
 # -- Compiling module color_mapper
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(54): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(56): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(62): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(64): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(67): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(85): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(87): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(93): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(95): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(98): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(116): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(118): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(124): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(126): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(129): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
 # 
 # Top level modules:
 # 	color_mapper
-# End time: 13:31:00 on Apr 11,2016, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# End time: 17:09:43 on Apr 17,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 15
 # vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/final_frogger_top.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:00 on Apr 11,2016
+# Start time: 17:09:43 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/final_frogger_top.sv 
 # -- Compiling module final_frogger_top
 # 
 # Top level modules:
 # 	final_frogger_top
-# End time: 13:31:00 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:43 on Apr 17,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/car_row.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 17:09:43 on Apr 17,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/car_row.sv 
+# -- Compiling module car_row
+# 
+# Top level modules:
+# 	car_row
+# End time: 17:09:43 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_irq_mapper.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:00 on Apr 11,2016
+# Start time: 17:09:43 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_irq_mapper.sv 
 # -- Compiling module nios_system_irq_mapper
 # 
 # Top level modules:
 # 	nios_system_irq_mapper
-# End time: 13:31:00 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:43 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:00 on Apr 11,2016
+# Start time: 17:09:43 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv 
 # -- Compiling module nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0
-# End time: 13:31:00 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:43 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:00 on Apr 11,2016
+# Start time: 17:09:43 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v 
 # -- Compiling module altera_avalon_st_handshake_clock_crosser
 # 
 # Top level modules:
 # 	altera_avalon_st_handshake_clock_crosser
-# End time: 13:31:00 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:43 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_clock_crosser.v}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:01 on Apr 11,2016
+# Start time: 17:09:43 on Apr 17,2016
 # vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_clock_crosser.v 
 # -- Compiling module altera_avalon_st_clock_crosser
 # 
 # Top level modules:
 # 	altera_avalon_st_clock_crosser
-# End time: 13:31:01 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:44 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:01 on Apr 11,2016
+# Start time: 17:09:44 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv 
 # -- Compiling module altera_merlin_arbitrator
 # -- Compiling module altera_merlin_arb_adder
 # 
 # Top level modules:
 # 	altera_merlin_arbitrator
-# End time: 13:31:01 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:44 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux_001.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:01 on Apr 11,2016
+# Start time: 17:09:44 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux_001.sv 
 # -- Compiling module nios_system_mm_interconnect_0_rsp_mux_001
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_rsp_mux_001
-# End time: 13:31:01 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:44 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:01 on Apr 11,2016
+# Start time: 17:09:44 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux.sv 
 # -- Compiling module nios_system_mm_interconnect_0_rsp_mux
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_rsp_mux
-# End time: 13:31:01 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:44 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux_001.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:01 on Apr 11,2016
+# Start time: 17:09:44 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux_001.sv 
 # -- Compiling module nios_system_mm_interconnect_0_rsp_demux_001
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_rsp_demux_001
-# End time: 13:31:01 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:44 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:01 on Apr 11,2016
+# Start time: 17:09:44 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux.sv 
 # -- Compiling module nios_system_mm_interconnect_0_rsp_demux
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_rsp_demux
-# End time: 13:31:02 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:44 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux_001.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:02 on Apr 11,2016
+# Start time: 17:09:44 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux_001.sv 
 # -- Compiling module nios_system_mm_interconnect_0_cmd_mux_001
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_cmd_mux_001
-# End time: 13:31:02 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:45 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:02 on Apr 11,2016
+# Start time: 17:09:45 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux.sv 
 # -- Compiling module nios_system_mm_interconnect_0_cmd_mux
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_cmd_mux
-# End time: 13:31:02 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:45 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux_001.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:02 on Apr 11,2016
+# Start time: 17:09:45 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux_001.sv 
 # -- Compiling module nios_system_mm_interconnect_0_cmd_demux_001
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_cmd_demux_001
-# End time: 13:31:02 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:45 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:02 on Apr 11,2016
+# Start time: 17:09:45 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux.sv 
 # -- Compiling module nios_system_mm_interconnect_0_cmd_demux
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_cmd_demux
-# End time: 13:31:02 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:45 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_003.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:02 on Apr 11,2016
+# Start time: 17:09:45 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_003.sv 
 # -- Compiling module nios_system_mm_interconnect_0_router_003_default_decode
 # -- Compiling module nios_system_mm_interconnect_0_router_003
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_router_003
-# End time: 13:31:03 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:46 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_002.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:03 on Apr 11,2016
+# Start time: 17:09:46 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_002.sv 
 # -- Compiling module nios_system_mm_interconnect_0_router_002_default_decode
 # -- Compiling module nios_system_mm_interconnect_0_router_002
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_router_002
-# End time: 13:31:03 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:46 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_001.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:03 on Apr 11,2016
+# Start time: 17:09:46 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_001.sv 
 # -- Compiling module nios_system_mm_interconnect_0_router_001_default_decode
 # -- Compiling module nios_system_mm_interconnect_0_router_001
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_router_001
-# End time: 13:31:03 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:46 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:03 on Apr 11,2016
+# Start time: 17:09:47 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router.sv 
 # -- Compiling module nios_system_mm_interconnect_0_router_default_decode
 # -- Compiling module nios_system_mm_interconnect_0_router
 # 
 # Top level modules:
 # 	nios_system_mm_interconnect_0_router
-# End time: 13:31:03 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:47 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:03 on Apr 11,2016
+# Start time: 17:09:47 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv 
 # -- Compiling module altera_merlin_slave_agent
 # ** Warning: E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(618): (vlog-2186) SystemVerilog testbench feature
@@ -531,67 +581,107 @@
 # 
 # Top level modules:
 # 	altera_merlin_slave_agent
-# End time: 13:31:03 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:47 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 6
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:03 on Apr 11,2016
+# Start time: 17:09:47 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv 
 # -- Compiling module altera_merlin_burst_uncompressor
 # 
 # Top level modules:
 # 	altera_merlin_burst_uncompressor
-# End time: 13:31:04 on Apr 11,2016, Elapsed time: 0:00:01
+# End time: 17:09:47 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_master_agent.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:04 on Apr 11,2016
+# Start time: 17:09:47 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_master_agent.sv 
 # -- Compiling module altera_merlin_master_agent
 # 
 # Top level modules:
 # 	altera_merlin_master_agent
-# End time: 13:31:04 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:47 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_translator.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:04 on Apr 11,2016
+# Start time: 17:09:47 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_translator.sv 
 # -- Compiling module altera_merlin_slave_translator
 # 
 # Top level modules:
 # 	altera_merlin_slave_translator
-# End time: 13:31:04 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:47 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_master_translator.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:04 on Apr 11,2016
+# Start time: 17:09:47 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_master_translator.sv 
 # -- Compiling module altera_merlin_master_translator
 # 
 # Top level modules:
 # 	altera_merlin_master_translator
-# End time: 13:31:04 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:48 on Apr 17,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/testbench.sv}
 # Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:31:04 on Apr 11,2016
+# Start time: 17:09:48 on Apr 17,2016
 # vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/testbench.sv 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 13:31:04 on Apr 11,2016, Elapsed time: 0:00:00
+# End time: 17:09:48 on Apr 17,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -L nios_system -voptargs="+acc"  testbench
 # vsim -gui "+altera" -l msim_transcript -do "final_frogger_run_msim_rtl_verilog.do" 
-# Start time: 13:31:04 on Apr 11,2016
+# Start time: 17:09:48 on Apr 17,2016
 # Loading sv_std.std
 # Loading work.testbench
+# Loading work.car_row
 # Loading work.car
-# Loading work.color_mapper
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /testbench/car_row_instance/car_i[0]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(38): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_instance/car_i[0]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /testbench/car_row_instance/car_i[1]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(38): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_instance/car_i[1]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /testbench/car_row_instance/car_i[2]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(38): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_instance/car_i[2]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Too few port connections. Expected 13, found 11.
+# 
+#         Region: /testbench/car_row_instance/car_i[3]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(38): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_instance/car_i[3]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(38): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
 # 
 # add wave *
 # view structure
@@ -600,5 +690,5 @@
 # .main_pane.objects.interior.cs.body.tree
 # run 200 ms
 # Success!
-# End time: 13:38:52 on Apr 11,2016, Elapsed time: 0:07:48
-# Errors: 0, Warnings: 0
+# End time: 17:50:48 on Apr 17,2016, Elapsed time: 0:41:00
+# Errors: 0, Warnings: 16
