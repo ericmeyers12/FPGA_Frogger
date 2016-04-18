@@ -50,9 +50,9 @@ module  car_row ( input Reset, frame_clk,
 		end
    endgenerate	 
 	
-	assign Car_Collision = ((car_collision_intermediate [0] && Number_Cars <= 1) ||
-								   (car_collision_intermediate [1] && Number_Cars <= 2) ||
-									(car_collision_intermediate [2] && Number_Cars <= 3) ||
-									(car_collision_intermediate [3] && Number_Cars <= 4)) ? 1 : 0;
+	assign Car_Collision = ((car_collision_intermediate [0] && Number_Cars >= 1) ||
+								   (car_collision_intermediate [1] && Number_Cars >= 2) ||
+									(car_collision_intermediate [2] && Number_Cars >= 3) ||
+									(car_collision_intermediate [3] && Number_Cars == 4)) ? 1 : 0;
    
 endmodule

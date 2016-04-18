@@ -53,26 +53,16 @@ module  car ( input Reset, frame_clk,
 						if (Direction == 1'b0) //DIRECTION == LEFT
 						begin
 							if ((Car_X_Position + Car_Width) == 11'd0)  //LEFT EDGE
-							begin
 								Car_X_Position = 11'd640;
-							end
 							else
-							begin
 								Car_X_Motion <= ~(Car_X_Step) + 1; //2s Complement
-								Car_Y_Motion <= 11'b0;
-							end
 						end
 						else //DIRECTION == RIGHT
 						begin
 							if ((Car_X_Position == 11'd640)) //RIGHT EDGE
-							begin
 								Car_X_Position = 11'd1968;
-							end
 							else
-							begin
 								Car_X_Motion <= Car_X_Step;
-								Car_Y_Motion <= 11'b0;
-							end
 						end
 						time_count <= 11'b0;
 					end
@@ -82,7 +72,7 @@ module  car ( input Reset, frame_clk,
 						time_count <= time_count + 1;
 					end
 				endcase		 
-				Car_Y_Position <= (Car_Y_Position + Car_Y_Motion);  // Update Car position
+				Car_Y_Position <= (Car_Y_Motion);  // Update Car position
 				Car_X_Position <= (Car_X_Position + Car_X_Motion);
 		end
 	end
@@ -107,21 +97,24 @@ module  car ( input Reset, frame_clk,
 		 *		Change Frog_X and Frog_Y values to change tolerance to sprite collisions (in future)
 		 */
 		if (
-			((Frog_X+X_TOLERANCE) >= CarX && (Frog_X+X_TOLERANCE) <= (CarX + Car_Width)  /*TOP LEFT*/
-			&& (Frog_Y+Y_TOLERANCE) >= CarY && (Frog_Y+Y_TOLERANCE) <= (CarY + Car_Height)) 
+			((Frog_X+X_TOLERANCE) >= Car_X_Position && (Frog_X+X_TOLERANCE) <= (Car_X_Position + Car_Width)  /*TOP LEFT*/
+			&& (Frog_Y+Y_TOLERANCE) >= Car_Y_Position && (Frog_Y+Y_TOLERANCE) <= (Car_Y_Position + Car_Height)) 
 			||
-			((Frog_X+X_TOLERANCE) >= CarX && (Frog_X+X_TOLERANCE) <= (CarX + Car_Width) /*BOTTOM LEFT*/
-			&& ((Frog_Y-Y_TOLERANCE) + Frog_Side) >= CarY && ((Frog_Y-Y_TOLERANCE) + Frog_Side) <= (CarY + Car_Height))
+			((Frog_X+X_TOLERANCE) >= Car_X_Position && (Frog_X+X_TOLERANCE) <= (Car_X_Position + Car_Width) /*BOTTOM LEFT*/
+			&& ((Frog_Y-Y_TOLERANCE) + Frog_Side) >= Car_Y_Position && ((Frog_Y-Y_TOLERANCE) + Frog_Side) <= (Car_Y_Position + Car_Height))
 			||
-			(((Frog_X-X_TOLERANCE) + Frog_Side) >= CarX && ((Frog_X-X_TOLERANCE) + Frog_Side) <= (CarX + Car_Width) /*TOP RIGHT*/
-			&& (Frog_Y+Y_TOLERANCE) >= CarY && (Frog_Y+Y_TOLERANCE) <= (CarY+Car_Height))
+			(((Frog_X-X_TOLERANCE) + Frog_Side) >= Car_X_Position && ((Frog_X-X_TOLERANCE) + Frog_Side) <= (Car_X_Position + Car_Width) /*TOP RIGHT*/
+			&& (Frog_Y+Y_TOLERANCE) >= Car_Y_Position && (Frog_Y+Y_TOLERANCE) <= (Car_Y_Position+Car_Height))
 			||
-			(((Frog_X-X_TOLERANCE) + Frog_Side) >= CarX && ((Frog_X-X_TOLERANCE) + Frog_Side) <= (CarX + Car_Width) /*BOTTOM RIGHT*/
-			&& ((Frog_Y-Y_TOLERANCE) + Frog_Side) >= CarY && ((Frog_Y-Y_TOLERANCE) + Frog_Side) <= (CarY + Car_Height))
+			(((Frog_X-X_TOLERANCE) + Frog_Side) >= Car_X_Position && ((Frog_X-X_TOLERANCE) + Frog_Side) <= (Car_X_Position + Car_Width) /*BOTTOM RIGHT*/
+			&& ((Frog_Y-Y_TOLERANCE) + Frog_Side) >= Car_Y_Position && ((Frog_Y-Y_TOLERANCE) + Frog_Side) <= (Car_Y_Position + Car_Height))
 			)
 			Car_Collision = 1'b1;
 		else
 			Car_Collision = 1'b0;
 	end
+	
+	assign CarX = Car_X_Position;
+	assign CarY = Car_Y_Position;
     
 endmodule

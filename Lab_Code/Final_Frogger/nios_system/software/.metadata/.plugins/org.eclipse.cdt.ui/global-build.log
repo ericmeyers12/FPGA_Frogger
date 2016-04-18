@@ -2686,3 +2686,57 @@ Info: Building ../final_frogger_bsp/
 C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
 [BSP build complete]
 [final_frogger build complete]
+19:50:44 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
+19:53:43 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
+19:54:00 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
+19:59:27 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
+19:59:48 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
+20:01:06 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
+20:01:35 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
+21:00:58 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
+21:06:44 **** Incremental Build of configuration Nios II for project final_frogger ****
+make all 
+Info: Building ../final_frogger_bsp/
+C:/altera/15.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../final_frogger_bsp/
+[BSP build complete]
+[final_frogger build complete]
