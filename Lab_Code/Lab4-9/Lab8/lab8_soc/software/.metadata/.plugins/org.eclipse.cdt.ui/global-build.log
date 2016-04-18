@@ -1,6 +1,0 @@
-16:45:40 **** Clean-only build of configuration Nios II for project usb_kb ****
-make clean 
-[usb_kb clean complete]
-16:46:54 **** Clean-only build of configuration Nios II for project usb_kb_bsp ****
-make clean 
-[BSP clean complete]

@@ -1,6 +1,0 @@
-16:46:54 **** Clean-only build of configuration Nios II for project usb_kb_bsp ****
-make clean 
-[BSP clean complete]
-
-16:46:55 Build Finished (took 1s.30ms)
-
