@@ -1,6 +1,6 @@
 EDA Netlist Writer report for final_frogger
-Mon Apr 18 13:01:43 2016
-Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Tue Apr 19 11:15:43 2016
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
 
 
 ---------------------
@@ -24,7 +24,7 @@ functions, and any output files from any of the foregoing
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
+Subscription Agreement, the Altera Quartus II License Agreement,
 the Altera MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Apr 18 13:01:43 2016 ;
+; EDA Netlist Writer Status ; Successful - Tue Apr 19 11:15:43 2016 ;
 ; Revision Name             ; final_frogger                         ;
 ; Top-level Entity Name     ; final_frogger_top                     ;
 ; Family                    ; Cyclone IV E                          ;
@@ -67,42 +67,42 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                      ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                                 ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/final_frogger_7_1200mv_85c_slow.vo     ;
-; C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/final_frogger_7_1200mv_0c_slow.vo      ;
-; C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/final_frogger_min_1200mv_0c_fast.vo    ;
-; C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/final_frogger.vo                       ;
-; C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/final_frogger_7_1200mv_85c_v_slow.sdo  ;
-; C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/final_frogger_7_1200mv_0c_v_slow.sdo   ;
-; C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/final_frogger_min_1200mv_0c_v_fast.sdo ;
-; C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/final_frogger_v.sdo                    ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+; Simulation Generated Files                                                  ;
++-----------------------------------------------------------------------------+
+; Generated Files                                                             ;
++-----------------------------------------------------------------------------+
+; E:/Final_Frogger/simulation/modelsim/final_frogger_7_1200mv_85c_slow.vo     ;
+; E:/Final_Frogger/simulation/modelsim/final_frogger_7_1200mv_0c_slow.vo      ;
+; E:/Final_Frogger/simulation/modelsim/final_frogger_min_1200mv_0c_fast.vo    ;
+; E:/Final_Frogger/simulation/modelsim/final_frogger.vo                       ;
+; E:/Final_Frogger/simulation/modelsim/final_frogger_7_1200mv_85c_v_slow.sdo  ;
+; E:/Final_Frogger/simulation/modelsim/final_frogger_7_1200mv_0c_v_slow.sdo   ;
+; E:/Final_Frogger/simulation/modelsim/final_frogger_min_1200mv_0c_v_fast.sdo ;
+; E:/Final_Frogger/simulation/modelsim/final_frogger_v.sdo                    ;
++-----------------------------------------------------------------------------+
 
 
 +-----------------------------+
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Mon Apr 18 13:01:15 2016
+Info: Running Quartus II 64-Bit EDA Netlist Writer
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Tue Apr 19 11:15:28 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off final_frogger -c final_frogger
-Info (204019): Generated file final_frogger_7_1200mv_85c_slow.vo in folder "C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file final_frogger_7_1200mv_0c_slow.vo in folder "C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file final_frogger_min_1200mv_0c_fast.vo in folder "C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file final_frogger.vo in folder "C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file final_frogger_7_1200mv_85c_v_slow.sdo in folder "C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file final_frogger_7_1200mv_0c_v_slow.sdo in folder "C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file final_frogger_min_1200mv_0c_v_fast.sdo in folder "C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file final_frogger_v.sdo in folder "C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Lab_Code/Final_Frogger/simulation/modelsim/" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 798 megabytes
-    Info: Processing ended: Mon Apr 18 13:01:43 2016
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:24
+Info (204019): Generated file final_frogger_7_1200mv_85c_slow.vo in folder "E:/Final_Frogger/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file final_frogger_7_1200mv_0c_slow.vo in folder "E:/Final_Frogger/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file final_frogger_min_1200mv_0c_fast.vo in folder "E:/Final_Frogger/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file final_frogger.vo in folder "E:/Final_Frogger/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file final_frogger_7_1200mv_85c_v_slow.sdo in folder "E:/Final_Frogger/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file final_frogger_7_1200mv_0c_v_slow.sdo in folder "E:/Final_Frogger/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file final_frogger_min_1200mv_0c_v_fast.sdo in folder "E:/Final_Frogger/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file final_frogger_v.sdo in folder "E:/Final_Frogger/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 661 megabytes
+    Info: Processing ended: Tue Apr 19 11:15:43 2016
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:08
 
 

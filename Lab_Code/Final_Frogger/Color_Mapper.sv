@@ -27,14 +27,24 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 							  input [2:0] Row1_Number_Cars, Row2_Number_Cars, Row3_Number_Cars, Row4_Number_Cars,
 							  input [2:0] Row1_Number_LPads, Row2_Number_LPads, Row3_Number_LPads, Row4_Number_LPads,
 							  input [3:0] Car_Collision, LPad_Collision,
+							  //input logic [18:0] backgroundIndex,      //for background imaage
                        output logic [7:0]  Red, Green, Blue );
     
     logic frog_on, lpad1_on;
 	 logic [3:0] car_on1, car_on2, car_on3, car_on4;
 	 logic [3:0] lpad_on1, lpad_on2, lpad_on3, lpad_on4;
-	  
 	 
 	 
+	 logic [9:0] frog_sprite[0:39][0:39];
+	 logic [9:0] frog_color_idx;
+	 logic [10:0] frog_x_index;
+	 logic [10:0] frog_y_index;
+	 frog_sprite c(.rgb(frog_sprite));
+
+	 logic [9:0] cur_color_idx;
+	 logic [7:0] color_palette [0:93][0:2];   //correct-frogonly
+	 palette game_palette(.palette(color_palette));
+	  	 
 /*====== DISPLAY FROGGER ======*/	  
  always_comb
  begin:Frog_on_proc
@@ -295,15 +305,31 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 			end
 		end
 	endgenerate
+	
+assign frog_x_index = DrawX - FrogX;
+assign frog_y_index = DrawY - FrogY;
+
 
 /*======= UPDATE VGA DISPLAY ======*/	 
  always_comb
  begin:RGB_Display
 	  if ((frog_on == 1'b1)) //FROG ON
 	  begin 
-			Red = 8'd40;
-			Green = 8'd250;
-			Blue = 8'd70;
+		if (frog_sprite[frog_x_index][frog_y_index]!=0)
+		begin
+			Red = color_palette[frog_sprite[frog_x_index][frog_y_index]][0];
+			Green = color_palette[frog_sprite[frog_x_index][frog_y_index]][1];
+			Blue = color_palette[frog_sprite[frog_x_index][frog_y_index]][2];
+		end
+		else
+		begin
+			Red = 8'hff;
+			Green = 8'hff;
+			Blue = 8'hff;
+		end
+//			Red = 8'd0;
+//			Green = 8'd150;
+//			Blue = 8'd250;
 	  end       
 	  else //CARROW #1 ON
 	  if (car_on1[0] == 1'b1 || car_on1[1] == 1'b1 || car_on1[2] == 1'b1 || car_on1[3] == 1'b1)	
@@ -351,10 +377,10 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	  end
 	  else //SHOW APPROPRIATE BACKGROUND (WHITE FOR NOW)
 	  begin 
-			Red = 8'hff;
-			Green = 8'hff;
-			Blue = 8'hff;
-	  end      
+			Red = 8'd255;
+			Green = 8'd255;
+			Blue = 8'd255;	  
+	  end 	     
  end 
     
 endmodule

@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY final_frogger_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:55:02  SEPTEMBER 28, 2015"
-set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
+set_global_assignment -name LAST_QUARTUS_VERSION 15.0.0
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE2_115_Default -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE2_115_Default -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -entity DE2_115_Default -section_id "Root Region"
@@ -598,6 +598,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE car.sv
 set_global_assignment -name SYSTEMVERILOG_FILE car_row.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad_row.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad.sv
+set_global_assignment -name SYSTEMVERILOG_FILE frog_sprite.sv
+set_global_assignment -name SYSTEMVERILOG_FILE palette.sv
 set_global_assignment -name SYSTEMVERILOG_FILE testbench.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hpi_io_intf.sv
