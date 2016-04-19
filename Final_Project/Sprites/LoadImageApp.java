@@ -13,6 +13,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.lang.Math;
 
 public class LoadImageApp {
     ArrayList<String> filenames;
@@ -44,9 +45,9 @@ public class LoadImageApp {
     private void outputPalette() throws IOException {
         int[][] paletteArray = new int[numPaletteEntries+1][3];
         for (Color c : palette.keySet()) {
-            paletteArray[palette.get(c)][0] = c.getRed();
-            paletteArray[palette.get(c)][1] = c.getGreen();
-            paletteArray[palette.get(c)][2] = c.getBlue();
+            paletteArray[palette.get(c)][0] = (int)((double) c.getRed()/10)*10;
+            paletteArray[palette.get(c)][1] = (int)((double) c.getGreen()/10)*10;
+            paletteArray[palette.get(c)][2] = (int)((double) c.getBlue()/10)*10;
         }
 
         PrintStream paletteSV = new PrintStream(new FileOutputStream("palette.sv"));
@@ -151,7 +152,8 @@ public class LoadImageApp {
     public static void main(String[] args) {
         try {
             ArrayList<String> l = new ArrayList<String>();
-            l.add("images/level1background");
+            l.add("images/basicbackground");
+            //l.add("images/level1background");
             //l.add("images/car_left");
             //l.add("images/car_right");
             //l.add("images/frog0");
