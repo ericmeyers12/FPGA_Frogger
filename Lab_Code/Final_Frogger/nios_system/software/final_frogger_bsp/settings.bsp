@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 8, 2016 6:09:50 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1460156990218</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Apr 20, 2016 10:46:45 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1461167206001</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>E:\Final_Frogger\nios_system\software\final_frogger_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios_system.sopcinfo</SopcDesignFile>

@@ -1,6 +1,6 @@
-14:26:18 **** Incremental Build of configuration Nios II for project final_frogger_bsp ****
+10:47:01 **** Build of configuration Nios II for project final_frogger_bsp ****
 make all 
 [BSP build complete]
 
-14:26:18 Build Finished (took 546ms)
+10:47:09 Build Finished (took 7s.773ms)
 

@@ -24,7 +24,7 @@ module  lilypad( input Reset, frame_clk,
     parameter [10:0] LPad_X_Max=11'd640;     // Rightmost point on the X axis
     parameter [10:0] LPad_Y_Min=11'd0;       // Topmost point on the Y axis
     parameter [10:0] LPad_Y_Max=11'd480;     // Bottommost point on the Y axis
-    parameter [10:0] LPad_X_Step=11'd10;      // Step size on the X axis
+    parameter [10:0] LPad_X_Step=11'd40;      // Step size on the X axis
     parameter [10:0] LPad_Y_Step=11'd0;      // Step size on the Y axis
 	 parameter [10:0] X_TOLERANCE = 11'd10;
 	 parameter [10:0] Y_TOLERANCE = 11'd1;
@@ -66,7 +66,7 @@ module  lilypad( input Reset, frame_clk,
 						begin
 							if ((LPad_X_Position == 11'd640)) //RIGHT EDGE
 							begin
-								LPad_X_Position = 11'd1968;
+								LPad_X_Position = 11'd2008;
 							end
 							else
 							begin
@@ -106,7 +106,7 @@ module  lilypad( input Reset, frame_clk,
 		 *		Change Frog_X and Frog_Y values to change tolerance to sprite collisions (in future)
 		 */
 		if (
-			((Frog_X+X_TOLERANCE) >= LPadX && (Frog_X+X_TOLERANCE) <= (LPad_X_Position + LPad_Width)  /*TOP LEFT*/
+			((Frog_X+X_TOLERANCE) >= LPad_X_Position && (Frog_X+X_TOLERANCE) <= (LPad_X_Position + LPad_Width)  /*TOP LEFT*/
 			&& (Frog_Y+Y_TOLERANCE) >= LPad_Y_Position && (Frog_Y+Y_TOLERANCE) <= (LPad_Y_Position + LPad_Height)) 
 			||
 			((Frog_X+X_TOLERANCE) >= LPad_X_Position && (Frog_X+X_TOLERANCE) <= (LPad_X_Position + LPad_Width) /*BOTTOM LEFT*/

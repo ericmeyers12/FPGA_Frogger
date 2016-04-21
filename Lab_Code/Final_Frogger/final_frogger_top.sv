@@ -124,10 +124,10 @@ module  final_frogger_top ( input         CLOCK_50,
 	 logic [3:0] [10:0] lpadrow_ysig [3:0];
 
 	 /*===== Car Parameters =====*/
-	 parameter bit [2:0] Number_Cars_Row [0:3] = '{3'd3, 
+	 parameter bit [2:0] Number_Cars_Row [0:3] = '{3'd4, 
 																  3'd4, 
-																  3'd3,
-																  3'd3};
+																  3'd4,
+																  3'd4};
 
 	 
 	 parameter bit [7:0] Gap_Size_Cars_Row [0:3] = '{8'd80,
@@ -151,21 +151,21 @@ module  final_frogger_top ( input         CLOCK_50,
 																    11'd280};
 	
 	/*===== Lilypad Parameters =====*/
-	 parameter bit [2:0] Number_LPad_Row [0:3] = '{3'd3, 
+	 parameter bit [2:0] Number_LPad_Row [0:3] = '{3'd4, 
 																  3'd4, 
-																  3'd2,
-																  3'd1};
+																  3'd4,
+																  3'd4};
 
 	 
-	 parameter bit [7:0] Gap_Size_LPad_Row [0:3] = '{8'd40,
-																	 8'd40,
-																    8'd40,
-																	 8'd40};
+	 parameter bit [7:0] Gap_Size_LPad_Row [0:3] = '{8'd80,
+																	 8'd80,
+																    8'd80,
+																	 8'd80};
 														
-	 parameter bit [4:0] Speed_LPad_Row [0:3] = '{5'd20,
-																 5'd15,
-															    5'd10,
-															    5'd5};
+	 parameter bit [4:0] Speed_LPad_Row [0:3] = '{5'd15,
+																 5'd20,
+															    5'd25,
+															    5'd30};
 
 	 parameter bit Direction_LPad_Row [0:3] = '{1'b1,
 															  1'b0,
@@ -231,7 +231,7 @@ module  final_frogger_top ( input         CLOCK_50,
 		end
 		endgenerate	 		
 
-	
+
 	
     color_mapper color_instance(.FrogX(frogxsig), 
 										  .FrogY(frogysig), 
@@ -265,6 +265,7 @@ module  final_frogger_top ( input         CLOCK_50,
 										  .Row4_Number_LPads(Number_LPad_Row[3]),
 										  .LPad_Collision(lpadcollisionsig),
 										  .Car_Collision(carcollisionsig),
+										  .up, .down, .left, .right,
 										  .Red(VGA_R), 
 										  .Green(VGA_G), 
 										  .Blue(VGA_B)
@@ -293,7 +294,10 @@ module  final_frogger_top ( input         CLOCK_50,
 			
 		//Update 
 		always_ff @ (posedge Clk)
-			begin
+		begin
 				keycode_prev <= (keycode == 16'h0) ? keycode_prev : keycode;
-			end
+		end
+	
+		
+		
 endmodule

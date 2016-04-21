@@ -599,7 +599,9 @@ set_global_assignment -name SYSTEMVERILOG_FILE car_row.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad_row.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad.sv
 set_global_assignment -name SYSTEMVERILOG_FILE frog_sprite.sv
+set_global_assignment -name SYSTEMVERILOG_FILE basicbackground.sv
 set_global_assignment -name SYSTEMVERILOG_FILE palette.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lilypad_sprite.sv
 set_global_assignment -name SYSTEMVERILOG_FILE testbench.sv
 set_global_assignment -name SYSTEMVERILOG_FILE VGA_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hpi_io_intf.sv

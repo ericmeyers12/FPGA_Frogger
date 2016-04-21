@@ -27,7 +27,7 @@ module  car ( input Reset, frame_clk,
     parameter [10:0] Car_X_Step=11'd10;      // Step size on the X axis
     parameter [10:0] Car_Y_Step=11'd0;      // Step size on the Y axis
 	 parameter [10:0] X_TOLERANCE = 11'd10;
-	 parameter [10:0] Y_TOLERANCE = 11'd1;
+	 parameter [10:0] Y_TOLERANCE = 11'd10;
 	 parameter [10:0] Frog_Side = 11'd40;
 
     assign Car_Width = 80;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"

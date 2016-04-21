@@ -20,7 +20,7 @@ module  lilypad_row (input Reset, frame_clk,
 						input Direction, 						/*1 = RIGHT, 0 = LEFT */
 						input [10:0] LPad_Start_Y,
 						output logic [3:0] [10:0] LPad_X, 	/*640/10 = 64 positions (2^6) on grid with 10 pixel steps*/
-						output logic [3:0] [10:0] LPad_Y, 			/*Car_Y is for entire Row*/
+						output logic [3:0] [10:0] LPad_Y, 	/*Car_Y is for entire Row*/
 						input [10:0] Frog_X, Frog_Y,
 						output logic LPad_Collision
 				 );
