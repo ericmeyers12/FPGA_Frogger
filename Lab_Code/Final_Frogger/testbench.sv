@@ -5,16 +5,46 @@ module testbench();
    
    // These signals are internal because the control will be
    // instantiated as a submodule in testbench.
+	 parameter bit [2:0] Number_LPad_Row [0:3] = '{3'd4, 
+																  3'd4, 
+																  3'd4,
+																  3'd4};
+
+	 
+	 parameter bit [7:0] Gap_Size_LPad_Row [0:3] = '{8'd80,
+																	 8'd80,
+																    8'd80,
+																	 8'd80};
+														
+	 parameter bit [5:0] Speed_LPad_Row [0:3] = '{5'd15,
+																 5'd20,
+															    5'd25,
+															    5'd10};
+
+	 parameter bit Direction_LPad_Row [0:3] = '{1'b1,
+															  1'b0,
+															  1'b1,
+															  1'b0};
+														
+	 parameter bit [10:0] Start_Y_LPad_Row [0:3] = '{11'd320,
+																    11'd360,
+																    11'd400,
+																    11'd440};
+
 	logic Reset, frame_clk;
-	logic [2:0] Number_Cars;			/*Total number of car modules used MAX 4 CARS/ROW*/
-	logic [7:0] Gap_Size;				/*Defines gap size from xcoord of 1 car to xcoord to another car*/
-	logic [4:0] Speed;					/*1-32 speed, used in car module state machine*/
-	logic Direction; 						/*1 = RIGHT, 0 = LEFT */
-	logic [10:0] Car_Start_Y;
-	logic [3:0] [10:0] Car_X; 	/*640/10 = 64 positions (2^6) on grid with 10 pixel steps*/
-	logic [3:0] [10:0] Car_Y;
-	logic [10:0] Frog_X, Frog_Y;
-	logic Car_Collision;
+
+	logic up, down, left, right;
+
+	logic [3:0] [10:0] lpadrow_xsig [3:0];
+	logic [3:0] [10:0] lpadrow_ysig [3:0];
+	 
+	logic [10:0] frogxsig, frogysig, frogheightsig, frogwidthsig;
+	 
+	logic [3:0] lpadcollisionsig;
+	
+		 logic [3:0] [5:0] LPad_Remainder_Count;
+	logic [1:0] cur_Frog_Direction;
+
                        
    // A counter to count the instances where simulation results
    // do no match with expected results
@@ -22,7 +52,44 @@ module testbench();
 
    // Instantiating the DUT
    // Make sure the module and signal names match with those in your design
-   car_row car_row_instance(.*);
+	generate
+	genvar j;
+	for (j = 0; j <= 2'd3; j = j + 1) 
+	begin: lpad_row_j
+		lilypad_row lilypad_row (.Reset, 
+					.frame_clk,
+					.Number_LPads(Number_LPad_Row[j]),
+					.Gap_Size(Gap_Size_LPad_Row[j]),
+					.Speed(Speed_LPad_Row[j]),
+					.LPad_Remainder_Count(LPad_Remainder_Count[j]),
+					.Direction(Direction_LPad_Row[j]), 
+					.LPad_Start_Y(Start_Y_LPad_Row[j]),
+					.LPad_X(lpadrow_xsig[j]), 	
+					.LPad_Y(lpadrow_ysig[j]),
+					.Frog_X(frogxsig),
+					.Frog_Y(frogysig),
+					.LPad_Collision(lpadcollisionsig[j])
+				 ); 	
+	end
+	endgenerate
+
+									
+	frog frog_instance(.Reset, 
+							  .frame_clk,
+							  .FrogX(frogxsig),
+							  .FrogY(frogysig),
+							  .Frog_Width(frogwidthsig),
+							  .Frog_Height(frogheightsig),
+							  .up, 
+							  .down, 
+							  .left, 
+							  .right,
+							  .LPad_Remainder_Count,
+							  .LPad_Speed(Speed_LPad_Row),
+							  .LPad_Direction(Direction_LPad_Row),
+							  .LPad_Collision(lpadcollisionsig),
+							  .cur_Frog_Direction
+							  );
 	
 	// Toggle the clock
    // #1 means wait for a delay of 1 timeunit
@@ -36,16 +103,26 @@ module testbench();
 
    //Testing starts
    initial begin: TEST_VECTORS
-		Frog_X = 600;
-		Frog_Y = 0;
-		Number_Cars = 3'd2;
-      Gap_Size = 8'd80;
-		Speed = 5'd10;
-      Direction = 1'b1;
-		Car_Start_Y = 11'd0;
-      
-      #2 Reset = 1;
-		#3 Reset = 0;
+      Reset = 0;
+		left = 0;
+		right = 0;
+		up = 0;
+		down = 0;
+		
+		
+      #4 Reset = 1;
+		#5 Reset = 0;
+		
+		#2 right = 1;
+		#3 right = 0;
+		
+		#50 left = 1;
+		#1 left = 0;
+		
+		#150  
+		
+		#5 up = 1;
+		#5 up = 0;
       
       if (ErrorCnt == 0)
         $display("Success!");

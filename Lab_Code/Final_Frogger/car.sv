@@ -9,7 +9,7 @@ module  car ( input Reset, frame_clk,
                output [10:0]  CarX, CarY, Car_Width, Car_Height,
 					input [10:0] Car_Start_X, Car_Start_Y,
 					input Direction,
-					input [4:0] Speed,
+					input [5:0] Speed,
 					input [10:0] Frog_X, Frog_Y,
 					output logic Car_Collision
 				 );
@@ -37,12 +37,12 @@ module  car ( input Reset, frame_clk,
     begin: Move_Car
         if (Reset)  // Asynchronous Reset
         begin 
-				state <= MOVE;
-				time_count <= 11'b0;
-            Car_Y_Motion <= 11'd0; //Car_Y_Step;
-				Car_X_Motion <= 11'd0; //Car_X_Step;
-				Car_Y_Position <= Car_Start_Y;
-				Car_X_Position <= Car_Start_X;
+				state = MOVE;
+				time_count = 11'b0;
+            Car_Y_Motion = 11'd0; //Car_Y_Step;
+				Car_X_Motion = 11'd0; //Car_X_Step;
+				Car_Y_Position = Car_Start_Y;
+				Car_X_Position = Car_Start_X;
         end
         else 
         begin 
@@ -55,20 +55,20 @@ module  car ( input Reset, frame_clk,
 							if ((Car_X_Position + Car_Width) == 11'd0)  //LEFT EDGE
 								Car_X_Position = 11'd640;
 							else
-								Car_X_Motion <= ~(Car_X_Step) + 1; //2s Complement
+								Car_X_Motion = ~(Car_X_Step) + 1; //2s Complement
 						end
 						else //DIRECTION == RIGHT
 						begin
 							if ((Car_X_Position == 11'd640)) //RIGHT EDGE
 								Car_X_Position = 11'd1968;
 							else
-								Car_X_Motion <= Car_X_Step;
+								Car_X_Motion = Car_X_Step;
 						end
 						time_count <= 11'b0;
 					end
 					WAIT:
 					begin
-						Car_X_Motion <= 11'b0;
+						Car_X_Motion = 11'b0;
 						time_count <= time_count + 1;
 					end
 				endcase		 

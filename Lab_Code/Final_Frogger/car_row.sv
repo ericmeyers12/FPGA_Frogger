@@ -16,7 +16,7 @@
 module  car_row ( input Reset, frame_clk,
 						input [2:0] Number_Cars,			/*Total number of car modules used MAX 4 CARS/ROW*/
 						input [7:0] Gap_Size,				/*Defines gap size from xcoord of 1 car to xcoord to another car*/
-						input [4:0] Speed,					/*1-32 speed, used in car module state machine*/
+						input [5:0] Speed,					/*1-32 speed, used in car module state machine*/
 						input Direction, 						/*1 = RIGHT, 0 = LEFT */
 						input [10:0] Car_Start_Y,
 						output logic [3:0] [10:0] Car_X, 	/*640/10 = 64 positions (2^6) on grid with 10 pixel steps*/

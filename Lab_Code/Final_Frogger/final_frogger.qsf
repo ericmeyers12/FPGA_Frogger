@@ -589,12 +589,9 @@ set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ms" -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE testbench.sv -section_id testbench
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE game_logic.sv
 set_global_assignment -name SDC_FILE lab8.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE final_frogger_top.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Color_Mapper.sv
-set_global_assignment -name SYSTEMVERILOG_FILE font_rom.sv
 set_global_assignment -name SYSTEMVERILOG_FILE frog.sv
 set_global_assignment -name SYSTEMVERILOG_FILE car.sv
 set_global_assignment -name SYSTEMVERILOG_FILE car_row.sv
@@ -602,6 +599,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE lilypad_row.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad.sv
 set_global_assignment -name SYSTEMVERILOG_FILE frog_sprite.sv
 set_global_assignment -name SYSTEMVERILOG_FILE basicbackground.sv
+set_global_assignment -name SYSTEMVERILOG_FILE font_rom.sv
 set_global_assignment -name SYSTEMVERILOG_FILE palette.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad_sprite.sv
 set_global_assignment -name SYSTEMVERILOG_FILE testbench.sv
@@ -610,3 +608,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE hpi_io_intf.sv
 set_global_assignment -name SYSTEMVERILOG_FILE HexDriver.sv
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/nios_system.v -library nios_system
 set_global_assignment -name QIP_FILE nios_system/synthesis/nios_system.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
