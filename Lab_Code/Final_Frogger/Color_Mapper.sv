@@ -27,19 +27,44 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 							  input [2:0] Row1_Number_Cars, Row2_Number_Cars, Row3_Number_Cars, Row4_Number_Cars,
 							  input [2:0] Row1_Number_LPads, Row2_Number_LPads, Row3_Number_LPads, Row4_Number_LPads,
 							  input [3:0] Car_Collision, LPad_Collision,
+							  input up, down, left, right,
+							  input [1:0] cur_Frog_Direction,
+							  //input logic [18:0] backgroundIndex,      //for background imaage
                        output logic [7:0]  Red, Green, Blue );
     
     logic frog_on, lpad1_on;
 	 logic [3:0] car_on1, car_on2, car_on3, car_on4;
 	 logic [3:0] lpad_on1, lpad_on2, lpad_on3, lpad_on4;
-	  
 	 
 	 
+	 logic [9:0] frog_sprite[0:39][0:39];
+	 logic [9:0] frog_color_idx;
+	 logic [10:0] frog_x_index;
+	 logic [10:0] frog_y_index;
+	 frog_sprite c(.rgb(frog_sprite));
+	 
+//	 logic [9:0] lilypad_sprite[0:39][0:39];
+//	 logic [9:0] lilypad_color_idx;
+//	 logic [10:0] lilypad_x_index;
+//	 logic [10:0] lilypad_y_index;
+//	 lilypad_sprite c(.rgb(lilypad_sprite));
+	 
+	 
+//	 logic [9:0] background[0:639][0:479];
+//	 logic [9:0] background_color_idx;
+//	 logic [10:0] background_x_index;
+//	 logic [10:0] background_y_index;
+//	 basicbackground b(.rgb(background));
+
+	 logic [9:0] cur_color_idx;
+	 logic [7:0] color_palette [0:16][0:2];   //correct-frogonly
+	 palette game_palette(.palette(color_palette));
+	  	 
 /*====== DISPLAY FROGGER ======*/	  
  always_comb
  begin:Frog_on_proc
-	  if (DrawX >= FrogX && DrawX <= (Frog_Width + FrogX) &&
-			DrawY >= FrogY && DrawY <= (Frog_Height + FrogY)) 
+	  if (DrawX >= (FrogX+7) && DrawX <= (Frog_Width + (FrogX-7)) &&
+			DrawY >= (FrogY+10) && DrawY <= (Frog_Height + FrogY-5)) 
 			frog_on = 1'b1;
 	  else 
 			frog_on = 1'b0;
@@ -182,7 +207,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 				begin
 					if(LPad_Row1_X[j1] >= 11'd0 && LPad_Row1_X[j1] < 11'd680)
 					begin
-						if (DrawX >= LPad_Row1_X[j1] && DrawX <= (11'd80 + LPad_Row1_X[j1]) &&
+						if (DrawX >= LPad_Row1_X[j1] && DrawX <= (11'd40 + LPad_Row1_X[j1]) &&
 						DrawY >= LPad_Row1_Y[j1] && DrawY <= (11'd40 + LPad_Row1_Y[j1]))
 							lpad_on1[j1] = 1'b1;
 						else
@@ -190,7 +215,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 					end
 					else
 					begin
-						if (DrawX >= 11'd0 && DrawX <= (11'd80 + LPad_Row1_X[j1]) &&
+						if (DrawX >= 11'd0 && DrawX <= (11'd40 + LPad_Row1_X[j1]) &&
 						DrawY >= LPad_Row1_Y[j1] && DrawY <= (11'd40 + LPad_Row1_Y[j1]))
 							lpad_on1[j1] = 1'b1;
 						else
@@ -213,7 +238,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 				begin
 					if(LPad_Row2_X[j2] >= 11'd0 && LPad_Row2_X[j2] < 11'd680)
 					begin
-						if (DrawX >= LPad_Row2_X[j2] && DrawX <= (11'd80 + LPad_Row2_X[j2]) &&
+						if (DrawX >= LPad_Row2_X[j2] && DrawX <= (11'd40 + LPad_Row2_X[j2]) &&
 						DrawY >= LPad_Row2_Y[j2] && DrawY <= (11'd40 + LPad_Row2_Y[j2]))
 							lpad_on2[j2] = 1'b1;
 						else
@@ -221,7 +246,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 					end
 					else
 					begin
-						if (DrawX >= 11'd0 && DrawX <= (11'd80 + LPad_Row2_X[j2]) &&
+						if (DrawX >= 11'd0 && DrawX <= (11'd40 + LPad_Row2_X[j2]) &&
 						DrawY >= LPad_Row2_Y[j2] && DrawY <= (11'd40 + LPad_Row2_Y[j2]))
 							lpad_on2[j2] = 1'b1;
 						else
@@ -244,7 +269,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 				begin
 					if(LPad_Row3_X[j3] >= 11'd0 && LPad_Row3_X[j3] < 11'd680)
 					begin
-						if (DrawX >= LPad_Row3_X[j3] && DrawX <= (11'd80 + LPad_Row3_X[j3]) &&
+						if (DrawX >= LPad_Row3_X[j3] && DrawX <= (11'd40 + LPad_Row3_X[j3]) &&
 						DrawY >= LPad_Row3_Y[j3] && DrawY <= (11'd40 + LPad_Row3_Y[j3]))
 							lpad_on3[j3] = 1'b1;
 						else
@@ -252,7 +277,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 					end
 					else
 					begin
-						if (DrawX >= 11'd0 && DrawX <= (11'd80 + LPad_Row3_X[j3]) &&
+						if (DrawX >= 11'd0 && DrawX <= (11'd40 + LPad_Row3_X[j3]) &&
 						DrawY >= LPad_Row3_Y[j3] && DrawY <= (11'd40 + LPad_Row3_Y[j3]))
 							lpad_on3[j3] = 1'b1;
 						else
@@ -276,7 +301,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 				begin
 					if(LPad_Row4_X[j4] >= 11'd0 && LPad_Row4_X[j4] < 11'd680)
 					begin
-						if (DrawX >= LPad_Row4_X[j4] && DrawX <= (11'd80 + LPad_Row4_X[j4]) &&
+						if (DrawX >= LPad_Row4_X[j4] && DrawX <= (11'd40 + LPad_Row4_X[j4]) &&
 						DrawY >= LPad_Row4_Y[j4] && DrawY <= (11'd40 + LPad_Row4_Y[j4]))
 							lpad_on4[j4] = 1'b1;
 						else
@@ -284,7 +309,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 					end
 					else
 					begin
-						if (DrawX >= 11'd0 && DrawX <= (11'd80 + LPad_Row4_X[j4]) &&
+						if (DrawX >= 11'd0 && DrawX <= (11'd40 + LPad_Row4_X[j4]) &&
 						DrawY >= LPad_Row4_Y[j4] && DrawY <= (11'd40 + LPad_Row4_Y[j4]))
 							lpad_on4[j4] = 1'b1;
 						else
@@ -295,17 +320,56 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 			end
 		end
 	endgenerate
+	
+assign frog_x_index = DrawX - FrogX;
+assign frog_y_index = DrawY - FrogY;
+//assign frog_x_index = DrawX - FrogX;
+//assign frog_y_index = DrawY - FrogY;
+always_comb
+begin
+if (cur_Frog_Direction == 2'b00)     //up
+	frog_color_idx = frog_sprite[frog_x_index][frog_y_index];
+else if (cur_Frog_Direction == 2'b01) //down
+	frog_color_idx = frog_sprite[Frog_Width-frog_x_index][Frog_Height-frog_y_index];
+else if (cur_Frog_Direction == 2'b10) //right
+	frog_color_idx = frog_sprite[frog_y_index][frog_x_index];
+else if (cur_Frog_Direction == 2'b11) //left
+	frog_color_idx = frog_sprite[Frog_Height-frog_y_index][Frog_Width-frog_x_index];
+else 
+	frog_color_idx = frog_sprite[frog_x_index][frog_y_index];
+end
+
+//assign background_x_index = DrawX;
+//assign background_y_index = DrawY;
+//assign background_color_idx = basicbackground[background_x_index][background_y_index];
+
 
 /*======= UPDATE VGA DISPLAY ======*/	 
  always_comb
  begin:RGB_Display
 	  if ((frog_on == 1'b1)) //FROG ON
 	  begin 
-			Red = 8'd40;
-			Green = 8'd250;
-			Blue = 8'd70;
-	  end       
-	  else //CARROW #1 ON
+		if (frog_color_idx!=0)
+		begin
+			Red = color_palette[frog_color_idx][0];
+			Green = color_palette[frog_color_idx][1];
+			Blue = color_palette[frog_color_idx][2];
+		end
+		else
+		begin
+//			Red = color_palette[background_color_idx][0];
+//			Green = color_palette[background_color_idx][1];
+//			Blue = color_palette[background_color_idx][2];
+			Red = 8'd255;
+			Green = 8'd255;
+			Blue = 8'd255;
+		end
+//			Red = 8'd0;
+//			Green = 8'd150;
+//			Blue = 8'd250;
+	  end 
+	  else
+	  //CARROW #1 ON
 	  if (car_on1[0] == 1'b1 || car_on1[1] == 1'b1 || car_on1[2] == 1'b1 || car_on1[3] == 1'b1)	
 	  begin
 			Red = 8'd0;
@@ -349,12 +413,41 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 			Green = 8'd00;
 			Blue = 8'd00;
 	  end
+	  else if (LPad_Collision[0] == 1'b1 || LPad_Collision[1] == 1'b1 || LPad_Collision[2] == 1'b1 || LPad_Collision[3] == 1'b1) //Car_Collision represents each row here
+	  begin
+			Red = 8'd179;
+			Green = 8'd255;
+			Blue = 8'd187;
+	  end
 	  else //SHOW APPROPRIATE BACKGROUND (WHITE FOR NOW)
 	  begin 
-			Red = 8'hff;
-			Green = 8'hff;
-			Blue = 8'hff;
-	  end      
+			if (DrawY > 80 && DrawY < 239 )
+			begin
+				Red = 8'd0;
+				Green = 8'd200;
+				Blue = 8'd255;
+			end
+			else if (DrawY > 240 && DrawY < 279)
+			begin
+				Red = 8'd0;
+				Green = 8'd200;
+				Blue = 8'd0;	
+			end
+			else if (DrawY > 280 && DrawY < 439)
+			begin
+				Red = 8'd69;
+				Green = 8'd69;
+				Blue = 8'd69;
+			end
+			else begin
+	//			Red = color_palette[background_color_idx][0];
+	//			Green = color_palette[background_color_idx][1];
+	//			Blue = color_palette[background_color_idx][2];
+				Red = 8'd255;
+				Green = 8'd255;
+				Blue = 8'd255;	 
+			end
+	  end 	     
  end 
     
 endmodule

@@ -7,12 +7,12 @@
 
 
 % Title of Document
-\title{ECE385 Final Project Proposal
+\title{ECE385 Final Project Report
 	}
 \author{
-\IEEEauthorblockN{Project Idea: Frogger \\ Eric Meyers, Ryan Helsdingen}\\
+\IEEEauthorblockN{Frogger in System Verilog\\ Eric Meyers, Ryan Helsdingen}\\
 \IEEEauthorblockA{Section ABG; TAs: Ben Delay, Shuo Liu \\
-April 6th, 2016 \\
+May 4th, 2016 \\
 emeyer7, helsdin2}}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \begin{document}
@@ -21,146 +21,102 @@ emeyer7, helsdin2}}
 \maketitle
 \singlespacing
 
-%SECTION 2 - Description of Circuit / Inputs and Outputs - 
-\section{Ideas and Overview}
-Our idea is to create a "Frogger" game with the basic premise of moving a frog across the street without getting hit by any moving obstacles (refer to Figure \ref{fig:frogger} for more details). This will be accomplished via similar techniques used in lab8 and interfacing VGA graphics with a USB keyboard controller.\\
+%SECTION 1 - Introduction - ERIC
+\section{Introduction}
+The basic premise of Frogger is to navigate frogs across the street/water without dying. A frog may die by either colliding with a moving car or falling in the water. There are a total of three frogs that the user must navigate to the other end of the map, and once all three frogs move to their particular ending location, the user wins. If a user dies three times, then the game is over.\\
 
-A NIOS-II Processor will be used which will be created in Qsys along with PIO modules to handle the input and output of the game. The sprite data and the background image data will be stored onboard the SDRAM which holds 1GBit of data (~20MB) - this will be plenty enough to store the sprite data ($<$ 1MB) and any other background image data we choose to use. The color\_mapper.sv file will then be modified to include the particular sprites wherever/whenever we may choose to use them.
-%SECTION 3 - Purpose of Modules - 
-\section{Block Diagram} 
-\begin{figure} [H]
-	\centering
-	\includegraphics[scale=.25]{Block_Diagram.png}
-	\caption{Block Diagram\label{fig:frogger}}
-\end{figure} 
+This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 FPGA Board, and used software drivers developed in C to communicate with a USB keyboard (to be used as the controller).
 
-%SECTION 4 - Description of USB Protocol & Changes
+
+%SECTION 2 - List of Features
 \section{List of Features}
-\textit{Basic Functionality}
-\begin{itemize}
-	\item User controlled block moves according to grid set on VGA display
-	\begin{itemize}
-		\item Up, down, left, or right depending on input
-	\end{itemize}
-	\item Moving obstacles that are different shapes
-	\begin{itemize}
-		\item Different types of objects can lead to different outcomes - i.e. object can either allow ``frogger" to move with it or kill it.
-	\end{itemize}
-	\item Multiple levels with increasing difficulty
-	\item Starting point and ending point on any given level
-	\item Timer
-		\begin{itemize}
-			\item 5 minutes to complete level
-		\end{itemize} 
-	\item Color 
-	\begin{itemize}
-		\item Must be able to clearly differentiate between obstacle, user controlled block, and the map
-	\end{itemize}
-	\item Score/Highscore
-\end{itemize}
+	%RYAN SECTION
+%\begin{itemize}
+%	\item User controlled block moves according to grid set on VGA display
+%	\begin{itemize}
+%		\item Up, down, left, or right depending on input
+%	\end{itemize}
+%	\item Moving obstacles that are different shapes
+%	\begin{itemize}
+%		\item Different types of objects can lead to different outcomes - i.e. object can either allow ``frogger" to move with it or kill it.
+%	\end{itemize}
+%	\item Multiple levels with increasing difficulty
+%	\item Starting point and ending point on any given level
+%	\item Timer
+%		\begin{itemize}
+%			\item 5 minutes to complete level
+%		\end{itemize} 
+%	\item Color 
+%	\begin{itemize}
+%		\item Must be able to clearly differentiate between obstacle, user controlled block, and the map
+%	\end{itemize}
+%	\item Score/Highscore
+%\end{itemize}
 
-\vspace{5mm}
+%\vspace{5mm}
+%
+%\textit{Optional Functionality and Complexity}
+%\begin{itemize}
+%	\item Multiple maps
+%	\begin{itemize}
+%		\item Maps taking place with different shaped obstacles and different background
+%	\end{itemize}
+%	\item Sound - 8-bit soundtrack
+%	\item Sprites and animations
+%	\item Start menu - Options Help Highscores, Start Button
+%	\item Powerups:
+%		\begin{itemize}
+%			\item Slow-down/speed-up obstacles
+%			\item Longer blocks for "frogger" to hop onto
+%			\item 
+%		\end{itemize}
+%	\item 2-Player Mode
+%\end{itemize}
 
-\textit{Optional Functionality and Complexity}
-\begin{itemize}
-	\item Multiple maps
-	\begin{itemize}
-		\item Maps taking place with different shaped obstacles and different background
-	\end{itemize}
-	\item Sound - 8-bit soundtrack
-	\item Sprites and animations
-	\item Start menu - Options Help Highscores, Start Button
-	\item Powerups:
-		\begin{itemize}
-			\item Slow-down/speed-up obstacles
-			\item Longer blocks for "frogger" to hop onto
-			\item 
-		\end{itemize}
-	\item 2-Player Mode
-\end{itemize}
+%SECTION 3 - Block Diagram - 
+\section{Block Diagram} 
+	 %ERIC SECTION - PUT BETTER BLOCK DIAGRAM HERE
+	 %RYAN - if you have anything to add here, feel free too
+ 
+ 
+%SECTION 4 - Purpose of Modules - 
+\section{Purpose of Modules}
+	%ERIC SECTION/RYAN SECTION- WORK ON YOUR RESPECTIVE STUFF
+	
+%SECTION 5 - Circuit Schematics - 
+\section{Circuit Schematics}
+	%ERIC SECTION
 
-%SECTION 5 - State Diagram for Decryption 
-\section{Expected Difficulty}
-The basic functionality of this game will not be much difficulty at all (4 pts). We are relying on implementing a majority of our ``Optional Functionality and Complexity" that will give us the bulk of the difficulty points. This project will most likely approach a 6 in terms of difficulty. \\
+%SECTION 6 - Finite State Machines - 
+\section{Finite State Machines}
+	%RYAN SECTION?
 
-The basic functionality is not too difficult to implement and will require us to heavily modify Lab 8. Sprites, animations, different maps, levels and power-ups will all require efficient memory usage. 
+%SECTION 7 - Color and Sprite Generation
+\section{Color \& Sprite Generation}
+	%RYAN SECTION?
 
-%SECTION 6 - Proposed Timeline
-\section{Proposed Timeline} 
-The final design project will take a total of 5 weeks to complete. Establishing a timeline will help guide the project to completion.  The table below gives an overview of lab dates and key checkpoints for the project.
+%SECTION 8 - Difficulty - 
+\section{ Difficulty}
+	%RYAN SECTION - Make an argument for the difficulty of this project
 
-\begin{table}[htbp]
-	\centering
-	\begin{tabular}{ccc}	% ccccccc indicates 7 center aligned columns
-		\toprule	% top separator
-		Week \# & Lab Date & Checkpoint \\
-		\midrule
-		0 & March 30 & \\
-		1 & April 6 & Design Proposal Due \\
-		2 & April 13 & \\
-		3 & April 20 & Mid-checkpoint \\
-		4 & April 27 & \\
-		5 & May 4 & Final Demo/Report Due \\
-		
-		\bottomrule	% bottom separator
-	\end{tabular}%
-	\label{tab:table1}	% this is the label given to the table that can be referenced using \ref{tab:Exp1Part1_7}
-\end{table}%
 
-\subsection{Week 1 - Design Proposal Due} 
-The design proposal is due in this lab period.  A list of modules that will be implemented should begin to be organized by the team and a method of procedure for the project should be established.  
-\subsection{Week 2}
-There is no lab this week.  The tasks that should be completed by the end of this week include the following:
-
-\begin{itemize}
-	\item create a generic block on screen to represent Frogger character
-	\item generate grid for Frogger to move
-	\item implement keyboard W-S-A-D to control up, down, left, and right movements for Frogger 
-	\item establish starting and ending locations on the map 
-\end{itemize}
-
-\subsection{Week 3 - Mid-checkpoint}
-This week will be the mid-checkpoint where progress in the project will be demonstrated to the TAs.  The tasks that will be shown to the TA include all tasks scheduled to be completed in previous weeks as well as the following which will be completed in week 3: 
-\begin{itemize}
-	\item create generic blocks for obstacles (cars and logs) 
-	\item declare which obstacles Frogger can jump on and which obstacles kill Frogger
-	\item make the obstacles move at various speeds and directions
-	\item test and fix any bugs with object movement
-\end{itemize}
-
-\subsection{Week 4} 
-There is no lab this week. The tasks that should be completed by the end of this week include the following: 
-\begin{itemize}
-	\item add graphical design to Frogger and the obstacles
-	\item input a background design
-	\item add a second player with option for 1- or 2-player modes
-	\item implement keyboard arrows to control up, down, left, and right movements for 2nd Frogger character
-
-\end{itemize}
-
-\subsection{Week 5 - Final Demo/Report Due}  
-The last week of the final design project is demo week where the project must be 100\% complete and all deliverables ready to display for the TAs.  The written report will also be due at this time.  The remaining tasks that must be completed by the end of this week include the following:   
-
-\begin{itemize}
-	\item add a game clock and scoreboard
-	\item construct a start menu
-	\item add multiple levels with increased difficulty (optional)
-	\item input powerups or other special features (optional)
-	\item insert 8-bit soundtrack (optional)  
-\end{itemize}
+%SECTION 9 - Conclusion
+\section{Conclusion} 
+	%JOINT SECTION
 
 
 
-%SECTION 7: Figures
+%SECTION 10: Figures & Appendix
 \section{Figures}
+\section*{Appendix}
 
 
-\begin{figure} [H]
-	\centering
-	\includegraphics[scale=.3]{Frogger.png}
-	\caption{Basic Gameplay Demonstration\label{fig:frogger}}
-\end{figure}            
-
-     
+%%\begin{figure} [H]
+%%	\centering
+%%	\includegraphics[scale=.3]{Frogger.png}
+%%	\caption{Basic Gameplay Demonstration\label{fig:frogger}}
+%%\end{figure}            
+%
+%     
 
 \end{document}

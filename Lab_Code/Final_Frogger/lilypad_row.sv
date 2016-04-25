@@ -16,11 +16,12 @@
 module  lilypad_row (input Reset, frame_clk,
 						input [2:0] Number_LPads,			/*Total number of lpad modules used MAX 4 LPadS/ROW*/
 						input [7:0] Gap_Size,				/*Defines gap size from xcoord of 1 car to xcoord to another car*/
-						input [4:0] Speed,					/*1-32 speed, used in car module state machine*/
+						input [5:0] Speed,					/*1-32 speed, used in car module state machine*/
 						input Direction, 						/*1 = RIGHT, 0 = LEFT */
 						input [10:0] LPad_Start_Y,
-						output logic [3:0] [10:0] LPad_X, 	/*640/10 = 64 positions (2^6) on grid with 10 pixel steps*/
-						output logic [3:0] [10:0] LPad_Y, 			/*Car_Y is for entire Row*/
+						output [5:0] LPad_Remainder_Count,
+						output logic [3:0] [10:0] LPad_X, 	/*640 positions*/
+						output logic [3:0] [10:0] LPad_Y, 	/*Car_Y is for entire Row*/
 						input [10:0] Frog_X, Frog_Y,
 						output logic LPad_Collision
 				 );
@@ -28,6 +29,9 @@ module  lilypad_row (input Reset, frame_clk,
 	logic [10:0] LPad_Start_X;
 	assign LPad_Start_X = 11'd0;
 	logic [3:0] lpad_collision_intermediate;
+	logic [3:0][5:0]LPad_Remainder_Count_INT;
+
+		 
 	
 	//This will generate a total of 4 Car Modules every time
 	//Color Mapper will determine which ones must be on and which ones must be off
@@ -43,12 +47,16 @@ module  lilypad_row (input Reset, frame_clk,
 									.LPad_Start_Y,
 									.Direction,
 									.Speed,
+									.LPad_Remainder_Count(LPad_Remainder_Count_INT[i]),
 									.Frog_X,
 									.Frog_Y,
 									.LPad_Collision(lpad_collision_intermediate[i])
 									);
 		end
    endgenerate	 
+	
+	assign LPad_Remainder_Count = LPad_Remainder_Count_INT[0];
+	
 	
 	assign LPad_Collision = ((lpad_collision_intermediate [0] && Number_LPads >= 1) ||
 								   (lpad_collision_intermediate [1] && Number_LPads >= 2) ||
