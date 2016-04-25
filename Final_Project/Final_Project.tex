@@ -21,15 +21,16 @@ emeyer7, helsdin2}}
 \maketitle
 \singlespacing
 
-%SECTION 2 - Description of Circuit / Inputs and Outputs - 
+%SECTION 1 - Introduction - ERIC
 \section{Introduction}
 The basic premise of Frogger is to navigate frogs across the street/water without dying. A frog may die by either colliding with a moving car or falling in the water. There are a total of three frogs that the user must navigate to the other end of the map, and once all three frogs move to their particular ending location, the user wins. If a user dies three times, then the game is over.\\
 
-This system was developed in System Verilog in Quartus-II, and used software drivers developed in C to communicate with a USB keyboard (to be used as the controller).
-%Our idea is to create a "Frogger" game with the basic premise of moving a frog across the street without getting hit by any moving obstacles (refer to Figure \ref{fig:frogger} for more details). This will be accomplished via similar techniques used in lab8 and interfacing VGA graphics with a USB keyboard controller.\\
-%
-%A NIOS-II Processor will be used which will be created in Qsys along with PIO modules to handle the input and output of the game. The sprite data and the background image data will be stored onboard the SDRAM which holds 1GBit of data (~20MB) - this will be plenty enough to store the sprite data ($<$ 1MB) and any other background image data we choose to use. The color\_mapper.sv file will then be modified to include the particular sprites wherever/whenever we may choose to use them.
+This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 FPGA Board, and used software drivers developed in C to communicate with a USB keyboard (to be used as the controller).
+
+
+%SECTION 2 - List of Features
 \section{List of Features}
+	%RYAN SECTION
 %\begin{itemize}
 %	\item User controlled block moves according to grid set on VGA display
 %	\begin{itemize}
@@ -71,66 +72,51 @@ This system was developed in System Verilog in Quartus-II, and used software dri
 %		\end{itemize}
 %	\item 2-Player Mode
 %\end{itemize}
-%SECTION 3 - Purpose of Modules - 
+
+%SECTION 3 - Block Diagram - 
 \section{Block Diagram} 
-%\begin{figure} [H]
-%	\centering
-%	\includegraphics[scale=.25]{Block_Diagram.png}
-%	\caption{Block Diagram\label{fig:frogger}}
-%\end{figure} 
-
+	 %ERIC SECTION - PUT BETTER BLOCK DIAGRAM HERE
+	 %RYAN - if you have anything to add here, feel free too
+ 
+ 
+%SECTION 4 - Purpose of Modules - 
 \section{Purpose of Modules}
-
+	%ERIC SECTION/RYAN SECTION- WORK ON YOUR RESPECTIVE STUFF
+	
+%SECTION 5 - Circuit Schematics - 
 \section{Circuit Schematics}
+	%ERIC SECTION
 
+%SECTION 6 - Finite State Machines - 
 \section{Finite State Machines}
-%SECTION 4 - Description of USB Protocol & Changes
+	%RYAN SECTION?
 
-
-%SECTION 5 - State Diagram for Decryption 
+%SECTION 7 - Color and Sprite Generation
 \section{Color \& Sprite Generation}
+	%RYAN SECTION?
 
+%SECTION 8 - Difficulty - 
 \section{ Difficulty}
-%The basic functionality of this game will not be much difficulty at all (4 pts). We are relying on implementing a majority of our ``Optional Functionality and Complexity" that will give us the bulk of the difficulty points. This project will most likely approach a 6 in terms of difficulty. \\
-%
-%The basic functionality is not too difficult to implement and will require us to heavily modify Lab 8. Sprites, animations, different maps, levels and power-ups will all require efficient memory usage. 
+	%RYAN SECTION - Make an argument for the difficulty of this project
 
-%SECTION 6 - Proposed Timeline
+
+%SECTION 9 - Conclusion
 \section{Conclusion} 
-%The final design project will take a total of 5 weeks to complete. Establishing a timeline will help guide the project to completion.  The table below gives an overview of lab dates and key checkpoints for the project.
-%
-%\begin{table}[htbp]
-%	\centering
-%	\begin{tabular}{ccc}	% ccccccc indicates 7 center aligned columns
-%		\toprule	% top separator
-%		Week \# & Lab Date & Checkpoint \\
-%		\midrule
-%		0 & March 30 & \\
-%		1 & April 6 & Design Proposal Due \\
-%		2 & April 13 & \\
-%		3 & April 20 & Mid-checkpoint \\
-%		4 & April 27 & \\
-%		5 & May 4 & Final Demo/Report Due \\
-%		
-%		\bottomrule	% bottom separator
-%	\end{tabular}%
-%	\label{tab:table1}	% this is the label given to the table that can be referenced using \ref{tab:Exp1Part1_7}
-%\end{table}%
-
-%\section{Conclusion}
+	%JOINT SECTION
 
 
-%SECTION 7: Figures
+
+%SECTION 10: Figures & Appendix
 \section{Figures}
-\section{Appendix}
+\section*{Appendix}
 
 
-%\begin{figure} [H]
-%	\centering
-%	\includegraphics[scale=.3]{Frogger.png}
-%	\caption{Basic Gameplay Demonstration\label{fig:frogger}}
-%\end{figure}            
-
-     
+%%\begin{figure} [H]
+%%	\centering
+%%	\includegraphics[scale=.3]{Frogger.png}
+%%	\caption{Basic Gameplay Demonstration\label{fig:frogger}}
+%%\end{figure}            
+%
+%     
 
 \end{document}
