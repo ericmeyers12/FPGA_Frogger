@@ -1,0 +1,121 @@
+Flow report for lab8
+Tue Dec 08 19:32:28 2015
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Tue Dec 08 19:32:28 2015      ;
+; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name                      ; lab8                                       ;
+; Top-level Entity Name              ; lab8                                       ;
+; Family                             ; Cyclone IV E                               ;
+; Device                             ; EP4CE115F29C7                              ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 5,628                                      ;
+;     Total combinational functions  ; 5,598                                      ;
+;     Dedicated logic registers      ; 240                                        ;
+; Total registers                    ; 240                                        ;
+; Total pins                         ; 196                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 12/08/2015 19:30:48 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; lab8                ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                           ;
++-------------------------------------+---------------------------------------+---------------+-----------------+------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name     ; Section Id ;
++-------------------------------------+---------------------------------------+---------------+-----------------+------------+
+; COMPILER_SIGNATURE_ID               ; 8796753653658.144963184804424         ; --            ; --              ; --         ;
+; ENABLE_OCT_DONE                     ; Off                                   ; On            ; --              ; --         ;
+; FLOW_ENABLE_POWER_ANALYZER          ; On                                    ; Off           ; --              ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --              ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --              ; --         ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; DE2_115_Default ; Top        ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; --              ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; DE2_115_Default ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --              ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; DE2_115_Default ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --              ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --              ; --         ;
+; POWER_DEFAULT_INPUT_IO_TOGGLE_RATE  ; 12.5 %                                ; 12.5%         ; --              ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --              ; --         ;
++-------------------------------------+---------------------------------------+---------------+-----------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:01:39     ; 1.0                     ; 1507 MB             ; 00:01:56                           ;
+; Total                ; 00:01:39     ; --                      ; --                  ; 00:01:56                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; nprince-windows  ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off lab8 -c lab8
+
+
+

@@ -153,6 +153,8 @@ public class LoadImageApp {
         try {
             ArrayList<String> l = new ArrayList<String>();
             l.add("images/basicbackground");
+            l.add("images/numbers");
+            
             //l.add("images/level1background");
             //l.add("images/car_left");
             //l.add("images/car_right");

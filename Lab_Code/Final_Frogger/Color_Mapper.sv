@@ -1,21 +1,14 @@
 //-------------------------------------------------------------------------
-//    Color_Mapper.sv                                                    --
-//    Stephen Kempf                                                      --
-//    3-1-06                                                             --
+//    Color_Mapper.sv                                                    --                                          --
 //                                                                       --
-//    Modified by David Kesler  07-16-2008                               --
-//    Translated by Joe Meng    07-07-2013                               --
-//                                                                       --
-//    Fall 2014 Distribution                                             --
-//                                                                       --
-//    For use with ECE 385 Lab 7                                         --
+//    				                                         --
 //    University of Illinois ECE Department                              --
 //-------------------------------------------------------------------------
 
 
 module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY, 
-														Frog_Width, Frog_Height,
-														LPad1X, LPad1Y, LPad1_Width, LPad1_Height,
+							  Frog_Width, Frog_Height,
+							  LPad1X, LPad1Y, LPad1_Width, LPad1_Height,
 							  input logic [3:0][10:0] Car_Row1_X, Car_Row1_Y,
 							  input logic [3:0][10:0] Car_Row2_X, Car_Row2_Y,
 							  input logic [3:0][10:0] Car_Row3_X, Car_Row3_Y,  
@@ -32,7 +25,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 							  //input logic [18:0] backgroundIndex,      //for background imaage
                        output logic [7:0]  Red, Green, Blue );
     
-    logic frog_on, lpad1_on;
+    	 logic frog_on, lpad1_on;
 	 logic [3:0] car_on1, car_on2, car_on3, car_on4;
 	 logic [3:0] lpad_on1, lpad_on2, lpad_on3, lpad_on4;
 	 
@@ -43,11 +36,11 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	 logic [10:0] frog_y_index;
 	 frog_sprite c(.rgb(frog_sprite));
 	 
-//	 logic [9:0] lilypad_sprite[0:39][0:39];
-//	 logic [9:0] lilypad_color_idx;
-//	 logic [10:0] lilypad_x_index;
-//	 logic [10:0] lilypad_y_index;
-//	 lilypad_sprite c(.rgb(lilypad_sprite));
+//*	 logic [9:0] lilypad_sprite[0:39][0:39];
+//*	 logic [9:0] lilypad_color_idx;
+//*	 logic [10:0] lilypad_x_index;
+//*	 logic [10:0] lilypad_y_index;
+//*	 lilypad_sprite c(.rgb(lilypad_sprite));
 	 
 	 
 //	 logic [9:0] background[0:639][0:479];
@@ -419,26 +412,48 @@ end
 			Green = 8'd255;
 			Blue = 8'd187;
 	  end
-	  else //SHOW APPROPRIATE BACKGROUND (WHITE FOR NOW)
+	  else //SHOW APPROPRIATE BACKGROUND 
 	  begin 
-			if (DrawY > 80 && DrawY < 239 )
+			//water color
+			if (DrawY >= 80 && DrawY <= 239 )
 			begin
 				Red = 8'd0;
 				Green = 8'd200;
 				Blue = 8'd255;
 			end
-			else if (DrawY > 240 && DrawY < 279)
+			//dark grass color
+			else if ((DrawY >= 40 && DrawY <= 79) && ((DrawX >= 0 && DrawX <= 119) || (DrawX >= 160 && DrawX <= 279) || (DrawX >= 320 && DrawX <= 479) || (DrawX >= 520 && DrawX <= 679))) 
 			begin
 				Red = 8'd0;
-				Green = 8'd200;
+				Green = 8'd200; 
 				Blue = 8'd0;	
 			end
-			else if (DrawY > 280 && DrawY < 439)
+			//grass color
+			else if ((DrawY >= 240 && DrawY <= 279) || 
+				(DrawY >= 440) || 
+				((DrawY >= 40 && DrawY <= 79) && ((DrawX >= 120 && DrawX <= 159) || (DrawX >= 280 && DrawX <= 319) || (DrawX >= 480 && DrawX <= 519)))) 
+			begin
+				Red = 8'd0;
+				Green = 8'd200; 
+				Blue = 8'd0;	
+			end
+			//pavement color
+			else if (DrawY >= 280 && DrawY <= 439)
 			begin
 				Red = 8'd69;
 				Green = 8'd69;
 				Blue = 8'd69;
 			end
+			//construction yellow
+			else if (((DrawY >= 318 && DrawY <= 322) || (DrawY >= 358 && DrawY <= 362) || (DrawY >= 398 && DrawY <= 402))  && 
+				((DrawX >= 0 && DrawX <= 100) || (DrawX >= 200 && DrawX <= 300) || (DrawX >= 400 && DrawX <= 500) || (DrawX >= 600)))
+			begin
+				Red = 8'd255;
+				Green = 8'd204;
+				Blue = 8'd0;
+			end
+
+		
 			else begin
 	//			Red = color_palette[background_color_idx][0];
 	//			Green = color_palette[background_color_idx][1];
