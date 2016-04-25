@@ -88,7 +88,7 @@ module  frog ( input Reset, frame_clk,
 							Frog_Y_Motion = ~(Frog_Y_Step)+1; //2s Complement
 							cur_Frog_Direction = 2'b00;
 					end
-					else if(state == DOWN) //DOWN BUTTON PRESSED
+					else if(state == DOWN && Frog_Y_Position != 440) //DOWN BUTTON PRESSED
 					begin
 							Frog_X_Motion = 11'b0;
 							Frog_Y_Motion = Frog_Y_Step;

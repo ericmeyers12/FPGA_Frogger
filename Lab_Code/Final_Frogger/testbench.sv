@@ -113,8 +113,8 @@ module testbench();
       #4 Reset = 1;
 		#5 Reset = 0;
 		
-		#2 right = 1;
-		#3 right = 0;
+		#2 down = 1;
+		#3 down = 0;
 		
 		#50 left = 1;
 		#1 left = 0;

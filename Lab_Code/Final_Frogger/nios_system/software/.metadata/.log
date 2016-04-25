@@ -5636,3 +5636,23 @@ java.lang.Exception: Connected system ID hash not found on target at expected ba
 
 !ENTRY com.altera.sbtgui.launch 1 0 2016-04-24 22:22:41.318
 !MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x2090 --id=0x0 --timestamp=1459711255 /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf]
+
+!ENTRY org.eclipse.ui.ide 4 4 2016-04-24 23:15:38.743
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2016-04-24 23:15:38.743
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2016-04-24 23:15:38.743
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: E:\Final_Frogger\nios_system\software\.metadata\.plugins\org.eclipse.core.resources\.projects\RemoteSystemsTempFiles\.markers (The system cannot find the file specified)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1600)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1680)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1142)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2376)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
