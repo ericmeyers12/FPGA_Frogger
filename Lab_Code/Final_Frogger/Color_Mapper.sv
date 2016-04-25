@@ -419,7 +419,7 @@ end
 			Green = 8'd255;
 			Blue = 8'd187;
 	  end
-	  else //SHOW APPROPRIATE BACKGROUND (WHITE FOR NOW)
+	  else //SHOW APPROPRIATE BACKGROUND 
 	  begin 
 			if (DrawY > 80 && DrawY < 239 )
 			begin

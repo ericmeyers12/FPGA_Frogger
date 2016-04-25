@@ -23,7 +23,7 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - ERIC
 \section{Introduction}
-The basic premise of Frogger is to navigate frogs across the street/water without dying. A frog may die by either colliding with a moving car or falling in the water. There are a total of three frogs that the user must navigate to the other end of the map, and once all three frogs move to their particular ending location, the user wins. If a user dies three times, then the game is over.\\
+For this ECE 385 project, we recreated the classic game called Frogger.  The basic premise of Frogger is to navigate three frogs through obstacles from the bottom to the top of the screen. Frogger must first pass through four lanes of traffic and a river full of lily pads in order to successfully make it to the other side of the map.  A frog may die by either colliding with a moving car or falling in the water. There are a total of three frogs that the user must navigate to the other end of the map, and once all three frogs move to their particular ending location, the user wins. If a user dies three times, then the game is over.\\
 
 This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 FPGA Board, and used software drivers developed in C to communicate with a USB keyboard (to be used as the controller).
 
@@ -31,27 +31,50 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 %SECTION 2 - List of Features
 \section{List of Features}
 	%RYAN SECTION
-%\begin{itemize}
-%	\item User controlled block moves according to grid set on VGA display
-%	\begin{itemize}
-%		\item Up, down, left, or right depending on input
-%	\end{itemize}
-%	\item Moving obstacles that are different shapes
-%	\begin{itemize}
-%		\item Different types of objects can lead to different outcomes - i.e. object can either allow ``frogger" to move with it or kill it.
-%	\end{itemize}
+\begin{itemize}
+	\item User controlled frog sprite moves according to grid set on VGA display
+	\begin{itemize}
+		\item Up, down, left, or right depending on keyboard input
+		\item Frog position restricted to on-screen
+		\item Frog direction held after keyboard direction inputed
+		\item Frog contains collision algorithms for obstacles 
+		\item A total of three frogs placed into game at three different starting points
+		\begin{itemize}
+			\item three endpoints for frogs to get to
+			\item frog can finish at any endpoint but only one frog can finish per endpoint 
+		\end{itemize} 
+	\end{itemize}
+	\item Generation of moving obstacles
+	\begin{itemize}
+		\item Four lanes of at least three cars in them 
+		\begin{itemize}
+				\item Each row moves at specific speed, direction
+				\item Cars wrap around screen
+				\item Frogger dies upon impact with car ending the game
+		\end{itemize}
+		\item Four lanes of at least three lily pads in them
+		\begin{itemize}
+			\item Each row moves at specific speed, direction
+			\item Lily pads wrap around screen
+			\item Frogger lives by stepping onto the lily pad, drowns by falling into the water
+			\item If the lily pad moves off the screen with Frogger on it, Frogger will fall into the water
+		\end{itemize}
+	\end{itemize}
 %	\item Multiple levels with increasing difficulty
-%	\item Starting point and ending point on any given level
-%	\item Timer
-%		\begin{itemize}
-%			\item 5 minutes to complete level
-%		\end{itemize} 
-%	\item Color 
-%	\begin{itemize}
-%		\item Must be able to clearly differentiate between obstacle, user controlled block, and the map
-%	\end{itemize}
-%	\item Score/Highscore
-%\end{itemize}
+
+	\item Working game clock at the top of the screen.
+		\begin{itemize}
+			\item 60 seconds to complete the level.
+			\item Clock resets at the start of the game
+			\item Game ends when the game clock runs out of time
+		\end{itemize} 
+	\item Color/VGA Monitor Output
+	\begin{itemize}
+		\item Detailed sprites give look and feel in graphical user interface
+		\item Colors allow user to clearly differentiate between obstacle, user controlled frog, and the map background
+	\end{itemize}
+	\item Game reset button established that can reset the game at any point.
+\end{itemize}
 
 %\vspace{5mm}
 %
@@ -82,6 +105,38 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 %SECTION 4 - Purpose of Modules - 
 \section{Purpose of Modules}
 	%ERIC SECTION/RYAN SECTION- WORK ON YOUR RESPECTIVE STUFF
+
+
+	\subsection{final\_frogger\_top}
+	\subsection{Color\_Mapper}
+		\subsubsection{Displays Frogger, Car rows, and Lily pad rows }
+		\subsubsection{Sets orientation of Frog Direction}
+	\subsection{frog}
+	\subsection{car}
+	\subsection{car\_row}
+	\subsection{lilypad}
+	\subsection{lilypad\_row}
+	\subsection{game\_logic}
+	Module game\_logic.sv controls the overall finite state machine of the Frogger game.  This module monitors number of frogs to successfully get to the other side of the screen.  It then sends the game into a win or death state depending on the outcome of the game.  This module also controls the value of the game clock.  If the game clock runs out of time before the three frogs reach the other side, the game ends and the player loses. 
+	\subsection{hpi\_io\_intf}
+	This method takes HPI output values from the NIOS II as input, checks for a call to reset, and if no reset, assigns these values to the proper values to be outputted by the top-level module to the CY7C67200 chip.  Inputs and outputs used are shown below. 
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.45\textwidth]{hpiio.jpg}
+		\label{fig:hpiio}
+	\end{figure}
+	
+	\subsection{VGA\_controller}
+	The VGA\_controller manages output to the monitor.  Inputs include clock and reset. Outputs include several sync signals, a pixel clock specified for 25 MHz and 10 bit horizontal and vertical coordinate signals as shown below.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.45\textwidth]{VGAio.jpg}
+		\label{fig:VGAio}
+	\end{figure}
+	
+
 	
 %SECTION 5 - Circuit Schematics - 
 \section{Circuit Schematics}
@@ -98,7 +153,13 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 %SECTION 8 - Difficulty - 
 \section{ Difficulty}
 	%RYAN SECTION - Make an argument for the difficulty of this project
+Producing the Frogger game in less than five weeks was no simple task.  The team came across a number of issues on a range of the features that were implemented into the game.  Most of the problems encountered came about from dealing with the System Verilog software.  What would be a simple function in a high-level programming language became rather tedious in System Verilog and required some thought in order to successfully implement.  \\
 
+One of the most difficult tasks in making the game was collision control for the Frogger sprite with obstacles, particularly with the lily pads.  The algorithm for collision control turned into a long AND/OR statement for the cars.  Collision for the frog with the cars was easy once that long statement was put into place and modified for precision.  It was easy because a simple contact between the frog sprite and car sprite killed the frog and ended the game.  Creating collision control with the lily pads was far more difficult to implement.  The frog should land on the lily pad and live, floating across the screen holding its position fixed to the lily pad until another direction key is pressed.  Clock issues came into play when trying to match up the speeds of the two colliding sprites, especially when the two sprites have different frame clocks.  \\
+
+Another issue was generating the high level graphics for the sprites and background.  The on-chip memory alone was not enough to hold the amount of colors and pixels of all graphics desired for the project.  SDRAM had to be implemented to store the memory for all 640 x 480 pixels on the screen. \\
+
+A LOT MORE COULD BE ADDED HERE\\
 
 %SECTION 9 - Conclusion
 \section{Conclusion} 

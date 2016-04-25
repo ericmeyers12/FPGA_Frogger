@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  24 APR 2016 15:19
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 APR 2016 09:42
->>>>>>> c1d18d6219cf1cb587660c65fab95864973ef051
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  25 APR 2016 14:03
 entering extended mode
 **Final_Project.tex
 
@@ -861,18 +857,8 @@ LaTeX Info: The control sequence `\]' is already robust on input line 472.
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ))
-<<<<<<< HEAD
 ("C:\Users\Ryan Helsdingen\Documents\School\ECE 385\ECE385_Labs\Final_Project\F
-inal_Project.aux"
-
-LaTeX Warning: Label `fig:frogger' multiply defined.
-
-)
-=======
-(./Final_Project.aux)
-\openout1 = `Final_Project.aux'.
-
->>>>>>> c1d18d6219cf1cb587660c65fab95864973ef051
+inal_Project.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
@@ -889,12 +875,8 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<<<<<<< HEAD
- ("C:\Program Files (x86)\MiKTeX 2.90\tex\context\base\supp-pdf.mkii"
-=======
 
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
->>>>>>> c1d18d6219cf1cb587660c65fab95864973ef051
+("C:\Program Files (x86)\MiKTeX 2.90\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count154
 \scratchdimen=\dimen221
@@ -914,93 +896,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-<<<<<<< HEAD
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 28.
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
 ("C:\Program Files (x86)\MiKTeX 2.90\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 
 ("C:\Program Files (x86)\MiKTeX 2.90\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<Block_Diagram.png, id=4, 619.31375pt x 681.54625pt>
-File: Block_Diagram.png Graphic file (type png)
- <use Block_Diagram.png>
-Package pdftex.def Info: Block_Diagram.png used on input line 33.
-(pdftex.def)             Requested size: 154.82805pt x 170.38614pt.
-
-Underfull \hbox (badness 1365) in paragraph at lines 84--85
-\OT1/ptm/m/n/11 much dif-fi-culty at all (4 pts). We are re-ly-ing on
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
-
- []
-
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
- <C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Final_Project/B
-lock_Diagram.png>]
-<Frogger.png, id=16, 963.6pt x 722.7pt>
-File: Frogger.png Graphic file (type png)
- <use Frogger.png>
-Package pdftex.def Info: Frogger.png used on input line 160.
-(pdftex.def)             Requested size: 289.08223pt x 216.81166pt.
-
-Overfull \hbox (37.08223pt too wide) in paragraph at lines 160--161
- [][] 
- []
-
-[2 <C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Final_Project
-/Frogger.png>]
-("C:\Users\Ryan Helsdingen\Documents\School\ECE 385\ECE385_Labs\Final_Project\F
-inal_Project.aux")
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
-Here is how much of TeX's memory you used:
- 23467 strings out of 493921
- 532161 string characters out of 3144445
- 680615 words of memory out of 3000000
- 26353 multiletter control sequences out of 15000+200000
- 34629 words of font info for 73 fonts, out of 3000000 for 9000
- 844 hyphenation exceptions out of 8191
- 64i,8n,67p,579b,281s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.90/fonts/enc/dvips/fontname/8r.enc}<C:/Progr
-am Files (x86)/MiKTeX 2.90/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.90/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program 
-Files (x86)/MiKTeX 2.90/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86
-)/MiKTeX 2.90/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2
-.90/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Final_Project.pdf (2 pages, 96025 bytes).
-PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
-=======
-[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-(./Final_Project.aux) ) 
+<hpiio.jpg, id=13, 328.22626pt x 86.57344pt>
+File: hpiio.jpg Graphic file (type jpg)
+ <use hpiio.jpg>
+Package pdftex.def Info: hpiio.jpg used on input line 126.
+(pdftex.def)             Requested size: 232.19843pt x 61.24562pt.
+
+<VGAio.jpg, id=14, 443.40656pt x 113.67468pt>
+File: VGAio.jpg Graphic file (type jpg)
+ <use VGAio.jpg>
+Package pdftex.def Info: VGAio.jpg used on input line 135.
+(pdftex.def)             Requested size: 232.19843pt x 59.52919pt.
+
+Underfull \hbox (badness 1430) in paragraph at lines 156--157
+\OT1/ptm/m/n/11 into the game. Most of the prob-lems en-coun-tered
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 158--159
+\OT1/ptm/m/n/11 was col-li-sion con-trol for the Frog-ger sprite with
+ []
+
+
+Underfull \hbox (badness 1990) in paragraph at lines 158--159
+\OT1/ptm/m/n/11 for col-li-sion con-trol turned into a long AND/OR
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+[2 <C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Final_Project
+/hpiio.jpg> <C:/Users/Ryan Helsdingen/Documents/School/ECE 385/ECE385_Labs/Fina
+l_Project/VGAio.jpg>]
+("C:\Users\Ryan Helsdingen\Documents\School\ECE 385\ECE385_Labs\Final_Project\F
+inal_Project.aux") ) 
 Here is how much of TeX's memory you used:
- 23314 strings out of 493089
- 528403 string characters out of 6134842
- 679491 words of memory out of 5000000
- 26411 multiletter control sequences out of 15000+600000
- 28639 words of font info for 56 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
- 64i,6n,67p,506b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base
-/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Final_Project.pdf (1 page, 20215 bytes).
+ 23463 strings out of 493921
+ 532057 string characters out of 3144445
+ 681615 words of memory out of 3000000
+ 26349 multiletter control sequences out of 15000+200000
+ 34629 words of font info for 73 fonts, out of 3000000 for 9000
+ 844 hyphenation exceptions out of 8191
+ 64i,6n,67p,885b,289s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.90/fonts/enc/dvips/fontnam
+e/8r.enc}<C:/Program Files (x86)/MiKTeX 2.90/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><C:/Program Files (x86)/MiKTeX 2.90/fonts/type1/public/amsfonts/cm/cmsy
+8.pfb><C:/Program Files (x86)/MiKTeX 2.90/fonts/type1/urw/times/utmb8a.pfb><C:/
+Program Files (x86)/MiKTeX 2.90/fonts/type1/urw/times/utmr8a.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.90/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Final_Project.pdf (2 pages, 117643 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
- 11 compressed objects within 1 object stream
->>>>>>> c1d18d6219cf1cb587660c65fab95864973ef051
+ 35 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
