@@ -22,10 +22,11 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 							  input [3:0] Car_Collision, LPad_Collision,
 							  input up, down, left, right,
 							  input [1:0] cur_Frog_Direction,
-							  //input logic [18:0] backgroundIndex,      //for background imaage
+//							  input [3:0] tens_digit, ones_digit,
+							  //input logic [18:0] backgroundIndex,      //for background image
                        output logic [7:0]  Red, Green, Blue );
     
-    	 logic frog_on, lpad1_on;
+    logic frog_on, lpad1_on;
 	 logic [3:0] car_on1, car_on2, car_on3, car_on4;
 	 logic [3:0] lpad_on1, lpad_on2, lpad_on3, lpad_on4;
 	 
@@ -36,11 +37,11 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	 logic [10:0] frog_y_index;
 	 frog_sprite c(.rgb(frog_sprite));
 	 
-//*	 logic [9:0] lilypad_sprite[0:39][0:39];
-//*	 logic [9:0] lilypad_color_idx;
-//*	 logic [10:0] lilypad_x_index;
-//*	 logic [10:0] lilypad_y_index;
-//*	 lilypad_sprite c(.rgb(lilypad_sprite));
+	 logic [9:0] lilypad_sprite[0:39][0:39];
+	 logic [9:0] lilypad_color_idx;
+	 logic [10:0] lilypad_x_index;
+	 logic [10:0] lilypad_y_index;
+	 lilypad_sprite lly(.rgb(lilypad_sprite));
 	 
 	 
 //	 logic [9:0] background[0:639][0:479];
@@ -52,6 +53,17 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	 logic [9:0] cur_color_idx;
 	 logic [7:0] color_palette [0:16][0:2];   //correct-frogonly
 	 palette game_palette(.palette(color_palette));
+	 
+	 
+// scoreboard
+//	 logic [9:0] numbers[0:231][0:31];
+//	 logic [9:0] tensdig_color_idx;
+//	 logic [10:0] tensdig_x_index;
+//	 logic [10:0] tensdig_y_index;
+//	 numbers numtens(.rgb(numbers));	 
+	 
+	 
+	 
 	  	 
 /*====== DISPLAY FROGGER ======*/	  
  always_comb
@@ -313,11 +325,12 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 			end
 		end
 	endgenerate
-	
+
+
+//setting indexes for Frog	
 assign frog_x_index = DrawX - FrogX;
 assign frog_y_index = DrawY - FrogY;
-//assign frog_x_index = DrawX - FrogX;
-//assign frog_y_index = DrawY - FrogY;
+
 always_comb
 begin
 if (cur_Frog_Direction == 2'b00)     //up
@@ -332,9 +345,16 @@ else
 	frog_color_idx = frog_sprite[frog_x_index][frog_y_index];
 end
 
-//assign background_x_index = DrawX;
-//assign background_y_index = DrawY;
-//assign background_color_idx = basicbackground[background_x_index][background_y_index];
+//setting index for lillypad
+assign lilypad_x_index = DrawX - LPad1X;
+assign lilypad_y_index = DrawY - LPad1Y;
+
+always_comb
+begin
+	lilypad_color_idx = lilypad_sprite[lilypad_x_index][lilypad_y_index];
+end
+
+
 
 
 /*======= UPDATE VGA DISPLAY ======*/	 
@@ -350,16 +370,10 @@ end
 		end
 		else
 		begin
-//			Red = color_palette[background_color_idx][0];
-//			Green = color_palette[background_color_idx][1];
-//			Blue = color_palette[background_color_idx][2];
 			Red = 8'd255;
 			Green = 8'd255;
 			Blue = 8'd255;
 		end
-//			Red = 8'd0;
-//			Green = 8'd150;
-//			Blue = 8'd250;
 	  end 
 	  else
 	  //CARROW #1 ON
@@ -383,7 +397,7 @@ end
 			Green = 8'd250;
 			Blue = 8'd0;
 	  end
-	  else //CARROW #3 ON
+	  else //CARROW #4 ON
 	  if (car_on4[0] == 1'b1 || car_on4[1] == 1'b1 || car_on4[2] == 1'b1 || car_on4[3] == 1'b1)	
 	  begin
 			Red = 8'd0;
@@ -396,9 +410,18 @@ end
 				  lpad_on3[0] == 1'b1 || lpad_on3[1] == 1'b1 ||  lpad_on3[2] == 1'b1 ||  lpad_on3[3] == 1'b1 ||
 				  lpad_on4[0] == 1'b1 || lpad_on4[1] == 1'b1 ||  lpad_on4[2] == 1'b1 ||  lpad_on4[3] == 1'b1)	
 	  begin
+	   if (lilypad_color_idx!=0)
+		 begin
+			Red = color_palette[lilypad_color_idx][0];
+			Green = color_palette[lilypad_color_idx][1];
+			Blue = color_palette[lilypad_color_idx][2];
+		 end
+		else
+		 begin
 			Red = 8'd60;
 			Green = 8'd240;
 			Blue = 8'd100;
+		end
 	  end
 	  else if (Car_Collision[0] == 1'b1 || Car_Collision[1] == 1'b1 || Car_Collision[2] == 1'b1 || Car_Collision[3] == 1'b1) //Car_Collision represents each row here
 	  begin
