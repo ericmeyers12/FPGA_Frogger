@@ -152,17 +152,12 @@ public class LoadImageApp {
     public static void main(String[] args) {
         try {
             ArrayList<String> l = new ArrayList<String>();
-            l.add("images/basicbackground");
+            l.add("images/frog_sprite");
+            l.add("images/lilypad_sprite");
+            l.add("images/carright_sprite");
+            l.add("images/carleft_sprite");
             l.add("images/numbers");
             
-            //l.add("images/level1background");
-            //l.add("images/car_left");
-            //l.add("images/car_right");
-            //l.add("images/frog0");
-            //l.add("images/frog1");
-            //l.add("images/frog2");
-            //l.add("images/frog3");
-            //l.add("images/frog4");
             LoadImageApp frogger = new LoadImageApp(l);
         } catch (IOException e) {
             System.out.println(e.getMessage());

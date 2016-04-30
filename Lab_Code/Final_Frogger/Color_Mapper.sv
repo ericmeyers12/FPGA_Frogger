@@ -33,16 +33,30 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	 
 	 logic [9:0] frog_sprite[0:39][0:39];
 	 logic [9:0] frog_color_idx;
-	 logic [10:0] frog_x_index;
-	 logic [10:0] frog_y_index;
-	 logic [10:0] LPad1X, LPad1Y;
+	 logic [5:0] frog_x_index;
+	 logic [5:0] frog_y_index;
 	 frog_sprite c(.rgb(frog_sprite));
 	 
 	 logic [9:0] lilypad_sprite[0:39][0:39];
 	 logic [9:0] lilypad_color_idx;
-	 logic [10:0] lilypad_x_index;
-	 logic [10:0] lilypad_y_index;
+	 logic [5:0] lilypad_x_index;
+	 logic [5:0] lilypad_y_index;
+	 logic [10:0] LPad1X, LPad1Y;
 	 lilypad_sprite lly(.rgb(lilypad_sprite));
+
+	 logic [9:0] leftcar_sprite[0:79][0:39];
+	 logic [9:0] leftcar_color_idx;
+	 logic [6:0] leftcar_x_index;
+	 logic [5:0] leftcar_y_index;
+	 logic [10:0] Car1X, Car1Y;
+	 leftcar_sprite lc(.rgb(leftcar_sprite));
+
+	 logic [9:0] rightcar_sprite[0:79][0:39];
+	 logic [9:0] rightcar_color_idx;
+	 logic [6:0] rightcar_x_index;
+	 logic [5:0] rightcar_y_index;
+	 logic [10:0] Car2X, Car2Y;
+	 rightcar_sprite rc(.rgb(rightcar_sprite));
 	 
 	 
 //	 logic [9:0] background[0:639][0:479];
@@ -339,7 +353,7 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	endgenerate
 
 
-//setting indexes for Frog	
+/*======= MAPPING COLOR INDEX FOR FROGGER ======*/	
 assign frog_x_index = DrawX - FrogX;
 assign frog_y_index = DrawY - FrogY;
 
@@ -357,14 +371,205 @@ else
 	frog_color_idx = frog_sprite[frog_x_index][frog_y_index];
 end
 
-//setting index for lillypad
+/*======= MAPPING COLOR INDEX FOR CARS ======*/
+
 always_comb
 begin
+//cars row 1
+	if (Car_on1[0] == 1'b1)
+	begin
+		Car2X = Car_Row1_X[0];
+		Car2Y = Car_Row1_Y[0];
+	end
+	else if (Car_on1[1] == 1'b1)
+	begin
+		Car2X = Car_Row1_X[1];
+		Car2Y = Car_Row1_Y[1];
+	end	
+	else if (Car_on1[2] == 1'b1)
+	begin
+		Car2X = Car_Row1_X[2];
+		Car2Y = Car_Row1_Y[2];
+	end	
+	else if (Car_on1[3] == 1'b1)
+	begin
+		Car2X = Car_Row1_X[3];
+		Car2Y = Car_Row1_Y[3];
+	end	
+//cars row 2
+	else if (Car_on2[0] == 1'b1)
+	begin
+		Car1X = Car_Row2_X[0];
+		Car1Y = Car_Row2_Y[0];
+	end	
+	else if (Car_on2[1] == 1'b1)
+	begin
+		Car1X = Car_Row2_X[1];
+		Car1Y = Car_Row2_Y[1];
+	end	
+	else if (Car_on2[2] == 1'b1)
+	begin
+		Car1X = Car_Row2_X[2];
+		Car1Y = Car_Row2_Y[2];
+	end	
+	else if (Car_on2[3] == 1'b1)
+	begin
+		Car1X = Car_Row2_X[3];
+		Car1Y = Car_Row2_Y[3];
+	end	
+//lilypads row 3
+	else if (Car_on3[0] == 1'b1)
+	begin
+		Car2X = Car_Row3_X[0];
+		Car2Y = Car_Row3_Y[0];
+	end	
+	else if (Car_on3[1] == 1'b1)
+	begin
+		Car2X = Car_Row3_X[1];
+		Car2Y = Car_Row3_Y[1];
+	end	
+	else if (Car_on3[2] == 1'b1)
+	begin
+		Car2X = Car_Row3_X[2];
+		Car2Y = Car_Row3_Y[2];
+	end	
+	else if (Car_on3[3] == 1'b1)
+	begin
+		Car2X = Car_Row3_X[3];
+		Car2Y = Car_Row3_Y[3];
+	end	
+//lilypads row 4
+	else if (Car_on4[0] == 1'b1)
+	begin
+		Car1X = Car_Row4_X[0];
+		Car1Y = Car_Row4_Y[0];
+	end	
+	else if (Car_on4[1] == 1'b1)
+	begin
+		Car1X = Car_Row4_X[1];
+		Car1Y = Car_Row4_Y[1];
+	end	
+	else if (Car_on4[2] == 1'b1)
+	begin
+		Car1X = Car_Row4_X[2];
+		Car1Y = Car_Row4_Y[2];
+	end	
+	else if (Car_on4[3] == 1'b1)
+	begin
+		Car1X = Car_Row4_X[3];
+		Car1Y = Car_Row4_Y[3];
+	end	
+//outside cases
+	else 
+	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
+	end
+end
+
+assign leftcar_x_index = DrawX - Car1X;
+assign leftcar_y_index = DrawY - Car1Y;
+assign rightcar_x_index = DrawX - Car2X;
+assign rightcar_y_index = DrawY - Car2Y;
+
+always_comb
+begin
+	leftcar_color_idx = leftcar_sprite[leftcar_x_index][leftcar_y_index];
+	rightcar_color_idx = rightcar_sprite[rightcar_x_index][rightcar_y_index];
+end
+
+
+
+/*======= MAPPING COLOR INDEX FOR LILYPADS ======*/
+always_comb
+begin
+//lilypads row 1
 	if (lpad_on1[0] == 1'b1)
 	begin
 		LPad1X = LPad_Row1_X[0];
 		LPad1Y = LPad_Row1_Y[0];
 	end
+	else if (lpad_on1[1] == 1'b1)
+	begin
+		LPad1X = LPad_Row1_X[1];
+		LPad1Y = LPad_Row1_Y[1];
+	end	
+	else if (lpad_on1[2] == 1'b1)
+	begin
+		LPad1X = LPad_Row1_X[2];
+		LPad1Y = LPad_Row1_Y[2];
+	end	
+	else if (lpad_on1[3] == 1'b1)
+	begin
+		LPad1X = LPad_Row1_X[3];
+		LPad1Y = LPad_Row1_Y[3];
+	end	
+//lilypads row 2
+	else if (lpad_on2[0] == 1'b1)
+	begin
+		LPad1X = LPad_Row2_X[0];
+		LPad1Y = LPad_Row2_Y[0];
+	end	
+	else if (lpad_on2[1] == 1'b1)
+	begin
+		LPad1X = LPad_Row2_X[1];
+		LPad1Y = LPad_Row2_Y[1];
+	end	
+	else if (lpad_on2[2] == 1'b1)
+	begin
+		LPad1X = LPad_Row2_X[2];
+		LPad1Y = LPad_Row2_Y[2];
+	end	
+	else if (lpad_on2[3] == 1'b1)
+	begin
+		LPad1X = LPad_Row2_X[3];
+		LPad1Y = LPad_Row2_Y[3];
+	end	
+//lilypads row 3
+	else if (lpad_on3[0] == 1'b1)
+	begin
+		LPad1X = LPad_Row3_X[0];
+		LPad1Y = LPad_Row3_Y[0];
+	end	
+	else if (lpad_on3[1] == 1'b1)
+	begin
+		LPad1X = LPad_Row3_X[1];
+		LPad1Y = LPad_Row3_Y[1];
+	end	
+	else if (lpad_on3[2] == 1'b1)
+	begin
+		LPad1X = LPad_Row3_X[2];
+		LPad1Y = LPad_Row3_Y[2];
+	end	
+	else if (lpad_on3[3] == 1'b1)
+	begin
+		LPad1X = LPad_Row3_X[3];
+		LPad1Y = LPad_Row3_Y[3];
+	end	
+//lilypads row 4
+	else if (lpad_on4[0] == 1'b1)
+	begin
+		LPad1X = LPad_Row4_X[0];
+		LPad1Y = LPad_Row4_Y[0];
+	end	
+	else if (lpad_on4[1] == 1'b1)
+	begin
+		LPad1X = LPad_Row4_X[1];
+		LPad1Y = LPad_Row4_Y[1];
+	end	
+	else if (lpad_on4[2] == 1'b1)
+	begin
+		LPad1X = LPad_Row4_X[2];
+		LPad1Y = LPad_Row4_Y[2];
+	end	
+	else if (lpad_on4[3] == 1'b1)
+	begin
+		LPad1X = LPad_Row4_X[3];
+		LPad1Y = LPad_Row4_Y[3];
+	end	
+//outside cases
 	else 
 	begin
 		LPad1X = 11'b0;
@@ -394,52 +599,45 @@ end
 	  end
 	  else
 	  //CARROW #1 ON
-	  if (car_on1[0] == 1'b1 || car_on1[1] == 1'b1 || car_on1[2] == 1'b1 || car_on1[3] == 1'b1)	
+	  if ((car_on1[0] == 1'b1 || car_on1[1] == 1'b1 || car_on1[2] == 1'b1 || car_on1[3] == 1'b1) && rightcar_color_idx!=0)
 	  begin
-			Red = 8'd0;
-			Green = 8'd150;
-			Blue = 8'd250;
-	  end
+			Red = color_palette[rightcar_color_idx][0];
+			Green = color_palette[rightcar_color_idx][1];
+			Blue = color_palette[rightcar_color_idx][2];
+	  end	
 	  else //CARROW #2 ON
-	  if (car_on2[0] == 1'b1 || car_on2[1] == 1'b1 || car_on2[2] == 1'b1 || car_on2[3] == 1'b1)	
+	  if ((car_on2[0] == 1'b1 || car_on2[1] == 1'b1 || car_on2[2] == 1'b1 || car_on2[3] == 1'b1) && leftcar_color_idx!=0)
 	  begin
-			Red = 8'd150;
-			Green = 8'd0;
-			Blue = 8'd30;
+			Red = color_palette[leftcar_color_idx][0];
+			Green = color_palette[leftcar_color_idx][1];
+			Blue = color_palette[leftcar_color_idx][2];
 	  end
 	  else //CARROW #3 ON
-	  if (car_on3[0] == 1'b1 || car_on3[1] == 1'b1 || car_on3[2] == 1'b1 || car_on3[3] == 1'b1)	
+	  if ((car_on3[0] == 1'b1 || car_on3[1] == 1'b1 || car_on3[2] == 1'b1 || car_on3[3] == 1'b1) && rightcar_color_idx!=0)
 	  begin
-			Red = 8'd150;
-			Green = 8'd250;
-			Blue = 8'd0;
-	  end
+			Red = color_palette[rightcar_color_idx][0];
+			Green = color_palette[rightcar_color_idx][1];
+			Blue = color_palette[rightcar_color_idx][2];
+	  end	
 	  else //CARROW #4 ON
-	  if (car_on4[0] == 1'b1 || car_on4[1] == 1'b1 || car_on4[2] == 1'b1 || car_on4[3] == 1'b1)	
+	  if ((car_on4[0] == 1'b1 || car_on4[1] == 1'b1 || car_on4[2] == 1'b1 || car_on4[3] == 1'b1) && leftcar_color_idx!=0)
 	  begin
-			Red = 8'd0;
-			Green = 8'd100;
-			Blue = 8'd1000;
+			Red = color_palette[leftcar_color_idx][0];
+			Green = color_palette[leftcar_color_idx][1];
+			Blue = color_palette[leftcar_color_idx][2];
 	  end
+
 	  else //ANY LILYPAD ON - Should all be same color
-	  if (lpad_on1[0] == 1'b1 || lpad_on1[1] == 1'b1 ||  lpad_on1[2] == 1'b1 ||  lpad_on1[3] == 1'b1 ||
+	  if ((lpad_on1[0] == 1'b1 || lpad_on1[1] == 1'b1 ||  lpad_on1[2] == 1'b1 ||  lpad_on1[3] == 1'b1 ||
 				  lpad_on2[0] == 1'b1 || lpad_on2[1] == 1'b1 ||  lpad_on2[2] == 1'b1 ||  lpad_on2[3] == 1'b1 ||
 				  lpad_on3[0] == 1'b1 || lpad_on3[1] == 1'b1 ||  lpad_on3[2] == 1'b1 ||  lpad_on3[3] == 1'b1 ||
-				  lpad_on4[0] == 1'b1 || lpad_on4[1] == 1'b1 ||  lpad_on4[2] == 1'b1 ||  lpad_on4[3] == 1'b1)	
+				  lpad_on4[0] == 1'b1 || lpad_on4[1] == 1'b1 ||  lpad_on4[2] == 1'b1 ||  lpad_on4[3] == 1'b1) && lilypad_color_idx!=0)
 	  begin
-	   if (lilypad_color_idx!=0)
-		 begin
 			Red = color_palette[lilypad_color_idx][0];
 			Green = color_palette[lilypad_color_idx][1];
 			Blue = color_palette[lilypad_color_idx][2];
-		 end
-		else
-		 begin
-			Red = 8'd0;
-			Green = 8'd200;
-			Blue = 8'd255;
-		end
 	  end
+	  
 	  else if (Car_Collision[0] == 1'b1 || Car_Collision[1] == 1'b1 || Car_Collision[2] == 1'b1 || Car_Collision[3] == 1'b1) //Car_Collision represents each row here
 	  begin
 			Red = 8'd255;
