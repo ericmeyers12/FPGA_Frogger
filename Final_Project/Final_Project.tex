@@ -23,7 +23,7 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - ERIC
 \section{Introduction}
-For this ECE 385 project, we recreated the classic game called Frogger.  The basic premise of Frogger is to navigate three frogs through obstacles from the bottom to the top of the screen. Frogger must first pass through four lanes of traffic and a river full of lily pads in order to successfully make it to the other side of the map.  A frog may die by either colliding with a moving car or falling in the water. There are a total of three frogs that the user must navigate to the other end of the map, and once all three frogs move to their particular ending location, the user wins. If a user dies three times, then the game is over.\\
+For this project, we recreated the classic game called Frogger.  The basic premise of Frogger is to navigate three frogs through obstacles from the bottom to the top of the screen. Frogger must first pass through four lanes of traffic and a river full of lily pads in order to successfully make it to the other side of the map.  A frog may die by either colliding with a moving car or falling in the water. There are a total of three frogs that the user must navigate to the other end of the map, and once all three frogs move to their particular ending location, the user wins. If a user dies three times, then the game is over.\\
 
 This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 FPGA Board, and used software drivers developed in C to communicate with a USB keyboard (to be used as the controller).
 
@@ -98,7 +98,7 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 
 %SECTION 3 - Block Diagram - 
 \section{Block Diagram} 
-	 %ERIC SECTION - PUT BETTER BLOCK DIAGRAM HERE
+	 %sdERIC SECTION - PUT BETTER BLOCK DIAGRAM HERE
 	 %RYAN - if you have anything to add here, feel free too
  
  
@@ -123,18 +123,31 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 	\end{figure}
 	
 	\subsection{Color\_Mapper}
+	%TODO: RYAN SECTION
 		\subsubsection{Displays Frogger, Cars, and Lilypads }
 		\subsubsection{Sets orientation of Frog Direction}
 	\subsection{frog}
-	The frog module contains the logic for the moving component controlled by the user (the "frog"). This means the logic for what the frog does when detecting it is colliding with a car, a lilypad, water , or the end position. The frog state diagram is explained below in the "Finite State Machines" section.
+	The frog module contains the logic for the moving component controlled by the user (the ``frog"). This entails the logic for what the frog does when detecting it is colliding with a car, a lilypad, water, or the end position. The frog state diagram is explained below in the "Finite State Machines" section. 
+	
+	This module takes inputs as the desired start position of the frog, the controller keys (up, down, left, right), lilypad collision signals, car collision signals, and lilypad parameters (so it can sync up with the movements of the lilypad). The module outputs the frog x and y position to display on the screen.
+	
 	\subsection{car}
-	The car module contains the logic for the moving cars in the bottom half of the screen. This module detects if there is a collision between its location and the location of frogger. This logic is shown in Figure \ref{}.
+	The car module contains the logic for the moving cars in the bottom half of the screen. This module also detects if there is a collision between its location and the location of the frog. It takes input of the desired speed/direction and updates/outputs the position of the car to display on the screen. It also takes inputs of the frog x and y position so it can determine if the car is collided with the frog. If it is, then it outputs a collision signal.
 	
+	The logic for the collision detection is shown in Figure \ref{fig:car-collision}.
 	
-	
+
 	\subsection{car\_row}
+	The car\_row module uses a generate block to create four car modules and depending on the number of cars used, it updates the collision signal. It takes inputs as the number of cars, speed/direction of cars, and the gap size in between each car. This is shown in Figure \ref{fig:car-row-generation}
+	
+	
 	\subsection{lilypad}
+	The lilypad module is similar to the functionality of the car module. This module contains the logic for the moving lilypads in the top half of the screen. It takes inputs of the desired direction/speed along with the frog x and y position and outputs the new location of the lilypad to draw to the screen. The frog x and y position are used to determine if a collision is occuring between the frog and the lilypad. This will output a collision signal if so. \\
+	
+	Lilypads differ from cars in that they ``carry" the frog once the two objects collide. This means that there must be a method to ``sync" up the movements of both the lilypad and the frog once they collide. For this reason, the lilypad module also must output its remaining count on its state machine cycle for its speed. This is so that if the frog lands on the lilypad midway through its ``move" cycle, then the frog can essentially take over the count of the lilypad and be synced up and move accordingly.
+	
 	\subsection{lilypad\_row}
+	The lilypad\_row module is similar to that of the car\_row module. Th
 	\subsection{game\_logic}
 	Module game\_logic.sv controls the overall finite state machine of the Frogger game.  This module monitors number of frogs to successfully get to the other side of the screen.  It then sends the game into a win or death state depending on the outcome of the game.  This module also controls the value of the game clock.  If the game clock runs out of time before the three frogs reach the other side, the game ends and the player loses. 
 	\subsection{hpi\_io\_intf}
@@ -154,7 +167,7 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 	
 %SECTION 5 - Circuit Schematics - 
 \section{Circuit Schematics}
-	%ERIC SECTION
+	ERIC SECTION - easy, just when done take screenshots of the circuit, 5 min
 
 
 
@@ -168,10 +181,9 @@ The frog module state diagram controls what happens to frogger when a particular
 %SECTION 7 - Color and Sprite Generation
 \section{Color \& Sprite Generation}
 A Java file was used to generate all sprite files for the game. First the sprite was developed on Piskel (a free online sprite editor) and optimized for the minimal amount of color use. A pallette was then generated based on all sprites in the project. For example...
-	%RYAN SECTION?
-
-
-
+	%RYAN SECTION - TALK MORE ABOUT METHOD USED
+	
+	
 %SECTION 8 - Difficulty - 
 \section{ Difficulty}
 	%RYAN SECTION - Make an argument for the difficulty of this project

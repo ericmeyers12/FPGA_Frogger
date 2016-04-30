@@ -6794,3 +6794,81 @@ java.lang.Exception: Connected system ID hash not found on target at expected ba
 
 !ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 13:17:09.135
 !MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x2090 --id=0x0 --timestamp=1459711255 /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2016-04-30 15:04:28.830
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2016-04-30 15:04:28.830
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: Connected system ID hash not found on target at expected base address.
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:589)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:04:39.143
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x2090 --id=0x0 --timestamp=1459711255]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:04:41.518
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x2090 --id=0x0 --timestamp=1459711255 /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:16:51.645
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x2090 --id=0x0 --timestamp=1459711255]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:16:52.720
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x2090 --id=0x0 --timestamp=1459711255]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2016-04-30 15:16:54.372
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --sidp=0x2090, --id=0x0, --timestamp=1459711255] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:16:55.722
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x2090 --id=0x0 --timestamp=1459711255 /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:16:55.735
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x2090 --id=0x0 --timestamp=1459711255 /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2016-04-30 15:16:57.897
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --sidp=0x2090, --id=0x0, --timestamp=1459711255, /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 4 0 2016-04-30 15:16:57.897
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:17:07.249
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:17:08.835
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x2090 --id=0x0 --timestamp=1459711255]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:17:11.277
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x2090 --id=0x0 --timestamp=1459711255 /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:38:13.657
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x2090 --id=0x0 --timestamp=1459711255]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 15:38:16.188
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x2090 --id=0x0 --timestamp=1459711255 /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 16:58:51.361
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x2090 --id=0x0 --timestamp=1459711255]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2016-04-30 16:58:53.798
+!MESSAGE Executing: [C:/altera/15.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x2090 --id=0x0 --timestamp=1459711255 /cygdrive/e/Final_Frogger/nios_system/software/final_frogger/final_frogger.elf]

@@ -23,7 +23,9 @@ module  frog ( input Reset, frame_clk,
 					input [3:0] LPad_Collision,
 					input [3:0] Car_Collision,
 					input active,
-					output logic [1:0] cur_Frog_Direction );		//up 00, down 01, left 11, right 10
+					output logic [1:0] cur_Frog_Direction,
+					input dead,
+					input win);		//up 00, down 01, left 11, right 10
     
     logic [10:0] Frog_X_Position, Frog_Y_Position, Frog_X_Motion, Frog_Y_Motion; 
 	 logic [5:0] time_count;
@@ -177,13 +179,13 @@ module  frog ( input Reset, frame_clk,
       case (state)
 			WAIT:
 				//check if car or water collision - go to DEAD STATE
-				if (Car_Collision[0] || Car_Collision[1] || Car_Collision[2] || Car_Collision[3] || 
+				if ((Car_Collision[0] || Car_Collision[1] || Car_Collision[2] || Car_Collision[3] || 
 					(Frog_Y_Position >= 80 && Frog_Y_Position <= 200 &&
-					!(LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3])))
+					!(LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3])) || dead) && active)
 					next_state = DEAD;
-				else if (LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3]) //check if lilypad collision - go to LILY STATE
+				else if ((LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3])&& active) //check if lilypad collision - go to LILY STATE
 					next_state = LILY_WAIT;
-				else if (Frog_Y_Position == 40 && (Frog_X_Position == 120 || Frog_X_Position == 280 || Frog_X_Position == 400))
+				else if (win)
 					next_state = WIN;				//check if at end state - go to WIN STATE
 				else if (down)//check if keypress
 					next_state = DOWN;

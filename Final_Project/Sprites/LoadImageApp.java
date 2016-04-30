@@ -1,24 +1,29 @@
-
-/**
- * LoadImageApp takes 
- * 
- * @created nprince
- * @edited rhelsdingen
- * @version April 15, 2015
- */
-
 import javax.imageio.ImageIO;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.lang.Math;
 
-public class LoadImageApp {
+public class LoadImageApp{
     ArrayList<String> filenames;
     HashMap<Color,Integer> palette;
     int numPaletteEntries;
+
+    public static int roundOffTens(int n)
+     {
+        // Get the right most digit 
+        int rdigit=n%10;
+
+        // If right digit greater than 5
+        if(rdigit>5)
+            n+=10-rdigit;
+        else
+            n-=rdigit;
+
+        // Return the value
+        return n;
+     }  
 
     private void establishPalette() throws IOException {
         int currentIndex = 0;
@@ -28,10 +33,16 @@ public class LoadImageApp {
             for (int x = 0; x < spritePNG.getWidth(); x++) {
                 for (int y = 0; y < spritePNG.getHeight(); y++) {
                     Color c = new Color(spritePNG.getRGB(x, y));
-  
-                    if (!palette.containsKey(c)) {
-                        palette.put(c, currentIndex);
+                    int red_val = roundOffTens(c.getRed());
+                    int green_val = roundOffTens(c.getGreen());
+                    int blue_val = roundOffTens(c.getBlue());
+                    Color c_trunc = new Color(red_val, green_val, blue_val);
+
+
+                    if (!palette.containsKey(c_trunc)) {
+                        palette.put(c_trunc, currentIndex);
                         currentIndex++;
+                        System.out.println(c_trunc);
                     }
                 }
             }
@@ -41,13 +52,12 @@ public class LoadImageApp {
         System.out.println("Total colors: " + currentIndex);
     }
 
-    //prints the output sv file used for the project
     private void outputPalette() throws IOException {
         int[][] paletteArray = new int[numPaletteEntries+1][3];
         for (Color c : palette.keySet()) {
-            paletteArray[palette.get(c)][0] = (int)((double) c.getRed()/10)*10;
-            paletteArray[palette.get(c)][1] = (int)((double) c.getGreen()/10)*10;
-            paletteArray[palette.get(c)][2] = (int)((double) c.getBlue()/10)*10;
+            paletteArray[palette.get(c)][0] = roundOffTens(c.getRed());
+            paletteArray[palette.get(c)][1] = roundOffTens(c.getGreen());
+            paletteArray[palette.get(c)][2] = roundOffTens(c.getBlue());
         }
 
         PrintStream paletteSV = new PrintStream(new FileOutputStream("palette.sv"));
@@ -88,7 +98,12 @@ public class LoadImageApp {
                 spriteSV.println("'{");
                 for (int y = 0; y < spritePNG.getHeight(); y++) {
                     Color c = new Color(spritePNG.getRGB(x, y));
-                    spriteSV.print(""+verilogNumber(palette.get(c)));
+                    int red_val = roundOffTens(c.getRed());
+                    int green_val = roundOffTens(c.getGreen());
+                    int blue_val = roundOffTens(c.getBlue());
+                    Color c_trunc = new Color(red_val, green_val, blue_val);
+
+                    spriteSV.print(""+verilogNumber(palette.get(c_trunc)));
 
                     if (y != spritePNG.getHeight() - 1) {
                         spriteSV.print(",");
@@ -101,18 +116,16 @@ public class LoadImageApp {
                     spriteSV.println(",");
                 }
             }
-        
+
             spriteSV.println("};");
             spriteSV.println("endmodule");
         }
     }
 
-    //determines number of bits required
     private int getRequiredInt() {
         return (int) Math.ceil(Math.log(numPaletteEntries + 1)/Math.log(2));
     }
 
-    
     public LoadImageApp(ArrayList<String> filenames) throws IOException {
         this.filenames = filenames;
         palette = new HashMap<Color, Integer>();
@@ -129,8 +142,12 @@ public class LoadImageApp {
         for (int y = 0; y < backgroundPNG.getHeight(); y++) {
             for (int x = 0; x < backgroundPNG.getWidth(); x++) {
                 Color c = new Color(backgroundPNG.getRGB(x, y));
+                int red_val = roundOffTens(c.getRed());
+                int green_val = roundOffTens(c.getGreen());
+                int blue_val = roundOffTens(c.getBlue());
+                Color c_trunc = new Color(red_val, green_val, blue_val);
 
-                int num = palette.get(c);
+                int num = palette.get(c_trunc);
                 int c1 = (num >> 8) & 0xff;
                 int c2 = (num & 0xff);
                 backgroundStream.writeByte(c2);
@@ -152,17 +169,12 @@ public class LoadImageApp {
     public static void main(String[] args) {
         try {
             ArrayList<String> l = new ArrayList<String>();
-            l.add("images/basicbackground");
+            l.add("images/frog_sprite");
+            l.add("images/lilypad_sprite");
+            l.add("images/carright_sprite");
+            l.add("images/carleft_sprite");
             l.add("images/numbers");
             
-            //l.add("images/level1background");
-            //l.add("images/car_left");
-            //l.add("images/car_right");
-            //l.add("images/frog0");
-            //l.add("images/frog1");
-            //l.add("images/frog2");
-            //l.add("images/frog3");
-            //l.add("images/frog4");
             LoadImageApp frogger = new LoadImageApp(l);
         } catch (IOException e) {
             System.out.println(e.getMessage());
