@@ -1,5 +1,33 @@
 
-State Machine - |final_frogger_top|frog:frog_instance|state
+State Machine - |final_frogger_top|frog:frog_instance_3|state
+Name state.LILY_MOVE state.LILY_WAIT state.WIN state.DEAD state.RESET state.UP state.KEYWAIT state.RIGHT state.LEFT state.DOWN state.WAIT 
+state.WAIT 0 0 0 0 0 0 0 0 0 0 0 
+state.DOWN 0 0 0 0 0 0 0 0 0 1 1 
+state.LEFT 0 0 0 0 0 0 0 0 1 0 1 
+state.RIGHT 0 0 0 0 0 0 0 1 0 0 1 
+state.KEYWAIT 0 0 0 0 0 0 1 0 0 0 1 
+state.UP 0 0 0 0 0 1 0 0 0 0 1 
+state.RESET 0 0 0 0 1 0 0 0 0 0 1 
+state.DEAD 0 0 0 1 0 0 0 0 0 0 1 
+state.WIN 0 0 1 0 0 0 0 0 0 0 1 
+state.LILY_WAIT 0 1 0 0 0 0 0 0 0 0 1 
+state.LILY_MOVE 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |final_frogger_top|frog:frog_instance_2|state
+Name state.LILY_MOVE state.LILY_WAIT state.WIN state.DEAD state.RESET state.UP state.KEYWAIT state.RIGHT state.LEFT state.DOWN state.WAIT 
+state.WAIT 0 0 0 0 0 0 0 0 0 0 0 
+state.DOWN 0 0 0 0 0 0 0 0 0 1 1 
+state.LEFT 0 0 0 0 0 0 0 0 1 0 1 
+state.RIGHT 0 0 0 0 0 0 0 1 0 0 1 
+state.KEYWAIT 0 0 0 0 0 0 1 0 0 0 1 
+state.UP 0 0 0 0 0 1 0 0 0 0 1 
+state.RESET 0 0 0 0 1 0 0 0 0 0 1 
+state.DEAD 0 0 0 1 0 0 0 0 0 0 1 
+state.WIN 0 0 1 0 0 0 0 0 0 0 1 
+state.LILY_WAIT 0 1 0 0 0 0 0 0 0 0 1 
+state.LILY_MOVE 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |final_frogger_top|frog:frog_instance_1|state
 Name state.LILY_MOVE state.LILY_WAIT state.WIN state.DEAD state.RESET state.UP state.KEYWAIT state.RIGHT state.LEFT state.DOWN state.WAIT 
 state.WAIT 0 0 0 0 0 0 0 0 0 0 0 
 state.DOWN 0 0 0 0 0 0 0 0 0 1 1 

@@ -15,28 +15,28 @@
 
 module  frog ( input Reset, frame_clk,
                output [10:0]  FrogX, FrogY, Frog_Width, Frog_Height,
+					input [10:0] Frog_X_Start,
 					input up, down, left, right,
 					input bit [5:0] LPad_Speed [0:3],
 					input [3:0] [5:0] LPad_Remainder_Count,
 					input bit LPad_Direction [0:3],
 					input [3:0] LPad_Collision,
 					input [3:0] Car_Collision,
-					input Water_Collision,
-					output logic [1:0] cur_Frog_Direction);		//up 00, down 01, left 11, right 10
+					input active,
+					output logic [1:0] cur_Frog_Direction );		//up 00, down 01, left 11, right 10
     
     logic [10:0] Frog_X_Position, Frog_Y_Position, Frog_X_Motion, Frog_Y_Motion; 
 	 logic [5:0] time_count;
 	 
 	 enum		logic [3:0] {UP, DOWN, LEFT, RIGHT, KEYWAIT, WAIT, RESET, DEAD, WIN, LILY_WAIT, LILY_MOVE} state, next_state;
 	 
-    parameter [10:0] Frog_X_Start=320;  // Start position on the X axis
-    parameter [10:0] Frog_Y_Start=440;  // Start position on the Y axis
     parameter [10:0] Frog_X_Min=0;       // Leftmost point on the X axis
     parameter [10:0] Frog_X_Max=640;     // Rightmost point on the X axis
     parameter [10:0] Frog_Y_Min=0;       // Topmost point on the Y axis
     parameter [10:0] Frog_Y_Max=480;     // Bottommost point on the Y axis
-    parameter [10:0] Frog_X_Step=40;      // Step size on the X axis
+    parameter [10:0] Frog_X_Step=20;      // Step size on the X axis
     parameter [10:0] Frog_Y_Step=40;      // Step size on the Y axis
+	 parameter [10:0] LPad_X_Step=20;
 
     assign Frog_Width = 40;  // assigns the value 4 as a 10-digit binary number, ie "0000000100"
 	 assign Frog_Height = 40;
@@ -45,8 +45,15 @@ module  frog ( input Reset, frame_clk,
 	 
 	 always_comb
 	 begin
-		for (int i = 0; i <= 3; i++)
-			collision_idx = (LPad_Collision[i] == 1'b1) ? i : 0;
+		if (LPad_Collision[0] == 1'b1)
+			collision_idx = 0;
+		else if (LPad_Collision[1] == 1'b1)
+			collision_idx = 1;
+		else if (LPad_Collision[2] == 1'b1)
+			collision_idx = 2;
+		else if (LPad_Collision[3] == 1'b1)				
+			collision_idx = 3;
+		else collision_idx = 0;
 	 end
 	 
 
@@ -60,7 +67,7 @@ module  frog ( input Reset, frame_clk,
 				cur_Frog_Direction <= 2'd0;
             Frog_Y_Motion <= 11'd0; //Frog_Y_Step;
 				Frog_X_Motion <= 11'd0; //Frog_X_Step;
-				Frog_Y_Position <= Frog_Y_Start;
+				Frog_Y_Position <= 11'd440;
 				Frog_X_Position <= Frog_X_Start;
         end
         else 
@@ -79,59 +86,80 @@ module  frog ( input Reset, frame_clk,
 					if (state == RESET)
 					begin
 							Frog_X_Position = Frog_X_Start;
-							Frog_Y_Position = Frog_Y_Start;
+							Frog_Y_Position = 11'd440;
 					end
 					/*KEYPRESS*/
-					else if(state == UP && Frog_Y_Position != 0)//UP BUTTON PRESSED
+					else if(state == UP && Frog_Y_Position != 0 && active)//UP BUTTON PRESSED
 					begin
 							Frog_X_Motion = 11'b0;
 							Frog_Y_Motion = ~(Frog_Y_Step)+1; //2s Complement
 							cur_Frog_Direction = 2'b00;
+							time_count = 6'b0;
 					end
-					else if(state == DOWN && Frog_Y_Position != 440) //DOWN BUTTON PRESSED
+					else if(state == DOWN && Frog_Y_Position != 440 && active) //DOWN BUTTON PRESSED
 					begin
 							Frog_X_Motion = 11'b0;
 							Frog_Y_Motion = Frog_Y_Step;
 							cur_Frog_Direction = 2'b01;
+							time_count = 6'b0;
+
 					end
-					else if(state == LEFT && Frog_X_Position != 0) //LEFT BUTTON PRESSED
+					else if(state == LEFT && Frog_X_Position != 0 && active) //LEFT BUTTON PRESSED
 					begin
 							Frog_Y_Motion = 11'b0;
 							Frog_X_Motion = ~(Frog_X_Step)+1; //2s Complement
 							cur_Frog_Direction = 2'b11;
+							time_count = 6'b0;
+
 					end
-					else if(state == RIGHT) //RIGHT BUTTON PRESSED
+					else if(state == RIGHT && Frog_X_Position != 600 && active) //RIGHT BUTTON PRESSED
 					begin
 							Frog_Y_Motion = 11'b0;
 							Frog_X_Motion = Frog_X_Step;
-							cur_Frog_Direction = 2'b10;
+							cur_Frog_Direction = 2'b10;							
+							time_count = 6'b0;
+
+					end
+					else if (state == LILY_MOVE)
+					begin
+						if (LPad_Direction[collision_idx] == 1'b0) //DIRECTION == LEFT
+						begin
+							if ((Frog_X_Position + Frog_Width) == 11'd0)  //LEFT EDGE
+							begin
+								Frog_X_Position = 11'd0;
+							end
+							else
+								Frog_X_Motion = ~(LPad_X_Step) + 1; //2s Complement
+						end
+						else //DIRECTION == RIGHT
+						begin
+							if ((Frog_X_Position == 11'd600)) //RIGHT EDGE
+							begin
+								Frog_X_Position = 11'd600;
+							end
+							else
+								Frog_X_Motion = LPad_X_Step;
+						end
+						time_count = 6'b0;
 					end
 					else if (state == LILY_WAIT)
 					begin
 						if(time_count == 6'b0)
 						begin
 							if(LPad_Remainder_Count[collision_idx] != 6'b0)
-								time_count <= LPad_Remainder_Count[collision_idx] +1;
+								time_count = LPad_Remainder_Count[collision_idx] + 1;
 							else
 								time_count = 6'b0;
 						end
 						else
 							time_count <= time_count + 1;
 						Frog_X_Motion = 11'b0;
-//						time_count <= time_count + 1;
-					end
-					else if (state == LILY_MOVE)
-					begin
-						if (LPad_Direction[collision_idx] == 1'b0) //DIRECTION == LEFT
-								Frog_X_Motion = ~(Frog_X_Step) + 1;
-						else //DIRECTION == RIGHT
-								Frog_X_Motion = Frog_X_Step;
-						time_count = 6'b0;
 					end
 					else //DEFAULT CASE - WAIT - Nothing pressed so stay still
 					begin
 							Frog_Y_Motion = 11'b0;
 							Frog_X_Motion = 11'b0;
+							time_count = 6'b0;
 					end
 				end
 				Frog_X_Position <= (Frog_X_Position + Frog_X_Motion);
@@ -149,7 +177,9 @@ module  frog ( input Reset, frame_clk,
       case (state)
 			WAIT:
 				//check if car or water collision - go to DEAD STATE
-				if (Car_Collision[0] || Car_Collision[1] || Car_Collision[2] || Car_Collision[3] || Water_Collision)
+				if (Car_Collision[0] || Car_Collision[1] || Car_Collision[2] || Car_Collision[3] || 
+					(Frog_Y_Position >= 80 && Frog_Y_Position <= 200 &&
+					!(LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3])))
 					next_state = DEAD;
 				else if (LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3]) //check if lilypad collision - go to LILY STATE
 					next_state = LILY_WAIT;

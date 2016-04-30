@@ -25,7 +25,7 @@ module  lilypad( input Reset, frame_clk,
     parameter [10:0] LPad_X_Max=11'd640;     // Rightmost point on the X axis
     parameter [10:0] LPad_Y_Min=11'd0;       // Topmost point on the Y axis
     parameter [10:0] LPad_Y_Max=11'd480;     // Bottommost point on the Y axis
-    parameter [10:0] LPad_X_Step=11'd40;      // Step size on the X axis
+    parameter [10:0] LPad_X_Step=11'd20;      // Step size on the X axis
     parameter [10:0] LPad_Y_Step=11'd0;      // Step size on the Y axis
 	 parameter [10:0] X_TOLERANCE = 11'd5;
 	 parameter [10:0] Y_TOLERANCE = 11'd1;

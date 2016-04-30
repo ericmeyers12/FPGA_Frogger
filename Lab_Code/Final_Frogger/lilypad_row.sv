@@ -29,11 +29,11 @@ module  lilypad_row (input Reset, frame_clk,
 	logic [10:0] LPad_Start_X;
 	assign LPad_Start_X = 11'd0;
 	logic [3:0] lpad_collision_intermediate;
-	logic [3:0][5:0]LPad_Remainder_Count_INT;
+	logic [3:0][5:0]LPad_Remainder_Count_Intermediate;
 
 		 
 	
-	//This will generate a total of 4 Car Modules every time
+	//This will generate a total of 4 LPad Modules every time
 	//Color Mapper will determine which ones must be on and which ones must be off
 	generate
       genvar i;
@@ -47,7 +47,7 @@ module  lilypad_row (input Reset, frame_clk,
 									.LPad_Start_Y,
 									.Direction,
 									.Speed,
-									.LPad_Remainder_Count(LPad_Remainder_Count_INT[i]),
+									.LPad_Remainder_Count(LPad_Remainder_Count_Intermediate[i]),
 									.Frog_X,
 									.Frog_Y,
 									.LPad_Collision(lpad_collision_intermediate[i])
@@ -55,7 +55,8 @@ module  lilypad_row (input Reset, frame_clk,
 		end
    endgenerate	 
 	
-	assign LPad_Remainder_Count = LPad_Remainder_Count_INT[0];
+	//need to output this to allow LPad_Move State to work
+	assign LPad_Remainder_Count = LPad_Remainder_Count_Intermediate[0];
 	
 	
 	assign LPad_Collision = ((lpad_collision_intermediate [0] && Number_LPads >= 1) ||
