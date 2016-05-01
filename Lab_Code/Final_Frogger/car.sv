@@ -24,7 +24,7 @@ module  car ( input Reset, frame_clk,
     parameter [10:0] Car_X_Max=11'd640;     // Rightmost point on the X axis
     parameter [10:0] Car_Y_Min=11'd0;       // Topmost point on the Y axis
     parameter [10:0] Car_Y_Max=11'd480;     // Bottommost point on the Y axis
-    parameter [10:0] Car_X_Step=11'd10;      // Step size on the X axis
+    parameter [10:0] Car_X_Step=11'd5;      // Step size on the X axis
     parameter [10:0] Car_Y_Step=11'd0;      // Step size on the Y axis
 	 parameter [10:0] X_TOLERANCE = 11'd10;
 	 parameter [10:0] Y_TOLERANCE = 11'd10;

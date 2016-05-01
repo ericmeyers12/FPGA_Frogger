@@ -6,8 +6,14 @@
 //-------------------------------------------------------------------------
 
 
-module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY, 
-							  Frog_Width, Frog_Height,
+module  color_mapper ( input logic [10:0] 
+							  Frog1X, Frog1Y, 
+							  Frog2X, Frog2Y,
+							  Frog3X, Frog3Y, 
+							  DrawX, DrawY, 
+							  Frog1_Width, Frog1_Height,
+							  Frog2_Width, Frog2_Height,
+							  Frog3_Width, Frog3_Height,
 							  LPad1_Width, LPad1_Height,
 							  input logic [3:0][10:0] Car_Row1_X, Car_Row1_Y,
 							  input logic [3:0][10:0] Car_Row2_X, Car_Row2_Y,
@@ -21,21 +27,24 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 							  input [2:0] Row1_Number_LPads, Row2_Number_LPads, Row3_Number_LPads, Row4_Number_LPads,
 							  input [3:0] Car_Collision, LPad_Collision,
 							  input up, down, left, right,
-							  input [1:0] cur_Frog_Direction,
+							  input [1:0] cur_Frog1_Direction,
+							  input [1:0] cur_Frog2_Direction,
+							  input [1:0] cur_Frog3_Direction,
 //							  input [3:0] tens_digit, ones_digit,
 							  //input logic [18:0] backgroundIndex,      //for background image
                        output logic [7:0]  Red, Green, Blue );
     
-    logic frog_on, lpad1_on;
+    logic frog1_on, frog2_on, frog3_on, lpad1_on;
 	 logic [3:0] car_on1, car_on2, car_on3, car_on4;
 	 logic [3:0] lpad_on1, lpad_on2, lpad_on3, lpad_on4;
 	 
 	 
 	 logic [9:0] frog_sprite[0:39][0:39];
-	 logic [9:0] frog_color_idx;
-	 logic [5:0] frog_x_index;
-	 logic [5:0] frog_y_index;
-	 frog_sprite c(.rgb(frog_sprite));
+	 logic [9:0] frog1_color_idx, frog2_color_idx, frog3_color_idx;
+	 logic [10:0] frog1_x_index, frog2_x_index, frog3_x_index;
+	 logic [10:0] frog1_y_index, frog2_y_index, frog3_y_index;
+	 frog_sprite frog(.rgb(frog_sprite));
+
 	 
 	 logic [9:0] lilypad_sprite[0:39][0:39];
 	 logic [9:0] lilypad_color_idx;
@@ -49,14 +58,14 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	 logic [6:0] leftcar_x_index;
 	 logic [5:0] leftcar_y_index;
 	 logic [10:0] Car1X, Car1Y;
-	 leftcar_sprite lc(.rgb(leftcar_sprite));
+	 carleft_sprite lc(.rgb(leftcar_sprite));
 
 	 logic [9:0] rightcar_sprite[0:79][0:39];
 	 logic [9:0] rightcar_color_idx;
 	 logic [6:0] rightcar_x_index;
 	 logic [5:0] rightcar_y_index;
 	 logic [10:0] Car2X, Car2Y;
-	 rightcar_sprite rc(.rgb(rightcar_sprite));
+	 carright_sprite rc(.rgb(rightcar_sprite));
 	 
 	 
 //	 logic [9:0] background[0:639][0:479];
@@ -66,7 +75,11 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 //	 basicbackground b(.rgb(background));
 
 	 logic [9:0] cur_color_idx;
+<<<<<<< HEAD
 	 logic [7:0] color_palette [0:16][0:2];   //incorrect-needs to be updated
+=======
+	 logic [7:0] color_palette [0:17][0:2];   //correct-frogonly
+>>>>>>> origin/master
 	 palette game_palette(.palette(color_palette));
 	 
 	 
@@ -89,14 +102,31 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	  	 
 /*====== DISPLAY FROGGER ======*/	  
  always_comb
- begin:Frog_on_proc
-	  if (DrawX >= (FrogX+7) && DrawX <= (Frog_Width + (FrogX-7)) &&
-			DrawY >= (FrogY+10) && DrawY <= (Frog_Height + FrogY-5)) 
-			frog_on = 1'b1;
+ begin:Frog1_on_proc
+	  if (DrawX >= (Frog1X+7) && DrawX <= (Frog1_Width + (Frog1X-7)) &&
+			DrawY >= (Frog1Y+10) && DrawY <= (Frog1_Height + Frog1Y-5)) 
+			frog1_on = 1'b1;
 	  else 
-			frog_on = 1'b0;
+			frog1_on = 1'b0;
   end 
-	 
+ 
+ always_comb
+ begin:Frog2_on_proc
+	  if (DrawX >= (Frog2X+7) && DrawX <= (Frog2_Width + (Frog2X-7)) &&
+			DrawY >= (Frog2Y+10) && DrawY <= (Frog2_Height + Frog2Y-5)) 
+			frog2_on = 1'b1;
+	  else 
+			frog2_on = 1'b0;
+  end 
+	
+ always_comb
+ begin:Frog3_on_proc
+	  if (DrawX >= (Frog3X+7) && DrawX <= (Frog3_Width + (Frog3X-7)) &&
+			DrawY >= (Frog3Y+10) && DrawY <= (Frog3_Height + Frog3Y-5)) 
+			frog3_on = 1'b1;
+	  else 
+			frog3_on = 1'b0;
+  end 	
 
 /*====== DISPLAY CAR_ROW1 =========*/ 
 	generate 
@@ -360,22 +390,62 @@ module  color_mapper ( input logic [10:0] FrogX, FrogY, DrawX, DrawY,
 	endgenerate
 
 
+
+
+
 /*======= MAPPING COLOR INDEX FOR FROGGER ======*/	
-assign frog_x_index = DrawX - FrogX;
-assign frog_y_index = DrawY - FrogY;
+//setting indexes for Frog	
+assign frog1_x_index = DrawX - Frog1X;
+assign frog1_y_index = DrawY - Frog1Y;
+
+assign frog2_x_index = DrawX - Frog2X;
+assign frog2_y_index = DrawY - Frog2Y;
+
+assign frog3_x_index = DrawX - Frog3X;
+assign frog3_y_index = DrawY - Frog3Y;
+
 
 always_comb
 begin
-if (cur_Frog_Direction == 2'b00)     //up
-	frog_color_idx = frog_sprite[frog_x_index][frog_y_index];
-else if (cur_Frog_Direction == 2'b01) //down
-	frog_color_idx = frog_sprite[Frog_Width-frog_x_index][Frog_Height-frog_y_index];
-else if (cur_Frog_Direction == 2'b10) //right
-	frog_color_idx = frog_sprite[frog_y_index][frog_x_index];
-else if (cur_Frog_Direction == 2'b11) //left
-	frog_color_idx = frog_sprite[Frog_Height-frog_y_index][Frog_Width-frog_x_index];
+if (cur_Frog1_Direction == 2'b00)     //up
+	frog1_color_idx = frog_sprite[frog1_x_index][frog1_y_index];
+else if (cur_Frog1_Direction == 2'b01) //down
+	frog1_color_idx = frog_sprite[Frog1_Width-frog1_x_index][Frog1_Height-frog1_y_index];
+else if (cur_Frog1_Direction == 2'b10) //right
+	frog1_color_idx = frog_sprite[frog1_y_index][frog1_x_index];
+else if (cur_Frog1_Direction == 2'b11) //left
+	frog1_color_idx = frog_sprite[Frog1_Height-frog1_y_index][Frog1_Width-frog1_x_index];
 else 
-	frog_color_idx = frog_sprite[frog_x_index][frog_y_index];
+	frog1_color_idx = frog_sprite[frog1_x_index][frog1_y_index];
+end
+
+always_comb
+begin
+if (cur_Frog2_Direction == 2'b00)     //up
+	frog2_color_idx = frog_sprite[frog2_x_index][frog2_y_index];
+else if (cur_Frog2_Direction == 2'b01) //down
+	frog2_color_idx = frog_sprite[Frog2_Width-frog2_x_index][Frog2_Height-frog2_y_index];
+else if (cur_Frog2_Direction == 2'b10) //right
+	frog2_color_idx = frog_sprite[frog2_y_index][frog2_x_index];
+else if (cur_Frog2_Direction == 2'b11) //left
+	frog2_color_idx = frog_sprite[Frog2_Height-frog2_y_index][Frog2_Width-frog2_x_index];
+else 
+	frog2_color_idx = frog_sprite[frog2_x_index][frog2_y_index];
+end
+
+
+always_comb
+begin
+if (cur_Frog3_Direction == 2'b00)     //up
+	frog3_color_idx = frog_sprite[frog3_x_index][frog3_y_index];
+else if (cur_Frog3_Direction == 2'b01) //down
+	frog3_color_idx = frog_sprite[Frog3_Width-frog3_x_index][Frog3_Height-frog3_y_index];
+else if (cur_Frog3_Direction == 2'b10) //right
+	frog3_color_idx = frog_sprite[frog3_y_index][frog3_x_index];
+else if (cur_Frog3_Direction == 2'b11) //left
+	frog3_color_idx = frog_sprite[Frog3_Height-frog3_y_index][Frog3_Width-frog3_x_index];
+else 
+	frog3_color_idx = frog_sprite[frog3_x_index][frog3_y_index];
 end
 
 /*======= MAPPING COLOR INDEX FOR CARS ======*/
@@ -383,88 +453,120 @@ end
 always_comb
 begin
 //cars row 1
-	if (Car_on1[0] == 1'b1)
+	if (car_on1[0] == 1'b1)
 	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
 		Car2X = Car_Row1_X[0];
 		Car2Y = Car_Row1_Y[0];
 	end
-	else if (Car_on1[1] == 1'b1)
+	else if (car_on1[1] == 1'b1)
 	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
 		Car2X = Car_Row1_X[1];
 		Car2Y = Car_Row1_Y[1];
 	end	
-	else if (Car_on1[2] == 1'b1)
+	else if (car_on1[2] == 1'b1)
 	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
 		Car2X = Car_Row1_X[2];
 		Car2Y = Car_Row1_Y[2];
 	end	
-	else if (Car_on1[3] == 1'b1)
+	else if (car_on1[3] == 1'b1)
 	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
 		Car2X = Car_Row1_X[3];
 		Car2Y = Car_Row1_Y[3];
 	end	
 //cars row 2
-	else if (Car_on2[0] == 1'b1)
+	else if (car_on2[0] == 1'b1)
 	begin
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
 		Car1X = Car_Row2_X[0];
 		Car1Y = Car_Row2_Y[0];
 	end	
-	else if (Car_on2[1] == 1'b1)
+	else if (car_on2[1] == 1'b1)
 	begin
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
 		Car1X = Car_Row2_X[1];
 		Car1Y = Car_Row2_Y[1];
 	end	
-	else if (Car_on2[2] == 1'b1)
+	else if (car_on2[2] == 1'b1)
 	begin
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
 		Car1X = Car_Row2_X[2];
 		Car1Y = Car_Row2_Y[2];
 	end	
-	else if (Car_on2[3] == 1'b1)
+	else if (car_on2[3] == 1'b1)
 	begin
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
 		Car1X = Car_Row2_X[3];
 		Car1Y = Car_Row2_Y[3];
 	end	
 //lilypads row 3
-	else if (Car_on3[0] == 1'b1)
+	else if (car_on3[0] == 1'b1)
 	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
 		Car2X = Car_Row3_X[0];
 		Car2Y = Car_Row3_Y[0];
 	end	
-	else if (Car_on3[1] == 1'b1)
+	else if (car_on3[1] == 1'b1)
 	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
 		Car2X = Car_Row3_X[1];
 		Car2Y = Car_Row3_Y[1];
 	end	
-	else if (Car_on3[2] == 1'b1)
+	else if (car_on3[2] == 1'b1)
 	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
 		Car2X = Car_Row3_X[2];
 		Car2Y = Car_Row3_Y[2];
 	end	
-	else if (Car_on3[3] == 1'b1)
+	else if (car_on3[3] == 1'b1)
 	begin
+		Car1X = 11'b0;
+		Car1Y = 11'b0;
 		Car2X = Car_Row3_X[3];
 		Car2Y = Car_Row3_Y[3];
 	end	
 //lilypads row 4
-	else if (Car_on4[0] == 1'b1)
+	else if (car_on4[0] == 1'b1)
 	begin
 		Car1X = Car_Row4_X[0];
 		Car1Y = Car_Row4_Y[0];
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
 	end	
-	else if (Car_on4[1] == 1'b1)
+	else if (car_on4[1] == 1'b1)
 	begin
 		Car1X = Car_Row4_X[1];
 		Car1Y = Car_Row4_Y[1];
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
 	end	
-	else if (Car_on4[2] == 1'b1)
+	else if (car_on4[2] == 1'b1)
 	begin
 		Car1X = Car_Row4_X[2];
 		Car1Y = Car_Row4_Y[2];
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
 	end	
-	else if (Car_on4[3] == 1'b1)
+	else if (car_on4[3] == 1'b1)
 	begin
 		Car1X = Car_Row4_X[3];
 		Car1Y = Car_Row4_Y[3];
+		Car2X = 11'b0;
+		Car2Y = 11'b0;
 	end	
 //outside cases
 	else 
@@ -610,11 +712,25 @@ end
 /*======= UPDATE VGA DISPLAY ======*/	 
  always_comb
  begin:RGB_Display
-	  if ((frog_on == 1'b1) && frog_color_idx!=0) //FROG ON
+	  if ((frog1_on == 1'b1) && frog1_color_idx!=0) //FROG ON
 	  begin 
-			Red = color_palette[frog_color_idx][0];
-			Green = color_palette[frog_color_idx][1];
-			Blue = color_palette[frog_color_idx][2];
+			Red = color_palette[frog1_color_idx][0];
+			Green = color_palette[frog1_color_idx][1];
+			Blue = color_palette[frog1_color_idx][2];
+	  end
+	  else
+	  if ((frog2_on == 1'b1) && frog2_color_idx!=0) //FROG ON
+	  begin 
+			Red = color_palette[frog2_color_idx][0];
+			Green = color_palette[frog2_color_idx][1];
+			Blue = color_palette[frog2_color_idx][2];
+	  end
+	  else
+	  if ((frog3_on == 1'b1) && frog3_color_idx!=0) //FROG ON
+	  begin 
+			Red = color_palette[frog3_color_idx][0];
+			Green = color_palette[frog3_color_idx][1];
+			Blue = color_palette[frog3_color_idx][2];
 	  end
 	  else
 	  //CARROW #1 ON
@@ -652,22 +768,21 @@ end
 				  lpad_on3[0] == 1'b1 || lpad_on3[1] == 1'b1 ||  lpad_on3[2] == 1'b1 ||  lpad_on3[3] == 1'b1 ||
 				  lpad_on4[0] == 1'b1 || lpad_on4[1] == 1'b1 ||  lpad_on4[2] == 1'b1 ||  lpad_on4[3] == 1'b1) && lilypad_color_idx!=0)
 	  begin
-			Red = color_palette[lilypad_color_idx][0];
-			Green = color_palette[lilypad_color_idx][1];
-			Blue = color_palette[lilypad_color_idx][2];
-	  end
-	  
-	  else if (Car_Collision[0] == 1'b1 || Car_Collision[1] == 1'b1 || Car_Collision[2] == 1'b1 || Car_Collision[3] == 1'b1) //Car_Collision represents each row here
-	  begin
-			Red = 8'd255;
-			Green = 8'd00;
-			Blue = 8'd00;
-	  end
-	  else if (LPad_Collision[0] == 1'b1 || LPad_Collision[1] == 1'b1 || LPad_Collision[2] == 1'b1 || LPad_Collision[3] == 1'b1) //Car_Collision represents each row here
-	  begin
-			Red = 8'd179;
-			Green = 8'd255;
-			Blue = 8'd187;
+//	   if (lilypad_color_idx!=0)
+//		 begin
+			Red = 8'd0;
+			Green = 8'd250;
+			Blue = 8'd0;
+//			Red = color_palette[lilypad_color_idx][0];
+//			Green = color_palette[lilypad_color_idx][1];
+//			Blue = color_palette[lilypad_color_idx][2];
+//		 end
+//		else
+//		 begin
+//			Red = 8'd0;
+//			Green = 8'd200;
+//			Blue = 8'd255;
+//		end
 	  end
 	  else //SHOW APPROPRIATE BACKGROUND 
 	  begin 
@@ -682,7 +797,7 @@ end
 			else if ((DrawY >= 40 && DrawY <= 79) && ((DrawX >= 0 && DrawX <= 119) || (DrawX >= 160 && DrawX <= 279) || (DrawX >= 320 && DrawX <= 479) || (DrawX >= 520 && DrawX <= 679))) 
 			begin
 				Red = 8'd0;
-				Green = 8'd200; 
+				Green = 8'd100; 
 				Blue = 8'd0;	
 			end
 			//grass color
@@ -709,13 +824,7 @@ end
 				Green = 8'd69;
 				Blue = 8'd69;
 			end
-
-
-		
 			else begin
-	//			Red = color_palette[background_color_idx][0];
-	//			Green = color_palette[background_color_idx][1];
-	//			Blue = color_palette[background_color_idx][2];
 				Red = 8'd255;
 				Green = 8'd255;
 				Blue = 8'd255;	 

@@ -23,7 +23,7 @@ emeyer7, helsdin2}}
 
 %SECTION 1 - Introduction - ERIC
 \section{Introduction}
-For this ECE 385 project, we recreated the classic game called Frogger.  The basic premise of Frogger is to navigate three frogs through obstacles from the bottom to the top of the screen. Frogger must first pass through four lanes of traffic and a river full of lily pads in order to successfully make it to the other side of the map.  A frog may die by either colliding with a moving car or falling in the water. There are a total of three frogs that the user must navigate to the other end of the map, and once all three frogs move to their particular ending location, the user wins. If a user dies three times, then the game is over.\\
+For this project, we recreated the classic game called Frogger.  The basic premise of Frogger is to navigate three frogs through obstacles from the bottom to the top of the screen. Frogger must first pass through four lanes of traffic and a river full of lily pads in order to successfully make it to the other side of the map.  A frog may die by either colliding with a moving car or falling in the water. There are a total of three frogs that the user must navigate to the other end of the map, and once all three frogs move to their particular ending location, the user wins. If a user dies three times, then the game is over.\\
 
 This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 FPGA Board, and used software drivers developed in C to communicate with a USB keyboard (to be used as the controller).
 
@@ -46,13 +46,13 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 	\end{itemize}
 	\item Generation of moving obstacles
 	\begin{itemize}
-		\item Four lanes of at least three cars in them 
+		\item Four lanes of at most four cars in them 
 		\begin{itemize}
 				\item Each row moves at specific speed, direction
 				\item Cars wrap around screen
 				\item Frogger dies upon impact with car ending the game
 		\end{itemize}
-		\item Four lanes of at least three lily pads in them
+		\item Four lanes of at most four lilypads in them
 		\begin{itemize}
 			\item Each row moves at specific speed, direction
 			\item Lily pads wrap around screen
@@ -105,17 +105,49 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 %SECTION 4 - Purpose of Modules - 
 \section{Purpose of Modules}
 	%ERIC SECTION/RYAN SECTION- WORK ON YOUR RESPECTIVE STUFF
-
-
+	
 	\subsection{final\_frogger\_top}
+	This is the top level module that both initializes all modules to use in the game and initializes their parameters. Three frogs are initialized and depending on the button the user presses (either 1, 2, or 3 on the numpad) either one is active at a single instant. Both cars and lilypads are initialized using parameter constant arrays, as shown in Figure \ref{fig:car-parameters} and Figure \ref{fig:lilypad-parameters]}. 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{car_parameters.png}
+		\caption{Car Parameters}
+		\label{fig:car-parameters}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{lilypad_parameters.png}
+		\caption{Lilypad Parameters}
+		\label{fig:lilypad-parameters]}
+	\end{figure}
+	
 	\subsection{Color\_Mapper}
-		\subsubsection{Displays Frogger, Car rows, and Lily pad rows }
+	%TODO: RYAN SECTION
+		\subsubsection{Displays Frogger, Cars, and Lilypads }
 		\subsubsection{Sets orientation of Frog Direction}
 	\subsection{frog}
+	The frog module contains the logic for the moving component controlled by the user (the ``frog"). This entails the logic for what the frog does when detecting it is colliding with a car, a lilypad, water, or the end position. The frog state diagram is explained below in the "Finite State Machines" section. 
+	
+	This module takes inputs as the desired start position of the frog, the controller keys (up, down, left, right), lilypad collision signals, car collision signals, and lilypad parameters (so it can sync up with the movements of the lilypad). The module outputs the frog x and y position to display on the screen.
+	
 	\subsection{car}
+	The car module contains the logic for the moving cars in the bottom half of the screen. This module also detects if there is a collision between its location and the location of the frog. It takes input of the desired speed/direction and updates/outputs the position of the car to display on the screen. It also takes inputs of the frog x and y position so it can determine if the car is collided with the frog. If it is, then it outputs a collision signal.
+	
+	The logic for the collision detection is shown in Figure \ref{fig:car-collision}.
+	
+
 	\subsection{car\_row}
+	The car\_row module uses a generate block to create four car modules and depending on the number of cars used, it updates the collision signal. It takes inputs as the number of cars, speed/direction of cars, and the gap size in between each car. This is shown in Figure \ref{fig:car-row-generation}
+	
+	
 	\subsection{lilypad}
+	The lilypad module is similar to the functionality of the car module. This module contains the logic for the moving lilypads in the top half of the screen. It takes inputs of the desired direction/speed along with the frog x and y position and outputs the new location of the lilypad to draw to the screen. The frog x and y position are used to determine if a collision is occuring between the frog and the lilypad. This will output a collision signal if so. \\
+	
+	Lilypads differ from cars in that they ``carry" the frog once the two objects collide. This means that there must be a method to ``sync" up the movements of both the lilypad and the frog once they collide. For this reason, the lilypad module also must output its remaining count on its state machine cycle for its speed. This is so that if the frog lands on the lilypad midway through its ``move" cycle, then the frog can essentially take over the count of the lilypad and be synced up and move accordingly.
+	
 	\subsection{lilypad\_row}
+	The lilypad\_row module is similar to that of the car\_row module. Th
 	\subsection{game\_logic}
 	Module game\_logic.sv controls the overall finite state machine of the Frogger game.  This module monitors number of frogs to successfully get to the other side of the screen.  It then sends the game into a win or death state depending on the outcome of the game.  This module also controls the value of the game clock.  If the game clock runs out of time before the three frogs reach the other side, the game ends and the player loses. 
 	\subsection{hpi\_io\_intf}
@@ -130,32 +162,28 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 	\subsection{VGA\_controller}
 	The VGA\_controller manages output to the monitor.  Inputs include clock and reset. Outputs include several sync signals, a pixel clock specified for 25 MHz and 10 bit horizontal and vertical coordinate signals as shown below.
 	
-	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.45\textwidth]{VGAio.jpg}
-		\label{fig:VGAio}
-	\end{figure}
-	
+
 
 	
 %SECTION 5 - Circuit Schematics - 
 \section{Circuit Schematics}
-	%ERIC SECTION
+	ERIC SECTION - easy, just when done take screenshots of the circuit, 5 min
 
 
 
 %SECTION 6 - Finite State Machines - 
 \section{Finite State Machines}
-	%RYAN SECTION?
+There were a total of 3 FSMs implemented in Frogger. One for the user-controlled component (the frog), another for the moving components (cars and lilypads), and the last for the game logic.\\ 
 
+The frog module state diagram controls what happens to frogger when a particular action occurs. For example, if frogger collides with a car or water, it must die. However, if frogger collides with a lilypad, it must move at the same rate as the lilypad. These state machines are shown in Figures \ref{fig:frogger-state}, \ref{fig:game-logic-state-diagram}, and \ref{fig:moving-state}.
 
 
 %SECTION 7 - Color and Sprite Generation
 \section{Color \& Sprite Generation}
-	%RYAN SECTION?
-
-
-
+A Java file was used to generate all sprite files for the game. First the sprite was developed on Piskel (a free online sprite editor) and optimized for the minimal amount of color use. A pallette was then generated based on all sprites in the project. For example...
+	%RYAN SECTION - TALK MORE ABOUT METHOD USED
+	
+	
 %SECTION 8 - Difficulty - 
 \section{ Difficulty}
 	%RYAN SECTION - Make an argument for the difficulty of this project
@@ -172,10 +200,66 @@ A LOT MORE COULD BE ADDED HERE\\
 	%JOINT SECTION
 
 
-
+\clearpage
+\onecolumn
 %SECTION 10: Figures & Appendix
 \section{Figures}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{car_collision.png}
+	\caption{Car Collision Logic}
+	\label{fig:car-collision}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{lilypad_collision.png}
+	\caption{Lilypad Collision Logic}
+	\label{fig:lilypad-collision}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{car_row_generation.png}
+	\caption{Car Row Generation}
+	\label{fig:car-row-generation}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{lpad_row_generation.png}
+	\caption{Lilypad Row Generation}
+	\label{fig:lpad-row-generation}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{frogger_state_diagram.png}
+	\caption{Frogger State Diagram}
+	\label{fig:frogger-state}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{game_logic_state_diagram.png}
+	\caption{Game Logic State Diagram}
+	\label{fig:game-logic-state-diagram}
+
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{moving_state.png}
+	\caption{Moving Obstacles State Diagram}
+	\label{fig:moving-state}
+\end{figure}
+
+
 \section*{Appendix}
+
+
 
 
 %%\begin{figure} [H]

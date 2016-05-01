@@ -45,17 +45,19 @@ module  final_frogger_top ( input         CLOCK_50,
 								  output			 DRAM_CLK				// SDRAM Clock
 									);
     
-    logic Reset_h, vssig, Clk;
+    logic Reset_h, vssig, Clk, soft_reset;
 
 	 logic [10:0] drawxsig, drawysig;
 	 
 	 logic [15:0] keycode;
 	 logic left, right, up, down;
+	 logic frog_1_key, frog_2_key, frog_3_key;
 	 
 	 assign VGA_VS = vssig;
     
 	 assign Clk = CLOCK_50;
     assign {Reset_h}=~ (KEY[0]);  // The push buttons are active low
+	 assign {soft_reset} = ~(KEY[1]);
 	
 	 
 	 wire [1:0] hpi_addr;
@@ -103,7 +105,7 @@ module  final_frogger_top ( input         CLOCK_50,
 										 );
 	 
     vga_controller vgasync_instance(.Clk, 
-												.Reset(Reset_h), 
+												.Reset(soft_reset), 
 												.hs(VGA_HS), 
 												.vs(vssig), 
 												.pixel_clk(VGA_CLK), 
@@ -113,7 +115,10 @@ module  final_frogger_top ( input         CLOCK_50,
 												.DrawY(drawysig)
 												);
 	 /* ============== FROG, CAR, AND LILYPAD MODULES BELOW ==============*/					
-	 logic [10:0] frogxsig, frogysig, frogwidthsig, frogheightsig,
+	 logic [10:0] frogcurxsig, frogcurysig, 
+					  frog1xsig, frog1ysig, frog1widthsig, frog1heightsig,
+					  frog2xsig, frog2ysig, frog2widthsig, frog2heightsig,
+					  frog3xsig, frog3ysig, frog3widthsig, frog3heightsig,
 					 lpad1xsig, lpad1ysig, lpad1widthsig, lpad1heightsig;
 					 
 	 logic [3:0] carcollisionsig;
@@ -125,7 +130,7 @@ module  final_frogger_top ( input         CLOCK_50,
 	 logic [3:0] [10:0] lpadrow_xsig [3:0];
 	 logic [3:0] [10:0] lpadrow_ysig [3:0];
 	 
-	 logic [1:0] curfrogdir;
+	 logic [1:0] curfrog1dir, curfrog2dir, curfrog3dir;
 	 
 	 logic [3:0] [5:0] LPad_Remainder_Count;
 
@@ -141,10 +146,10 @@ module  final_frogger_top ( input         CLOCK_50,
 																    8'd80,
 																    8'd80};
 														
-	 parameter bit [5:0] Speed_Cars_Row [0:3] = '{5'd20,
-															    5'd15,
-															    5'd10,
-															    5'd5};
+	 parameter bit [5:0] Speed_Cars_Row [0:3] = '{6'd10,
+															    6'd7,
+															    6'd3,
+															    6'd1};
 
 	 parameter bit Direction_Cars_Row [0:3] = '{1'b1,
 															  1'b0,
@@ -168,10 +173,10 @@ module  final_frogger_top ( input         CLOCK_50,
 																    8'd80,
 																	 8'd80};
 														
-	 parameter bit [5:0] Speed_LPad_Row [0:3] = '{5'd15,
-																 5'd20,
-															    5'd25,
-															    5'd30};
+	 parameter bit [5:0] Speed_LPad_Row [0:3] = '{5'd30,
+																 5'd27,
+															    5'd30,
+															    5'd25};
 
 	 parameter bit Direction_LPad_Row [0:3] = '{1'b1,
 															  1'b0,
@@ -183,14 +188,35 @@ module  final_frogger_top ( input         CLOCK_50,
 																    11'd160,
 																    11'd200};
 	 
-
-	 
+		always_comb
+		begin
+			if (frog_1_key)
+			begin
+				frogcurxsig = frog1xsig;
+				frogcurysig = frog1ysig;
+			end
+			else if (frog_2_key)
+			begin
+				frogcurxsig = frog2xsig;
+				frogcurysig = frog2ysig;
+			end
+			else if (frog_3_key)
+			begin
+				frogcurxsig = frog3xsig;
+				frogcurysig = frog3ysig; 
+			end
+			else 
+			begin
+				frogcurxsig = 11'd0;
+				frogcurysig = 11'd0;
+			end
+		end
 							  
 		generate
       genvar i;
 		for (i = 0; i <= 2'd3; i = i + 1) 
 		begin: car_row_i
-			car_row car_row_instance1(.Reset(Reset_h),
+			car_row car_row_instance1(.Reset(soft_reset),
 									.frame_clk(vssig),
 									.Number_Cars(Number_Cars_Row[i]),
 									.Gap_Size(Gap_Size_Cars_Row[i]),
@@ -199,8 +225,8 @@ module  final_frogger_top ( input         CLOCK_50,
 									.Car_Start_Y(Start_Y_Cars_Row[i]),
 									.Car_X(carrow_xsig[i]), 	
 									.Car_Y(carrow_ysig[i]),
-									.Frog_X(frogxsig),
-									.Frog_Y(frogysig),
+									.Frog_X(frogcurxsig),
+									.Frog_Y(frogcurysig),
 									.Car_Collision(carcollisionsig[i]));
 		end
 		endgenerate	 
@@ -210,7 +236,7 @@ module  final_frogger_top ( input         CLOCK_50,
       genvar j;
 		for (j = 0; j <= 2'd3; j = j + 1) 
 		begin: lpad_row_j
-			lilypad_row lilypad_row (.Reset(Reset_h), 
+			lilypad_row lilypad_row (.Reset(soft_reset), 
 						.frame_clk(vssig),
 						.Number_LPads(Number_LPad_Row[j]),
 						.Gap_Size(Gap_Size_LPad_Row[j]),
@@ -220,39 +246,89 @@ module  final_frogger_top ( input         CLOCK_50,
 						.LPad_Start_Y(Start_Y_LPad_Row[j]),
 						.LPad_X(lpadrow_xsig[j]), 	
 						.LPad_Y(lpadrow_ysig[j]),
-						.Frog_X(frogxsig),
-						.Frog_Y(frogysig),
+						.Frog_X(frogcurxsig),
+						.Frog_Y(frogcurysig),
 						.LPad_Collision(lpadcollisionsig[j])
 				 );
 		end
 		endgenerate	 		
-		
-		frog frog_instance(.Reset(Reset_h), 
+
+		frog frog_instance_1(.Reset(soft_reset), 
 							  .frame_clk(vssig),
-							  .FrogX(frogxsig),
-							  .FrogY(frogysig),
-							  .Frog_Width(frogwidthsig),
-							  .Frog_Height(frogheightsig),
+							  .FrogX(frog1xsig),
+							  .FrogY(frog1ysig),
+							  .Frog_Width(frog1widthsig),
+							  .Frog_Height(frog1heightsig),
+							  .Frog_X_Start(11'd120),
 							  .up, 
 							  .down, 
 							  .left, 
 							  .right,
 							  .Car_Collision(carcollisionsig),
 							  .LPad_Speed(Speed_LPad_Row),
-							  .LPad_Remainder_Count,
+							  .LPad_Remainder_Count(LPad_Remainder_Count),
 							  .LPad_Direction(Direction_LPad_Row),
 							  .LPad_Collision(lpadcollisionsig),
-							  .cur_Frog_Direction(curfrogdir)
+							  .cur_Frog_Direction(curfrog1dir),
+							  .active(frog_1_key)
+							  );
+//							  
+		frog frog_instance_2(.Reset(soft_reset), 
+							  .frame_clk(vssig),
+							  .FrogX(frog2xsig),
+							  .FrogY(frog2ysig),
+							  .Frog_Width(frog2widthsig),
+							  .Frog_Height(frog2heightsig),
+							  .Frog_X_Start(11'd320),
+							  .up, 
+							  .down, 
+							  .left, 
+							  .right,
+							  .Car_Collision(carcollisionsig),
+							  .LPad_Speed(Speed_LPad_Row),
+							  .LPad_Remainder_Count(LPad_Remainder_Count),
+							  .LPad_Direction(Direction_LPad_Row),
+							  .LPad_Collision(lpadcollisionsig),
+							  .cur_Frog_Direction(curfrog2dir),
+							  .active(frog_2_key)
+							  );
+							  
+		frog frog_instance_3(.Reset(soft_reset), 
+							  .frame_clk(vssig),
+							  .FrogX(frog3xsig),
+							  .FrogY(frog3ysig),
+							  .Frog_Width(frog3widthsig),
+							  .Frog_Height(frog3heightsig),
+							  .Frog_X_Start(11'd520),
+							  .up, 
+							  .down, 
+							  .left, 
+							  .right,
+							  .Car_Collision(carcollisionsig),
+							  .LPad_Speed(Speed_LPad_Row),
+							  .LPad_Remainder_Count(LPad_Remainder_Count),
+							  .LPad_Direction(Direction_LPad_Row),
+							  .LPad_Collision(lpadcollisionsig),
+							  .cur_Frog_Direction(curfrog3dir),
+							  .active(frog_3_key)
 							  );
 
 
 	
-    color_mapper color_instance(.FrogX(frogxsig), 
-										  .FrogY(frogysig), 
+    color_mapper color_instance(.Frog1X(frog1xsig), 
+										  .Frog1Y(frog1ysig), 
+										  .Frog2X(frog2xsig), 
+										  .Frog2Y(frog2ysig), 
+										  .Frog3X(frog3xsig), 
+										  .Frog3Y(frog3ysig),
 										  .DrawX(drawxsig), 
 										  .DrawY(drawysig), 
-										  .Frog_Width(frogwidthsig),
-										  .Frog_Height(frogheightsig),
+										  .Frog1_Width(frog1widthsig),
+										  .Frog1_Height(frog1heightsig),
+										  .Frog2_Width(frog2widthsig),
+										  .Frog2_Height(frog2heightsig),
+										  .Frog3_Width(frog3widthsig),
+										  .Frog3_Height(frog3heightsig),
 										  .Car_Row1_X(carrow_xsig[0]),
 										  .Car_Row1_Y(carrow_ysig[0]),
 										  .Row1_Number_Cars(Number_Cars_Row[0]),
@@ -280,14 +356,16 @@ module  final_frogger_top ( input         CLOCK_50,
 										  .LPad_Collision(lpadcollisionsig),
 										  .Car_Collision(carcollisionsig),
 										  .up, .down, .left, .right,
-										  .cur_Frog_Direction(curfrogdir),
+										  .cur_Frog1_Direction(curfrog1dir),
+										  .cur_Frog2_Direction(curfrog2dir),
+										  .cur_Frog3_Direction(curfrog3dir),
 										  .Red(VGA_R), 
 										  .Green(VGA_G), 
 										  .Blue(VGA_B)
 										  );
 						
 		//Previous keycode, and logic left, right, up, down
-		logic[7:0] keycode_prev;
+		logic[7:0] keycode_prev, frog_keycode_prev;
 		
 		//Assigning Keycodes to left,down,right,and up - ARROW KEYS
 		//				<^>
@@ -296,12 +374,22 @@ module  final_frogger_top ( input         CLOCK_50,
 		assign right = keycode == 16'h4f ? 1'b1 : 1'b0;
 		assign up = keycode == 16'h52 ? 1'b1 : 1'b0;
 		assign down = keycode == 16'h51 ? 1'b1 : 1'b0;
+	
 		
 		//Assign previous keycodes based on functionality (only one key at a time)
 		assign LEDG[0] = keycode_prev == 16'h4f ? 1'b1 : 1'b0; // right
 		assign LEDG[1] = keycode_prev == 16'h51 ? 1'b1 : 1'b0; // down
 		assign LEDG[2] = keycode_prev == 16'h52 ? 1'b1 : 1'b0; // up
 		assign LEDG[3] = keycode_prev == 16'h50 ? 1'b1 : 1'b0; // left
+		
+		assign frog_1_key = frog_keycode_prev == 16'h59 ? 1'b1 : 1'b0;
+		assign frog_2_key = frog_keycode_prev == 16'h5a ? 1'b1 : 1'b0;
+		assign frog_3_key = frog_keycode_prev == 16'h5b ? 1'b1 : 1'b0;
+		
+		assign LEDG[4] = frog_1_key;
+		assign LEDG[5] = frog_2_key;
+		assign LEDG[6] = frog_3_key;
+
 		
 		//Update Hex Drivers
 		HexDriver hex_inst_0 (keycode[3:0], HEX0);
@@ -310,6 +398,7 @@ module  final_frogger_top ( input         CLOCK_50,
 		//Update 
 		always_ff @ (posedge Clk)
 		begin
+				frog_keycode_prev <= (keycode == 16'h0 || (keycode != 16'h59 && keycode != 16'h5a && keycode != 16'h5b)) ? frog_keycode_prev : keycode;
 				keycode_prev <= (keycode == 16'h0) ? keycode_prev : keycode;
 		end
 	

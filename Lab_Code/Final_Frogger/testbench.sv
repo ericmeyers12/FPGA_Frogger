@@ -16,10 +16,10 @@ module testbench();
 																    8'd80,
 																	 8'd80};
 														
-	 parameter bit [5:0] Speed_LPad_Row [0:3] = '{5'd15,
-																 5'd20,
+	 parameter bit [5:0] Speed_LPad_Row [0:3] = '{5'd25,
+																 5'd25,
 															    5'd25,
-															    5'd10};
+															    5'd25};
 
 	 parameter bit Direction_LPad_Row [0:3] = '{1'b1,
 															  1'b0,
@@ -112,17 +112,12 @@ module testbench();
 		
       #4 Reset = 1;
 		#5 Reset = 0;
+
+  
 		
-		#2 down = 1;
-		#3 down = 0;
-		
-		#50 left = 1;
-		#1 left = 0;
-		
-		#150  
-		
-		#5 up = 1;
+		#100 up = 1;
 		#5 up = 0;
+
       
       if (ErrorCnt == 0)
         $display("Success!");
