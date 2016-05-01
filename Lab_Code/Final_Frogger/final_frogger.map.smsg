@@ -1,9 +1,11 @@
-Warning (10268): Verilog HDL information at frog.sv(61): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at frog.sv(64): always construct contains both blocking and non-blocking assignments
 Info (10281): Verilog HDL Declaration information at frog.sv(19): object "up" differs only in case from object "UP" in the same scope
 Info (10281): Verilog HDL Declaration information at frog.sv(19): object "down" differs only in case from object "DOWN" in the same scope
 Info (10281): Verilog HDL Declaration information at frog.sv(19): object "left" differs only in case from object "LEFT" in the same scope
 Info (10281): Verilog HDL Declaration information at frog.sv(19): object "right" differs only in case from object "RIGHT" in the same scope
 Info (10281): Verilog HDL Declaration information at frog.sv(16): object "Reset" differs only in case from object "RESET" in the same scope
+Info (10281): Verilog HDL Declaration information at frog.sv(28): object "dead" differs only in case from object "DEAD" in the same scope
+Info (10281): Verilog HDL Declaration information at frog.sv(29): object "win" differs only in case from object "WIN" in the same scope
 Warning (10268): Verilog HDL information at car.sv(36): always construct contains both blocking and non-blocking assignments
 Warning (10268): Verilog HDL information at lilypad.sv(37): always construct contains both blocking and non-blocking assignments
 Warning (10273): Verilog HDL warning at hpi_io_intf.sv(15): extended using "x" or "z"

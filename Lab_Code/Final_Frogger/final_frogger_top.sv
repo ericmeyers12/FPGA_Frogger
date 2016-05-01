@@ -146,10 +146,10 @@ module  final_frogger_top ( input         CLOCK_50,
 																    8'd80,
 																    8'd80};
 														
-	 parameter bit [5:0] Speed_Cars_Row [0:3] = '{5'd20,
-															    5'd15,
-															    5'd10,
-															    5'd5};
+	 parameter bit [5:0] Speed_Cars_Row [0:3] = '{6'd10,
+															    6'd7,
+															    6'd3,
+															    6'd1};
 
 	 parameter bit Direction_Cars_Row [0:3] = '{1'b1,
 															  1'b0,

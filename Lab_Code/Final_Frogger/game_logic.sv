@@ -6,9 +6,11 @@
 
 
 module  game_logic ( input game_restart, 						//push button that signals restart the game
-									frame_clk, 
-									isDead,								//is the Frog dead?
-									isAlive,								//is the Frog safely on the other side?
+									frame_clk,	
+							input [3:0] [10:0] Frog_X, Frog_Y,
+							output win_game,
+							output lose_game,
+							output dead_frog,				
               output [3:0] tens_digit, ones_digit,		//10 possible digits
 									
 				 );
@@ -99,11 +101,7 @@ end
 				
 				WAIT: 
 				begin
-					if (/*something with clock every second*/)
-						next_state = INCREMENT_CLK;
-					else if (isDead == 1'd1)
-						next_state = DEAD;
-					else if (isAlive == 1'd1)
+					if (/*WIN LOGIC FOR FROG*/)
 						next_state = WIN;
 					else
 						next_state = WAIT;

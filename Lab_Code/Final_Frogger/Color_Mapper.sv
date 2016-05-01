@@ -774,7 +774,7 @@ end
 			else if ((DrawY >= 40 && DrawY <= 79) && ((DrawX >= 0 && DrawX <= 119) || (DrawX >= 160 && DrawX <= 279) || (DrawX >= 320 && DrawX <= 479) || (DrawX >= 520 && DrawX <= 679))) 
 			begin
 				Red = 8'd0;
-				Green = 8'd200; 
+				Green = 8'd100; 
 				Blue = 8'd0;	
 			end
 			//grass color

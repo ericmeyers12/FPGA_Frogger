@@ -24,6 +24,7 @@ module  frog ( input Reset, frame_clk,
 					input [3:0] Car_Collision,
 					input active,
 					output logic [1:0] cur_Frog_Direction,
+					output dead_frog,
 					input dead,
 					input win);		//up 00, down 01, left 11, right 10
     
@@ -91,7 +92,7 @@ module  frog ( input Reset, frame_clk,
 							Frog_Y_Position = 11'd440;
 					end
 					/*KEYPRESS*/
-					else if(state == UP && Frog_Y_Position != 0 && active)//UP BUTTON PRESSED
+					else if(state == UP && Frog_Y_Position != 0 && Frog_Y_Position != 80 && active)//UP BUTTON PRESSED
 					begin
 							Frog_X_Motion = 11'b0;
 							Frog_Y_Motion = ~(Frog_Y_Step)+1; //2s Complement
