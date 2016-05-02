@@ -232,7 +232,9 @@ module  final_frogger_top ( input         CLOCK_50,
 									.Car_Y(carrow_ysig[i]),
 									.Frog_X(frogcurxsig),
 									.Frog_Y(frogcurysig),
-									.Car_Collision(carcollisionsig[i]));
+									.Car_Collision(carcollisionsig[i]),
+									.win(win_game),
+									.lose(lose_game));
 		end
 		endgenerate	 
 		
@@ -253,7 +255,9 @@ module  final_frogger_top ( input         CLOCK_50,
 						.LPad_Y(lpadrow_ysig[j]),
 						.Frog_X(frogcurxsig),
 						.Frog_Y(frogcurysig),
-						.LPad_Collision(lpadcollisionsig[j])
+						.LPad_Collision(lpadcollisionsig[j]),
+						.win(win_game),
+						.lose(lose_game)
 				 );
 		end
 		endgenerate	 		
@@ -276,7 +280,9 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog1dir),
 							  .dead_frog(dead_frog1),
-							  .active(frog_1_key)
+							  .active(frog_1_key),
+							  .win(win_game),
+							  .lose(lose_game)
 							  );
 //							  
 		frog frog_instance_2(.Reset(soft_reset), 
@@ -297,7 +303,9 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog2dir),
 							  .dead_frog(dead_frog2),
-							  .active(frog_2_key)
+							  .active(frog_2_key),
+							  .win(win_game),
+							  .lose(lose_game)
 							  );
 							  
 		frog frog_instance_3(.Reset(soft_reset), 
@@ -318,7 +326,9 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog3dir),
 							  .dead_frog(dead_frog3),
-							  .active(frog_3_key)
+							  .active(frog_3_key),
+							  .win(win_game),
+							  .lose(lose_game)
 							  );
 	
 	 assign dead_frog = dead_frog1 || dead_frog2 || dead_frog3;

@@ -586,11 +586,11 @@ set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -sectio
 set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH testbench -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME testbench -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id testbench
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ms" -section_id testbench
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "4000 ns" -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench -section_id testbench
-set_global_assignment -name EDA_TEST_BENCH_FILE testbench.sv -section_id testbench
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name EDA_TEST_BENCH_FILE testbench.sv -section_id testbench
 set_global_assignment -name SYSTEMVERILOG_FILE final_frogger_top.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Color_Mapper.sv
 set_global_assignment -name SYSTEMVERILOG_FILE frog.sv
@@ -600,6 +600,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE game_logic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad_row.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad.sv
 set_global_assignment -name SYSTEMVERILOG_FILE numbers.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lose_text_sprite.sv
 set_global_assignment -name SYSTEMVERILOG_FILE carright_sprite.sv
 set_global_assignment -name SYSTEMVERILOG_FILE carleft_sprite.sv
 set_global_assignment -name SYSTEMVERILOG_FILE frog_sprite.sv

@@ -9,9 +9,9 @@ module  game_logic ( input game_restart, 						//push button that signals restar
 									frame_clk,	
 							input [10:0] Frog1_X, Frog1_Y, Frog2_X, Frog2_Y, Frog3_X, Frog3_Y,
 							input dead_frog,
-							output [1:0] frog_lives,	
-							output win_game,
-							output lose_game
+							output logic [1:0] frog_lives,	
+							output logic win_game,
+							output logic lose_game
 //              output [3:0] tens_digit, ones_digit		//10 possible digits				
 				 );
 				 

@@ -22,7 +22,8 @@ module  car_row ( input Reset, frame_clk,
 						output logic [3:0] [10:0] Car_X, 	/*640/10 = 64 positions (2^6) on grid with 10 pixel steps*/
 						output logic [3:0] [10:0] Car_Y, 			/*Car_Y is for entire Row*/
 						input [10:0] Frog_X, Frog_Y,
-						output logic Car_Collision
+						output logic Car_Collision, 
+						input win, lose
 				 );
 				 
 	logic [10:0] Car_Start_X;
@@ -45,7 +46,8 @@ module  car_row ( input Reset, frame_clk,
 									.Speed,
 									.Frog_X,
 									.Frog_Y,
-									.Car_Collision(car_collision_intermediate[i])
+									.Car_Collision(car_collision_intermediate[i]),
+									.win, .lose
 									);
 		end
    endgenerate	 

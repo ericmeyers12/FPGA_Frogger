@@ -30,6 +30,7 @@ module  color_mapper ( input logic [10:0]
 							  input [1:0] cur_Frog1_Direction,
 							  input [1:0] cur_Frog2_Direction,
 							  input [1:0] cur_Frog3_Direction,
+							  input win, lose,
 //							  input [3:0] tens_digit, ones_digit,
 							  //input logic [18:0] backgroundIndex,      //for background image
                        output logic [7:0]  Red, Green, Blue );
@@ -44,6 +45,9 @@ module  color_mapper ( input logic [10:0]
 	 logic [10:0] frog1_x_index, frog2_x_index, frog3_x_index;
 	 logic [10:0] frog1_y_index, frog2_y_index, frog3_y_index;
 	 frog_sprite frog(.rgb(frog_sprite));
+	 
+	 logic [9:0] lose_text_sprite[0:479][0:39];
+	 lose_text_sprite lose_text(.rgb(lose_text_sprite));
 
 	 
 	 logic [9:0] lilypad_sprite[0:39][0:39];
@@ -75,11 +79,7 @@ module  color_mapper ( input logic [10:0]
 //	 basicbackground b(.rgb(background));
 
 	 logic [9:0] cur_color_idx;
-<<<<<<< HEAD
-	 logic [7:0] color_palette [0:16][0:2];   //incorrect-needs to be updated
-=======
 	 logic [7:0] color_palette [0:17][0:2];   //correct-frogonly
->>>>>>> origin/master
 	 palette game_palette(.palette(color_palette));
 	 
 	 
@@ -824,10 +824,27 @@ end
 				Green = 8'd69;
 				Blue = 8'd69;
 			end
-			else begin
-				Red = 8'd255;
-				Green = 8'd255;
-				Blue = 8'd255;	 
+			else if (lose)
+			begin
+				if ((DrawX >= 0 && DrawX <= 480) && (DrawY >= 0 && DrawY <= 40))
+				begin
+					Red = color_palette[lose_text_sprite[DrawX][DrawY]][0];
+					Green = color_palette[lose_text_sprite[DrawX][DrawY]][1];
+					Blue = color_palette[lose_text_sprite[DrawX][DrawY]][2];	 
+				end
+				else
+				begin
+				Red = 255;
+				Blue = 255;
+				Green = 255;
+			end
+				
+			end
+			else
+			begin
+				Red = 255;
+				Blue = 255;
+				Green = 255;
 			end
 	  end 	     
  end 

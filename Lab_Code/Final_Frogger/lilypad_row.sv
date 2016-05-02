@@ -23,7 +23,8 @@ module  lilypad_row (input Reset, frame_clk,
 						output logic [3:0] [10:0] LPad_X, 	/*640 positions*/
 						output logic [3:0] [10:0] LPad_Y, 	/*Car_Y is for entire Row*/
 						input [10:0] Frog_X, Frog_Y,
-						output logic LPad_Collision
+						output logic LPad_Collision,
+						input win, lose
 				 );
     	 
 	logic [10:0] LPad_Start_X;
@@ -50,7 +51,8 @@ module  lilypad_row (input Reset, frame_clk,
 									.LPad_Remainder_Count(LPad_Remainder_Count_Intermediate[i]),
 									.Frog_X,
 									.Frog_Y,
-									.LPad_Collision(lpad_collision_intermediate[i])
+									.LPad_Collision(lpad_collision_intermediate[i]),
+									.win, .lose
 									);
 		end
    endgenerate	 

@@ -11,7 +11,8 @@ module  car ( input Reset, frame_clk,
 					input Direction,
 					input [5:0] Speed,
 					input [10:0] Frog_X, Frog_Y,
-					output logic Car_Collision
+					output logic Car_Collision,
+					input win, lose
 				 );
     
     logic [10:0] Car_X_Position, Car_Y_Position, Car_X_Motion, Car_Y_Motion;
@@ -81,7 +82,11 @@ module  car ( input Reset, frame_clk,
 	begin
       next_state = state;
       case (state)
-			WAIT: next_state = (time_count == Speed) ? MOVE : WAIT;
+			WAIT:
+			if(time_count == Speed && (!win && !lose)) 
+				next_state = MOVE;
+			else
+				next_state = WAIT;
 			
 			MOVE:	next_state = WAIT;
 		endcase

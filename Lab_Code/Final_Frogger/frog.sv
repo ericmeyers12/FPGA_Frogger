@@ -24,8 +24,8 @@ module  frog ( input Reset, frame_clk,
 					input [3:0] Car_Collision,
 					input active,
 					output logic [1:0] cur_Frog_Direction,
-					output dead_frog,
-					input dead,
+					output logic dead_frog,
+					input lose,
 					input win);		//up 00, down 01, left 11, right 10
     
     logic [10:0] Frog_X_Position, Frog_Y_Position, Frog_X_Motion, Frog_Y_Motion; 
@@ -89,6 +89,7 @@ module  frog ( input Reset, frame_clk,
 			 begin
 					if (state == RESET)
 					begin
+							dead_frog = 1'b0;
 							Frog_X_Position = Frog_X_Start;
 							Frog_Y_Position = 11'd440;
 					end
@@ -100,14 +101,14 @@ module  frog ( input Reset, frame_clk,
 																		  Frog_X_Position >= 11'd160 && Frog_X_Position <= 11'd279|| 
 																		  Frog_X_Position >= 11'd320 && Frog_X_Position <= 11'd479||
 																		  Frog_X_Position >= 11'd520 && Frog_X_Position <= 11'd639))) && 
-							 active)//UP BUTTON PRESSED
+							 active && (!win && !lose))//UP BUTTON PRESSED
 					begin
 							Frog_X_Motion = 11'b0;
 							Frog_Y_Motion = ~(Frog_Y_Step)+1; //2s Complement
 							cur_Frog_Direction = 2'b00;
 							time_count = 6'b0;
 					end
-					else if(state == DOWN && Frog_Y_Position != 440 && active) //DOWN BUTTON PRESSED
+					else if(state == DOWN && Frog_Y_Position != 440 && active && (!win && !lose)) //DOWN BUTTON PRESSED
 					begin
 							Frog_X_Motion = 11'b0;
 							Frog_Y_Motion = Frog_Y_Step;
@@ -115,7 +116,7 @@ module  frog ( input Reset, frame_clk,
 							time_count = 6'b0;
 
 					end
-					else if(state == LEFT && Frog_X_Position != 0 && active) //LEFT BUTTON PRESSED
+					else if(state == LEFT && Frog_X_Position != 0 && active && (!win && !lose)) //LEFT BUTTON PRESSED
 					begin
 							Frog_Y_Motion = 11'b0;
 							Frog_X_Motion = ~(Frog_X_Step)+1; //2s Complement
@@ -123,7 +124,7 @@ module  frog ( input Reset, frame_clk,
 							time_count = 6'b0;
 
 					end
-					else if(state == RIGHT && Frog_X_Position != 600 && active) //RIGHT BUTTON PRESSED
+					else if(state == RIGHT && Frog_X_Position != 600 && active && (!win && !lose)) //RIGHT BUTTON PRESSED
 					begin
 							Frog_Y_Motion = 11'b0;
 							Frog_X_Motion = Frog_X_Step;
@@ -190,7 +191,7 @@ module  frog ( input Reset, frame_clk,
 				//check if car or water collision - go to DEAD STATE
 				if ((Car_Collision[0] || Car_Collision[1] || Car_Collision[2] || Car_Collision[3] || 
 					(Frog_Y_Position >= 80 && Frog_Y_Position <= 200 &&
-					!(LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3])) || dead) && active)
+					!(LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3]))) && active)
 					next_state = DEAD;
 				else if ((LPad_Collision[0] || LPad_Collision[1] || LPad_Collision[2] || LPad_Collision[3])&& active) //check if lilypad collision - go to LILY STATE
 					next_state = LILY_WAIT;
