@@ -31,7 +31,8 @@ module  color_mapper ( input logic [10:0]
 							  input [1:0] cur_Frog2_Direction,
 							  input [1:0] cur_Frog3_Direction,
 							  input win, lose,
-//							  input [3:0] tens_digit, ones_digit,
+							  input [3:0] tens_digit, ones_digit,
+							  input [7:0] frog_lives,
 							  //input logic [18:0] backgroundIndex,      //for background image
                        output logic [7:0]  Red, Green, Blue );
     
@@ -46,8 +47,8 @@ module  color_mapper ( input logic [10:0]
 	 logic [10:0] frog1_y_index, frog2_y_index, frog3_y_index;
 	 frog_sprite frog(.rgb(frog_sprite));
 	 
-	 logic [9:0] lose_text_sprite[0:479][0:39];
-	 lose_text_sprite lose_text(.rgb(lose_text_sprite));
+//	 logic [9:0] lose_text_sprite[0:479][0:39];
+//	 lose_text_sprite lose_text(.rgb(lose_text_sprite));
 
 	 
 	 logic [9:0] lilypad_sprite[0:39][0:39];
@@ -83,23 +84,30 @@ module  color_mapper ( input logic [10:0]
 	 palette game_palette(.palette(color_palette));
 	 
 	 
- scoreboard - tens digit and ones digit
-	 logic [9:0] numbers[0:231][0:31];
+ //scoreboard - tens digit and ones digit
+	 logic [9:0] numbers_1[0:239][0:31];
+ 	 logic [9:0] numbers_2[0:239][0:31];
 	 logic [9:0] tensdig_color_idx;
 	 logic [10:0] tensdig_x_index;
 	 logic [10:0] tensdig_y_index;
-	 numbers numtens(.rgb(numbers));	 
+	 numbers numtens(.rgb(numbers_1));	 
 
-	 logic [9:0] numbers[0:231][0:31];
 	 logic [9:0] onesdig_color_idx;
 	 logic [10:0] onesdig_x_index;
 	 logic [10:0] onesdig_y_index;
-	 numbers numones(.rgb(numbers));	 
-
-   assign tens_digit = 3'd8;				//remove once game logic is working
-   assign ones_digit = 3'd8;	 			//remove once game logic is working
+	 numbers numones(.rgb(numbers_2));	 
+	 logic [4:0] num_width, num_height;
 	 assign num_width = 5'd24;
 	 assign num_height = 5'd32;
+	 
+	 logic [9:0] numbers_3[0:239][0:31];
+	 logic [9:0] lives_color_idx;
+	 logic [10:0] lives_x_index;
+	 logic [10:0] lives_y_index;
+	 numbers froglives(.rgb(numbers_3));
+	 
+	 
+	 
 	  	 
 /*====== DISPLAY FROGGER ======*/	  
  always_comb
@@ -413,9 +421,10 @@ if (cur_Frog1_Direction == 2'b00)     //up
 else if (cur_Frog1_Direction == 2'b01) //down
 	frog1_color_idx = frog_sprite[Frog1_Width-frog1_x_index][Frog1_Height-frog1_y_index];
 else if (cur_Frog1_Direction == 2'b10) //right
-	frog1_color_idx = frog_sprite[frog1_y_index][frog1_x_index];
-else if (cur_Frog1_Direction == 2'b11) //left
 	frog1_color_idx = frog_sprite[Frog1_Height-frog1_y_index][Frog1_Width-frog1_x_index];
+else if (cur_Frog1_Direction == 2'b11) //left
+	frog1_color_idx = frog_sprite[frog1_y_index][frog1_x_index];
+
 else 
 	frog1_color_idx = frog_sprite[frog1_x_index][frog1_y_index];
 end
@@ -427,9 +436,10 @@ if (cur_Frog2_Direction == 2'b00)     //up
 else if (cur_Frog2_Direction == 2'b01) //down
 	frog2_color_idx = frog_sprite[Frog2_Width-frog2_x_index][Frog2_Height-frog2_y_index];
 else if (cur_Frog2_Direction == 2'b10) //right
-	frog2_color_idx = frog_sprite[frog2_y_index][frog2_x_index];
-else if (cur_Frog2_Direction == 2'b11) //left
 	frog2_color_idx = frog_sprite[Frog2_Height-frog2_y_index][Frog2_Width-frog2_x_index];
+else if (cur_Frog2_Direction == 2'b11) //left
+	frog2_color_idx = frog_sprite[frog2_y_index][frog2_x_index];
+
 else 
 	frog2_color_idx = frog_sprite[frog2_x_index][frog2_y_index];
 end
@@ -442,9 +452,10 @@ if (cur_Frog3_Direction == 2'b00)     //up
 else if (cur_Frog3_Direction == 2'b01) //down
 	frog3_color_idx = frog_sprite[Frog3_Width-frog3_x_index][Frog3_Height-frog3_y_index];
 else if (cur_Frog3_Direction == 2'b10) //right
-	frog3_color_idx = frog_sprite[frog3_y_index][frog3_x_index];
-else if (cur_Frog3_Direction == 2'b11) //left
 	frog3_color_idx = frog_sprite[Frog3_Height-frog3_y_index][Frog3_Width-frog3_x_index];
+else if (cur_Frog3_Direction == 2'b11) //left
+	frog3_color_idx = frog_sprite[frog3_y_index][frog3_x_index];
+
 else 
 	frog3_color_idx = frog_sprite[frog3_x_index][frog3_y_index];
 end
@@ -695,20 +706,24 @@ begin
 	lilypad_color_idx = lilypad_sprite[lilypad_x_index][lilypad_y_index];
 end
 
-/*======= MAPPING COLOR INDEX FOR SCORECLOCK ======*/
+/*======= MAPPING COLOR INDEX FOR SCORECLOCK/LIVES ======*/
 	assign tensdig_x_index = DrawX - 9'd315 + (num_width * tens_digit);
-	assign tensdig_y_index = DrawY - 6'd44;
-	assign onesdig_x_index = DrawX - 9'd341 + (num_width * ones_digit);
-	assign onesdig_y_index = DrawY - 6'd44;
+	assign tensdig_y_index = DrawY - 3'd4;
+	assign onesdig_x_index = DrawX - 9'd339 + (num_width * ones_digit);
+	assign onesdig_y_index = DrawY - 3'd4;
+	assign lives_x_index = DrawX - 10'd575 + (num_width * frog_lives);
+	assign lives_y_index = DrawY - 3'd4;
 
 	always_comb
 	begin
-		tensdig_color_idx = numbers[tensdig_x_index][tensdig_y_index];
-		onesdig_color_idx = numbers[onesdig_x_index][onesdig_y_index];
+		tensdig_color_idx = numbers_1[tensdig_x_index][tensdig_y_index];
+		onesdig_color_idx = numbers_2[onesdig_x_index][onesdig_y_index];
+		lives_color_idx = numbers_3[lives_x_index][lives_y_index];
   	end
 
-
-
+	
+	
+	
 
 /*======= UPDATE VGA DISPLAY ======*/	 
  always_comb
@@ -788,13 +803,19 @@ end
 	  else //SHOW APPROPRIATE BACKGROUND 
 	  begin 
 			//scoreboard		
-			if (DrawY >= 44 && DrawY <= 76) && (DrawX >= 315 && DrawX <= 339)
+			if ((DrawY >= 4 && DrawY <= 36) && (DrawX >= 315 && DrawX <= 339))
 			begin
 				Red = color_palette[tensdig_color_idx][0];
 				Green = color_palette[tensdig_color_idx][1];
 				Blue = color_palette[tensdig_color_idx][2];
 			end
-			else if (DrawY >= 44 && DrawY <= 76) && (DrawX >= 341 && DrawX <= 365)
+			else if ((DrawY >= 4 && DrawY <= 36) && (DrawX >= 339 && DrawX <= 362))
+			begin
+				Red = color_palette[onesdig_color_idx][0];
+				Green = color_palette[onesdig_color_idx][1];
+				Blue = color_palette[onesdig_color_idx][2];
+			end
+			else if ((DrawY >= 4 && DrawY <= 36) && (DrawX >= 575 && DrawX <= 599))
 			begin
 				Red = color_palette[onesdig_color_idx][0];
 				Green = color_palette[onesdig_color_idx][1];
@@ -841,19 +862,9 @@ end
 			end
 			else if (lose)
 			begin
-				if ((DrawX >= 0 && DrawX <= 480) && (DrawY >= 0 && DrawY <= 40))
-				begin
-					Red = color_palette[lose_text_sprite[DrawX][DrawY]][0];
-					Green = color_palette[lose_text_sprite[DrawX][DrawY]][1];
-					Blue = color_palette[lose_text_sprite[DrawX][DrawY]][2];	 
-				end
-				else
-				begin
 				Red = 255;
 				Blue = 255;
 				Green = 255;
-			end
-				
 			end
 			else
 			begin
