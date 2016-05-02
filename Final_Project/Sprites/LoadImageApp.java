@@ -174,7 +174,11 @@ public class LoadImageApp{
             l.add("images/carright_sprite");
             l.add("images/carleft_sprite");
             l.add("images/numbers");
+<<<<<<< HEAD
+            l.add("images/logo");
+=======
             l.add("images/lose_text");
+>>>>>>> 5a0b7c47aa9c403dc73415158e2adeb42131257a
             
             LoadImageApp frogger = new LoadImageApp(l);
         } catch (IOException e) {
