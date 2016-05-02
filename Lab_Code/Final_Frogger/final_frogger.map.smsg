@@ -20,8 +20,6 @@ Info (10281): Verilog HDL Declaration information at nios_system_mm_interconnect
 Info (10281): Verilog HDL Declaration information at nios_system_mm_interconnect_0_router.sv(48): object "DEFAULT_WR_CHANNEL" differs only in case from object "default_wr_channel" in the same scope
 Info (10281): Verilog HDL Declaration information at nios_system_mm_interconnect_0_router.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
 Warning (10236): Verilog HDL Implicit Net warning at final_frogger_top.sv(337): created implicit net for "dead_frog"
-Warning (10236): Verilog HDL Implicit Net warning at final_frogger_top.sv(402): created implicit net for "tensdigit"
-Warning (10236): Verilog HDL Implicit Net warning at final_frogger_top.sv(403): created implicit net for "onesdigit"
 Warning (10236): Verilog HDL Implicit Net warning at final_frogger_top.sv(446): created implicit net for "HEX4"
 Warning (10236): Verilog HDL Implicit Net warning at final_frogger_top.sv(447): created implicit net for "HEX5"
 Warning (10236): Verilog HDL Implicit Net warning at lilypad.sv(81): created implicit net for "LPad_Motion_X"

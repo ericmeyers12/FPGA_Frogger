@@ -436,7 +436,7 @@ module  final_frogger_top ( input         CLOCK_50,
 		assign LEDR[2] = lose_game;
 		assign LEDR[3] = win_game;
 
-//		logic [3:0] onesdigit, tensdigit;
+		logic [3:0] onesdigit, tensdigit;
 
 		assign onesdigit = clock_time % 4'd10;
 		assign tensdigit =  clock_time / 4'd10;
