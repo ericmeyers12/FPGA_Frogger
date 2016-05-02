@@ -75,19 +75,30 @@ module  color_mapper ( input logic [10:0]
 //	 basicbackground b(.rgb(background));
 
 	 logic [9:0] cur_color_idx;
+<<<<<<< HEAD
+	 logic [7:0] color_palette [0:16][0:2];   //incorrect-needs to be updated
+=======
 	 logic [7:0] color_palette [0:17][0:2];   //correct-frogonly
+>>>>>>> origin/master
 	 palette game_palette(.palette(color_palette));
 	 
 	 
-// scoreboard
+// scoreboard - tens digit and ones digit
 //	 logic [9:0] numbers[0:231][0:31];
 //	 logic [9:0] tensdig_color_idx;
 //	 logic [10:0] tensdig_x_index;
 //	 logic [10:0] tensdig_y_index;
 //	 numbers numtens(.rgb(numbers));	 
-	 
-	 
-	 
+
+//	 logic [10:0] numbersX, numbersY;
+
+//	 logic [9:0] numbers[0:231][0:31];
+//	 logic [9:0] onesdig_color_idx;
+//	 logic [10:0] onesdig_x_index;
+//	 logic [10:0] onesdig_y_index;
+//	 numbers numones(.rgb(numbers));	 
+//   assign tens_digit = 3'd8;				//remove once game logic is working
+//   assign ones_digit = 3'd8;	 			//remove once game logic is working
 	  	 
 /*====== DISPLAY FROGGER ======*/	  
  always_comb
@@ -682,6 +693,18 @@ always_comb
 begin
 	lilypad_color_idx = lilypad_sprite[lilypad_x_index][lilypad_y_index];
 end
+
+/*======= MAPPING COLOR INDEX FOR LILYPADS ======*/
+//	assign tensdig_x_index = DrawX - LPad1X;
+//	assign tensdig_y_index = DrawY - LPad1Y;
+//	assign onesdig_x_index = DrawX - LPad1X;
+//	assign onesdig_y_index = DrawY - LPad1Y;
+
+//	always_comb
+//	begin
+//		tensdig_color_idx = numbers[tensdig_x_index][tensdig_y_index];
+//		onesdig_color_idx = numbers[onesdig_x_index][onesdig_y_index];
+//	end
 
 
 
