@@ -596,6 +596,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE Color_Mapper.sv
 set_global_assignment -name SYSTEMVERILOG_FILE frog.sv
 set_global_assignment -name SYSTEMVERILOG_FILE car.sv
 set_global_assignment -name SYSTEMVERILOG_FILE car_row.sv
+set_global_assignment -name SYSTEMVERILOG_FILE game_logic.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad_row.sv
 set_global_assignment -name SYSTEMVERILOG_FILE lilypad.sv
 set_global_assignment -name SYSTEMVERILOG_FILE numbers.sv

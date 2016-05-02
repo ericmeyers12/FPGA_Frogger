@@ -71,6 +71,7 @@ module  frog ( input Reset, frame_clk,
             Frog_Y_Motion <= 11'd0; //Frog_Y_Step;
 				Frog_X_Motion <= 11'd0; //Frog_X_Step;
 				Frog_Y_Position <= 11'd440;
+				dead_frog=1'b0;
 				Frog_X_Position <= Frog_X_Start;
         end
         else 
@@ -91,8 +92,15 @@ module  frog ( input Reset, frame_clk,
 							Frog_X_Position = Frog_X_Start;
 							Frog_Y_Position = 11'd440;
 					end
+					else if (state == DEAD)
+						dead_frog = 1'b1;
 					/*KEYPRESS*/
-					else if(state == UP && Frog_Y_Position != 0 && Frog_Y_Position != 80 && active)//UP BUTTON PRESSED
+					else if(state == UP && Frog_Y_Position != 0 && 
+							 (!(Frog_Y_Position == 11'd80 && ((Frog_X_Position >= 11'd0 && Frog_X_Position <= 11'd119) || 
+																		  Frog_X_Position >= 11'd160 && Frog_X_Position <= 11'd279|| 
+																		  Frog_X_Position >= 11'd320 && Frog_X_Position <= 11'd479||
+																		  Frog_X_Position >= 11'd520 && Frog_X_Position <= 11'd639))) && 
+							 active)//UP BUTTON PRESSED
 					begin
 							Frog_X_Motion = 11'b0;
 							Frog_Y_Motion = ~(Frog_Y_Step)+1; //2s Complement

@@ -1,4 +1,13 @@
 
+State Machine - |final_frogger_top|game_logic:game_logic_mod|state
+Name state.RESTART state.WAIT state.LOSE state.DEAD state.WIN state.START 
+state.START 0 0 0 0 0 0 
+state.WIN 0 0 0 0 1 1 
+state.DEAD 0 0 0 1 0 1 
+state.LOSE 0 0 1 0 0 1 
+state.WAIT 0 1 0 0 0 1 
+state.RESTART 1 0 0 0 0 1 
+
 State Machine - |final_frogger_top|frog:frog_instance_3|state
 Name state.LILY_MOVE state.LILY_WAIT state.WIN state.DEAD state.RESET state.UP state.KEYWAIT state.RIGHT state.LEFT state.DOWN state.WAIT 
 state.WAIT 0 0 0 0 0 0 0 0 0 0 0 

@@ -14,7 +14,7 @@ module  final_frogger_top ( input         CLOCK_50,
 								  input[3:0]    KEY, //bit 0 is set up as Reset
 								  output [6:0]  HEX0, HEX1,// HEX2, HEX3, HEX4, HEX5, HEX6, HEX7,
 								  output [8:0]  LEDG,
-								  //output [17:0] LEDR,
+								  output [17:0] LEDR,
 								  // VGA Interface 
 								  output [7:0]  VGA_R,					//VGA Red
 													 VGA_G,					//VGA Green
@@ -123,6 +123,11 @@ module  final_frogger_top ( input         CLOCK_50,
 					 
 	 logic [3:0] carcollisionsig;
 	 logic [3:0] lpadcollisionsig;
+	 
+	 logic dead_frog1, dead_frog2, dead_frog3;
+	 
+	 logic [1:0] frog_lives;
+	 logic win_game, lose_game;
 	 
 	 /*4 Cars in Each Row * X Position (Top-Left) for each car*/
 	 logic [3:0] [10:0] carrow_xsig [3:0];
@@ -270,6 +275,7 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Direction(Direction_LPad_Row),
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog1dir),
+							  .dead_frog(dead_frog1),
 							  .active(frog_1_key)
 							  );
 //							  
@@ -290,6 +296,7 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Direction(Direction_LPad_Row),
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog2dir),
+							  .dead_frog(dead_frog2),
 							  .active(frog_2_key)
 							  );
 							  
@@ -310,9 +317,21 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Direction(Direction_LPad_Row),
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog3dir),
+							  .dead_frog(dead_frog3),
 							  .active(frog_3_key)
 							  );
+	
+	 assign dead_frog = dead_frog1 || dead_frog2 || dead_frog3;
 
+	 game_logic game_logic_mod(.game_restart(soft_reset), 						//push button that signals restart the game
+									.frame_clk(vssig),	
+							.Frog1_X(frog1xsig), .Frog1_Y(frog1ysig),
+							.Frog2_X(frog2xsig), .Frog2_Y(frog2ysig),
+							.Frog3_X(frog3xsig), .Frog3_Y(frog3ysig),
+							.dead_frog,
+							.frog_lives,	
+							.win_game,
+							.lose_game);
 
 	
     color_mapper color_instance(.Frog1X(frog1xsig), 
@@ -389,6 +408,11 @@ module  final_frogger_top ( input         CLOCK_50,
 		assign LEDG[4] = frog_1_key;
 		assign LEDG[5] = frog_2_key;
 		assign LEDG[6] = frog_3_key;
+		
+		assign LEDR[0] = frog_lives[0];
+		assign LEDR[1] = frog_lives[1];
+		assign LEDR[2] = lose_game;
+		assign LEDR[3] = win_game;
 
 		
 		//Update Hex Drivers
