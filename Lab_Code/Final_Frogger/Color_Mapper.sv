@@ -83,22 +83,23 @@ module  color_mapper ( input logic [10:0]
 	 palette game_palette(.palette(color_palette));
 	 
 	 
-// scoreboard - tens digit and ones digit
-//	 logic [9:0] numbers[0:231][0:31];
-//	 logic [9:0] tensdig_color_idx;
-//	 logic [10:0] tensdig_x_index;
-//	 logic [10:0] tensdig_y_index;
-//	 numbers numtens(.rgb(numbers));	 
+ scoreboard - tens digit and ones digit
+	 logic [9:0] numbers[0:231][0:31];
+	 logic [9:0] tensdig_color_idx;
+	 logic [10:0] tensdig_x_index;
+	 logic [10:0] tensdig_y_index;
+	 numbers numtens(.rgb(numbers));	 
 
-//	 logic [10:0] numbersX, numbersY;
+	 logic [9:0] numbers[0:231][0:31];
+	 logic [9:0] onesdig_color_idx;
+	 logic [10:0] onesdig_x_index;
+	 logic [10:0] onesdig_y_index;
+	 numbers numones(.rgb(numbers));	 
 
-//	 logic [9:0] numbers[0:231][0:31];
-//	 logic [9:0] onesdig_color_idx;
-//	 logic [10:0] onesdig_x_index;
-//	 logic [10:0] onesdig_y_index;
-//	 numbers numones(.rgb(numbers));	 
-//   assign tens_digit = 3'd8;				//remove once game logic is working
-//   assign ones_digit = 3'd8;	 			//remove once game logic is working
+   assign tens_digit = 3'd8;				//remove once game logic is working
+   assign ones_digit = 3'd8;	 			//remove once game logic is working
+	 assign num_width = 5'd24;
+	 assign num_height = 5'd32;
 	  	 
 /*====== DISPLAY FROGGER ======*/	  
  always_comb
@@ -694,17 +695,17 @@ begin
 	lilypad_color_idx = lilypad_sprite[lilypad_x_index][lilypad_y_index];
 end
 
-/*======= MAPPING COLOR INDEX FOR LILYPADS ======*/
-//	assign tensdig_x_index = DrawX - LPad1X;
-//	assign tensdig_y_index = DrawY - LPad1Y;
-//	assign onesdig_x_index = DrawX - LPad1X;
-//	assign onesdig_y_index = DrawY - LPad1Y;
+/*======= MAPPING COLOR INDEX FOR SCORECLOCK ======*/
+	assign tensdig_x_index = DrawX - 9'd315 + (num_width * tens_digit);
+	assign tensdig_y_index = DrawY - 6'd44;
+	assign onesdig_x_index = DrawX - 9'd341 + (num_width * ones_digit);
+	assign onesdig_y_index = DrawY - 6'd44;
 
-//	always_comb
-//	begin
-//		tensdig_color_idx = numbers[tensdig_x_index][tensdig_y_index];
-//		onesdig_color_idx = numbers[onesdig_x_index][onesdig_y_index];
-//	end
+	always_comb
+	begin
+		tensdig_color_idx = numbers[tensdig_x_index][tensdig_y_index];
+		onesdig_color_idx = numbers[onesdig_x_index][onesdig_y_index];
+  	end
 
 
 
@@ -786,8 +787,22 @@ end
 	  end
 	  else //SHOW APPROPRIATE BACKGROUND 
 	  begin 
+			//scoreboard		
+			if (DrawY >= 44 && DrawY <= 76) && (DrawX >= 315 && DrawX <= 339)
+			begin
+				Red = color_palette[tensdig_color_idx][0];
+				Green = color_palette[tensdig_color_idx][1];
+				Blue = color_palette[tensdig_color_idx][2];
+			end
+			else if (DrawY >= 44 && DrawY <= 76) && (DrawX >= 341 && DrawX <= 365)
+			begin
+				Red = color_palette[onesdig_color_idx][0];
+				Green = color_palette[onesdig_color_idx][1];
+				Blue = color_palette[onesdig_color_idx][2];
+			end
+
 			//water color
-			if (DrawY >= 80 && DrawY <= 239 )
+			else if (DrawY >= 80 && DrawY <= 239 )
 			begin
 				Red = 8'd0;
 				Green = 8'd200;
