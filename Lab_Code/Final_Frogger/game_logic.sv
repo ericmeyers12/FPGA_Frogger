@@ -9,25 +9,21 @@ module  game_logic ( input game_restart, 						//push button that signals restar
 									frame_clk,	
 							input [10:0] Frog1_X, Frog1_Y, Frog2_X, Frog2_Y, Frog3_X, Frog3_Y,
 							input dead_frog,
-							output [1:0] frog_lives,	
-							output win_game,
-							output lose_game
+							output logic [7:0] frog_lives,	
+							output logic win_game,
+							output logic lose_game
 //              output [3:0] tens_digit, ones_digit		//10 possible digits				
 				 );
 				 
 	enum		logic [2:0] {START, WIN, DEAD, LOSE, WAIT, RESTART} state, next_state;
 	
-//	logic [6:0] game_clock, clock_cnt;
-	logic [1:0] frog_wins;
 	
-//	parameter [6:0] clock_restart = 6'd60;
-//	parameter [1:0] frog_wins_restart = 2'd0;
 
 	always_ff @ (posedge game_restart or posedge frame_clk)
 	begin
 		if (game_restart)  // Asynchronous Reset
 		begin 
-			frog_lives = 2'd3;
+			frog_lives = 8'd3;
 			win_game = 1'b0;
 			lose_game = 1'b0;
 			state = START;
@@ -38,7 +34,7 @@ module  game_logic ( input game_restart, 						//push button that signals restar
 			case(state)
 				START:
 				begin
-					frog_lives = 2'd3;
+					frog_lives = 8'd3;
 					win_game = 1'b0;
 					lose_game = 1'b0;
 				end
@@ -78,7 +74,7 @@ module  game_logic ( input game_restart, 						//push button that signals restar
 				begin
 					win_game = 1'b0;
 					lose_game= 1'b0;
-					frog_lives = 2'd3;
+					frog_lives = 8'd3;
 				end
 			endcase
 		end

@@ -98,8 +98,12 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 
 %SECTION 3 - Block Diagram - 
 \section{Block Diagram} 
-	 %ERIC SECTION - PUT BETTER BLOCK DIAGRAM HERE
-	 %RYAN - if you have anything to add here, feel free too
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{Block_Diagram.png}
+	\caption{Top Block Diagram}
+	\label{fig:moving-state}
+\end{figure}
  
  
 %SECTION 4 - Purpose of Modules - 
@@ -197,6 +201,26 @@ A LOT MORE COULD BE ADDED HERE\\
 
 %SECTION 9 - Conclusion
 \section{Conclusion} 
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{c|c}	% ccccccc indicates 7 center aligned columns
+		\toprule	% top separator
+		Resource & Value \\
+		\midrule
+		LUT & \\
+		DSP & \\
+		Memory (BRAM) & \\
+		Flip-Flop & \\
+		Frequency &  \\
+		Static Power & \\
+		Dynamic Power & \\
+		Total Power & \\
+		\bottomrule	% bottom separator
+	\end{tabular}%	
+	\caption{Design Statistics}
+	\label{tab:design}
+\end{table}
+
 	%JOINT SECTION
 
 

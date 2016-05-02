@@ -126,7 +126,7 @@ module  final_frogger_top ( input         CLOCK_50,
 	 
 	 logic dead_frog1, dead_frog2, dead_frog3;
 	 
-	 logic [1:0] frog_lives;
+	 logic [7:0] frog_lives;
 	 logic win_game, lose_game;
 	 
 	 /*4 Cars in Each Row * X Position (Top-Left) for each car*/
@@ -138,6 +138,9 @@ module  final_frogger_top ( input         CLOCK_50,
 	 logic [1:0] curfrog1dir, curfrog2dir, curfrog3dir;
 	 
 	 logic [3:0] [5:0] LPad_Remainder_Count;
+	 logic [7:0] clock_time;
+	 logic lose_game_int;
+	 logic time_is_up;
 
 	 /*===== Car Parameters =====*/
 	 parameter bit [2:0] Number_Cars_Row [0:3] = '{3'd4, 
@@ -232,7 +235,9 @@ module  final_frogger_top ( input         CLOCK_50,
 									.Car_Y(carrow_ysig[i]),
 									.Frog_X(frogcurxsig),
 									.Frog_Y(frogcurysig),
-									.Car_Collision(carcollisionsig[i]));
+									.Car_Collision(carcollisionsig[i]),
+									.win(win_game),
+									.lose(lose_game));
 		end
 		endgenerate	 
 		
@@ -253,7 +258,9 @@ module  final_frogger_top ( input         CLOCK_50,
 						.LPad_Y(lpadrow_ysig[j]),
 						.Frog_X(frogcurxsig),
 						.Frog_Y(frogcurysig),
-						.LPad_Collision(lpadcollisionsig[j])
+						.LPad_Collision(lpadcollisionsig[j]),
+						.win(win_game),
+						.lose(lose_game)
 				 );
 		end
 		endgenerate	 		
@@ -276,7 +283,9 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog1dir),
 							  .dead_frog(dead_frog1),
-							  .active(frog_1_key)
+							  .active(frog_1_key),
+							  .win(win_game),
+							  .lose(lose_game)
 							  );
 //							  
 		frog frog_instance_2(.Reset(soft_reset), 
@@ -297,7 +306,9 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog2dir),
 							  .dead_frog(dead_frog2),
-							  .active(frog_2_key)
+							  .active(frog_2_key),
+							  .win(win_game),
+							  .lose(lose_game)
 							  );
 							  
 		frog frog_instance_3(.Reset(soft_reset), 
@@ -318,7 +329,9 @@ module  final_frogger_top ( input         CLOCK_50,
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog3dir),
 							  .dead_frog(dead_frog3),
-							  .active(frog_3_key)
+							  .active(frog_3_key),
+							  .win(win_game),
+							  .lose(lose_game)
 							  );
 	
 	 assign dead_frog = dead_frog1 || dead_frog2 || dead_frog3;
@@ -331,7 +344,15 @@ module  final_frogger_top ( input         CLOCK_50,
 							.dead_frog,
 							.frog_lives,	
 							.win_game,
-							.lose_game);
+							.lose_game(lose_game_int));
+							
+	 clock_logic clock_logic_mod(.game_restart(soft_reset),
+										  .frame_clk(vssig),
+										  .clock_time, .lose_game);
+										  
+	 assign time_is_up = (clock_time == 0);
+	 
+	 assign lose_game = time_is_up || lose_game_int;
 
 	
     color_mapper color_instance(.Frog1X(frog1xsig), 
@@ -378,6 +399,9 @@ module  final_frogger_top ( input         CLOCK_50,
 										  .cur_Frog1_Direction(curfrog1dir),
 										  .cur_Frog2_Direction(curfrog2dir),
 										  .cur_Frog3_Direction(curfrog3dir),
+										  .tens_digit(tensdigit),
+										  .ones_digit(onesdigit),
+										  .frog_lives,
 										  .Red(VGA_R), 
 										  .Green(VGA_G), 
 										  .Blue(VGA_B)
@@ -408,16 +432,19 @@ module  final_frogger_top ( input         CLOCK_50,
 		assign LEDG[4] = frog_1_key;
 		assign LEDG[5] = frog_2_key;
 		assign LEDG[6] = frog_3_key;
-		
-		assign LEDR[0] = frog_lives[0];
-		assign LEDR[1] = frog_lives[1];
+	
 		assign LEDR[2] = lose_game;
 		assign LEDR[3] = win_game;
 
-		
+//		logic [3:0] onesdigit, tensdigit;
+
+		assign onesdigit = clock_time % 4'd10;
+		assign tensdigit =  clock_time / 4'd10;
 		//Update Hex Drivers
-		HexDriver hex_inst_0 (keycode[3:0], HEX0);
-		HexDriver hex_inst_1 (keycode[7:4], HEX1);
+		HexDriver hex_inst_0 (onesdigit, HEX0);
+		HexDriver hex_inst_1 (tensdigit, HEX1);
+		HexDriver hex_inst_4 (frog_lives[3:0], HEX4);
+		HexDriver hex_inst_5 (frog_lives[7:4], HEX5);
 			
 		//Update 
 		always_ff @ (posedge Clk)

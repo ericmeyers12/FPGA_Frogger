@@ -1,4 +1,9 @@
 
+State Machine - |final_frogger_top|clock_logic:clock_logic_mod|state
+Name state.DECREMENT 
+state.WAIT 0 
+state.DECREMENT 1 
+
 State Machine - |final_frogger_top|game_logic:game_logic_mod|state
 Name state.RESTART state.WAIT state.LOSE state.DEAD state.WIN state.START 
 state.START 0 0 0 0 0 0 

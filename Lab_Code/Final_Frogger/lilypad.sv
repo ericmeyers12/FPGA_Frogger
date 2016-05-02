@@ -12,7 +12,8 @@ module  lilypad( input Reset, frame_clk,
 					input [5:0] Speed,
 					input [10:0] Frog_X, Frog_Y,
 					output [5:0] LPad_Remainder_Count,
-					output logic [3:0] LPad_Collision
+					output logic [3:0] LPad_Collision,
+					input win, lose
 				 );
     
     logic [10:0] LPad_X_Position, LPad_Y_Position, LPad_X_Motion, LPad_Y_Motion;
@@ -84,7 +85,11 @@ module  lilypad( input Reset, frame_clk,
 	begin
       next_state = state;
       case (state)
-			WAIT: next_state = (time_count == Speed) ? MOVE : WAIT;
+			WAIT: 
+			if(time_count == Speed && (!win && !lose)) 
+				next_state = MOVE;
+			else
+				next_state = WAIT;
 			
 			MOVE:	next_state = WAIT;
 		endcase

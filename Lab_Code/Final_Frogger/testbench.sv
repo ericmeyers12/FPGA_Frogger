@@ -7,9 +7,9 @@ module testbench();
    // instantiated as a submodule in testbench.
 	
    /* ============== FROG, CAR, AND LILYPAD MODULES BELOW ==============*/			
-	logic frame_clk;
+	logic soft_reset, frame_clk;
 
-	logic up, down, left, right, frog_1_key, frog_2_key, frog_3_key;;
+	logic up, down, left, right, frog_1_key, frog_2_key, frog_3_key;
 	
 	 logic [10:0] frogcurxsig, frogcurysig, 
 					  frog1xsig, frog1ysig, frog1widthsig, frog1heightsig,
@@ -172,7 +172,9 @@ module testbench();
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog1dir),
 							  .dead_frog(dead_frog1),
-							  .active(frog_1_key)
+							  .active(frog_1_key),
+							  .win(win_game),
+							  .lose(lose_game)
 							  );
 //							  
 		frog frog_instance_2(.Reset(soft_reset), 
@@ -193,11 +195,13 @@ module testbench();
 							  .LPad_Collision(lpadcollisionsig),
 							  .cur_Frog_Direction(curfrog2dir),
 							  .dead_frog(dead_frog2),
-							  .active(frog_2_key)
+							  .active(frog_2_key),
+							  .win(win_game),
+							  .lose(lose_game)
 							  );
 							  
 		frog frog_instance_3(.Reset(soft_reset), 
-							  .frame_clk(vssig),
+							  .frame_clk,
 							  .FrogX(frog3xsig),
 							  .FrogY(frog3ysig),
 							  .Frog_Width(frog3widthsig),
@@ -241,7 +245,7 @@ module testbench();
 
    //Testing starts
    initial begin: TEST_VECTORS
-      Reset = 0;
+      soft_reset = 0;
 		left = 0;
 		right = 0;
 		up = 0;
@@ -251,19 +255,32 @@ module testbench();
 		frog_3_key = 0;
 		
 		
-      #4 Reset = 1;
-		#5 Reset = 0;
-
-  
+      #4 soft_reset = 1;
+		#5 soft_reset = 0;
 		
-		#100 up = 1;
+		#1 frog_1_key = 1;
+	
+		#50 up = 1;
+		#5 up = 0;
+		
+		#50 up = 1;
+		#5 up = 0;
+		
+		#50 up = 1;
+		#5 up = 0;
+		
+		#50 up = 1;
+		#5 up = 0;
+		
+		#50 up = 1;
+		#5 up = 0;
+		
+		#50 up = 1;
+		#5 up = 0;
+		
+		#50 up = 1;
 		#5 up = 0;
 
-      
-      if (ErrorCnt == 0)
-        $display("Success!");
-      else
-        $display("%d error(s) detected. Try again!", ErrorCnt);
    end
 
 endmodule
