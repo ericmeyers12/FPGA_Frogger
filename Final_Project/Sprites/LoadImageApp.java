@@ -174,6 +174,7 @@ public class LoadImageApp{
             l.add("images/carright_sprite");
             l.add("images/carleft_sprite");
             l.add("images/numbers");
+            l.add("images/logo");
             
             LoadImageApp frogger = new LoadImageApp(l);
         } catch (IOException e) {
