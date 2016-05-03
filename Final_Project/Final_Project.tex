@@ -127,9 +127,29 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 	\end{figure}
 	
 	\subsection{Color\_Mapper}
-	%TODO: RYAN SECTION
-		\subsubsection{Displays Frogger, Cars, and Lilypads }
-		\subsubsection{Sets orientation of Frog Direction}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{color_mapper_io.png}
+		\caption{Color\_mapper.sv input/output.}
+		\label{fig:color_mapper_io}
+	\end{figure}
+	
+	The Color\_Mapper module is the heart of controlling what gets displayed onto the screen.  The module was inspired by Lab 8 with the moving ball sprite.  This version of Color\_Mapper has several jobs including knowing the position of and displaying all 39 sprites for the game at any given instance, establishing the proper orientation of Frogger, displaying the game clock, number of lives, and game title, as well as properly layering the background to the back of the game.  Figure \ref{fig:color_mapper_io} is a view of the inputs and outputs of the module showing just how involved this module really is to the Frogger game.  	\\
+	
+	The sprite generation will be discussed in full detail in "Section XII - Color and Sprite Generation".  Though it is worth noting how the background was implemented with so many sprites on the screen.  A large if-else statement was used to control the layers on the screen with front layers appearing earlier in the if-else logic and background layers appearing as the else statement.  Figure \ref{fig:background_ex} shows only the first background layer of the else condition, the blue color of the water meant to be displayed behind all lilypad sprites.     
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{background_ex.png}
+		\caption{Generating a background image.}
+		\label{fig:background_ex}
+	\end{figure}
+	
+	The two variables DrawX and DrawY represent the given pixel that is to be colored in.  The two variables run through the if-else logic until they find conditions in which they satisfy.  For the example shown in Figure \ref{fig:background_ex}, any uncolored pixels left with Y coordinates between 80 and 239 inclusive are filled with the RGB value within the else if statement.  
+	
+	
+	
 	\subsection{frog}
 	The frog module contains the logic for the moving component controlled by the user (the ``frog"). This entails the logic for what the frog does when detecting it is colliding with a car, a lilypad, water, or the end position. The frog state diagram is explained below in the "Finite State Machines" section. 
 	
@@ -184,11 +204,70 @@ The frog module state diagram controls what happens to frogger when a particular
 
 %SECTION 7 - Color and Sprite Generation
 \section{Color \& Sprite Generation}
-A Java file was used to generate all sprite files for the game. First the sprite was developed on Piskel (a free online sprite editor) and optimized for the minimal amount of color use. A pallette was then generated based on all sprites in the project. For example...
-	%RYAN SECTION - TALK MORE ABOUT METHOD USED
+A total of 39 sprites appear on the VGA monitor at any given moment.  They consist of three (3) frogs, sixteen (16) lilypads, eight (8) cars facing to the left, eight (8) cars facing to the right, two (2) digits for representing the tens digit and ones digit of the game clock, (1) digit for representing the number of lives left, and (1) sprite for the logo image.  \\
+
+The logo is the least complex displaying a static picture of the game logo, while the frogs are the most complex sprites controlling both location and orientation. The cars and lilypads were complex in their own way since there were multiple sprites on multiple rows that needed position to be tracked.  Let's look at the process used to get carright\_sprite from the drawing board to the big screen as an example. 
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{piskel.png}
+		\caption{Generating carright\_sprite in Piskel.}
+		\label{fig:piskel}
+	\end{figure}  
+
+All sprites were born as .png files for clear, simple pixel mappings.  It was not as easy as finding .png files from the internet or converting our own images into .png files, however.  Even the clearest .png files had thousands of colors due to poor clarity.  Developing sprites thus began with Piskel, a free online sprite editor, which allowed us to optimize for the minimal amount of color use.  Figure \ref{fig:piskel} shows the creation of carright\_sprite in Piskel.  A Java file was used to generate all sprite files for the game mapping each pixel to a color. A palette, or array of colors used amongst all sprites, was also generated based on all sprites used in the project.  This process made it easy to map the correct color from the palette.sv to the sprite generation file in the Color\_Mapper module.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{sprite_description1.png}
+		\caption{Grabbing inputs for rightcar\_sprite.}
+		\label{fig:sprite_description1}
+	\end{figure} 
+
+The Color\_Mapper module takes five parts to properly map one of the carright\_sprite(s) onto the screen. It first inputs the x and y location for each car\_row as well as generates variables such as car\_on1 to check if a car is on at a given pixel. Figure \ref{fig:sprite_description1} shows a screenshot of these lines of code.  The carright\_sprite was only generated on rows 1 and 3, so those are the only rows cared about for this example.
+
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{sprite_description2.png}
+		\caption{Determining location of cars in first car row.}
+		\label{fig:sprite_description2}
+	\end{figure} 
+
+Next four cars are mapped onto their given rows.  In Figure \ref{fig:sprite_description2} we see the first car row get mapped.  Pixels specified by DrawX and DrawY values are given a specific car\_on1 value, 1 if a car is at that pixel and 0 if there is no car at that pixel.  \\
+
+The third part of Color\_Mapper initializes the sprite 2D pixel array as well as the palette.  The palette only gets initialized once for all sprites.  A color index, x and y index are also initialized here.  Figure \ref{fig:sprite_description3} shows this part for the carright\_sprite.            
+
+ 	\begin{figure}[H]
+ 		\centering
+ 		\includegraphics[width=0.45\textwidth]{sprite_description3.png}
+ 		\caption{Initializing variables for sprites.}
+ 		\label{fig:sprite_description3}
+ 	\end{figure} 
+
+Following this, each car gets its upper left-hand corner (x,y) positioned marked.  For this example, the first car in the first row is used.  Car2X and Car2Y were designated to point to upper left-hand corner coordinates of this carright\_sprite. Variables rightcar\_x\_index and rightcar\_y\_index are assigned to be the local x and y index within the sprite.  These values are then used to map the proper color value at each pixel location to rightcar\_color\_idx.   
 	
+ 	\begin{figure}[H]
+ 		\centering
+ 		\includegraphics[width=0.45\textwidth]{sprite_description4.png}
+ 		\caption{Mapping the carright\_sprite to its color index.}
+ 		\label{fig:sprite_description4}
+ 	\end{figure}	
 	
-%SECTION 8 - Difficulty - 
+The fifth stage within Color\_Mapper is to finally draw the sprite to the screen.  A large if statement checks for DrawX and DrawY values to contain car\_on values.  This means the car exists at that pixel and it can be mapped to its proper color in the sprite.  Figure \ref{fig:sprite_description5} shows this being done for the carright\_sprite.  The RGB values are properly mapped to the correct values for the pixel and outputted from Color\_Mapper to the VGA\_controller to be displayed onto the VGA monitor. 
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{sprite_description5.png}
+		\caption{Establishing RGB for each pixel in carright\_sprite.}
+		\label{fig:sprite_description5}
+	\end{figure}	
+	
+Every sprite that moved went through these five stages in the  Color\_Mapper module in order to be displayed.  The game clock, lives counter, and game logo could bypass the first two stages since their position on the screen remained static.  The game clock and lives counter required inputs to the Color\_Mapper module to declare which number to display on the screen. \\
+
+One last added feature not mentioned was the ability to control the direction of the frogs.  A direction variable was used to record the last direction key used on the frog and orient the frog based on that direction.  Matrix transformations were then used to rotate the 2D pixel array of the frog to the proper direction.  \\  	
+	
+%SECTION 8 - Difficulty 
 \section{ Difficulty}
 	%RYAN SECTION - Make an argument for the difficulty of this project
 Producing the Frogger game in less than five weeks was no simple task.  The team came across a number of issues on a range of the features that were implemented into the game.  Most of the problems encountered came about from dealing with the System Verilog software.  What would be a simple function in a high-level programming language became rather tedious in System Verilog and required some thought in order to successfully implement.  \\
