@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 MAY 2016 21:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 MAY 2016 09:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -879,12 +879,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 35.
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+
+ []
+
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 36.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 36.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -892,7 +897,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <Block_Diagram.png, id=4, 619.31375pt x 681.54625pt>
 File: Block_Diagram.png Graphic file (type png)
  <use Block_Diagram.png>
-Package pdftex.def Info: Block_Diagram.png used on input line 103.
+Package pdftex.def Info: Block_Diagram.png used on input line 104.
 (pdftex.def)             Requested size: 206.39685pt x 227.13646pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -904,18 +909,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <car_parameters.png, id=15, 462.72874pt x 421.575pt>
 File: car_parameters.png Graphic file (type png)
  <use car_parameters.png>
-Package pdftex.def Info: car_parameters.png used on input line 117.
+Package pdftex.def Info: car_parameters.png used on input line 118.
 (pdftex.def)             Requested size: 232.19843pt x 211.54604pt.
 
 <lilypad_parameters.png, id=16, 471.7625pt x 420.57124pt>
 File: lilypad_parameters.png Graphic file (type png)
 
 <use lilypad_parameters.png>
-Package pdftex.def Info: lilypad_parameters.png used on input line 124.
+Package pdftex.def Info: lilypad_parameters.png used on input line 125.
 (pdftex.def)             Requested size: 232.19843pt x 207.00581pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+<color_mapper_io.png, id=17, 623.32875pt x 333.49594pt>
+File: color_mapper_io.png Graphic file (type png)
 
+<use color_mapper_io.png>
+Package pdftex.def Info: color_mapper_io.png used on input line 134.
+(pdftex.def)             Requested size: 232.19843pt x 124.2312pt.
+
+Underfull \hbox (badness 1668) in paragraph at lines 139--140
+\OT1/ptm/m/n/11 ori-en-ta-tion of Frog-ger, dis-play-ing the game clock,
  []
 
 
@@ -923,143 +935,223 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-[2 <./Block_Diagram.png> <./car_parameters.png> <./lilypad_parameters.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+[2 <./Block_Diagram.png> <./car_parameters.png> <./lilypad_parameters.png> <./c
+olor_mapper_io.png>] <background_ex.png, id=26, 239.39438pt x 103.88812pt>
+File: background_ex.png Graphic file (type png)
+
+<use background_ex.png>
+Package pdftex.def Info: background_ex.png used on input line 145.
+(pdftex.def)             Requested size: 232.19843pt x 100.76659pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-<hpiio.jpg, id=24, 328.22626pt x 86.57344pt>
+[3 <./background_ex.png>] <hpiio.jpg, id=31, 328.22626pt x 86.57344pt>
 File: hpiio.jpg Graphic file (type jpg)
- <use hpiio.jpg>
-Package pdftex.def Info: hpiio.jpg used on input line 162.
+
+<use hpiio.jpg>
+Package pdftex.def Info: hpiio.jpg used on input line 183.
 (pdftex.def)             Requested size: 232.19843pt x 61.24562pt.
 
-Underfull \hbox (badness 1394) in paragraph at lines 180--181
+Underfull \hbox (badness 1394) in paragraph at lines 201--202
 []\OT1/ptm/m/n/11 There were a to-tal of 3 FSMs im-ple-mented in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+<piskel.png, id=32, 991.45406pt x 484.05844pt>
+File: piskel.png Graphic file (type png)
+ <use piskel.png>
+Package pdftex.def Info: piskel.png used on input line 214.
+(pdftex.def)             Requested size: 232.19843pt x 113.36227pt.
+
+<sprite_description1.png, id=33, 256.70906pt x 74.52844pt>
+File: sprite_description1.png Graphic file (type png)
+
+<use sprite_description1.png>
+Package pdftex.def Info: sprite_description1.png used on input line 223.
+(pdftex.def)             Requested size: 232.19843pt x 67.4127pt.
+
+<sprite_description2.png, id=34, 493.845pt x 341.02406pt>
+File: sprite_description2.png Graphic file (type png)
+
+<use sprite_description2.png>
+Package pdftex.def Info: sprite_description2.png used on input line 233.
+(pdftex.def)             Requested size: 232.19843pt x 160.34377pt.
+
+Underfull \vbox (badness 1142) has occurred while \output is active []
+
+ [4 <./hpiio.jpg> <./piskel.png> <./sprite_description1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
+
+ []
+
+<sprite_description3.png, id=40, 246.9225pt x 106.89937pt>
+File: sprite_description3.png Graphic file (type png)
+
+<use sprite_description3.png>
+Package pdftex.def Info: sprite_description3.png used on input line 244.
+(pdftex.def)             Requested size: 232.19843pt x 100.52455pt.
+
+<sprite_description4.png, id=41, 412.54124pt x 185.94469pt>
+File: sprite_description4.png Graphic file (type png)
+
+<use sprite_description4.png>
+Package pdftex.def Info: sprite_description4.png used on input line 253.
+(pdftex.def)             Requested size: 232.19843pt x 104.65887pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<sprite_description5.png, id=42, 276.28218pt x 117.43875pt>
+File: sprite_description5.png Graphic file (type png)
+
+<use sprite_description5.png>
+Package pdftex.def Info: sprite_description5.png used on input line 262.
+(pdftex.def)             Requested size: 232.19843pt x 98.69983pt.
+
+Underfull \hbox (badness 1484) in paragraph at lines 263--263
+[]\OT1/ptm/m/n/11 Fig. 11: |Es-tab-lish-ing RGB for each pixel in car-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 296--297
 \OT1/ptm/m/n/11 into the game. Most of the prob-lems en-coun-tered
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
-[3 <./hpiio.jpg>]
-Underfull \hbox (badness 2521) in paragraph at lines 196--197
+[5 <./sprite_description2.png> <./sprite_description3.png> <./sprite_descriptio
+n4.png> <./sprite_description5.png>]
+Underfull \hbox (badness 2521) in paragraph at lines 298--299
 \OT1/ptm/m/n/11 was col-li-sion con-trol for the Frog-ger sprite with
  []
 
 
-Underfull \hbox (badness 1990) in paragraph at lines 196--197
-\OT1/ptm/m/n/11 for col-li-sion con-trol turned into a long AND/OR
+Underfull \hbox (badness 1852) in paragraph at lines 298--299
+\OT1/ptm/m/n/11 con-tain-ing many AND/OR con-di-tions for the cars
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \vbox (badness 1460) has occurred while \output is active []
 
- []
+ [6]
+<starting_screen.png, id=53, 2265.46375pt x 1698.345pt>
+File: starting_screen.png Graphic file (type png)
 
-[4] <car_collision.png, id=31, 1035.87pt x 341.275pt>
+<use starting_screen.png>
+Package pdftex.def Info: starting_screen.png used on input line 313.
+(pdftex.def)             Requested size: 464.39685pt x 348.13707pt.
+ <car_collision.png, id=54, 1035.87pt x 341.275pt>
 File: car_collision.png Graphic file (type png)
- <use car_collision.png>
-Package pdftex.def Info: car_collision.png used on input line 234.
+
+<use car_collision.png>
+Package pdftex.def Info: car_collision.png used on input line 320.
 (pdftex.def)             Requested size: 464.39685pt x 152.9995pt.
 
-<lilypad_collision.png, id=32, 1066.98625pt x 355.3275pt>
+<lilypad_collision.png, id=55, 1066.98625pt x 355.3275pt>
 File: lilypad_collision.png Graphic file (type png)
 
 <use lilypad_collision.png>
-Package pdftex.def Info: lilypad_collision.png used on input line 241.
+Package pdftex.def Info: lilypad_collision.png used on input line 327.
 (pdftex.def)             Requested size: 464.39685pt x 154.65295pt.
 
-<car_row_generation.png, id=33, 614.295pt x 359.3425pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7
+
+
+ <./starting_screen.png> <./car_collision.png>]
+<car_row_generation.png, id=62, 614.295pt x 359.3425pt>
 File: car_row_generation.png Graphic file (type png)
 
 <use car_row_generation.png>
-Package pdftex.def Info: car_row_generation.png used on input line 248.
+Package pdftex.def Info: car_row_generation.png used on input line 334.
 (pdftex.def)             Requested size: 464.39685pt x 271.66107pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5
-
-
- <./car_collision.png> <./lilypad_collision.png>]
-<lpad_row_generation.png, id=39, 627.34375pt x 428.60126pt>
+<lpad_row_generation.png, id=63, 627.34375pt x 428.60126pt>
 File: lpad_row_generation.png Graphic file (type png)
 
 <use lpad_row_generation.png>
-Package pdftex.def Info: lpad_row_generation.png used on input line 255.
+Package pdftex.def Info: lpad_row_generation.png used on input line 341.
 (pdftex.def)             Requested size: 464.39685pt x 317.29076pt.
 
-<frogger_state_diagram.png, id=40, 1003.75pt x 649.42625pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./lilypad_collision.png> <./car_row_generation.png>]
+<frogger_state_diagram.png, id=69, 1003.75pt x 649.42625pt>
 File: frogger_state_diagram.png Graphic file (type png)
 
 <use frogger_state_diagram.png>
-Package pdftex.def Info: frogger_state_diagram.png used on input line 263.
+Package pdftex.def Info: frogger_state_diagram.png used on input line 349.
 (pdftex.def)             Requested size: 412.80157pt x 267.08897pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./car_row_generation.png> <./lpad_row_generation.png>]
-<game_logic_state_diagram.png, id=46, 642.90187pt x 647.41875pt>
+<game_logic_state_diagram.png, id=70, 642.90187pt x 647.41875pt>
 File: game_logic_state_diagram.png Graphic file (type png)
 
 <use game_logic_state_diagram.png>
-Package pdftex.def Info: game_logic_state_diagram.png used on input line 270.
+Package pdftex.def Info: game_logic_state_diagram.png used on input line 356.
 (pdftex.def)             Requested size: 309.60315pt x 311.78485pt.
-
-<moving_state.png, id=47, 337.26pt x 205.76875pt>
-File: moving_state.png Graphic file (type png)
- <use moving_state.png>
-Package pdftex.def Info: moving_state.png used on input line 278.
-(pdftex.def)             Requested size: 258.0pt x 157.41257pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./frogger_state_diagram.png> <./game_logic_state_diagram.png>] [8 <./movin
-g_state.png>] (./Final_Project.aux)
+ [9 <./lpad_row_generation.png> <./frogger_state_diagram.png>]
+<moving_state.png, id=76, 521.95pt x 204.765pt>
+File: moving_state.png Graphic file (type png)
+ <use moving_state.png>
+Package pdftex.def Info: moving_state.png used on input line 364.
+(pdftex.def)             Requested size: 258.0pt x 101.21681pt.
+ [10 <./game_logic_state_diagram.png> <./moving_state.png>] (./Final_Project.au
+x)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23441 strings out of 493089
- 530853 string characters out of 6134842
+ 23495 strings out of 493089
+ 532122 string characters out of 6134842
  683491 words of memory out of 5000000
- 26507 multiletter control sequences out of 15000+600000
+ 26552 multiletter control sequences out of 15000+600000
  34629 words of font info for 73 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 64i,8n,67p,884b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,9n,67p,1016b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on Final_Project.pdf (8 pages, 593063 bytes).
+Output written on Final_Project.pdf (10 pages, 7695746 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

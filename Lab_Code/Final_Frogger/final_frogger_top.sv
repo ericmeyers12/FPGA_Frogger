@@ -12,7 +12,7 @@
 
 module  final_frogger_top ( input         CLOCK_50,
 								  input[3:0]    KEY, //bit 0 is set up as Reset
-								  output [6:0]  HEX0, HEX1,// HEX2, HEX3, HEX4, HEX5, HEX6, HEX7,
+								  output [6:0]  HEX0, HEX1, /*HEX2, HEX3,*/ HEX4, /*HEX5, HEX6, HEX7,*/
 								  output [8:0]  LEDG,
 								  output [17:0] LEDR,
 								  // VGA Interface 
@@ -436,15 +436,15 @@ module  final_frogger_top ( input         CLOCK_50,
 		assign LEDR[2] = lose_game;
 		assign LEDR[3] = win_game;
 
-		logic [3:0] time_onesdigit, time_tensdigit;
+		logic [3:0] onesdigit, tensdigit;
 
-		assign time_onesdigit = clock_time % 4'd10;
-		assign time_tensdigit =  clock_time / 4'd10;
+		assign onesdigit = clock_time % 4'd10;
+		assign tensdigit =  clock_time / 4'd10;
 		//Update Hex Drivers
 		HexDriver hex_inst_0 (onesdigit, HEX0);
 		HexDriver hex_inst_1 (tensdigit, HEX1);
-		HexDriver hex_inst_4 (frog_lives[3:0], HEX4);
-		HexDriver hex_inst_5 (frog_lives[7:4], HEX5);
+		HexDriver hex_inst_4 (frog_lives[3:0] + 1, HEX4);
+
 			
 		//Update 
 		always_ff @ (posedge Clk)

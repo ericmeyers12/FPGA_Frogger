@@ -23,7 +23,7 @@ module  game_logic ( input game_restart, 						//push button that signals restar
 	begin
 		if (game_restart)  // Asynchronous Reset
 		begin 
-			frog_lives = 8'd3;
+			frog_lives = 8'd2;
 			win_game = 1'b0;
 			lose_game = 1'b0;
 			state = START;
@@ -34,7 +34,7 @@ module  game_logic ( input game_restart, 						//push button that signals restar
 			case(state)
 				START:
 				begin
-					frog_lives = 8'd3;
+					frog_lives = 8'd2;
 					win_game = 1'b0;
 					lose_game = 1'b0;
 				end
@@ -74,7 +74,7 @@ module  game_logic ( input game_restart, 						//push button that signals restar
 				begin
 					win_game = 1'b0;
 					lose_game= 1'b0;
-					frog_lives = 8'd3;
+					frog_lives = 8'd2;
 				end
 			endcase
 		end
@@ -107,7 +107,7 @@ end
 			
 				DEAD: 
 				begin
-					if (frog_lives == 8'd0)
+					if (frog_lives == 0)
 						next_state = LOSE;
 					else
 						next_state = WAIT;
