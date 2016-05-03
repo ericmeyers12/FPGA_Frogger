@@ -131,12 +131,12 @@ This system was developed in System Verilog in Quartus-II on an Altera-DE2-115 F
 		\subsubsection{Displays Frogger, Cars, and Lilypads }
 		\subsubsection{Sets orientation of Frog Direction}
 	\subsection{frog}
-	The frog module contains the logic for the moving component controlled by the user (the ``frog"). This entails the logic for what the frog does when detecting it is colliding with a car, a lilypad, water, or the end position. The frog state diagram is explained below in the "Finite State Machines" section. 
+	The frog module contains the logic for the moving component controlled by the user (the ``frog"). This entails the logic for what the frog does when detecting it is colliding with a car, a lilypad, water, or the end position. The frog is implemented as a state machine that depending on the actions of the user, will move to the cooresponding state. The frog state diagram is explained below in the "Finite State Machines" section. \\
 	
-	This module takes inputs as the desired start position of the frog, the controller keys (up, down, left, right), lilypad collision signals, car collision signals, and lilypad parameters (so it can sync up with the movements of the lilypad). The module outputs the frog x and y position to display on the screen.
+	This module takes inputs as the desired start position of the frog, the controller keys (up, down, left, right), lilypad collision signals, car collision signals, lilypad parameters (so it can sync up with the movements of the lilypad when colliding), and the win/lose signal. The module outputs the frog x and y position to display on the screen. Depending on the state of these win/lose signals the frog stops responding to input. 
 	
 	\subsection{car}
-	The car module contains the logic for the moving cars in the bottom half of the screen. This module also detects if there is a collision between its location and the location of the frog. It takes input of the desired speed/direction and updates/outputs the position of the car to display on the screen. It also takes inputs of the frog x and y position so it can determine if the car is collided with the frog. If it is, then it outputs a collision signal.
+	The car module contains the logic for the moving cars in the bottom half of the screen. This module also detects if there is a collision between its location and the location of the frog. It takes input of the desired speed/direction and updates/outputs the position of the car to display on the screen. It also takes inputs of the frog x and y position so it can determine if the car is collided with the frog. If it is, then it outputs a collision signal.\\
 	
 	The logic for the collision detection is shown in Figure \ref{fig:car-collision}.
 	
@@ -207,14 +207,14 @@ A LOT MORE COULD BE ADDED HERE\\
 		\toprule	% top separator
 		Resource & Value \\
 		\midrule
-		LUT & \\
-		DSP & \\
-		Memory (BRAM) & \\
-		Flip-Flop & \\
-		Frequency &  \\
-		Static Power & \\
-		Dynamic Power & \\
-		Total Power & \\
+		LUT & 9239\\
+		DSP & 0\\
+		Memory (BRAM) & 82,944\\
+		Flip-Flop & 656\\
+		Frequency &  73.32 MHz\\
+		Static Power & 102.66 mW\\
+		Dynamic Power & 50.68 mW\\
+		Total Power & 249.76 mW\\
 		\bottomrule	% bottom separator
 	\end{tabular}%	
 	\caption{Design Statistics}

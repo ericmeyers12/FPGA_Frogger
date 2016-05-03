@@ -47,6 +47,9 @@ module  color_mapper ( input logic [10:0]
 	 logic [10:0] frog1_y_index, frog2_y_index, frog3_y_index;
 	 frog_sprite frog(.rgb(frog_sprite));
 	 
+	 logic [9:0] logo[0:152][0:39];
+	 logo logo_inst(.rgb(logo));
+	 
 //	 logic [9:0] lose_text_sprite[0:479][0:39];
 //	 lose_text_sprite lose_text(.rgb(lose_text_sprite));
 
@@ -80,7 +83,7 @@ module  color_mapper ( input logic [10:0]
 //	 basicbackground b(.rgb(background));
 
 	 logic [9:0] cur_color_idx;
-	 logic [7:0] color_palette [0:17][0:2];   //correct-frogonly
+	 logic [7:0] color_palette [0:18][0:2];   //correct-frogonly
 	 palette game_palette(.palette(color_palette));
 	 
 	 
@@ -711,8 +714,8 @@ end
 	assign tensdig_y_index = DrawY - 3'd4;
 	assign onesdig_x_index = DrawX - 9'd339 + (num_width * ones_digit);
 	assign onesdig_y_index = DrawY - 3'd4;
-	assign lives_x_index = DrawX - 10'd575 + (num_width * frog_lives);
-	assign lives_y_index = DrawY - 3'd4;
+	assign lives_x_index = DrawX - 10'd575 + (num_width * frog_lives[4:0]);
+	assign lives_y_index = DrawY - 10'd4;
 
 	always_comb
 	begin
@@ -860,11 +863,11 @@ end
 				Green = 8'd69;
 				Blue = 8'd69;
 			end
-			else if (lose)
+			else if (DrawX >= 0 && DrawX <=152 && DrawY >= 0 && DrawY <=39 && logo[DrawX][DrawY] != 0)
 			begin
-				Red = 255;
-				Blue = 255;
-				Green = 255;
+				Red = color_palette[logo[DrawX][DrawY]][0];
+				Green = color_palette[logo[DrawX][DrawY]][1];
+				Blue = color_palette[logo[DrawX][DrawY]][2];
 			end
 			else
 			begin

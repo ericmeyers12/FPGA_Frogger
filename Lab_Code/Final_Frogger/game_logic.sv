@@ -107,7 +107,7 @@ end
 			
 				DEAD: 
 				begin
-					if (frog_lives == 0)
+					if (frog_lives == 8'd0)
 						next_state = LOSE;
 					else
 						next_state = WAIT;

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 MAY 2016 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 MAY 2016 21:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,7 +913,17 @@ File: lilypad_parameters.png Graphic file (type png)
 <use lilypad_parameters.png>
 Package pdftex.def Info: lilypad_parameters.png used on input line 124.
 (pdftex.def)             Requested size: 232.19843pt x 207.00581pt.
- [2 <./Block_Diagram.png> <./car_parameters.png> <./lilypad_parameters.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+[2 <./Block_Diagram.png> <./car_parameters.png> <./lilypad_parameters.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
@@ -923,10 +933,6 @@ File: hpiio.jpg Graphic file (type jpg)
  <use hpiio.jpg>
 Package pdftex.def Info: hpiio.jpg used on input line 162.
 (pdftex.def)             Requested size: 232.19843pt x 61.24562pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 Underfull \hbox (badness 1394) in paragraph at lines 180--181
 []\OT1/ptm/m/n/11 There were a to-tal of 3 FSMs im-ple-mented in
@@ -947,7 +953,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
-
+[3 <./hpiio.jpg>]
 Underfull \hbox (badness 2521) in paragraph at lines 196--197
 \OT1/ptm/m/n/11 was col-li-sion con-trol for the Frog-ger sprite with
  []
@@ -962,7 +968,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-[3 <./hpiio.jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
@@ -972,9 +978,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
-[4
-
-] <car_collision.png, id=31, 1035.87pt x 341.275pt>
+[4] <car_collision.png, id=31, 1035.87pt x 341.275pt>
 File: car_collision.png Graphic file (type png)
  <use car_collision.png>
 Package pdftex.def Info: car_collision.png used on input line 234.
@@ -1041,7 +1045,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  23441 strings out of 493089
  530853 string characters out of 6134842
- 684491 words of memory out of 5000000
+ 683491 words of memory out of 5000000
  26507 multiletter control sequences out of 15000+600000
  34629 words of font info for 73 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1052,7 +1056,7 @@ xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/t
 exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on Final_Project.pdf (8 pages, 592778 bytes).
+Output written on Final_Project.pdf (8 pages, 593063 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream

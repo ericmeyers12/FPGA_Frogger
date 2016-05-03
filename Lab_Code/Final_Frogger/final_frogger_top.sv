@@ -348,7 +348,7 @@ module  final_frogger_top ( input         CLOCK_50,
 							
 	 clock_logic clock_logic_mod(.game_restart(soft_reset),
 										  .frame_clk(vssig),
-										  .clock_time, .lose_game);
+										  .clock_time, .lose_game, .win_game);
 										  
 	 assign time_is_up = (clock_time == 0);
 	 
@@ -436,10 +436,10 @@ module  final_frogger_top ( input         CLOCK_50,
 		assign LEDR[2] = lose_game;
 		assign LEDR[3] = win_game;
 
-		logic [3:0] onesdigit, tensdigit;
+		logic [3:0] time_onesdigit, time_tensdigit;
 
-		assign onesdigit = clock_time % 4'd10;
-		assign tensdigit =  clock_time / 4'd10;
+		assign time_onesdigit = clock_time % 4'd10;
+		assign time_tensdigit =  clock_time / 4'd10;
 		//Update Hex Drivers
 		HexDriver hex_inst_0 (onesdigit, HEX0);
 		HexDriver hex_inst_1 (tensdigit, HEX1);
