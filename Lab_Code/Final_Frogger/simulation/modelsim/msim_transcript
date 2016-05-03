@@ -1,0 +1,1228 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do final_frogger_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlib nios_system
+# ** Warning: (vlib-34) Library already exists at "nios_system".
+# 
+# vmap nios_system nios_system
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet nios_system nios_system 
+# Modifying modelsim.ini
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis {E:/Final_Frogger/nios_system/synthesis/nios_system.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:24 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis" E:/Final_Frogger/nios_system/synthesis/nios_system.v 
+# -- Compiling module nios_system
+# 
+# Top level modules:
+# 	nios_system
+# End time: 16:30:24 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_reset_controller.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:24 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_reset_controller.v 
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# End time: 16:30:25 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_reset_synchronizer.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:25 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_reset_synchronizer.v 
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# End time: 16:30:25 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:25 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0.v 
+# -- Compiling module nios_system_mm_interconnect_0
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0
+# End time: 16:30:25 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:25 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter.v 
+# -- Compiling module nios_system_mm_interconnect_0_avalon_st_adapter
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_avalon_st_adapter
+# End time: 16:30:26 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:26 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v 
+# -- Compiling module altera_avalon_sc_fifo
+# 
+# Top level modules:
+# 	altera_avalon_sc_fifo
+# End time: 16:30:26 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sysid_qsys_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:26 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sysid_qsys_0.v 
+# -- Compiling module nios_system_sysid_qsys_0
+# 
+# Top level modules:
+# 	nios_system_sysid_qsys_0
+# End time: 16:30:26 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sdram_pll.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:26 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sdram_pll.v 
+# -- Compiling module nios_system_sdram_pll_dffpipe_l2c
+# -- Compiling module nios_system_sdram_pll_stdsync_sv6
+# -- Compiling module nios_system_sdram_pll_altpll_lqa2
+# -- Compiling module nios_system_sdram_pll
+# 
+# Top level modules:
+# 	nios_system_sdram_pll
+# End time: 16:30:26 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sdram.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:26 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_sdram.v 
+# -- Compiling module nios_system_sdram_input_efifo_module
+# -- Compiling module nios_system_sdram
+# 
+# Top level modules:
+# 	nios_system_sdram
+# End time: 16:30:27 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_data.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:27 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_data.v 
+# -- Compiling module nios_system_otg_hpi_data
+# 
+# Top level modules:
+# 	nios_system_otg_hpi_data
+# End time: 16:30:27 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_cs.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:27 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_cs.v 
+# -- Compiling module nios_system_otg_hpi_cs
+# 
+# Top level modules:
+# 	nios_system_otg_hpi_cs
+# End time: 16:30:27 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_address.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:27 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_otg_hpi_address.v 
+# -- Compiling module nios_system_otg_hpi_address
+# 
+# Top level modules:
+# 	nios_system_otg_hpi_address
+# End time: 16:30:27 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_onchip_memory2_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:27 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_onchip_memory2_0.v 
+# -- Compiling module nios_system_onchip_memory2_0
+# 
+# Top level modules:
+# 	nios_system_onchip_memory2_0
+# End time: 16:30:28 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:28 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0.v 
+# -- Compiling module nios_system_nios2_qsys_0
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0
+# End time: 16:30:28 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:28 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_register_bank_a_module
+# -- Compiling module nios_system_nios2_qsys_0_cpu_register_bank_b_module
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_debug
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_break
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_xbrk
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_dbrk
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_itrace
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_td_mode
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_dtrace
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_compute_input_tm_cnt
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_fifo_wrptr_inc
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_fifo_cnt_inc
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_fifo
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_pib
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci_im
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_performance_monitors
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_avalon_reg
+# -- Compiling module nios_system_nios2_qsys_0_cpu_ociram_sp_ram_module
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_ocimem
+# -- Compiling module nios_system_nios2_qsys_0_cpu_nios2_oci
+# -- Compiling module nios_system_nios2_qsys_0_cpu
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_nios2_performance_monitors
+# 	nios_system_nios2_qsys_0_cpu
+# End time: 16:30:29 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_sysclk.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:29 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_sysclk.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_sysclk
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_debug_slave_sysclk
+# End time: 16:30:30 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_tck.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:30 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_tck.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_tck
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_debug_slave_tck
+# End time: 16:30:30 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_wrapper.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:30 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_debug_slave_wrapper.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_debug_slave_wrapper
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_debug_slave_wrapper
+# End time: 16:30:31 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_test_bench.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:31 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_nios2_qsys_0_cpu_test_bench.v 
+# -- Compiling module nios_system_nios2_qsys_0_cpu_test_bench
+# 
+# Top level modules:
+# 	nios_system_nios2_qsys_0_cpu_test_bench
+# End time: 16:30:31 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_keycode.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:31 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_keycode.v 
+# -- Compiling module nios_system_keycode
+# 
+# Top level modules:
+# 	nios_system_keycode
+# End time: 16:30:31 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_jtag_uart_0.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:31 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_jtag_uart_0.v 
+# -- Compiling module nios_system_jtag_uart_0_sim_scfifo_w
+# -- Compiling module nios_system_jtag_uart_0_scfifo_w
+# -- Compiling module nios_system_jtag_uart_0_sim_scfifo_r
+# -- Compiling module nios_system_jtag_uart_0_scfifo_r
+# -- Compiling module nios_system_jtag_uart_0
+# 
+# Top level modules:
+# 	nios_system_jtag_uart_0
+# End time: 16:30:32 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/Color_Mapper.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:32 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/Color_Mapper.sv 
+# -- Compiling module color_mapper
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(153): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(155): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(161): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(163): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(166): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(184): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(186): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(192): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(194): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(197): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(215): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(217): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(223): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(225): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(228): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(247): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(249): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(255): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(257): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(260): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(279): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(283): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(291): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(295): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(301): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(320): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(322): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(328): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(330): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(333): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(351): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(353): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(359): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(361): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(364): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(383): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(385): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(391): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(393): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/Color_Mapper.sv(396): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# 
+# Top level modules:
+# 	color_mapper
+# End time: 16:30:32 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 40
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/frog.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:32 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/frog.sv 
+# -- Compiling module frog
+# 
+# Top level modules:
+# 	frog
+# End time: 16:30:32 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/car.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:32 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/car.sv 
+# -- Compiling module car
+# 
+# Top level modules:
+# 	car
+# End time: 16:30:33 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/game_logic.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:33 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/game_logic.sv 
+# -- Compiling module game_logic
+# 
+# Top level modules:
+# 	game_logic
+# End time: 16:30:33 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/clock_logic.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:33 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/clock_logic.sv 
+# -- Compiling module clock_logic
+# 
+# Top level modules:
+# 	clock_logic
+# End time: 16:30:33 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/lilypad.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:33 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/lilypad.sv 
+# -- Compiling module lilypad
+# 
+# Top level modules:
+# 	lilypad
+# End time: 16:30:33 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/numbers.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:33 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/numbers.sv 
+# -- Compiling module numbers
+# 
+# Top level modules:
+# 	numbers
+# End time: 16:30:33 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/carright_sprite.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:33 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/carright_sprite.sv 
+# -- Compiling module carright_sprite
+# 
+# Top level modules:
+# 	carright_sprite
+# End time: 16:30:34 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/carleft_sprite.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:34 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/carleft_sprite.sv 
+# -- Compiling module carleft_sprite
+# 
+# Top level modules:
+# 	carleft_sprite
+# End time: 16:30:34 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/frog_sprite.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:34 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/frog_sprite.sv 
+# -- Compiling module frog_sprite
+# 
+# Top level modules:
+# 	frog_sprite
+# End time: 16:30:34 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/palette.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:34 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/palette.sv 
+# -- Compiling module palette
+# 
+# Top level modules:
+# 	palette
+# End time: 16:30:34 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/lilypad_sprite.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:34 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/lilypad_sprite.sv 
+# -- Compiling module lilypad_sprite
+# 
+# Top level modules:
+# 	lilypad_sprite
+# End time: 16:30:34 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/VGA_controller.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:34 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/VGA_controller.sv 
+# -- Compiling module vga_controller
+# 
+# Top level modules:
+# 	vga_controller
+# End time: 16:30:35 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/hpi_io_intf.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:35 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/hpi_io_intf.sv 
+# -- Compiling module hpi_io_intf
+# 
+# Top level modules:
+# 	hpi_io_intf
+# End time: 16:30:35 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/HexDriver.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:35 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/HexDriver.sv 
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# End time: 16:30:35 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/final_frogger_top.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:35 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/final_frogger_top.sv 
+# -- Compiling module final_frogger_top
+# 
+# Top level modules:
+# 	final_frogger_top
+# End time: 16:30:35 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/car_row.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:35 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/car_row.sv 
+# -- Compiling module car_row
+# 
+# Top level modules:
+# 	car_row
+# End time: 16:30:35 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/lilypad_row.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:35 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/lilypad_row.sv 
+# -- Compiling module lilypad_row
+# 
+# Top level modules:
+# 	lilypad_row
+# End time: 16:30:36 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_irq_mapper.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:36 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_irq_mapper.sv 
+# -- Compiling module nios_system_irq_mapper
+# 
+# Top level modules:
+# 	nios_system_irq_mapper
+# End time: 16:30:36 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:36 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv 
+# -- Compiling module nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+# End time: 16:30:36 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:36 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v 
+# -- Compiling module altera_avalon_st_handshake_clock_crosser
+# 
+# Top level modules:
+# 	altera_avalon_st_handshake_clock_crosser
+# End time: 16:30:36 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_clock_crosser.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:36 on May 02,2016
+# vlog -reportprogress 300 -vlog01compat -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_avalon_st_clock_crosser.v 
+# -- Compiling module altera_avalon_st_clock_crosser
+# 
+# Top level modules:
+# 	altera_avalon_st_clock_crosser
+# End time: 16:30:36 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:36 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv 
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# End time: 16:30:37 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:37 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux_001.sv 
+# -- Compiling module nios_system_mm_interconnect_0_rsp_mux_001
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_rsp_mux_001
+# End time: 16:30:37 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:37 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux.sv 
+# -- Compiling module nios_system_mm_interconnect_0_rsp_mux
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_rsp_mux
+# End time: 16:30:37 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:37 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux_001.sv 
+# -- Compiling module nios_system_mm_interconnect_0_rsp_demux_001
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_rsp_demux_001
+# End time: 16:30:37 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:37 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux.sv 
+# -- Compiling module nios_system_mm_interconnect_0_rsp_demux
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_rsp_demux
+# End time: 16:30:38 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:38 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux_001.sv 
+# -- Compiling module nios_system_mm_interconnect_0_cmd_mux_001
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_cmd_mux_001
+# End time: 16:30:38 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:38 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux.sv 
+# -- Compiling module nios_system_mm_interconnect_0_cmd_mux
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_cmd_mux
+# End time: 16:30:38 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:38 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux_001.sv 
+# -- Compiling module nios_system_mm_interconnect_0_cmd_demux_001
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_cmd_demux_001
+# End time: 16:30:38 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:38 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux.sv 
+# -- Compiling module nios_system_mm_interconnect_0_cmd_demux
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_cmd_demux
+# End time: 16:30:38 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_003.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:38 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_003.sv 
+# -- Compiling module nios_system_mm_interconnect_0_router_003_default_decode
+# -- Compiling module nios_system_mm_interconnect_0_router_003
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_router_003
+# End time: 16:30:39 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_002.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:39 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_002.sv 
+# -- Compiling module nios_system_mm_interconnect_0_router_002_default_decode
+# -- Compiling module nios_system_mm_interconnect_0_router_002
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_router_002
+# End time: 16:30:39 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:39 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_001.sv 
+# -- Compiling module nios_system_mm_interconnect_0_router_001_default_decode
+# -- Compiling module nios_system_mm_interconnect_0_router_001
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_router_001
+# End time: 16:30:39 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:39 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router.sv 
+# -- Compiling module nios_system_mm_interconnect_0_router_default_decode
+# -- Compiling module nios_system_mm_interconnect_0_router
+# 
+# Top level modules:
+# 	nios_system_mm_interconnect_0_router
+# End time: 16:30:39 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:39 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv 
+# -- Compiling module altera_merlin_slave_agent
+# ** Warning: E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(618): (vlog-2186) SystemVerilog testbench feature
+# 
+# (randomization, coverage or assertion) detected in the design.
+# 
+# These features are only supported in Questasim.
+# 
+# ** Warning: E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(488): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(489): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(490): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(491): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv(34): (vlog-2186) SystemVerilog testbench feature
+# 
+# (randomization, coverage or assertion) detected in the design.
+# 
+# These features are only supported in Questasim.
+# 
+# 
+# Top level modules:
+# 	altera_merlin_slave_agent
+# End time: 16:30:40 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 6
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:40 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv 
+# -- Compiling module altera_merlin_burst_uncompressor
+# 
+# Top level modules:
+# 	altera_merlin_burst_uncompressor
+# End time: 16:30:40 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_master_agent.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:40 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_master_agent.sv 
+# -- Compiling module altera_merlin_master_agent
+# 
+# Top level modules:
+# 	altera_merlin_master_agent
+# End time: 16:30:40 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_translator.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:40 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_slave_translator.sv 
+# -- Compiling module altera_merlin_slave_translator
+# 
+# Top level modules:
+# 	altera_merlin_slave_translator
+# End time: 16:30:40 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work nios_system +incdir+E:/Final_Frogger/nios_system/synthesis/submodules {E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_master_translator.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:40 on May 02,2016
+# vlog -reportprogress 300 -sv -work nios_system "+incdir+E:/Final_Frogger/nios_system/synthesis/submodules" E:/Final_Frogger/nios_system/synthesis/submodules/altera_merlin_master_translator.sv 
+# -- Compiling module altera_merlin_master_translator
+# 
+# Top level modules:
+# 	altera_merlin_master_translator
+# End time: 16:30:41 on May 02,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+E:/Final_Frogger {E:/Final_Frogger/testbench.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:30:41 on May 02,2016
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/Final_Frogger" E:/Final_Frogger/testbench.sv 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 16:30:41 on May 02,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -L nios_system -voptargs="+acc"  testbench
+# vsim -gui "+altera" -l msim_transcript -do "final_frogger_run_msim_rtl_verilog.do" 
+# Start time: 16:30:41 on May 02,2016
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.frog
+# Loading work.game_logic
+# Loading work.car_row
+# Loading work.lilypad_row
+# Loading work.car
+# Loading work.lilypad
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Too few port connections. Expected 14, found 12.
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1/car_i[0]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1/car_i[0]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1/car_i[1]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1/car_i[1]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1/car_i[2]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1/car_i[2]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1/car_i[3]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[0]/car_row_instance1/car_i[3]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Too few port connections. Expected 14, found 12.
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1/car_i[0]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1/car_i[0]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1/car_i[1]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1/car_i[1]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1/car_i[2]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1/car_i[2]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1/car_i[3]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[1]/car_row_instance1/car_i[3]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Too few port connections. Expected 14, found 12.
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1/car_i[0]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1/car_i[0]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1/car_i[1]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1/car_i[1]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1/car_i[2]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1/car_i[2]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1/car_i[3]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[2]/car_row_instance1/car_i[3]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Too few port connections. Expected 14, found 12.
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(120): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1/car_i[0]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1/car_i[0]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1/car_i[1]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1/car_i[1]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1/car_i[2]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1/car_i[2]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1/car_i[3]/car_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/car_row.sv(39): [PCDPC] - Port size (11) does not match connection size (32) for port 'Car_Start_X'. The port definition is at: E:/Final_Frogger/car.sv(10).
+# 
+#         Region: /testbench/car_row_i[3]/car_row_instance1/car_i[3]/car_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/car_row.sv(39): [TFMPC] - Missing connection for port 'Car_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[0]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[1]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[2]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Too few port connections. Expected 15, found 13.
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(140): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[0]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[1]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[2]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Too few port connections. Expected 16, found 14.
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (11) does not match connection size (32) for port 'LPad_Start_X'. The port definition is at: E:/Final_Frogger/lilypad.sv(10).
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3015) E:/Final_Frogger/lilypad_row.sv(43): [PCDPC] - Port size (4) does not match connection size (1) for port 'LPad_Collision'. The port definition is at: E:/Final_Frogger/lilypad.sv(15).
+# 
+#         Region: /testbench/lpad_row_j[3]/lilypad_row/LPad_i[3]/lpad_instance
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Width'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/lilypad_row.sv(43): [TFMPC] - Missing connection for port 'LPad_Height'.
+# 
+# ** Warning: (vsim-3017) E:/Final_Frogger/testbench.sv(203): [TFMPC] - Too few port connections. Expected 21, found 19.
+# 
+#         Region: /testbench/frog_instance_3
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(203): [TFMPC] - Missing connection for port 'lose'.
+# 
+# ** Warning: (vsim-3722) E:/Final_Frogger/testbench.sv(203): [TFMPC] - Missing connection for port 'win'.
+# 
+# ** Error: (vsim-8378) E:/Final_Frogger/testbench.sv(226): Port size (8) does not match connection size (2) for implicit .name connection port 'frog_lives'. The port definition is at: E:/Final_Frogger/game_logic.sv(12).
+# 
+#         Region: /testbench/game_logic_mod
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./final_frogger_run_msim_rtl_verilog.do PAUSED at line 74
+# End time: 16:31:14 on May 02,2016, Elapsed time: 0:00:33
+# Errors: 1, Warnings: 171
