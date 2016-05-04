@@ -256,8 +256,27 @@ Following this, each car gets its upper left-hand corner (x,y) positioned marked
  		\caption{Mapping the carright\_sprite to its color index.}
  		\label{fig:sprite_description4}
  	\end{figure}	
+
 	
 The fifth stage within Color\_Mapper is to finally draw the sprite to the screen.  A large if statement checks for DrawX and DrawY values to contain car\_on values.  This means the car exists at that pixel and it can be mapped to its proper color in the sprite.  Figure \ref{fig:sprite_description5} shows this being done for the carright\_sprite.  The RGB values are properly mapped to the correct values for the pixel and outputted from Color\_Mapper to the VGA\_controller to be displayed onto the VGA monitor. 
+
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\textwidth]{sprite_description5.png}
+		\caption{Establishing RGB for each pixel in carright\_sprite.}
+		\label{fig:sprite_description5}
+	\end{figure}	
+	
+Every sprite that moved went through these five stages in the  Color\_Mapper module in order to be displayed.  The game clock, lives counter, and game logo could bypass the first two stages since their position on the screen remained static.  The game clock and lives counter required inputs to the Color\_Mapper module to declare which number to display on the screen. \\
+
+One last added feature not mentioned was the ability to control the direction of the frogs.  A direction variable was used to record the last direction key used on the frog and orient the frog based on that direction.  Matrix transformations were then used to rotate the 2D pixel array of the frog to the proper direction.  \\  	
+	
+%SECTION 8 - Difficulty 
+\section{ Difficulty}
+	%RYAN SECTION - Make an argument for the difficulty of this project
+Producing the Frogger game in less than five weeks was no simple task.  The team came across a number of issues on a range of the features that were implemented into the game.  Most of the problems encountered came about from dealing with the System Verilog software.  What would be a simple function in a high-level programming language became rather tedious in System Verilog and required some thought in order to successfully implement.  \\
+
 
 	\begin{figure}[H]
 		\centering
